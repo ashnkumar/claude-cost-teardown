@@ -1,0 +1,212 @@
+{
+ "id": "ref:t-compliance-live-compact/rep-22",
+ "A": "t-compliance-live-compact/rep-22",
+ "B": "t-compliance-naive-append/rep-11",
+ "calls": 2,
+ "STATE_COVERAGE": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 2,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "REQUIRED_FIELDS": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 2,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "LAUNCH_DECISION": {
+  "winner": "EQUAL",
+  "tally": {
+   "A": 0,
+   "B": 0,
+   "EQUAL": 2
+  },
+  "clear_votes": 0,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "DENSITY": {
+  "winner": "A",
+  "tally": {
+   "A": 2,
+   "B": 0,
+   "EQUAL": 0
+  },
+  "clear_votes": 0,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "GROUNDING": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 0,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "OVERALL": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 2,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "position_bias": false,
+ "_detail": {
+  "id": "ref:t-compliance-live-compact/rep-22",
+  "A": "t-compliance-live-compact/rep-22",
+  "B": "t-compliance-naive-append/rep-11",
+  "calls": [
+   {
+    "order": "AB",
+    "dims": {
+     "STATE_COVERAGE": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "Both tier all fifty states, but Report 1 pushes the threshold analysis that decides whether nineteen of them even reach you into a subtask, while Report 2 keeps it in the report with a per-state exceptions table (Nebraska SBA, Rhode Island no cure, Utah opt-out, Florida's $1B floor, Maryland's necessity standard) plus an explicit \"Not researched\" boundary.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "REQUIRED_FIELDS": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "He asked what the penalties are and Report 1 leaves Washington as \"CPA remedies\" and gives Colorado — a state it ranks dangerous — no figure at all, where Report 2 has $7,500 and $20,000 per violation, adds a size-threshold row for applicability, and specifies the consent screen down to the camera trigger, the unticked separate control, the e-signature confirmation and the second §15(d) consent for the vendor hand-off.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "LAUNCH_DECISION": {
+      "winner": 0,
+      "margin": "EQUAL",
+      "why": "Both put a bounded, ranked danger list on the first screen and both apply a real test — private right of action versus AG discretion, damages ceiling, and no-threshold applicability — with Report 1 slightly more lookupable as a verdict table and Report 2 slightly more product-anchored, which cancels out.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "EQUAL"
+     },
+     "DENSITY": {
+      "winner": 1,
+      "margin": "SLIGHT",
+      "why": "Report 1 gets the whole answer, eleven tables and a ranked risk-reduction list into half the reading with almost no fat, while Report 2 spends a chunk on app-store age laws it then labels stale and on register-padding lines like the Perkins Coie citation.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "A"
+     },
+     "GROUNDING": {
+      "winner": 2,
+      "margin": "SLIGHT",
+      "why": "Neither commits the launch-changing per-scan error and both get Illinois's private right of action right, but Report 2 lands more verified cells — retroactivity of the damages cap, e-signature satisfying the written release, the Washington and Colorado penalty figures — and states where it did not look.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "OVERALL": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "Report 2 fills the cells you would actually build and budget from — penalty figures with units for all four biometric-statute states, the thresholds that decide whether the other nineteen reach you at all, and a consent-screen spec you could hand to engineering today — where Report 1 is tighter reading but answers four columns instead of five and defers the applicability work to a subtask.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     }
+    },
+    "unusable": [],
+    "deletable_unverifiable": 0,
+    "deletable_1": [
+     "**If you only remember one thing:** Illinois is a class-action risk, Texas is a regulator risk, Colorado is a \"we didn't think it applied to us\" risk. They fail in three different ways and need three different mitigations.",
+     "That decision is yours to make and is captured as its own subtask.",
+     "Rather than 50 near-identical rows, states are grouped by the regime that actually governs them. Every state appears exactly once."
+    ],
+    "deletable_2": [
+     "⚠️ **Explicitly stale — re-verify before relying on it.** Enforcement timelines and liability frameworks for all three acts shifted during 2026 due to later legislation and court rulings. A subtask exists for this.",
+     "Practitioners now describe Texas, not California, as the leading US privacy regulator.",
+     "These are genuine gaps, not things I skipped."
+    ],
+    "stop_reason": "end_turn"
+   },
+   {
+    "order": "BA",
+    "dims": {
+     "STATE_COVERAGE": {
+      "winner": 1,
+      "margin": "CLEAR",
+      "why": "Report 1 puts all four dedicated-statute states in one filled matrix and then differentiates inside the 19-state sensitive-data layer state by state (which thresholds bite, which has no cure period, which is a decoy) and states what it did not research, where Report 2 gives the same tier a single caveat and pushes the applicability question to a subtask.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "REQUIRED_FIELDS": {
+      "winner": 1,
+      "margin": "CLEAR",
+      "why": "Report 2 leaves Washington's penalty as \"CPA remedies\" and gives Colorado — the state it ranks third most dangerous — no penalty figure at all, while Report 1 carries the unit on every one and also gives him the two build details Report 2 omits: that an e-signature/tap satisfies the written release, and that the vendor hand-off needs its own separate §15(d) consent.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "LAUNCH_DECISION": {
+      "winner": 0,
+      "margin": "EQUAL",
+      "why": "Both put a bounded danger list on the first screen with the test visible — private right of action, damages ceiling, no size threshold — and both turn on the actual product (scan once at signup, subscription, pre-launch); Report 1 quantifies per-class-member exposure and flags the Portland sleeper and the Florida decoy, Report 2 has the cleaner verdict column, and the two offset.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "EQUAL"
+     },
+     "DENSITY": {
+      "winner": 2,
+      "margin": "SLIGHT",
+      "why": "Report 2 gets the same core answer across in about 60% of the words and ends in a ranked, consolidated do-this list, while Report 1 spends a whole unrequested section on minors and app-store age acts that it then labels stale, and restates the delete-after-verification rule four separate times.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "A"
+     },
+     "GROUNDING": {
+      "winner": 1,
+      "margin": "SLIGHT",
+      "why": "Neither commits the per-scan liability error and both get the only private right of action right, so this comes down to verified cells filled: Report 1 pins the public act number, the effective date and the retroactivity holding, and also gets Washington's $7,500, Colorado's $20,000 and the e-signature point that Report 2 leaves blank.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "OVERALL": {
+      "winner": 1,
+      "margin": "CLEAR",
+      "why": "Report 2 reads faster and its danger table is prettier, but Report 1 is the one you can actually build and budget from — penalty units on all four biometric states, the e-signature and separate vendor-consent rules for the signup screen, which of the nineteen sensitive-data states bite at launch, and an explicit list of what it did not research — whereas Report 2 leaves Colorado's and Washington's numbers blank and defers the threshold question to a subtask.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     }
+    },
+    "unusable": [],
+    "deletable_unverifiable": 0,
+    "deletable_1": [
+     "Also: Colorado SB 24-041 (parental consent under 13, stacks with HB 24-1130); MODPA (no sale/targeted ads for under-18s); **Arkansas HB 1717, effective 1 July 2026** (consent before collecting from teens 13–16); Connecticut and Arkansas age-appropriate design codes; federal COPPA.",
+     "Practitioners now describe Texas, not California, as the leading US privacy regulator.",
+     "Data you don't hold can't be breached, litigated over, or subpoenaed."
+    ],
+    "deletable_2": [
+     "Rather than 50 near-identical rows, states are grouped by the regime that actually governs them. Every state appears exactly once.",
+     "Easy to forget because it has nothing to do with faces.",
+     "That decision is yours to make and is captured as its own subtask."
+    ],
+    "stop_reason": "end_turn"
+   }
+  ]
+ }
+}

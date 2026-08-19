@@ -1,0 +1,193 @@
+{
+  "cell": "live-append-effort-medium",
+  "rep": 1,
+  "task_id": "t-dog",
+  "run_id": "exp-live-append-effort-medium-r1-msgeswuy",
+  "dry_run": false,
+  "config": {
+    "cache": "live",
+    "context": "append",
+    "effort": "medium"
+  },
+  "git_sha": "dbcb2b4",
+  "started_at": "2026-08-05T18:17:17.914Z",
+  "finished_at": "2026-08-05T18:21:59.586Z",
+  "wall_ms": 281628,
+  "turns": null,
+  "stop_reason": null,
+  "status": "error",
+  "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.5: `tool_use` ids were found without `tool_result` blocks immediately after: toolu_01NZXgArkzonnG9gfBtwXT5w. Each `tool_use` block must have a corresponding `tool_result` block in the next message.\"},\"request_id\":\"req_011Cdk4osY35Qf6jqGLd4ske\"}",
+  "seed_check_ok": true,
+  "cache_hit_call1": false,
+  "totals": {
+    "api_calls": 4,
+    "summarizer_calls": 0,
+    "input_tokens": 56,
+    "output_tokens": 7907,
+    "cache_creation_input_tokens": 40134,
+    "cache_read_input_tokens": 638457,
+    "web_search_requests": 15,
+    "web_fetch_requests": 20,
+    "cost_usd": 0.918021,
+    "computed_cost_usd": 0.918021,
+    "summarizer_cost_usd": 0
+  },
+  "behavior": {
+    "subtasks_created": 5,
+    "comments": 0,
+    "report_attached": false,
+    "statuses_set": 3,
+    "searches": 15,
+    "fetches": 20
+  },
+  "final_task_tree": {
+    "id": "t-dog",
+    "title": "Figure out a training plan for my dog",
+    "description": "Rescue border collie mix, 14 months. Pulls hard on the leash and barks at every other dog on walks. South Bay, California; I can do evenings and weekends.\n\nThree things only:\n1. Whether to hire a trainer or do it myself.\n2. If hiring — two or three local options with real prices.\n3. A week-by-week plan for the first four weeks.\n\nDon't research anything beyond those three.",
+    "status": "in_progress",
+    "assignee": "agent",
+    "parentId": null,
+    "needsHumanReview": false,
+    "priority": "medium",
+    "energy": "medium",
+    "timeEstimate": 60,
+    "taskType": [
+      "researching",
+      "planning"
+    ],
+    "dueDate": "2026-08-08",
+    "project": "Personal",
+    "section": "This week",
+    "comments": [],
+    "report": null,
+    "createdAt": "2026-08-01T09:12:00.000Z",
+    "updatedAt": "2026-08-05T18:17:37.182Z",
+    "subtasks": [
+      {
+        "id": "t-3952f838",
+        "title": "Decide: DIY vs. hire a trainer for leash pulling + dog reactivity",
+        "description": "Work out whether a 14-month rescue border collie mix with hard leash pulling and barking/lunging at other dogs is a DIY case or needs a professional. Key question: is this reactivity (fear/frustration) or just under-exercised adolescent excitement, and what does that imply. Output: a clear recommendation with reasoning and cost/time trade-off.",
+        "status": "in_progress",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching",
+          "decision"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T18:17:37.184Z",
+        "updatedAt": "2026-08-05T18:21:11.545Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-e6859d3f",
+        "title": "Find 3 South Bay trainers with real published prices",
+        "description": "THREE OPTIONS, cheapest to most expensive. All use reward-based / positive-reinforcement methods.\n\n1) HUMANE SOCIETY SILICON VALLEY — \"Top Dogs Level 1\" — $300\n- Built specifically for leash/barrier reactivity. Six-week course; first session 90 min, then 5 x 50 min. For dogs who bark, lunge, or worry but have NOT caused injury. Dogs under 8 months need instructor approval (yours is 14 mo, fine).\n- Next listed start: Aug 19, 2026, 6:15pm, online-only via Zoom (6 weeks). In-person Top Dogs 1/2/3 also run — Level 2 is in-person and requires Level 1 or instructor approval.\n- Adopters get a discount code — email DogTraining@hssv.org and ask, since your dog is a rescue (ask whether an HSSV adoption is required).\n- HSSV does NOT offer private training/consults to the public, but will give referrals.\n- 901 Ames Ave, Milpitas, CA 95035. Email DogTraining@hssv.org\n- Pages: https://www.hssv.org/behavior-management-classes/ and https://www.hssv.org/services/dog-services/training/\n- Free resource regardless of whether you enroll: HSSV Reactive Dog Training Guide PDF — https://www.hssv.org/wp-content/uploads/2025/10/Reactive-Dog-Training-Guide-7.11.25.pdf\n\n2) STACY'S WAG'N'TRAIN (Stacy Braslau-Schneck, San Jose, 25+ yrs, in-home/virtual)\n- Basic \"4-pack\": $800 — four 1-hour private lessons (starts with a virtual evaluation + 3 coaching sessions, virtual or in person), scheduled 1–2 weeks apart. Described as for basic training WITHOUT real behavior-mod needs — probably not enough on its own for reactivity.\n- Beginning Behavior Modification \"6-pack\": $1,500 — six 1-hour private lessons (virtual eval + 5 coaching). This is the right tier for leash reactivity.\n- Behavior Modification Foundation: $3,000 — 14 one-hour lessons.\n- Contact: stacy@wagntrain.com (email is the preferred/only listed channel). Serves Willow Glen and surrounding San Jose.\n- https://wagntrain.com/private-dog-training-lessons/\n\n3) D FOR DOGZ (Kaajal; Silicon Valley — covers San Jose, Santa Clara, Sunnyvale, Mountain View, Campbell, Los Gatos, Cupertino, Milpitas)\n- Has a dedicated leash-reactive private program; framing is emotion-first (counter-conditioning / learning to disengage), not suppression.\n- Private Coaching: $2,400 / 6 weeks — you learn to train the dog; 90-minute sessions, between-session support by call/text/email, one complimentary group class, 3 months post-program phone/email support.\n- Day Training: $4,200 / 6 weeks — trainer works the dog directly, you join key sessions. ($420 discount for enrolling in the full program.)\n- Phone: 650-538-3011. https://dfordogtraining.com/private-dog-training-silicon-valley/leash-reactive-dog-private-training/\n\nRULED OUT: Off Leash K9 / Sit Means Sit / Bark Busters — e-collar / dominance-based approaches. With a reactive dog, punishing the bark tends to suppress the warning while leaving the underlying fear/frustration, and can make reactivity worse. Skip these.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 60,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T18:17:37.184Z",
+        "updatedAt": "2026-08-05T18:21:11.544Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-e7a2a3b7",
+        "title": "Write the week-by-week plan for weeks 1-4",
+        "description": "Build a concrete 4-week plan covering equipment, loose-leash walking protocol, and a dog-reactivity protocol (engage-disengage / look-at-that / counter-conditioning at distance). Must fit evenings and weekends. Include session lengths and what success looks like at the end of each week.",
+        "status": "not_started",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "high",
+        "timeEstimate": 60,
+        "taskType": [
+          "researching",
+          "writing"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T18:17:37.184Z",
+        "updatedAt": "2026-08-05T18:17:37.184Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-e49975a4",
+        "title": "Buy the equipment: front-clip harness + 6ft leash + high-value treats",
+        "description": "Front-clip (front-attachment) harness in the dog's size, a fixed 4-6ft leash (NOT retractable), a treat pouch, and soft high-value treats you can deliver fast (small cheese cubes, hot dog slices, freeze-dried liver). Optional: 15-30ft long line for the yard/park decompression work. Available at any Petco/PetSmart in the South Bay or online.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "low",
+        "timeEstimate": 30,
+        "taskType": [
+          "errand"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T18:17:37.184Z",
+        "updatedAt": "2026-08-05T18:17:37.184Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-cd54811c",
+        "title": "Email or call your top 2 trainer picks to book an intake",
+        "description": "Contact details go in the trainer research subtask. Ask each: (1) do you use food-based/force-free methods and no prong/e-collar, (2) do you have evening or weekend slots, (3) what does the first session cost and what's included, (4) have you worked with adolescent herding-breed leash reactivity. Book whichever answers best.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "low",
+        "timeEstimate": 30,
+        "taskType": [
+          "calling",
+          "decision"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T18:17:37.184Z",
+        "updatedAt": "2026-08-05T18:17:37.184Z",
+        "subtasks": []
+      }
+    ]
+  },
+  "prefix_diff": {
+    "pairs": 3,
+    "clean_append": 3,
+    "drift_after_markers": 0,
+    "cache_busting": 0,
+    "first_busting": null
+  }
+}

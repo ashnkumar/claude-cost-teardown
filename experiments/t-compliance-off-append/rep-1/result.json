@@ -1,0 +1,712 @@
+{
+  "cell": "off-append",
+  "rep": 1,
+  "task_id": "t-compliance",
+  "run_id": "exp-off-append-r1-mse2ui7b",
+  "dry_run": false,
+  "config": {
+    "cache": "off",
+    "context": "append"
+  },
+  "git_sha": "e467e91",
+  "started_at": "2026-08-04T03:07:04.487Z",
+  "finished_at": "2026-08-04T03:27:36.178Z",
+  "wall_ms": 1231261,
+  "turns": 23,
+  "stop_reason": "end_turn",
+  "status": "ok",
+  "error": null,
+  "seed_check_ok": true,
+  "cache_hit_call1": false,
+  "totals": {
+    "api_calls": 23,
+    "summarizer_calls": 0,
+    "input_tokens": 4367212,
+    "output_tokens": 55854,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "web_search_requests": 27,
+    "web_fetch_requests": 12,
+    "cost_usd": 23.50241,
+    "computed_cost_usd": 23.50241,
+    "summarizer_cost_usd": 0
+  },
+  "behavior": {
+    "subtasks_created": 20,
+    "comments": 4,
+    "report_attached": true,
+    "statuses_set": 20,
+    "searches": 27,
+    "fetches": 12
+  },
+  "final_task_tree": {
+    "id": "t-compliance",
+    "title": "Research compliance across 50 states",
+    "description": "We're shipping a consumer mobile app that scans a user's face to verify identity at signup, and we charge a monthly subscription. Before launch I need to know, state by state, which biometric privacy laws apply to us, what notice and written consent we have to collect, how long we're allowed to retain the scan, whether there's a private right of action, and what the penalties are. Flag the states that are genuinely dangerous to launch in.",
+    "status": "needs_review",
+    "assignee": "agent",
+    "parentId": null,
+    "needsHumanReview": false,
+    "priority": "high",
+    "energy": "high",
+    "timeEstimate": 90,
+    "taskType": [
+      "researching",
+      "decision"
+    ],
+    "dueDate": "2026-08-05",
+    "project": "Launch",
+    "section": "This week",
+    "comments": [
+      {
+        "id": "c-14089fda",
+        "body": "Starting. Scoping note on how I'm reading this brief:\n\nThe task says \"50 states,\" but a flat 50-row table would bury the answer. The real risk in face-scan-at-signup is concentrated in a handful of states with dedicated biometric statutes — and specifically in whether there's a **private right of action** (PRA), because that's what turns a compliance gap into class-action exposure. So I'm structuring this as: dedicated biometric statutes first (deep), then comprehensive privacy laws that treat biometrics as sensitive data (medium), then the remaining states (grouped, with the residual theories that still apply — UDAP, wiretap, data breach).\n\nTwo things about your product description materially change the analysis, and I'm researching both rather than assuming:\n1. \"Scans a user's face to verify identity\" — face verification (1:1 match against an ID) vs. face identification (1:N search) is treated differently under some laws, and several statutes have carve-outs.\n2. You charge a monthly subscription — that likely makes you a \"business\" over some thresholds and matters for a couple of statutes' scope.\n\nI'll flag anything that needs your product/legal judgement rather than guessing. Building the tree now.",
+        "author": "agent",
+        "createdAt": "2026-08-04T03:07:14.594Z"
+      },
+      {
+        "id": "c-3bf7de5d",
+        "body": "Progress — three deep dives done (IL, TX, WA), findings written into those subtasks.\n\nHeadline so far, and one genuine surprise:\n\n**Illinois BIPA is the whole ballgame.** Private right of action, no injury required (Rosenbach), $1,000/$5,000 liquidated damages, fee-shifting, 5-year limitations period. The Aug 2024 SB 2979 amendment helps a lot — damages are now one recovery per person per violation type rather than per scan, killing the Cothron multiplier — but 100k Illinois users still nominally exposes you to ~$100M on the consent count alone.\n\n**Texas has no private right of action but is the more active enforcer.** $1.4B from Meta, $1.375B from Google, both under CUBI, both AG-driven with contingency outside counsel. Consent standard is lighter than Illinois (no written release required), but the retention cap is *tighter* — 1 year after the collection purpose expires, vs Illinois' 3-year backstop.\n\n**The surprise: Washington's biometric statute probably doesn't apply to you at all.** RCW 19.375 excludes \"digital photograph... or data generated therefrom,\" defines \"commercial purpose\" narrowly as third-party marketing, and has an express exemption for \"security purposes\" that explicitly names fraud prevention and protecting account integrity. All three independently point away from coverage. But **My Health My Data does** potentially reach you, and it's the one with the private right of action — it lists \"biometric data\" inside its definition of health data. Whether an identity-verification faceprint \"identifies health status\" is genuinely unresolved; I've flagged it as a counsel question rather than guessing.\n\nContinuing with Colorado, then the comprehensive-privacy-law tier.",
+        "author": "agent",
+        "createdAt": "2026-08-04T03:16:02.551Z"
+      },
+      {
+        "id": "c-d573c52f",
+        "body": "Colorado, the comprehensive-law tier, and California are done. Two findings worth surfacing early because they affect engineering decisions, not just paperwork:\n\n**1. There is one technical control that removes your largest non-Illinois class-action exposure: encrypt face templates and source images at rest.** California's private right of action (§ 1798.150) only reaches *nonencrypted and nonredacted* personal information in a breach. I confirmed that face data is inside the covered category — § 1798.81.5(d)(1)(A) excludes photographs *unless used or stored for facial recognition purposes*, which is exactly your use case. Statutory damages are $100–$750 per consumer per incident with no proof of harm required. Encryption at rest takes the whole theory off the table.\n\n**2. Colorado applies to you from your first Colorado user, and most people get this wrong.** The Colorado Privacy Act normally needs 100k residents to bite. HB 24-1130 (effective 1 July 2025) disapplies the thresholds *for biometrics specifically*. Ten Colorado users is enough. It also has the most prescriptive operational rules anywhere — a public biometric policy, an *annual* deletion review, a 45-day deletion trigger, and a notice element requiring you to disclose processor sharing. And the 60-day cure period expired 1 Jan 2025, so there's no fix-it-later grace.\n\nThe useful framing that's emerging: **the dedicated biometric laws (IL, TX, CO, WA MHMD, NYC) bind you from user #1. The comprehensive privacy laws mostly have 35k–100k thresholds you grow into.** That's your triage order.\n\nOne thing I want to flag as a product decision rather than research, and I've written it up as its own subtask: several states (Colorado expressly, Maryland via \"strictly necessary\") condition your right to *require* the face scan on whether it's genuinely necessary to deliver the service. If there's no non-biometric verification fallback, that argument is stronger — but Colorado separately bars refusing service for refusal to consent *unless* the biometric is necessary. This needs your call on product architecture.\n\nRemaining: NYC/local ordinances, residual theories in the no-law states, then the matrix and ranking.",
+        "author": "agent",
+        "createdAt": "2026-08-04T03:20:16.054Z"
+      },
+      {
+        "id": "c-0d6558d7",
+        "body": "**Done — report attached. Here's what you need to know and what's waiting on you.**\n\n**The answer to \"which states are genuinely dangerous\": four, not fifty.**\n\n- **Illinois** — the only state combining a private right of action, liquidated damages with no injury requirement, and fee-shifting. Compliable, but the flow has to be right *before* first collection (*Mora* means no retrofitting the retention policy).\n- **Texas** — no private right of action, which fools people. The AG has taken $1.4B from Meta and $1.375B from Google under CUBI. Compliance is cheap here; non-compliance isn't.\n- **Portland, OR** — an outright *ban*, $1,000 **per day**. Consent is not a defence. This is the one most people miss entirely.\n- **Colorado** — no threshold at all for biometrics, no cure period since Jan 2025, and the most prescriptive operational rules in the country.\n\n**Three findings that changed the shape of the analysis:**\n\n1. **One engineering ticket removes your largest non-Illinois class-action exposure.** California's PRA reaches only *nonencrypted* data. I verified face data sits inside the covered category — the photograph carve-out expressly doesn't apply where an image is \"used or stored for facial recognition purposes.\" Encrypt at rest and § 1798.150 is gone, along with most breach-notification duties.\n\n2. **Washington's biometric statute probably doesn't apply to you at all** — three independent grounds (the digital-photograph exclusion, the narrow \"commercial purpose\" definition, and an express security-purpose exemption naming fraud prevention). But My Health My Data might, and *that's* the one with the PRA.\n\n3. **Threshold asymmetry is the right triage tool.** Biometric-specific laws bind from user #1. Comprehensive privacy laws mostly need 35k–100k residents. Build for the first group now; the second is a growth problem.\n\n**What's waiting on you — 11 subtasks, and two are decisions that gate the others:**\n\n- **Is the face scan mandatory or is there a fallback?** This is a genuine fork, not a formality: a fallback protects you in states that bar conditioning service on biometric consent, but *weakens* Maryland's \"strictly necessary\" argument because you've just proved the service works without it. Most companies offer the fallback and lean on consent rather than necessity. Your call.\n- **Launch-state geofencing** — Illinois and Portland.\n\nThen: encrypt at rest, audit SDKs off the verification screen, draft the consent flow, publish the retention policy, two counsel questions, the model-training decision, vendor contract terms, and a quarterly review.\n\n**Two things I deliberately did not answer**, because guessing would have been worse than flagging: whether MHMD's \"consumer health data\" reaches an identity-verification faceprint, and whether Portland's ordinance reaches a mobile app. Both are written up with the arguments on each side. On Portland, answer the KYC-compulsion question first — if your verification is legally compelled, exception (A) may dissolve the problem entirely.\n\nOne caveat worth stating plainly: I verified statutory text against primary sources rather than trusting summaries, but this is research, not legal advice. The Tier 1 launch decisions and both open questions should go to privacy counsel before you ship.\n\nParent set to `needs_review`. All research subtasks are `done`; the 11 open items are yours.",
+        "author": "agent",
+        "createdAt": "2026-08-04T03:27:20.786Z"
+      }
+    ],
+    "report": {
+      "markdown": "# Biometric Compliance for Face-Scan Identity Verification — 50-State Analysis\n\n**Product assumed:** consumer mobile app, face scan at signup for 1:1 identity verification, paid monthly subscription, no physical premises.\n\n---\n\n## 1. The short answer\n\nFour jurisdictions are genuinely dangerous. Everything else is either standard compliance work or has a threshold you have not yet crossed.\n\n| | Jurisdiction | Why it's dangerous | Can you cure it? |\n|---|---|---|---|\n| 🔴 | **Illinois** | Private right of action, $1,000/$5,000 liquidated damages per person, **no injury required**, attorneys' fees, 5-year lookback | Yes — but the flow must be right *before* first collection |\n| 🔴 | **Texas** | No PRA, but the AG has extracted **$1.4B from Meta** and **$1.375B from Google** under CUBI | Yes — compliance here is cheap |\n| 🔴 | **Portland, OR** | **Outright ban**, $1,000 **per day** per violation | **No — consent is not a defence** |\n| 🟠 | **Colorado** | No threshold at all for biometrics, no cure period, most prescriptive rules in the country | Yes |\n\n**The most important structural insight:** dedicated biometric laws (IL, TX, CO, WA MHMD) have **no applicability thresholds** — they bind from your first user. Comprehensive privacy laws mostly have **35,000–100,000 resident thresholds** you grow into later. That asymmetry should drive your triage.\n\n**The single highest-leverage action:** encrypt face templates and source images at rest. It eliminates California's private right of action outright and collapses most of the 50-state breach-notification exposure. One engineering ticket removes your largest non-Illinois class-action theory.\n\n---\n\n## 2. Tiered danger ranking\n\n### 🔴 Tier 1 — Do not launch without counsel sign-off\n\n**Illinois — BIPA, 740 ILCS 14**\n\nThe only statute in the country combining a broad private right of action, liquidated damages requiring no proof of harm, and fee-shifting. That combination is what created the BIPA plaintiffs' bar.\n\n- Covers \"scan of hand or **face geometry**.\" The \"photographs\" exclusion has largely **failed** as a defence outside the 9th Circuit — *Rivera v. Google* (N.D. Ill.) rejected it; *In re Facebook* read \"photograph\" as paper prints, not digital files. **No identity-verification exception exists.**\n- **§ 15(b):** before collection you must inform in writing that biometric data is collected, inform in writing of the **specific purpose and length of term**, and obtain a **written release**.\n- **§ 15(a):** a public retention/destruction policy — purpose satisfied or **3 years** from last interaction, whichever first. *Mora v. J&M Plating* requires it to exist **at or before collection**; you cannot adopt it later and cure.\n- **§ 15(c):** flat ban on profiting from biometric data. No consent cure.\n- **Damages:** $1,000 negligent / $5,000 intentional or reckless per violation, plus fees and expert costs. *Rosenbach* — no actual harm needed.\n- **Good news:** SB 2979 (eff. 2 Aug 2024) limits recovery to **one per person per violation type**, overriding *Cothron*'s per-scan accrual, and confirms electronic signature satisfies \"written release.\" Exposure is now roughly *users × $1,000*, not *scans × $1,000*.\n- **Limitations period:** 5 years (*Tims v. Black Horse Carriers*).\n\n> 100,000 Illinois users × $1,000 = **$100M nominal** on the consent count alone, before fees.\n\n**Texas — CUBI, Tex. Bus. & Com. Code § 503.001**\n\nNo private right of action, which misleads people into ignoring it. The AG is the most aggressive biometric enforcer in the country, using contingency outside counsel.\n\n- Covers \"record of hand or **face geometry**\" with **no photograph exclusion at all** — the Illinois definitional argument isn't available.\n- **Consent is lighter than Illinois:** inform before capture + obtain consent. No written-release requirement, no mandated purpose/term disclosure.\n- **Retention is *tighter* than Illinois:** destroy within a reasonable time and **no later than 1 year after the purpose for collection expires**. § 503.001(c-1) extends this where another law requires longer record-keeping — relevant if you have KYC/AML duties.\n- **Penalty:** up to **$25,000 per violation**, AG-enforced.\n\n**Portland, Oregon — City Code Ch. 34.10**\n\nDifferent in kind from everything else: a **prohibition**, not a consent regime.\n\n- Bans private entities using Face Recognition Technologies in \"Places of Public Accommodation\" within city limits. The definition covers \"any place **or service** offering to the public… goods, **services**…\" — an online service is arguably within the literal text.\n- \"Face Recognition Technologies\" expressly includes processes that assist in \"**verifying**\" facial features. 1:1 verification is covered.\n- **Remedy:** damages or **$1,000 per day for each day of violation**, whichever is greater, plus fees.\n- **The exceptions do not obviously save you.** The device-unlock exception covers an individual unlocking *their own* phone, not server-side verification. The strongest argument is exception (A) — necessary to comply with federal, state or local law — which only helps if your verification is legally *compelled* (KYC/AML), not commercially chosen.\n- Untested against a mobile app. Geofencing one city is cheap relative to per-day damages.\n\n*Note: the rest of Oregon is fine. **Baltimore's equivalent ordinance expired 31 Dec 2022** — outdated checklists still list it.*\n\n### 🟠 Tier 2 — High caution, fully compliable\n\n**Colorado — C.R.S. § 6-1-1314 (eff. 1 July 2025)**\n\nThe state most likely to catch a startup that assumed it was too small.\n\n- **HB 24-1130 disapplies the CPA's 100,000-resident threshold for biometrics.** Ten Colorado users puts you fully in scope.\n- Notice must cover collection, **specific purpose and retention length**, and — unusually — **whether data goes to a processor and why**. That element is the one most often missed.\n- Public written policy required: retention schedule + incident-response protocol + deletion guidelines, plus an **annual review** to identify data ripe for deletion.\n- **Retention:** earliest of purpose satisfied / **24 months** after last interaction / **45 days** after a review determines storage is unnecessary.\n- Flat ban on selling, leasing or trading identifiers. Cannot refuse service for refusal to consent **unless the biometric is necessary** to provide it.\n- **No PRA.** AG and DAs only, up to **$20,000 per violation** ($50,000 where the consumer is 60+).\n- **The 60-day cure period expired 1 Jan 2025.** No fix-it-later grace.\n\n**Washington — two regimes, and the counterintuitive result**\n\n*RCW 19.375 (the \"biometric law\") almost certainly does **not** apply to you*, on three independent grounds:\n1. \"Biometric identifier\" expressly **excludes** \"a physical or digital photograph, video or audio recording **or data generated therefrom**\" — and doesn't list face geometry at all.\n2. \"Commercial purpose\" is narrowly defined as third-party disclosure for **marketing unrelated goods** — not identity verification.\n3. § 19.375.020(7) exempts enrollment for a \"**security purpose**,\" expressly defined to include \"preventing… fraud\" and \"protecting the security or integrity of… accounts, applications, online services.\"\n\n*My Health My Data (RCW 19.373) is the real Washington risk* — and it has the PRA:\n- **No threshold.** Broader biometric definition covering face **imagery** \"from which an identifier template can be extracted.\"\n- **Unresolved:** \"consumer health data\" is gateway-defined as data identifying **health status**, but the list of what health status \"includes\" contains \"biometric data.\" Does a signup faceprint identify health status? Defence says no; plaintiffs say the list is definitional. **Flagged for counsel — I did not guess.**\n- If in scope: a **standalone** Consumer Health Data Privacy Policy with its own link (cannot merge into your general policy), opt-in consent expressly *not* obtainable via broad ToS acceptance or dark patterns, separate consent for sharing, deletion reaching backups.\n- Possible safe harbour: collection \"necessary to provide a product or service the consumer has requested.\"\n- **PRA via the CPA** (§ 19.373.090 → RCW 19.86.090). **But note the limit:** plaintiffs must show \"injury in business or property,\" and there are **no liquidated damages** — actual damages, discretionary treble capped at $25,000, plus fees. Real, but not BIPA-scale.\n\n**California — CCPA/CPRA**\n\n- **Thresholds buy you time:** $25M revenue, or 100k CA consumers, or 50% of revenue from selling PI. A pre-launch app likely meets none.\n- Biometric data is sensitive PI, but California uses a **right to limit use**, not opt-in consent. Notice at collection and retention disclosure still apply.\n- **The breach PRA reaches your face data.** § 1798.150 covers **nonencrypted, nonredacted** personal information. § 1798.81.5(d)(1)(A) covers biometric data used to authenticate and says the photograph carve-out doesn't apply where an image is \"**used or stored for facial recognition purposes**\" — precisely your use case.\n- **$100–$750 per consumer per incident**, no proof of harm. **Encryption at rest removes this entirely.**\n- **Watch:** new CPPA regs (eff. 1 Jan 2026) require a **risk assessment** before processing sensitive PI — by 31 Dec 2027 for pre-2026 processing, reporting from 1 Apr 2028. ADMT notice/opt-out from 1 Jan 2027; ask counsel whether an automated verification failure is a \"significant decision.\"\n\n**Maryland — MODPA (eff. 1 Oct 2025, processing after 1 Apr 2026)**\n\nThe strictest data-minimisation language in the country. Threshold 35,000.\n\n- Does not merely require consent — **prohibits** collecting sensitive data (incl. biometrics) unless **strictly necessary** to provide a product or service the consumer requested. **Consent is not a cure.** You need a documented necessity assessment.\n- First state to **ban the sale of sensitive data outright**.\n- AG only. Cure period sunsets 1 Apr 2027.\n\n### 🟡 Tier 3 — Standard compliance (comprehensive privacy laws)\n\nTwenty comprehensive laws in effect (CA, VA, CO, CT, UT, TX, OR, MT, FL, IA, DE, NH, NE, NJ, TN, MN, MD, IN, KY, RI). All treat biometric data as **sensitive**, nearly all requiring **opt-in consent** plus a data protection assessment. **None has a private right of action** except California's breach PRA.\n\n| Threshold | States |\n|---|---|\n| **No threshold** (SBA small-business exemption only) | **Texas, Nebraska** — reach more businesses than any others |\n| 35,000 residents | Maryland, New Hampshire, Delaware, Rhode Island |\n| 50,000 | Montana |\n| ~100,000 | Virginia, Connecticut, Oregon, Minnesota, Indiana, Kentucky, most others |\n| $1B revenue *and* ad-dependency | **Florida** — effective universe ~10 companies. Not you. |\n\n**Exceptions to opt-in:** California (right-to-limit model), Utah, and **Iowa** — the genuine outlier, requiring only notice and opt-out.\n\n**Cure periods are closing.** CO/CT sunset Jan 2025; OR/DE Jan 2026; MN Jan 2026; MT Apr 2026; NJ Jul 2026; MD Apr 2027. **Rhode Island never had one** — combined with a 35,000 threshold, a quiet outlier. VA, UT, IN, NE, TN kept theirs permanently.\n\n**Tennessee** offers a **NIST Privacy Framework safe harbour** — an affirmative defence for aligning your privacy programme. Cheap insurance that also evidences reasonableness elsewhere.\n\n### ⚪ Tier 4 — Residual risk only (~28 states)\n\nAL, AK, AZ, AR*, GA, HI, ID, KS, LA, ME, MA, MI, MS, MO, NV, NM, NC, ND, OH, OK*, PA, SC, SD, VT, WV, WI, WY, DC.\n\nNo biometric statute, no applicable comprehensive law. **But \"no law\" is not \"no risk\":**\n\n1. **UDAP statutes — all 50 states.** Several allow private suits with statutory minimums, treble damages and fees. **The trigger is almost always your own promises** — this makes your privacy policy the primary liability surface here. Massachusetts Ch. 93A is the most plaintiff-friendly.\n2. **Breach notification — all 50 states**, a growing subset expressly covering biometric data. Encryption generally triggers a safe harbour.\n3. **Intrusion upon seclusion** — weak where the user knowingly pointed a camera at themselves. Tag-along count.\n4. **Wiretap analogies** — poor fit for the scan itself, but a **live risk via third-party SDKs** on the verification screen (CIPA and equivalents in PA, FL, IL, MA, MD, WA).\n5. **FTC Act § 5** — see below.\n\n*\\*Oklahoma SB 546 signed 20 Mar 2026, effective date TBC. Arkansas law referenced for 1 Jul 2026 — verify statute text.*\n\n**If you build to the Illinois standard, you are comfortably compliant across all of Tier 4 with no additional engineering.**\n\n---\n\n## 3. The federal overlay — and the remedy to actually fear\n\nNo federal biometric statute exists. **APRA collapsed in June 2024 markup and expired with the 118th Congress**; preemption is not coming before 2028. Plan state-by-state.\n\nThe FTC enforces via § 5. **The remedy to fear is algorithmic disgorgement.** In the Rite Aid settlement (Dec 2023) the FTC banned facial recognition for five years and required destruction of all photos and videos **and \"all data, models, or algorithms derived in whole or in part therefrom,\"** with an obligation to instruct third parties to do likewise. The FTC has ordered model destruction repeatedly (Everalbum, Cambridge Analytica, Ring, Weight Watchers, Amazon).\n\n> A fine is survivable. An order to destroy the model your product runs on may not be. **Do not train on user verification scans** without separate, unbundled consent — and keep any training corpus provably segregated.\n\n---\n\n## 4. Build to these numbers and you are compliant everywhere\n\n| Requirement | Strictest source | Build to this |\n|---|---|---|\n| **Consent form** | Illinois § 15(b) | Standalone written release, e-signature OK, **unbundled from ToS** |\n| **Notice content** | Illinois + Colorado | Collection + **specific purpose** + **length of term** + **processor sharing** |\n| **Retention** | **Texas** § 503.001(c)(3) | Delete at verification completion; **12-month hard cap** |\n| **Public policy** | Illinois § 15(a), Colorado § 6-1-1314(2) | Published document, **live before first collection** |\n| **Deletion review** | Colorado | **Annual** review; delete within 45 days of determination |\n| **Encryption** | California § 1798.150 | At rest, templates **and** source images, keys held separately |\n| **Sale/profit** | Illinois § 15(c), Colorado | **Never.** Flat prohibition, no consent cure |\n| **Breach notice** | New York SHIELD | 30 days |\n\n---\n\n## 5. Recommended launch posture\n\n1. **Build one consent flow to the Illinois standard.** It satisfies every other state. Do not build 50 variants.\n2. **Encrypt everything at rest before launch.** Highest-leverage single control in this entire analysis.\n3. **Publish the retention policy on day one.** *Mora* means you cannot retrofit it in Illinois.\n4. **Set retention at 12 months maximum**, matching production TTL exactly. A mismatch between stated and actual retention is the most common UDAP hook.\n5. **Geofence Portland** unless counsel clears it or your KYC obligation triggers exception (A). Consider holding Illinois back until the flow has outside-counsel sign-off.\n6. **Never train models on verification scans** without separate consent and corpus segregation.\n7. **Audit third-party SDKs** off the verification screen.\n8. **Re-check quarterly.** New PRA states are the only development that would materially change this picture; New York is the one to watch.\n\n---\n\n## 6. Two questions I could not answer\n\nBoth are in the task tree as counsel subtasks with the arguments on each side written out.\n\n1. **Does Washington MHMD reach identity-verification biometrics?** Turns on whether a faceprint \"identifies health status\" when the statute lists biometric data inside that definition. Genuinely unresolved. The pragmatic answer is probably to comply rather than litigate the definition — the incremental cost is a standalone policy and a consent screen.\n2. **Does Portland Ch. 34.10 reach a mobile app, and does the legal-compliance exception apply?** Turns on whether \"or service\" captures an online service, and whether your identity verification is legally *compelled*. Answer the compulsion question first — if the KYC obligation is genuine, the problem may dissolve.\n\n---\n\n## 7. Scope note\n\nThis is a structured research summary, not legal advice, and it does not create an attorney–client relationship. Statutory text was verified against primary sources (ILGA/Justia codification, Texas Legislature, Washington Legislature, Colorado codification, Portland City Code) rather than relying on secondary summaries. The two open questions above and the Tier 1 launch decisions should go to qualified privacy counsel before you ship.\n",
+      "sources": [
+        {
+          "title": "740 ILCS 14 — Illinois Biometric Information Privacy Act (current codification, incl. P.A. 103-769/SB 2979)",
+          "url": "https://law.justia.com/codes/illinois/chapter-740/act-740-ilcs-14/"
+        },
+        {
+          "title": "Illinois BIPA Reform Takes Effect (SB 2979) — King & Spalding",
+          "url": "https://www.kslaw.com/news-and-insights/illinois-bipa-reform-takes-effect"
+        },
+        {
+          "title": "Illinois Supreme Court Sets Five-Year Statute of Limitations for All BIPA Claims (Tims v. Black Horse Carriers)",
+          "url": "https://natlawreview.com/article/breaking-illinois-supreme-court-sets-five-year-statute-limitations-all-bipa-claims"
+        },
+        {
+          "title": "Court Refuses to Dismiss Biometric Privacy Action over Facial Recognition (Rivera v. Google)",
+          "url": "https://natlawreview.com/article/court-refuses-to-dismiss-biometric-privacy-action-over-facial-recognition-technology"
+        },
+        {
+          "title": "Tex. Bus. & Com. Code § 503.001 — Capture or Use of Biometric Identifier (full text)",
+          "url": "https://texas.public.law/statutes/tex._bus._and_com._code_section_503.001"
+        },
+        {
+          "title": "Texas AG — $1.4 Billion Settlement with Meta Over Unauthorized Capture of Biometric Data",
+          "url": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-secures-14-billion-settlement-meta-over-its-unauthorized-capture"
+        },
+        {
+          "title": "Texas AG — $1.375 Billion Settlement with Google (CUBI and related claims)",
+          "url": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-secures-historic-1375-billion-settlement-google-related-texans-data"
+        },
+        {
+          "title": "Chapter 19.375 RCW — Biometric Identifiers (full chapter text)",
+          "url": "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true"
+        },
+        {
+          "title": "Chapter 19.373 RCW — Washington My Health My Data Act (full chapter text)",
+          "url": "https://app.leg.wa.gov/RCW/default.aspx?cite=19.373&full=true"
+        },
+        {
+          "title": "Washington My Health My Data Act, Part 7: Biometric Data — Hintze Law",
+          "url": "https://hintzelaw.com/blog/wa-my-health-my-data-act-pt7-biometrics"
+        },
+        {
+          "title": "RCW 19.86.090 — Consumer Protection Act civil action, treble damages",
+          "url": "https://law.justia.com/codes/washington/title-19/chapter-19-86/section-19-86-090/"
+        },
+        {
+          "title": "Colo. Rev. Stat. § 6-1-1314 — Biometric identifiers (full text)",
+          "url": "https://codes.findlaw.com/co/title-6-consumer-and-commercial-affairs/co-rev-st-sect-6-1-1314/"
+        },
+        {
+          "title": "Colorado Amends State Privacy Law to Include Biometric Data Requirements (HB 24-1130) — Venable",
+          "url": "https://www.venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include"
+        },
+        {
+          "title": "Colorado Imposes New Privacy Requirements on Organizations Collecting Biometric Identifiers — Paul Hastings",
+          "url": "https://www.paulhastings.com/insights/ph-privacy/colorado-imposes-new-privacy-requirements-on-organizations-collecting-biometric-identifiers-and-data"
+        },
+        {
+          "title": "Cal. Civ. Code § 1798.81.5 — definition of personal information incl. unique biometric data",
+          "url": "https://california.public.law/codes/civil_code_section_1798.81.5"
+        },
+        {
+          "title": "CCPA/CPRA Private Right of Action — statutory damages $100–$750 per consumer per incident",
+          "url": "https://www.truevault.com/learn/does-the-ccpa-have-a-private-right-of-action"
+        },
+        {
+          "title": "CCPA litigation: Shaping the contours of the private right of action — IAPP",
+          "url": "https://iapp.org/news/a/ccpa-litigation-shaping-the-contours-of-the-private-right-of-action"
+        },
+        {
+          "title": "CCPA Regulations on Cybersecurity, Risk Assessments, and ADMT — Morrison Foerster",
+          "url": "https://www.mofo.com/resources/insights/251007-ccpa-regulations-on-cybersecurity-risk-assessments"
+        },
+        {
+          "title": "California's 2026 CCPA Regulations: Summary and Preparation Guide — Thompson Coburn",
+          "url": "https://www.thompsoncoburn.com/insights/californias-2026-ccpa-regulations-summary-and-preparation-guide/"
+        },
+        {
+          "title": "Portland City Code Chapter 34.10 — Prohibition on Face Recognition Technologies by Private Entities",
+          "url": "https://www.portland.gov/code/34/10"
+        },
+        {
+          "title": "Portland Becomes First Jurisdiction to Ban Certain Uses of Facial Recognition by Private Businesses — Davis Wright Tremaine",
+          "url": "https://www.dwt.com/blogs/privacy--security-law-blog/2021/01/portland-facial-recognition-ban"
+        },
+        {
+          "title": "New York City Creates Right to Sue Over Use of Biometric Data (NYC Admin. Code §§ 22-1201–1205) — Carlton Fields",
+          "url": "https://www.carltonfields.com/insights/publications/2021/new-york-city-biometric-law"
+        },
+        {
+          "title": "NYC Biometrics Law for Food and Drink Establishments, Entertainment Venues, and Retail Stores — Troutman Pepper Locke",
+          "url": "https://www.troutman.com/insights/new-york-city-enacts-biometrics-law-for-food-and-drink-establishments-entertainment-venues-and-retail-stores/"
+        },
+        {
+          "title": "Baltimore's Ban on Private Sector Use of Facial Recognition Technology Expires — Hunton",
+          "url": "https://www.hunton.com/privacy-and-information-security-law/baltimores-ban-on-private-sector-use-of-facial-recognition-technology-expires"
+        },
+        {
+          "title": "NY SHIELD Act — obligations, penalties, no private right of action — IAPP",
+          "url": "https://iapp.org/news/a/new-yorks-shield-act-has-taken-effect-what-does-this-mean-for-your-business"
+        },
+        {
+          "title": "Maryland Online Data Privacy Act — strictly necessary standard and SPI sale ban — Cooley",
+          "url": "https://www.cooley.com/news/insight/2025/2025-09-09-marylands-unique-state-privacy-law-takes-effect-october-1--what-you-should-know"
+        },
+        {
+          "title": "Maryland MODPA key rules and requirements — OneTrust",
+          "url": "https://www.onetrust.com/blog/marylands-online-data-privacy-act-modpa-key-rules-and-requirements/"
+        },
+        {
+          "title": "US State Privacy Law Tracker 2026 — thresholds, cure periods, UOOM, PRA",
+          "url": "https://www.consenteo.com/knowledge-hub/legal/us_state_privacy_law_tracker_2026"
+        },
+        {
+          "title": "All of the Comprehensive Privacy Laws That Take Effect in 2026 — MultiState",
+          "url": "https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026"
+        },
+        {
+          "title": "U.S. State Privacy Laws: 2025 Status Update (applicability thresholds) — Coblentz",
+          "url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/"
+        },
+        {
+          "title": "The FTC's Case Against Rite Aid's Deployment of AI-Based Technology (algorithmic disgorgement) — Arnold & Porter",
+          "url": "https://www.arnoldporter.com/en/perspectives/advisories/2024/01/ftc-case-against-rite-aid-deployment-of-ai-based-technology"
+        },
+        {
+          "title": "FTC Announces Groundbreaking Action Against Rite Aid for Unfair Use of AI — WilmerHale",
+          "url": "https://www.wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20240111-ftc-announces-groundbreaking-action-against-rite-aid-for-unfair-use-of-ai"
+        },
+        {
+          "title": "US Privacy and Biometric Litigation Overview (UDAP theories) — Privacy World",
+          "url": "https://www.privacyworld.blog/us-privacy-and-biometric-litigation-overview/"
+        },
+        {
+          "title": "State Data Breach Notification Laws — Willkie Compliance Concourse",
+          "url": "https://complianceconcourse.willkie.com/resources/privacy-and-cybersecurity-us-state-data-breach-notification-laws/"
+        },
+        {
+          "title": "State Biometric Legislation Developments — Lewis Brisbois",
+          "url": "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments"
+        }
+      ],
+      "createdAt": "2026-08-04T03:27:01.267Z"
+    },
+    "createdAt": "2026-07-31T16:40:00.000Z",
+    "updatedAt": "2026-08-04T03:27:20.786Z",
+    "subtasks": [
+      {
+        "id": "t-cd62d257",
+        "title": "Illinois BIPA — full requirements, retention, PRA, damages",
+        "description": "Illinois BIPA, 740 ILCS 14. FINDINGS (statutory text confirmed against Justia's current codification, current through P.A. 103-769):\n\nCOVERAGE — you are in scope. \"Biometric identifier\" expressly includes \"scan of hand or face geometry\" (14/10). The definition excludes \"photographs,\" and defence counsel have repeatedly argued a template derived from an uploaded image is therefore exempt. That argument has largely FAILED outside the 9th Circuit: N.D. Ill. in Rivera v. Google rejected the electronic-photograph exception; In re Facebook read \"photograph\" to mean paper prints, not digitised image files. Assume a face-geometry template built at signup is covered even if generated from a camera capture rather than a live in-person scan. There is NO identity-verification exception.\n\nFOUR OBLIGATIONS (14/15):\n- 15(a) Written retention+destruction policy, MADE AVAILABLE TO THE PUBLIC. Must destroy when initial purpose is satisfied OR within 3 years of the individual's last interaction, whichever is FIRST. Must actually comply with your own schedule. Mora v. J&M Plating (2022 IL App (2d) 210692) held the policy must exist at/before the time of collection — you cannot adopt it later.\n- 15(b) Before collection you must (1) inform in writing that biometric data is being collected/stored, (2) inform in writing of the SPECIFIC PURPOSE and LENGTH OF TERM of collection/storage/use, and (3) receive a WRITTEN RELEASE. Post-SB 2979, \"written release\" is defined as informed written consent OR electronic signature — so an in-app e-signature flow is sufficient form. It must be standalone and affirmative, not buried in a general ToS accept.\n- 15(c) NO selling, leasing, trading or otherwise profiting from biometric data. Note: this is a flat prohibition, not a consent-based one. Structure vendor contracts so your face-verification provider is not \"profiting from\" the data.\n- 15(d) No disclosure/redisclosure without consent (exceptions incl. completing a financial transaction the subject authorised, legal requirement, warrant).\n- 15(e) Reasonable industry standard of care in storage/transmission, and treatment at least as protective as your other confidential data.\n\nPRIVATE RIGHT OF ACTION — YES, and it is the whole problem. 14/20: \"any person aggrieved\" may sue in state circuit court or as a supplemental federal claim. Rosenbach held no actual harm/injury is required — a bare procedural violation suffices.\n\nDAMAGES (14/20): $1,000 liquidated per negligent violation; $5,000 per intentional or reckless violation; or actual damages if greater. PLUS reasonable attorneys' fees, costs, expert witness fees, and injunctive relief. Fee-shifting is what makes these cases economically attractive to the plaintiffs' bar.\n\nSB 2979 (P.A. 103-769, eff. 2 Aug 2024) — meaningful but partial relief. Codified at 20(b)-(c): collecting the same identifier from the same person by the same method more than once is a SINGLE 15(b) violation with at most one recovery; same single-recovery rule for repeated 15(d) disclosures to the same recipient. This overrides the per-scan accrual of Cothron v. White Castle (2023), which had made damages multiply by every scan. Practical effect for you: exposure is roughly one recovery per class member per violation type, not per login. Still: 100,000 Illinois users x $1,000 = $100M nominal exposure on the 15(b) count alone, before fees.\n\nLIMITATIONS PERIOD — 5 years for all BIPA claims (Tims v. Black Horse Carriers, Ill. 2023). Your launch-day flow is actionable for five years.\n\nVERDICT: Illinois is the #1 danger state. Do not launch the face scan to Illinois users without a standalone written-release flow, a published retention policy live at launch, and counsel review.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "high",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:07:45.175Z",
+        "updatedAt": "2026-08-04T03:09:33.837Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-984ac4af",
+        "title": "Texas CUBI — requirements, AG enforcement, penalty per violation",
+        "description": "Texas CUBI, Tex. Bus. & Com. Code § 503.001. FINDINGS (full statutory text verified; statute verified current as of May 2025, last amended 2017 by SB 1343):\n\nCOVERAGE — in scope. \"Biometric identifier\" = retina/iris scan, fingerprint, voiceprint, or RECORD OF HAND OR FACE GEOMETRY. Note CUBI has NO photograph exclusion at all, so the definitional fight available in Illinois isn't available here. Trigger is capture \"for a commercial purpose\" — a paid subscription app plainly qualifies.\n\nCONSENT — materially LIGHTER than BIPA. § 503.001(b): you must (1) inform the individual BEFORE capturing, and (2) receive the individual's consent to capture. The statute does not specify a form — there is no \"written release\" requirement and no requirement to disclose the specific purpose and term in writing. Informed in-app notice plus an affirmative tap is defensible. Practically, if you build to BIPA's stricter standard you satisfy Texas automatically.\n\nRETENTION — § 503.001(c)(3): destroy within a reasonable time, and NOT LATER THAN THE FIRST ANNIVERSARY of the date the purpose for collecting expires. For signup identity verification the purpose arguably expires once verification completes, which would put the outer limit at ~1 year from verification, not 1 year from account closure. (c-1) extends this where the biometric is used with a document another law requires you to keep longer — relevant if you're doing KYC/AML retention, in which case the clock runs from when that record-keeping duty ends. This is the one place Texas is STRICTER than Illinois' 3-year backstop.\n\nOTHER DUTIES: (c)(1) no sale/lease/disclosure except four narrow exceptions — one of which is completing a financial transaction the individual requested or authorised. (c)(2) reasonable care in storage/transmission, at least as protective as your other confidential information. Note there is NO 15(c)-style flat \"no profit\" ban as in Illinois.\n\nPRIVATE RIGHT OF ACTION — NO. Enforcement is exclusively by the Texas Attorney General. § 503.001(d).\n\nPENALTY — civil penalty of up to $25,000 FOR EACH VIOLATION, recoverable by the AG. Per-violation on a per-user basis is how the AG has pleaded it, which is how you get to nine-figure numbers.\n\nWHY NO PRA DOES NOT MEAN LOW RISK — Texas is now the most aggressive biometric enforcer in the country. The AG obtained a $1.4B settlement from Meta (July 2024) over facial-recognition capture, described as the largest settlement ever obtained by a single state and the first action ever brought under CUBI. Then a $1.375B settlement in principle with Google (announced executed 31 Oct 2025) covering CUBI claims over voiceprints and facial geometry in Google Photos, Assistant and Nest Hub Max. Texas has demonstrated both the appetite and the outside-counsel model (Keller Postman, McKool Smith on contingency) to pursue these.\n\nVERDICT: Tier 1 danger, but for a different reason than Illinois — no class actions, but catastrophic AG penalty exposure and a proven willingness to use it. Compliance is cheap here (notice + consent + 1-year destruction); non-compliance is not.\n\nSEPARATE: Texas also has the TDPSA comprehensive privacy law treating biometric data as sensitive — tracked in the comprehensive-laws subtask.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "high",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:07:45.175Z",
+        "updatedAt": "2026-08-04T03:10:20.685Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-e7594db4",
+        "title": "Washington HB 1493 + My Health My Data — scope traps",
+        "description": "Washington. TWO separate regimes, and the counterintuitive result is that the one called \"the biometric law\" probably does NOT apply to you, while the health law probably does. Statutory text verified at app.leg.wa.gov.\n\n=== (1) RCW 19.375 (HB 1493) — LIKELY OUT OF SCOPE. Three independent reasons: ===\n- DEFINITION CARVE-OUT (19.375.010(1)): \"Biometric identifier\" expressly \"does not include a physical or digital photograph, video or audio recording OR DATA GENERATED THEREFROM.\" A phone-camera face capture is a digital photograph/video and the resulting template is data generated therefrom. Note also the enumerated list (fingerprint, voiceprint, retinas, irises) does not mention face geometry at all — unlike Illinois and Texas.\n- \"COMMERCIAL PURPOSE\" IS NARROW (19.375.010(4)): defined as a purpose in furtherance of the sale or disclosure to a THIRD PARTY of a biometric identifier for MARKETING of goods/services UNRELATED to the initial transaction. Identity verification at signup is not that. The whole of 19.375.020(1) only bites on enrollment \"for a commercial purpose.\"\n- EXPRESS SECURITY-PURPOSE EXEMPTION (19.375.020(7)): nothing in the section requires notice and consent where enrollment furthers a \"security purpose,\" and 19.375.010(8) defines security purpose to include \"preventing... fraud\" and \"protecting the security or integrity of software, accounts, applications, online services.\" Anti-fraud identity verification at signup sits squarely inside this.\n- If it did apply: notice + consent OR an opt-out mechanism (deliberately flexible, \"context-dependent\"); retain no longer than reasonably necessary (19.375.020(4)(b)); reasonable care duty.\n- ENFORCEMENT: 19.375.030(2) — \"may be enforced SOLELY by the attorney general\" under the Consumer Protection Act. NO private right of action.\n\n=== (2) My Health My Data Act, RCW 19.373 — THE REAL WASHINGTON RISK. ===\n- SCOPE: no revenue or volume threshold. Applies to any entity doing business in WA or targeting WA consumers that determines the purpose and means of collecting consumer health data. Compliance dates (31 Mar 2024 / 30 Jun 2024 for small business) have both passed.\n- \"Biometric data\" (19.373.010(4)) is deliberately BROADER than 19.375: it covers \"imagery of the iris, retina, fingerprint, FACE, hand, palm, vein patterns, and voice recordings, FROM WHICH AN IDENTIFIER TEMPLATE CAN BE EXTRACTED.\" So the raw face image is in scope, not just the template, and there is no photograph exclusion.\n- THE OPEN QUESTION: \"consumer health data\" is gateway-defined as personal information that \"identifies the consumer's past, present, or future physical or mental health status,\" and the list of what health status \"includes\" contains \"(ix) Biometric data\" (19.373.010(8)). Defence reading: a signup faceprint reveals nothing about health, so the gateway isn't met — and WA AG guidance supports the view that data not identifying health status is outside the Act. Plaintiff reading: the enumerated list is definitional, so biometric data is consumer health data per se. THIS IS UNRESOLVED and is a question for your counsel, not something I can answer. Budget for the plaintiff reading.\n- IF IN SCOPE, obligations are heavy: (a) a SEPARATE, standalone Consumer Health Data Privacy Policy — 19.373.020 requires its own link, it cannot be folded into your general privacy policy; (b) consent before collection under 19.373.030(1)(a)(i), and consent must be opt-in, freely given, specific, and expressly CANNOT be obtained via acceptance of a broad terms-of-use document or via deceptive design (19.373.010(6)); (c) separate and distinct consent for sharing; (d) no sale without a signed \"valid authorization\" document (19.373.070) — a much higher bar than consent; (e) a strong deletion right (19.373.040(1)(c)) reaching backups and requiring you to pass the request to processors and third parties.\n- POSSIBLE SAFE HARBOUR: 19.373.030(1)(a)(ii) permits collection without consent \"to the extent necessary to provide a product or service that the consumer has requested.\" Signup identity verification has a decent argument here. Do not rely on it alone — get consent as well, since consent is cheap and the argument is untested.\n- PRIVATE RIGHT OF ACTION — YES, indirectly, and this is the point. 19.373.090 makes any violation a per se unfair/deceptive act under the Consumer Protection Act (ch. 19.86). Private plaintiffs sue via RCW 19.86.090.\n- REMEDIES via CPA: actual damages, costs and reasonable attorneys' fees, plus discretionary treble damages capped at $25,000. NOTE THE IMPORTANT LIMIT: a private CPA plaintiff must show \"injur[y] in his or her business or property.\" There are no liquidated damages. That is a materially weaker plaintiff position than BIPA, where Rosenbach requires no actual harm. MHMD is a real class-action risk but not a BIPA-scale one, because damages must be proven.\n\nVERDICT: Tier 2. Ship a standalone consumer health data privacy policy and a separate opt-in consent for the face scan, and Washington is manageable. Do not assume RCW 19.375 applies — but do not tell your board that Washington is clear either, because MHMD's PRA is live.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "high",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:07:45.175Z",
+        "updatedAt": "2026-08-04T03:15:49.308Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-00c5a2c8",
+        "title": "Colorado HB 24-1130 biometric amendments — effective July 2025",
+        "description": "Colorado — HB 24-1130, codified at C.R.S. § 6-1-1314, effective 1 JULY 2025 (signed 31 May 2024). Statutory text verified via FindLaw codification. Colorado now has TWO overlapping layers: the CPA's existing sensitive-data rule (biometrics = sensitive, opt-in consent required) AND this dedicated biometric section.\n\nTHE CRITICAL POINT — NO THRESHOLD. The CPA normally only reaches controllers processing personal data of 100,000+ Coloradans/year, or 25,000+ where you derive revenue from selling data. HB 1130 disapplies those thresholds for biometrics: the biometric obligations bind any controller that controls or processes the biometric data of ANY Colorado resident. A pre-launch app with ten Colorado users is fully in scope on day one. This is the single most common way companies get Colorado wrong.\n\nDEFINITIONAL NARROWING IN YOUR FAVOUR: biometric identifiers are defined (§ 6-1-1303(2.4)) as biological/physical/behavioural characteristics \"processed for the purpose of uniquely identifying an individual\" — includes facial maps and geometry templates. Unlike Illinois, the identification purpose is an element. Your product does identify uniquely, so you're in scope, but note that incidental face imagery not used for identification may not be.\n\nPRE-COLLECTION DUTIES (§ 6-1-1314(4)(a)) — notice must be \"clear, reasonably accessible, and understandable,\" and must cover:\n (i) that a biometric identifier is being collected;\n (ii) the SPECIFIC PURPOSE and THE LENGTH OF TIME you will retain it;\n (iii) whether it will be disclosed to a PROCESSOR and the specific purpose for that sharing — this processor-disclosure element is unusual and is easy to miss if you're using a third-party verification vendor.\n Plus consent before collecting biometric data (§ 6-1-1314(4)(e), cross-referencing 6-1-1308(7)). Note the statute says \"informs... in a clear manner\" rather than BIPA's \"in writing\" + \"written release,\" so the form is slightly looser than Illinois, but consent must meet the CPA § 6-1-1303(5) definition (freely given, specific, informed, unambiguous — no dark patterns, no bundled ToS acceptance).\n\nWRITTEN BIOMETRIC POLICY (§ 6-1-1314(2)) — must be adopted and made available to the public, containing: (I) a retention schedule; (II) an incident-response protocol including consumer breach notification per § 6-1-716; (III) deletion guidelines. You must also conduct an ANNUAL REVIEW to identify data ripe for deletion — an affirmative recurring obligation no other state imposes.\n\nRETENTION — deletion required on or before the EARLIEST of:\n (A) the date the initial purpose for collection is satisfied;\n (B) 24 MONTHS after the consumer last interacted with you; or\n (C) no more than 45 DAYS after you determine storage is no longer necessary/adequate/relevant to the express processing purpose (as identified by the annual review).\n The 24-month backstop is tighter than Illinois' 3 years. The 45-day rule is unique to Colorado.\n\nPROHIBITED ACTS (§ 6-1-1314(4)(b)-(c)):\n - Flat ban on SELLING, LEASING OR TRADING a biometric identifier with any entity — no consent cure available.\n - No disclosure/redisclosure without consent or consumer request, subject to exceptions.\n - CANNOT refuse service for refusal to consent UNLESS the biometric processing is NECESSARY to provide the good or service. NOTE: this is likely satisfied for you if face verification is genuinely required for the product to function — but if identity can be verified another way (document upload, knowledge-based), the necessity argument weakens and refusing service becomes unlawful. WORTH A PRODUCT DECISION: do you need a non-biometric fallback verification path? See the human decision subtask.\n - Cannot charge a different price or degrade quality for consumers exercising CPA rights.\n - Cannot purchase biometric identifiers except on narrow paid-consent terms.\n - Reasonable industry standard of care in storage and transmission.\n\nALSO REQUIRED: a data protection assessment for processing sensitive data (CPA § 6-1-1309), and consumer access/deletion rights extending to biometric data.\n\nEMPLOYERS: separate regime in (6) — employers may condition employment on biometric consent only for four enumerated purposes (secure access, start/end of workday, workplace safety, public emergency safety). Not your consumer flow, but relevant if you use biometric timekeeping internally.\n\nPRIVATE RIGHT OF ACTION — NO. Enforcement exclusively by the Colorado AG and district attorneys.\n\nPENALTIES — a CPA violation is a deceptive trade practice under the Colorado Consumer Protection Act (§ 6-1-112): up to $20,000 per violation, rising to $50,000 per violation where the affected consumer is 60 or older. AG may also seek injunctions and assurances of discontinuance. The AG has rulemaking authority under HB 1130 and may set more stringent biometric security standards; no such rules promulgated as of the last reporting I found.\n\nCURE PERIOD — GONE. The CPA's 60-day right to cure expired 1 January 2025. The AG and DAs can now go straight to enforcement with no opportunity to fix first. This materially raises the cost of launching non-compliant and fixing later.\n\nVERDICT: Tier 2 — no class-action exposure, but zero threshold protection, no cure period, and the most prescriptive operational requirements in the country (annual deletion review, 45-day rule, processor-disclosure notice element). Colorado is the state most likely to catch a startup that assumed it was too small to be covered.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "high",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:07:45.175Z",
+        "updatedAt": "2026-08-04T03:17:16.305Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-b10e9c71",
+        "title": "Comprehensive state privacy laws treating biometrics as sensitive data",
+        "description": "Comprehensive state privacy laws treating biometric data as SENSITIVE. FINDINGS.\n\nLANDSCAPE: 20 comprehensive state privacy laws are in effect as of early/mid 2026 — CA, VA, CO, CT, UT, TX (TDPSA), OR, MT, FL, IA, DE, NH, NE, NJ, TN, MN, MD, IN, KY, RI. Indiana, Kentucky and Rhode Island all came into effect 1 Jan 2026. Oklahoma SB 546 was signed 20 March 2026 with the effective date still to be confirmed — treat as a watch item. An Arkansas law is referenced in trackers for 1 July 2026; verify the statute text before relying on it.\n\nALL OF THEM classify biometric data as sensitive personal data. The near-universal consequence: OPT-IN CONSENT is required before processing, plus a data protection assessment / risk assessment for sensitive-data processing in most of them.\n\nTHE THREE EXCEPTIONS to opt-in: California (uses a \"right to limit use of sensitive personal information\" instead — see the California subtask), Utah, and Iowa. IOWA IS THE GENUINE OUTLIER: it requires only clear notice and an opt-out for sensitive data, not opt-in.\n\n*** THE MOST IMPORTANT PRACTICAL POINT — THRESHOLDS ***\nFor a pre-launch/early-stage app, most of these laws will NOT apply on day one, because they have applicability thresholds you have to grow into:\n - VA, CT, OR, MN, IN, KY and most others: ~100,000 state residents/year (or ~25,000 with a revenue-from-data-sales qualifier)\n - MT: 50,000 (or 25,000 where 25%+ of revenue comes from data sales)\n - MD, NH, DE, RI: 35,000 residents — the lowest numeric thresholds. RI also has a 10,000 + 20%-revenue prong.\n - FL (FDBR): effectively unreachable — needs $1B+ gross revenue AND 50%+ revenue from online ads, or a smart speaker, or an app store with 250,000+ apps. The real universe is roughly ten companies. You are not in scope.\n - TX (TDPSA) and NE (NDPA): NO numeric threshold at all. In scope unless you meet the SBA small-business definition. Note carefully: even a small business must obtain consent to SELL sensitive personal information. Texas therefore reaches more businesses than any other state.\n - CO: for BIOMETRICS SPECIFICALLY, thresholds are disapplied entirely by HB 24-1130 — see the Colorado subtask. In scope from user #1.\n\nSo the correct mental model is two-track: the dedicated biometric statutes (IL, TX CUBI, CO, WA MHMD, NYC) bite from your very first user; the comprehensive privacy laws are a scaling problem you will cross into as you grow. Build for both now, but triage engineering effort accordingly.\n\nMARYLAND MODPA IS THE STRICTEST IN THE COUNTRY AND DESERVES SEPARATE ATTENTION. Effective 1 Oct 2025, applying to processing after 1 Apr 2026. Threshold 35,000 consumers.\n - It does not merely require consent for sensitive data — it PROHIBITS the collection, processing or sharing of sensitive data (which includes biometric identifiers) unless STRICTLY NECESSARY to provide or maintain a specific product or service REQUESTED BY THE CONSUMER. Consent is not a cure. You must be able to document necessity.\n - It is the first state to ban the SALE of sensitive personal information outright, with consent irrelevant. (Consumer-directed disclosures are still excluded from the definition of \"sale,\" as in other states.)\n - Practical action: you will need a written \"necessity assessment\" for the face scan, not just a consent record. If your product can verify identity without biometrics, the strictly-necessary argument gets materially harder.\n - AG has exclusive enforcement. 60-day cure period, sunsetting 1 Apr 2027.\n\nTENNESSEE TIPA has a useful and unusual feature: a NIST Privacy Framework safe harbour. Aligning your privacy programme with the NIST Privacy Framework gives you an affirmative defence against certain enforcement actions. Cheap insurance — worth doing because it also helps in other states as evidence of reasonableness.\n\nCURE PERIODS ARE CLOSING. The \"wait for the AG letter, then fix it in 30 days\" strategy is largely dead. Colorado and Connecticut sunset 1 Jan 2025; Oregon, Delaware 1 Jan 2026; Minnesota 31 Jan 2026; Montana 1 Apr 2026; New Jersey 15 Jul 2026; Maryland 1 Apr 2027. Rhode Island NEVER had one. Virginia (30 days) and Utah (30 days) kept theirs permanently; Indiana, Nebraska and Tennessee also have non-sunsetting cure periods. Rhode Island's combination of a low 35,000 threshold and no cure period makes it a quiet outlier risk.\n\nPRIVATE RIGHT OF ACTION — NONE of the comprehensive laws provide one, with the single narrow exception of California's data-breach PRA (§ 1798.150). Every other state reserves enforcement to the AG, DOJ or a dedicated regulator. This is why the comprehensive-law tier is a regulatory-risk problem, not a class-action problem.\n\nADJACENT OBLIGATION WORTH KNOWING: 12 states now require honouring a universal opt-out mechanism / Global Privacy Control (CA, CO, CT, TX, DE, NH, NE, NJ, MN, MD, MT, OR). On 9 Sept 2025 the CPPA, Colorado AG and Connecticut AG announced a coordinated investigative sweep on opt-out preference signals — the first cross-state coordinated action on a specific technical issue. Not biometric-specific, but it tells you multi-state coordinated enforcement is now real. Honouring GPC globally is cheaper than state-scoped logic.\n\nCALIFORNIA IS THE ONLY STATE WHOSE COMPREHENSIVE LAW COVERS EMPLOYEES AND JOB APPLICANTS. All 19 others are consumer-only. Relevant if you ever use biometrics internally.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "high",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:07:45.175Z",
+        "updatedAt": "2026-08-04T03:18:58.158Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-4527062b",
+        "title": "California — CCPA/CPRA sensitive data + breach PRA + FIPA-style rules",
+        "description": "California — CCPA as amended by CPRA (Cal. Civ. Code §§ 1798.100 et seq.). FINDINGS.\n\nAPPLICABILITY THRESHOLD — you must meet ONE of: $25M+ annual gross revenue; OR buy/sell/share the personal information of 100,000+ California consumers or households per year; OR derive 50%+ of annual revenue from selling/sharing personal information. A pre-launch subscription app likely meets NONE of these at day one, so the CCPA obligations below are a scaling problem, not a launch blocker. Re-check at every funding round and at 100k CA users.\n\nBIOMETRIC INFORMATION IS SENSITIVE PERSONAL INFORMATION. California uniquely does NOT use an opt-in consent model for sensitive data. Instead:\n - Notice at collection must identify the categories of sensitive PI collected, the purposes, and whether it is sold or shared.\n - Consumers get the RIGHT TO LIMIT USE AND DISCLOSURE of sensitive PI to what is necessary to perform the service. You must offer a \"Limit the Use of My Sensitive Personal Information\" link/mechanism if you use it beyond permitted business purposes. Using biometrics solely to verify identity at signup is likely within the permitted purposes, which narrows this obligation — but the notice obligation stands regardless.\n - Purpose limitation and data minimisation apply; retention periods must be DISCLOSED (you must state the retention period for each category, or the criteria used to determine it — you cannot retain indefinitely).\n - California is the ONLY state whose comprehensive law also covers employees, job applicants and B2B contacts.\n\n*** THE PRIVATE RIGHT OF ACTION — NARROW, BUT IT DOES REACH YOUR FACE DATA ***\n§ 1798.150 gives consumers a PRA only for DATA BREACHES — not for general CCPA violations. Specifically: where nonencrypted and nonredacted personal information is subject to unauthorised access and exfiltration, theft or disclosure as a result of the business's failure to implement and maintain reasonable security procedures under § 1798.81.5.\n\nCRITICAL DETAIL I VERIFIED — face data is within the covered definition. § 1798.81.5(d)(1)(A) lists \"unique biometric data generated from measurements or technical analysis of human body characteristics... used to authenticate a specific individual,\" and then says: unique biometric data \"does not include a physical or digital photograph, UNLESS USED OR STORED FOR FACIAL RECOGNITION PURPOSES.\" Your product is facial recognition for authentication, so both the template AND the stored face image fall inside the breach-PRA-eligible category.\n\nDAMAGES: statutory damages of $100–$750 PER CONSUMER PER INCIDENT, or actual damages, whichever is greater, plus injunctive/declaratory relief. Statutory damages require no proof of actual loss. This is a genuine class-action exposure — but note it is CONDITIONAL ON A BREACH. No breach, no PRA. The mitigation is therefore engineering, not paperwork: ENCRYPT THE TEMPLATES AND THE SOURCE IMAGES AT REST. Encrypted data falls outside § 1798.150 entirely. This is the single highest-leverage technical control in the whole 50-state analysis.\nNote also § 1798.150(c) bars using the CCPA as the basis for a PRA \"under any other law,\" but plaintiffs routinely plead CCPA violations as predicate \"unlawful\" acts under the UCL (Bus. & Prof. Code § 17200) — e.g. Burke v. Clearview AI did exactly this for face-scraping. Courts have not fully resolved whether that is permitted. Assume a UCL workaround will be attempted.\n\nAG / CPPA ENFORCEMENT: administrative fines up to $2,500 per violation, or $7,500 per intentional violation or any violation involving a minor's data. Enforced by both the AG and the California Privacy Protection Agency (the only dedicated state privacy regulator). The CPRA cure period is discretionary only — do not count on it.\n\nNEW CPPA REGULATIONS — RISK ASSESSMENTS WILL CATCH YOU. Approved by OAL 23 Sept 2025, took effect 1 Jan 2026, with deadlines phased to 2030.\n - A RISK ASSESSMENT is required BEFORE initiating processing that presents \"significant risk\" to privacy — and PROCESSING SENSITIVE PERSONAL INFORMATION IS EXPRESSLY ON THAT LIST. Biometric identity verification is squarely in scope once you are a covered business.\n - Timing: processing that began before 1 Jan 2026 and continues after must be assessed by 31 DEC 2027. Annual summary reporting to the CPPA begins 1 APR 2028.\n - Cybersecurity audits are tiered by revenue: first certification due 1 Apr 2028 for $100M+ revenue, 1 Apr 2029 for $50–100M. Not a near-term concern for you.\n - ADMT rules: if you use automated decision-making for a \"significant decision,\" notice and opt-out obligations apply from 1 Jan 2027. WORTH CHECKING WITH COUNSEL: if a failed face match automatically denies someone access to a paid financial-ish service, that may be a \"significant decision\" triggering ADMT notice + opt-out + explanation rights. This is a live question for identity-verification products and is easy to overlook.\n\nVERDICT: Tier 2. Thresholds buy you time on the operational requirements, but the breach PRA applies as soon as you hold California face data and is the main reason to encrypt everything at rest from day one.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:07:45.175Z",
+        "updatedAt": "2026-08-04T03:20:01.307Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-f81b6494",
+        "title": "Second-tier biometric statutes and city ordinances",
+        "description": "Second-tier biometric regimes and city ordinances. FINDINGS.\n\n=== NEW YORK CITY, NYC Admin. Code §§ 22-1201–1205 — PROBABLY NOT APPLICABLE TO YOU, but verify ===\nIn effect since 9 July 2021. It DOES have a private right of action for persons \"aggrieved,\" and the biometric definition expressly includes \"a scan of hand or face geometry.\"\nWHY IT LIKELY DOESN'T REACH YOU: the law binds \"commercial establishments,\" a term defined narrowly as a PLACE OF ENTERTAINMENT, A RETAIL STORE, OR A FOOD AND DRINK ESTABLISHMENT. The core obligation under § 22-1202(a) is to post \"a clear and conspicuous sign\" in plain language NEAR ALL CUSTOMER ENTRANCES — an obligation that only makes sense for physical premises. A mobile app has no customer entrance and is not a retail store. § 22-1202(b) separately bans selling, leasing, trading, sharing for value, or otherwise profiting from biometric identifier information, but that prong is tied to BII used by a commercial establishment.\nCONCLUSION: out of scope for a pure mobile app. IN SCOPE if you ever open a physical location, do in-person onboarding, or partner with retail. Flag it to counsel if the product roadmap includes any physical footprint.\nIF IT DID APPLY: $500 per violation of 22-1202(a); $500 per negligent violation of 22-1202(b); $5,000 per intentional or reckless violation of 22-1202(b); plus attorneys' fees. A 30-day written notice-and-cure applies to 22-1202(a) claims only — there is NO cure period for the sale/profit prong.\n\n=== PORTLAND, OREGON — City Code Chapter 34.10 — THIS ONE IS A REAL AND UNDER-APPRECIATED RISK ===\nEffective 1 Jan 2021. The first US jurisdiction to ban private-sector facial recognition. § 34.10.030: \"a Private Entity shall not use Face Recognition Technologies in Places of Public Accommodation within the boundaries of the City of Portland.\" This is a BAN, not a consent regime — you cannot cure it with notice or consent.\nWHY IT MAY REACH A MOBILE APP: \"Places of Public Accommodation\" is defined as \"Any place OR SERVICE offering to the public accommodations, advantages, facilities, or privileges whether in the nature of goods, SERVICES, lodgings, amusements, transportation or otherwise.\" The words \"or service\" and \"services\" are doing a lot of work — an online service offered to the public is arguably within the literal text. \"Face Recognition Technologies\" is defined very broadly, covering automated processes that assist in \"identifying, VERIFYING, detecting, or characterizing facial features\" — verification is expressly named, so a 1:1 identity check is covered.\nTHE EXCEPTIONS DO NOT SAVE YOU. There are only three: (A) to the extent necessary to comply with federal/state/local law; (B) \"for user verification purposes by an individual to access the individual's own personal or employer issued communication and electronic devices\" — this is the Face ID-unlocks-your-own-phone exception, NOT server-side identity verification by a business; (C) automatic face detection in social media applications. Exception (A) is worth exploring with counsel if you have a statutory KYC/AML obligation that compels identity verification — that is potentially a genuine defence and is the strongest argument available.\nREMEDIES — § 34.10.050: any person injured by a material violation has a cause of action for damages sustained OR $1,000 PER DAY FOR EACH DAY OF VIOLATION, whichever is greater, plus attorneys' fees (subject to a 30-day pre-suit written demand and a tender defence that can defeat fees).\nASSESSMENT: whether an app \"uses\" face recognition \"in a place of public accommodation within the boundaries of the City\" when the user is physically in Portland is genuinely untested. I found no litigation resolving it. But the per-day damages structure is unusual and dangerous, and geofencing Portland is trivial compared with the downside. RECOMMEND: exclude Portland at launch unless counsel clears it. See the human decision subtask.\n\n=== BALTIMORE — NO LONGER A CONCERN ===\nBaltimore's 2021 ordinance banning private-sector facial recognition contained a sunset clause and EXPIRED on 31 December 2022. The City Council took no action to renew it. Some compliance checklists still list Baltimore — they are out of date. Ignore it.\n\n=== NEW YORK STATE — SHIELD Act, N.Y. Gen. Bus. Law §§ 899-aa, 899-bb ===\nApplies to ANY business holding private information of a New York resident, regardless of where the business is located — no threshold, no nexus requirement beyond holding the data. \"Private information\" includes BIOMETRIC INFORMATION. Two obligations: breach notification, and an affirmative \"reasonable safeguards\" standard (administrative, technical, physical), scaled for small businesses to what is appropriate to their size, complexity and the sensitivity of the data.\nNO PRIVATE RIGHT OF ACTION — expressly excluded. AG enforcement only, with civil penalties up to $5,000 per violation, plus separate penalties for notification failures.\nDec 2024 amendments (effective 21 March 2025) tightened the notification deadline to 30 DAYS and expanded private information to include medical and health insurance data.\nNote New York has repeatedly introduced but not passed a BIPA-style biometric statute with a private right of action. Treat NY as a live legislative watch item — if it passes, New York instantly becomes a Tier 1 state.\n\n=== BREACH-NOTIFICATION STATUTES GENERALLY ===\nAll 50 states, DC, Puerto Rico, Guam and the US Virgin Islands have breach notification laws. A meaningful and growing subset now includes biometric data within \"personal information\" — California, New York and Vermont are the commonly cited examples, with others (including Illinois, Nebraska, Nevada, Rhode Island, South Dakota, Wyoming, Arizona, Arkansas, Colorado, Connecticut and more) having added biometric or similar categories via amendment. These statutes change frequently.\nPRACTICAL TAKEAWAY: rather than tracking 50 breach statutes, adopt the strictest common denominator — treat any unauthorised access to face templates or source images as notifiable, notify within 30 days (the NY standard), and encrypt at rest so that most statutes' encryption safe harbours apply and the notification duty is not triggered at all. Encryption is the control that collapses this entire category.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "medium",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:07:45.175Z",
+        "updatedAt": "2026-08-04T03:21:45.289Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-86d103fe",
+        "title": "Residual exposure in the remaining ~30 states",
+        "description": "Residual exposure in states with NO biometric statute and NO applicable comprehensive privacy law. FINDINGS — \"no biometric law\" does NOT mean \"no risk.\" Four theories survive everywhere.\n\n=== 1. STATE UDAP / CONSUMER PROTECTION STATUTES — the universal backstop ===\nALL 50 STATES have an unfair-and-deceptive-acts-and-practices statute analogous to FTC Act § 5. Critically, SEVERAL STATES ALLOW A PRIVATE RIGHT OF ACTION under their UDAP statute, and many of those permit statutory minimum damages, treble damages and/or attorneys' fees. This is how plaintiffs reach conduct in states with no biometric law.\nTHE TRIGGER IS ALMOST ALWAYS YOUR OWN PROMISES. UDAP claims in biometric cases are typically pleaded as: \"the privacy policy said X about face data, the company did Y.\" That makes your privacy policy the primary liability surface in ~30 states. Practical consequences:\n - Do not overstate your security posture (\"bank-grade encryption,\" \"we never store your face,\" \"deleted immediately\") unless it is literally true and you can evidence it.\n - Do not say the scan is deleted \"immediately\" if a template persists for reverification.\n - Make sure the stated retention period matches the actual TTL configured in your infrastructure. Mismatch between policy and implementation is the single most common UDAP hook.\n - Massachusetts Ch. 93A is the most plaintiff-friendly of these regimes and pairs a broad standard with fee-shifting and multiple damages; it deserves specific attention despite Massachusetts having no biometric statute. Massachusetts has also repeatedly considered BIPA-style legislation.\n\n=== 2. INTRUSION UPON SECLUSION / COMMON-LAW PRIVACY TORTS ===\nAvailable in most states. Requires an intrusion into a private matter highly offensive to a reasonable person. A weak theory where the user affirmatively pointed a camera at their own face and tapped \"continue\" — consent is a strong defence. Realistically this gets pleaded as a tag-along count, survives dismissal occasionally, and rarely drives outcomes. Do not spend engineering effort here; consent records defeat it.\n\n=== 3. WIRETAP / TWO-PARTY-CONSENT ANALOGIES ===\nMostly a poor fit for a face scan the user knowingly initiates — these statutes target interception of communications, and a deliberate selfie capture is not an intercepted communication. The genuine risk is ADJACENT: if you embed third-party SDKs, session-replay, or analytics that capture the camera/verification screen and transmit it to a vendor, plaintiffs in two-party-consent states (notably California under CIPA, plus PA, FL, IL, MA, MD, WA and others) have brought a large wave of claims on exactly that \"undisclosed third-party eavesdropper\" theory. ACTION: audit which third-party SDKs are active on the verification screen and ensure none of them receive camera frames or screen recordings. This is a real and currently very active litigation area.\n\n=== 4. BREACH NOTIFICATION STATUTES — all 50 states ===\nCovered in the second-tier subtask. Universal coverage; a growing subset expressly includes biometric data. Encryption at rest generally triggers a safe harbour and avoids the notification duty entirely.\n\n=== 5. FEDERAL OVERLAY — FTC ACT § 5 (applies in all 50 states) ===\nNo biometric-specific federal statute exists, and the American Privacy Rights Act (APRA) collapsed in June 2024 markup and expired with the 118th Congress in January 2025 without reintroduction. Federal preemption is not on the horizon — plan state-by-state through at least 2028.\nThe FTC uses § 5 unfairness and deception authority against biometric practices. THE REMEDY TO FEAR IS ALGORITHMIC DISGORGEMENT. In the Rite Aid settlement (19 Dec 2023) the FTC required Rite Aid to be BANNED from facial recognition for five years, to destroy all photos and videos collected in connection with the programme, AND to destroy \"all data, models, or algorithms derived in whole or in part therefrom\" — and to instruct third parties that received the data to do the same. The FTC has ordered model destruction repeatedly (Everalbum, Cambridge Analytica, Ring, Weight Watchers, Amazon).\nWHY THIS MATTERS MORE THAN THE FINES: for a company whose product depends on a trained model, algorithmic disgorgement is an existential remedy in a way that a monetary penalty is not. If your face-matching model is trained or fine-tuned on user-submitted scans, improperly obtained consent could put the model itself at risk. STRONG RECOMMENDATION: do not train or improve models on user verification scans without separate, explicit, unbundled consent for that specific purpose — and keep the training corpus provably segregated from the verification corpus so that a disgorgement order cannot reach your core model. This is an architecture decision worth making before launch, not after.\nNote the 2025–2026 FTC has been less active on privacy than the prior administration, but the Rite Aid order remains in force and the remedy precedent stands.\n\n=== GROUPED CONCLUSION FOR THE ~28 REMAINING STATES ===\nAL, AK, AZ, AR (pending law — verify), GA, HI, ID, KS, LA, ME, MA, MI, MS, MO, NV, NM, NC, ND, OH, OK (SB 546 signed 20 Mar 2026, effective date TBC), PA, SC, SD, VT, WV, WI, WY, DC:\n - No dedicated biometric statute and (currently) no applicable comprehensive privacy law.\n - Exposure = UDAP (private in several), breach notification, common-law tort, FTC § 5.\n - Compliance posture required: an accurate privacy policy, honest security claims, a documented retention period you actually honour, breach readiness, and encryption at rest.\n - If you build to the Illinois standard, you are comfortably compliant in all of them. There is no additional state-specific engineering work needed for this group.\n - WATCH ITEMS: Massachusetts, New York, Michigan, Maryland and Vermont have all seen BIPA-style bills with private rights of action introduced. Oklahoma SB 546 and the referenced Arkansas law (1 July 2026) need statute-text verification. Re-run this analysis each legislative session.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "medium",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:07:45.176Z",
+        "updatedAt": "2026-08-04T03:22:37.833Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-e2e38bc1",
+        "title": "Build the state-by-state matrix and danger ranking",
+        "description": "DONE — matrix and tiered danger ranking built and delivered in the report attached to the parent task.\n\nTIERING LOGIC USED: ranked primarily by (1) presence of a private right of action, (2) whether damages are liquidated/statutory vs. requiring proof of harm, (3) whether a threshold protects an early-stage company, and (4) whether the conduct can be cured by consent at all.\n\nTIER 1 — DO NOT LAUNCH WITHOUT COUNSEL SIGN-OFF: Illinois (BIPA — PRA, liquidated damages, no injury required, fee-shifting, 5-yr lookback); Texas (no PRA but proven $1B+ AG enforcement); Portland OR (outright ban, $1,000/day, consent is no defence).\nTIER 2 — HIGH CAUTION, FULLY COMPLIABLE: Colorado (no threshold for biometrics, no cure period, most prescriptive operational rules); Washington (MHMD PRA via the CPA, but damages must be proven); California (breach-only PRA, defeated by encryption at rest); Maryland (strictly-necessary standard, consent is not a cure).\nTIER 3 — STANDARD COMPLIANCE: the remaining comprehensive-privacy-law states — opt-in consent for sensitive data, AG-only enforcement, thresholds you grow into. Iowa and Utah are the most permissive; Iowa needs only notice + opt-out.\nTIER 4 — RESIDUAL RISK ONLY: ~28 states with no biometric statute and no applicable comprehensive law. Exposure is UDAP (private in several states, Massachusetts Ch. 93A most notably), breach notification, common-law tort, and FTC Act § 5.\n\nKEY STRUCTURAL FINDING: the dedicated biometric laws (IL, TX CUBI, CO, WA MHMD) have NO applicability thresholds and bind from the first user. The comprehensive privacy laws mostly have 35k–100k thresholds. That asymmetry is the correct triage order and is the single most useful organising insight from this work.\n\nBINDING NATIONAL CONSTRAINTS (strictest-common-denominator, safe to build to everywhere):\n- Consent: Illinois standard — standalone written release, e-signature acceptable, unbundled from ToS, disclosing specific purpose AND term, plus Colorado's processor-sharing disclosure.\n- Retention: Texas standard — delete within 1 year of the collection purpose expiring. Recommend deletion at verification completion, 12-month hard cap.\n- Public policy document: required by Illinois and Colorado; must be live before first collection (Mora v. J&M Plating).\n- Encryption at rest: defeats the California PRA and most breach-notification duties.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "high",
+        "timeEstimate": 60,
+        "taskType": [
+          "writing",
+          "planning"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:07:45.176Z",
+        "updatedAt": "2026-08-04T03:25:12.854Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-ab3bef28",
+        "title": "DECIDE: is the face scan mandatory, or is there a non-biometric verification fallback?",
+        "description": "This is the highest-leverage product decision in the whole compliance analysis and it gates several others. It is your call, not counsel's, because it is about what the product is.\n\nWHY IT MATTERS LEGALLY:\n1. Colorado C.R.S. 6-1-1314(4)(c)(I) prohibits refusing to provide a good or service because a consumer declined biometric consent, UNLESS the biometric processing is NECESSARY to provide that good or service. If face scan is the only path to an account, you are relying entirely on the necessity argument.\n2. Maryland MODPA goes further: collecting sensitive data (incl. biometrics) is prohibited unless STRICTLY NECESSARY to provide a product or service the consumer requested. Consent does not cure it. You need a documented necessity assessment.\n3. Washington MHMD has a safe harbour for collection 'necessary to provide a product or service the consumer has requested.'\n\nTHE TENSION: a fallback path (document upload, knowledge-based verification, manual review) makes you safer in states that ban conditioning service on biometric consent — but it WEAKENS the 'strictly necessary' argument in Maryland, because you have just proved the service works without biometrics.\n\nTHE RESOLUTION most companies land on: offer a fallback, and rely on consent rather than necessity as the legal basis. Consent is the more robust foundation in more states. But that costs engineering and ops.\n\nOUTPUT NEEDED: a written decision, one paragraph, recorded here. Either (a) biometric-only, and we document why it is necessary; or (b) fallback offered, and we build the consent architecture as primary. Everything downstream depends on this.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "decision",
+          "planning"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:24:53.326Z",
+        "updatedAt": "2026-08-04T03:24:53.326Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-7deefbcd",
+        "title": "DECIDE: launch-state geofencing — Illinois and Portland OR",
+        "description": "Decide whether to launch nationwide or exclude specific jurisdictions at v1.\n\nTHE TWO CANDIDATES FOR EXCLUSION:\n\n1. ILLINOIS. Not because compliance is impossible — it is very achievable — but because the downside of getting it slightly wrong is a class action with $1,000-$5,000 per class member plus fee-shifting and a 5-year lookback. Many consumer apps launch everywhere except Illinois, then add Illinois once the consent flow has been through outside counsel review. If you do launch in Illinois, the flow must be right on day one; you cannot retrofit, because Mora v. J&M Plating means the retention policy had to exist before collection.\n\n2. PORTLAND, OREGON. City Code Ch. 34.10 is an outright BAN on private entities using face recognition in 'places of public accommodation,' defined to include any 'service' offered to the public. Consent does NOT cure a ban. Damages are $1,000 PER DAY per violation plus fees. Whether it reaches a mobile app is untested, but geofencing one city is cheap relative to per-day damages. Note the rest of Oregon is fine — this is city limits only.\n\nCONSIDER ALSO: the cost of geofencing is not just engineering. It is IP-based and therefore imperfect, it creates a support burden, and excluding Illinois means excluding ~4% of the US market. Weigh against the cost of getting counsel to bless the flow before launch.\n\nOUTPUT NEEDED: a launch-state list, recorded here, plus whoever owns implementing the geo-restriction.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "decision",
+          "planning"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:24:53.326Z",
+        "updatedAt": "2026-08-04T03:24:53.326Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-06f4741e",
+        "title": "Engineering: encrypt face templates and source images at rest before launch",
+        "description": "Highest-leverage single technical control identified in this research. Do this regardless of every other decision.\n\nWHY: California's private right of action (Cal. Civ. Code 1798.150) only reaches personal information that is 'nonencrypted and nonredacted' when breached. I verified that face data is inside the covered category — 1798.81.5(d)(1)(A) covers unique biometric data used to authenticate, and expressly says the photograph carve-out does NOT apply where the image is 'used or stored for facial recognition purposes,' which is exactly this product. Statutory damages are $100-$750 per consumer per incident with no proof of harm required. Encryption at rest removes the theory entirely.\n\nSECONDARY BENEFIT: most state breach-notification statutes have an encryption safe harbour, so encryption at rest also collapses the 50-state breach-notification exposure — you may avoid the notification duty altogether.\n\nSCOPE OF WORK:\n- Encrypt biometric templates at rest.\n- Encrypt source images/video frames at rest, including any transient storage, buffers, and logs.\n- Confirm keys are managed separately from the data store (encryption is only a safe harbour if the key was not also taken).\n- Confirm your face-verification VENDOR does the same, in writing, in the contract.\n- Audit that camera frames never land in application logs, crash dumps, or analytics payloads.\n\nDONE = a written confirmation from engineering covering each of the five bullets above.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "high",
+        "timeEstimate": 90,
+        "taskType": [
+          "planning"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:24:53.326Z",
+        "updatedAt": "2026-08-04T03:24:53.326Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-0c731758",
+        "title": "Engineering: audit third-party SDKs on the verification screen",
+        "description": "Specific, bounded engineering task with a real litigation driver behind it.\n\nTHE RISK: there is a very active wave of class litigation in two-party-consent states (California CIPA especially, plus PA, FL, IL, MA, MD, WA) on the theory that embedded third-party SDKs, session-replay tools and analytics act as undisclosed 'eavesdroppers.' A session-replay tool that captures the identity-verification screen — or worse, camera frames — is a much more attractive target than the usual form-field cases, because the captured data is a face.\n\nSEPARATELY: Illinois BIPA 15(c) flatly bans profiting from biometric data and 15(d) restricts disclosure; Colorado 6-1-1314(4)(b)(I) bans selling, leasing or trading biometric identifiers with any entity, with no consent cure. An analytics SDK receiving face data could be characterised as prohibited disclosure.\n\nTASK:\n1. Enumerate every third-party SDK active on the signup/verification flow (analytics, crash reporting, session replay, A/B testing, ad attribution, support chat).\n2. For each, confirm in writing whether it can capture screen contents or camera frames.\n3. Disable screen capture on the verification screen for all of them, or exclude the screen explicitly.\n4. Confirm no camera frame ever transits a third-party endpoint.\n\nDONE = a written list of SDKs with a yes/no capture determination for each, and confirmation the verification screen is excluded.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 60,
+        "taskType": [
+          "planning"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:24:53.326Z",
+        "updatedAt": "2026-08-04T03:24:53.326Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-1f6d8aed",
+        "title": "Draft the standalone biometric consent flow to the Illinois BIPA standard",
+        "description": "Build one consent flow to the strictest standard and it satisfies every other state. Illinois is the strictest, so build to Illinois.\n\nMUST HAVE, all BEFORE any capture occurs:\n1. A written disclosure, on screen, that a biometric identifier is being collected and stored. Not in the ToS — on the screen, in the flow.\n2. A written statement of the SPECIFIC PURPOSE and the SPECIFIC LENGTH OF TERM for which it will be collected, stored and used. 'To verify your identity; retained for X months after account closure' — an actual number, matching your infrastructure TTL.\n3. A separate affirmative action constituting a written release. Post-SB 2979 (eff. 2 Aug 2024), 740 ILCS 14/10 defines 'written release' to include electronic signature, so an in-app checkbox/signature is sufficient FORM — but it must be standalone and unbundled. A general 'I accept the Terms' checkbox does NOT work, and is expressly invalid under Washington MHMD's consent definition too.\n4. Colorado additionally requires you to state whether the identifier will be disclosed to a PROCESSOR and the specific purpose of that sharing. Include this — it is the element most often missed.\n5. Store an auditable consent record: user ID, timestamp, the exact policy version and text shown, and the affirmative action taken. You will need to prove this per-user years later; the BIPA limitations period is 5 years (Tims v. Black Horse Carriers).\n\nDO NOT use dark patterns, pre-ticked boxes, or bundled acceptance — expressly invalid in Washington and Colorado.\n\nHand the draft to counsel before it ships.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "high",
+        "timeEstimate": 90,
+        "taskType": [
+          "writing",
+          "planning"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:24:53.326Z",
+        "updatedAt": "2026-08-04T03:24:53.326Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-6532d54a",
+        "title": "Write and publish the public biometric retention & destruction policy",
+        "description": "Required as a PUBLICLY AVAILABLE document, separately from your general privacy policy. Two states mandate this and it must be live at launch.\n\nILLINOIS 740 ILCS 14/15(a): a written policy, MADE AVAILABLE TO THE PUBLIC, with a retention schedule and destruction guidelines. Mora v. J&M Plating (2022 IL App (2d) 210692) held it must exist AT OR BEFORE collection — you cannot adopt it later and cure. This must ship on day one.\n\nCOLORADO C.R.S. 6-1-1314(2): a written policy, publicly available, containing (i) a retention schedule, (ii) an incident-response protocol including consumer breach notification per 6-1-716, and (iii) deletion guidelines.\n\nTHE RETENTION NUMBER MUST SATISFY THE TIGHTEST APPLICABLE CAP. The binding constraints:\n- Texas: destroy no later than 1 YEAR after the purpose for collection expires. TIGHTEST.\n- Colorado: earliest of purpose satisfied / 24 months after last interaction / 45 days after a review determines storage is unnecessary.\n- Illinois: purpose satisfied or 3 years from last interaction, whichever first.\nRECOMMENDED SINGLE NATIONAL RULE: delete the template and source image once verification completes, or at most 12 months from verification, whichever is first — unless a documented KYC/AML record-keeping obligation requires longer, in which case document that specific legal basis (Texas 503.001(c-1) expressly contemplates this).\n\nALSO REQUIRED — COLORADO ONLY: an ANNUAL REVIEW to identify biometric data ripe for deletion, with deletion within 45 days of that determination. Put a recurring calendar entry on someone's name now; this is an ongoing obligation nobody remembers after launch.\n\nCRITICAL: the published number must match the actual TTL configured in production. A mismatch between the stated and actual retention period is the single most common UDAP/deceptive-practices hook in the ~30 states with no biometric statute.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 60,
+        "taskType": [
+          "writing"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:24:53.326Z",
+        "updatedAt": "2026-08-04T03:24:53.326Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-0f839f0f",
+        "title": "Confirm with counsel: does Washington My Health My Data reach identity-verification biometrics?",
+        "description": "The single unresolved legal question in this research. I could not answer it and did not guess.\n\nTHE QUESTION: RCW 19.373.010(8) defines 'consumer health data' as personal information that 'identifies the consumer's past, present, or future physical or mental health status,' and then lists what health status 'includes,' item (ix) being 'Biometric data.'\n\nTWO READINGS:\n- DEFENCE: the gateway requirement is that the data identify HEALTH STATUS. A faceprint used to check identity reveals nothing about health, so it falls outside. WA AG guidance reportedly supports the view that data not identifying health status is outside the Act.\n- PLAINTIFF: the enumerated list is definitional, so biometric data is consumer health data per se, full stop.\n\nWHY IT MATTERS: MHMD is enforced as a per se Consumer Protection Act violation (RCW 19.373.090), and the CPA carries a PRIVATE RIGHT OF ACTION (RCW 19.86.090). It is the second-most-significant PRA in the country for this product after BIPA. Note the private plaintiff must show 'injur[y] in... business or property' and there are no liquidated damages — remedies are actual damages, discretionary treble capped at $25,000, plus attorneys' fees. So it is a real but not BIPA-scale risk.\n\nIF IN SCOPE, the extra work is: a SEPARATE standalone Consumer Health Data Privacy Policy with its own homepage link (RCW 19.373.020 — it cannot be merged into the general privacy policy), separate consent for collection and a distinct separate consent for sharing, and a deletion right reaching backups and requiring propagation to processors and third parties.\n\nPRAGMATIC RECOMMENDATION TO PUT TO COUNSEL: the incremental cost of shipping the standalone policy and consent is low; the cost of being wrong is a class action. Ask whether to simply comply rather than litigate the definition.\n\nAlso worth asking in the same session: does RCW 19.375 really not apply? My read is that it does not, on three independent grounds (the digital-photograph-and-data-generated-therefrom exclusion, the narrow third-party-marketing definition of 'commercial purpose', and the express security-purpose exemption in 19.375.020(7) which names fraud prevention and account integrity). Worth a second opinion since it is unusually good news.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 60,
+        "taskType": [
+          "decision",
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:24:53.326Z",
+        "updatedAt": "2026-08-04T03:24:53.326Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-e8793598",
+        "title": "Confirm with counsel: does Portland Ch. 34.10 reach a mobile app, and does the legal-compliance exception apply?",
+        "description": "Second unresolved question. Bounded, and worth a specific answer because the remedy is unusual.\n\nTHE QUESTION: Portland City Code 34.10.030 bans private entities using Face Recognition Technologies in 'Places of Public Accommodation within the boundaries of the City of Portland.' 34.10.020(D) defines that as 'Any place OR SERVICE offering to the public accommodations, advantages, facilities, or privileges whether in the nature of goods, SERVICES, lodgings, amusements, transportation or otherwise.' The words 'or service' arguably capture an online service. 'Face Recognition Technologies' expressly includes processes that assist in 'VERIFYING' facial features, so 1:1 verification is covered.\n\nWHY IT MATTERS: this is a BAN. Consent does not cure it. Remedy under 34.10.050 is damages sustained OR $1,000 PER DAY FOR EACH DAY OF VIOLATION, whichever is greater, plus attorneys' fees — subject to a 30-day pre-suit written demand, and fees can be defeated by tendering the damages amount before suit.\n\nSPECIFIC QUESTIONS FOR COUNSEL:\n1. Does an app used by a person physically located in Portland constitute use 'in a Place of Public Accommodation within the boundaries of the City'? I found no litigation resolving this.\n2. Does exception 34.10.040(A) — 'to the extent necessary for a Private Entity to comply with federal, state, or local laws' — apply if we have a statutory KYC/AML identity-verification obligation? This is the strongest available defence and depends entirely on whether your verification is legally compelled or merely commercially chosen. ANSWER THIS FIRST; if the obligation is genuine, the problem may dissolve.\n3. If neither is clear, is geofencing Portland city limits the proportionate response for v1?\n\nNote exception 34.10.040(B) does NOT help — it covers an individual using face recognition to unlock their own device, not server-side verification by a business.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "medium",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "decision",
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:24:53.326Z",
+        "updatedAt": "2026-08-04T03:24:53.326Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-43b0a639",
+        "title": "Decide whether user scans will ever be used to train or improve models — and segregate if so",
+        "description": "Architecture decision that must be made BEFORE launch because it is very hard to unwind afterwards.\n\nTHE RISK: the FTC's remedy of choice in biometric cases is ALGORITHMIC DISGORGEMENT. In the Rite Aid settlement (19 Dec 2023) the FTC banned Rite Aid from facial recognition for five years and required destruction of all photos and videos collected, AND 'all data, models, or algorithms derived in whole or in part therefrom,' with an obligation to instruct third parties to do the same. The FTC has ordered model destruction repeatedly — Everalbum, Cambridge Analytica, Ring, Weight Watchers, Amazon.\n\nWHY THIS IS EXISTENTIAL RATHER THAN EXPENSIVE: a fine is survivable. An order to destroy the model your product depends on may not be. If user verification scans are folded into training data and consent is later held defective, the disgorgement remedy reaches the model itself.\n\nSEPARATELY: Illinois BIPA 15(c) bans profiting from biometric data, and using scans to improve a commercial model is a plausible (if untested) 'profit' theory. Colorado bans selling, leasing or trading identifiers outright.\n\nDECISION REQUIRED — one of:\n(a) NEVER train on user verification scans. Simplest, safest, and makes the disgorgement remedy structurally unable to reach your core model. Recommended default.\n(b) Train only on scans where the user gave SEPARATE, EXPLICIT, UNBUNDLED consent for that specific purpose — distinct from the consent to verify identity. Bundling the two is exactly the defect that triggers these orders.\n\nIf (b): keep the training corpus provably segregated from the verification corpus, with documented lineage, so that a disgorgement order against one cannot reach the other. Record the decision and the architecture here.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "high",
+        "timeEstimate": 60,
+        "taskType": [
+          "decision",
+          "planning"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:24:53.326Z",
+        "updatedAt": "2026-08-04T03:24:53.326Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-d0e5e506",
+        "title": "Get the vendor contract right if using a third-party face-verification provider",
+        "description": "If the face matching is done by a vendor (Persona, Onfido, Jumio, Incode, Veriff, AWS Rekognition, etc.), several obligations flow through to them and a standard DPA will not cover them.\n\nCONTRACT MUST ADDRESS:\n1. NO PROFITING FROM THE DATA. Illinois BIPA 15(c) is a flat prohibition on selling, leasing, trading or otherwise profiting from biometric data — with no consent cure. Colorado 6-1-1314(4)(b)(I) bans selling, leasing or trading identifiers with any entity. Confirm in writing the vendor does not use your users' scans for its own purposes, its own model training, or benchmarking.\n2. MODEL TRAINING. Explicitly prohibit training or improving the vendor's models on your users' data unless you have obtained separate unbundled consent for it. This is a common default in vendor terms — check it, do not assume.\n3. RETENTION AND DELETION. The vendor must delete on your schedule, not theirs, and must confirm deletion. Your published retention policy is only true if the vendor honours it. Get contractual deletion SLAs.\n4. ENCRYPTION AT REST, with keys managed separately. See the encryption subtask.\n5. COLORADO NOTICE ELEMENT. C.R.S. 6-1-1314(4)(a)(IV) requires you to tell the consumer, before collection, whether the identifier will be disclosed to a PROCESSOR and the specific purpose. You need to know exactly what the vendor receives in order to write that notice accurately.\n6. PROCESSOR OBLIGATIONS. Colorado 6-1-1314(3) requires processors to maintain their own security-incident protocol including notifying you of a breach. Washington MHMD 19.373.060 imposes processor obligations too.\n7. DELETION PROPAGATION. If Washington MHMD applies, deletion requests must reach processors and third parties — build the mechanism, don't just promise it.\n8. FLOW-DOWN OF DISGORGEMENT RISK. Rite Aid was required to instruct third parties to destroy derived data, models and algorithms. Make sure you have the contractual right to compel that.\n\nDONE = a signed addendum covering all eight points, or written confirmation the standard terms already do.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 60,
+        "taskType": [
+          "planning",
+          "writing"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:24:53.326Z",
+        "updatedAt": "2026-08-04T03:24:53.326Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-aeb87615",
+        "title": "Set a recurring quarterly review of biometric privacy legislation",
+        "description": "This area moves faster than almost any other in US privacy law and today's answer will be wrong within a year. Put a recurring 60-minute quarterly slot on someone's calendar with this as the agenda.\n\nSPECIFIC ITEMS ALREADY PENDING VERIFICATION:\n- OKLAHOMA SB 546, signed 20 March 2026, effective date still to be confirmed. Verify statute text and effective date.\n- ARKANSAS: a privacy law is referenced in trackers for a 1 July 2026 effective date. Verify against the actual statute before relying on it.\n- COLORADO AG RULEMAKING: HB 24-1130 authorises the Colorado Department of Law to promulgate biometric rules, potentially with MORE STRINGENT security standards. None promulgated as of the last reporting I found. Watch for these — they would change your engineering requirements.\n- CALIFORNIA CPPA: risk assessment obligations phase in — processing begun before 1 Jan 2026 must be assessed by 31 Dec 2027, with annual reporting to the CPPA from 1 Apr 2028. ADMT notice/opt-out obligations from 1 Jan 2027; check whether an automated verification failure counts as a 'significant decision'.\n- CURE PERIODS CLOSING: New Jersey 15 Jul 2026, Maryland 1 Apr 2027. After those dates there is no fix-it-later grace in those states.\n\nSTATES TO WATCH FOR BIPA-STYLE BILLS WITH A PRIVATE RIGHT OF ACTION: New York (has repeatedly introduced one — if it passes, NY becomes a Tier 1 state overnight), Massachusetts, Michigan, Maryland, Vermont. A new PRA state is the only development that would materially change your risk posture, so this is the thing to actually watch.\n\nALSO RE-CHECK EACH QUARTER: whether you have crossed any comprehensive-law thresholds (35,000 residents for MD/NH/DE/RI; 50,000 for MT; 100,000 for most others; and the CCPA's $25M revenue / 100k consumer tests). Growth silently pulls you into these.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "medium",
+        "energy": "low",
+        "timeEstimate": 15,
+        "taskType": [
+          "planning"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T03:24:53.326Z",
+        "updatedAt": "2026-08-04T03:24:53.326Z",
+        "subtasks": []
+      }
+    ]
+  },
+  "prefix_diff": {
+    "pairs": 22,
+    "clean_append": 0,
+    "drift_after_markers": 22,
+    "cache_busting": 0,
+    "first_busting": null
+  }
+}

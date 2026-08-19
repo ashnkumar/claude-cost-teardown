@@ -1,0 +1,212 @@
+{
+ "id": "ref:t-compliance-off-append/rep-12",
+ "A": "t-compliance-off-append/rep-12",
+ "B": "t-compliance-naive-append/rep-11",
+ "calls": 2,
+ "STATE_COVERAGE": {
+  "winner": "A",
+  "tally": {
+   "A": 2,
+   "B": 0,
+   "EQUAL": 0
+  },
+  "clear_votes": 2,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "REQUIRED_FIELDS": {
+  "winner": "A",
+  "tally": {
+   "A": 2,
+   "B": 0,
+   "EQUAL": 0
+  },
+  "clear_votes": 0,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "LAUNCH_DECISION": {
+  "winner": "EQUAL",
+  "tally": {
+   "A": 0,
+   "B": 0,
+   "EQUAL": 2
+  },
+  "clear_votes": 0,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "DENSITY": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 1,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "GROUNDING": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 0,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "OVERALL": {
+  "winner": "A",
+  "tally": {
+   "A": 2,
+   "B": 0,
+   "EQUAL": 0
+  },
+  "clear_votes": 1,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "position_bias": false,
+ "_detail": {
+  "id": "ref:t-compliance-off-append/rep-12",
+  "A": "t-compliance-off-append/rep-12",
+  "B": "t-compliance-naive-append/rep-11",
+  "calls": [
+   {
+    "order": "AB",
+    "dims": {
+     "STATE_COVERAGE": {
+      "winner": 1,
+      "margin": "CLEAR",
+      "why": "He asked state by state and Report 1 gives him a row per jurisdiction with the statute named and the actual in-scope threshold, so he can look up Tennessee or New Jersey without reading anything else, where Report 2 gives him the state's name in a comma list and a bloc-level \"typically 100,000\" he still has to check.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "A"
+     },
+     "REQUIRED_FIELDS": {
+      "winner": 1,
+      "margin": "SLIGHT",
+      "why": "All five asked-for cells are actually filled for every jurisdiction in Report 1 — applicability threshold, consent standard, retention cap, private right of action, penalty — whereas Report 2 resolves 19 states with a single inherited pattern, even though Report 2's consent-screen spec (notice content (a)–(e), the second §15(d) consent, policy live before the first scan) is the better build sheet.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "A"
+     },
+     "LAUNCH_DECISION": {
+      "winner": 0,
+      "margin": "EQUAL",
+      "why": "Both give him a bounded danger list on the first screen with a stated test — Report 1 adds per-state launch verdicts and dollar exposure at his user counts, Report 2 adds the anti-geofencing argument, the Portland sleeper and the Jumio suits on his exact signup flow — and neither edge would change what he ships.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "EQUAL"
+     },
+     "DENSITY": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "This is exactly the \"fewer words, same density\" report he asked for — Report 2 carries as many decision facts in a third fewer words, while Report 1 spends its extra length on an insurance detour, a count-reconciliation aside, and the Tier 3 states listed once in prose and again as 28 identical table rows.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "GROUNDING": {
+      "winner": 2,
+      "margin": "SLIGHT",
+      "why": "Both get the one error that would have mattered right — the August 2024 amendment killing per-scan BIPA damages — but Report 2 prices Colorado and Washington the way the statutes read ($20,000 and $7,500 per violation) while Report 1 prices Colorado an order of magnitude low, on a state it tells him to build to, and leaves Washington's number blank.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "OVERALL": {
+      "winner": 1,
+      "margin": "SLIGHT",
+      "why": "Report 1 is the one I'd keep, because it hands you the state-by-state artifact you actually asked for — every jurisdiction as a row with statute, in-scope threshold, consent standard, retention cap, private right of action and penalty — and since both get the 2024 BIPA amendment right, the fixes are cheap: correct its Colorado penalty to $20,000 per violation and lift Report 2's Portland ordinance flag and its separate vendor-disclosure consent.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "A"
+     }
+    },
+    "unusable": [],
+    "deletable_unverifiable": 0,
+    "deletable_1": [
+     "Both are defensible; this table puts Florida in the comprehensive column and marks it out of scope.",
+     "*Mayron v. Google* (Cal. Ct. App. 2020) held the unconditional-gift provision alone does **not** confer UCL standing",
+     "whether the trigger is claims-made or occurrence (CGL responds on when the conduct occurred, Tech E&O on when the claim was made)"
+    ],
+    "deletable_2": [
+     "Practitioners now describe Texas, not California, as the leading US privacy regulator.",
+     "Texas SB 2420 took effect **1 January 2026** after the Fifth Circuit stayed a preliminary injunction",
+     "See `Wallrich v. Samsung` (7th Cir.) on the fee-payment trap."
+    ],
+    "stop_reason": "end_turn"
+   },
+   {
+    "order": "BA",
+    "dims": {
+     "STATE_COVERAGE": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "Both do the dangerous states at comparable depth, but only Report 2 lets him look up Montana or Delaware and get in-scope, consent, retention, private right of action and penalty in one row, where Report 1 hands him a bloc list and a modal answer.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "A"
+     },
+     "REQUIRED_FIELDS": {
+      "winner": 2,
+      "margin": "SLIGHT",
+      "why": "Report 2 fills all five asked-for cells for every jurisdiction with real per-state thresholds (35k Delaware, 50k Montana, Connecticut's removed sensitive-data threshold) instead of a \"typically 100,000\" approximation, though Report 1's consent-build detail (the separate §15(d) vendor consent, the notice content list) and its correct Washington and Colorado penalty figures narrow the gap.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "A"
+     },
+     "LAUNCH_DECISION": {
+      "winner": 0,
+      "margin": "EQUAL",
+      "why": "Both put a bounded, tested danger list in the first screen and turn on this product (once-at-signup capture, IDV vendor, subscription); Report 2 adds a per-state launch verdict and the geofence-cost-vs-exposure arithmetic, Report 1 adds the Portland ordinance and the exact-fact-pattern Jumio litigation, and they offset.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "EQUAL"
+     },
+     "DENSITY": {
+      "winner": 1,
+      "margin": "SLIGHT",
+      "why": "Report 1 answers his five questions in one table and keeps the register flat, while Report 2 spends ten thousand extra characters partly on identical no-law rows repeated twenty-odd times, two exposure tables extrapolated to five million users, and litigation-posture asides.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "GROUNDING": {
+      "winner": 1,
+      "margin": "SLIGHT",
+      "why": "Both correctly kill the per-scan reading of BIPA with P.A. 103-0769 and both get Illinois's private right of action and Texas's absence of one right, but Report 2 understates Colorado's penalty tenfold and gives no Washington figure at all, where Report 1's four-state penalty row matches the statutes cell for cell.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "OVERALL": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "You asked state by state and Report 2 is the one that actually answers it — every jurisdiction gets its own filled row for scope, consent, retention, right to sue and penalty, on top of Illinois/Texas/Colorado/Washington depth that matches Report 1's — and the price is a tenfold-wrong Colorado penalty figure and ten thousand more characters, which is cheaper than Report 1 leaving nineteen comprehensive-law states as a bloc with a guessed threshold.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "A"
+     }
+    },
+    "unusable": [],
+    "deletable_unverifiable": 0,
+    "deletable_1": [
+     "⚠️ **Explicitly stale — re-verify before relying on it.** Enforcement timelines and liability frameworks for all three acts shifted during 2026 due to later legislation and court rulings. A subtask exists for this.",
+     "Practitioners now describe Texas, not California, as the leading US privacy regulator.",
+     "Data you don't hold can't be breached, litigated over, or subpoenaed."
+    ],
+    "deletable_2": [
+     "| 5,000,000 | 188,000 | $188.0M | $940.0M | $28.2M–$75.2M |",
+     "| Alaska | Breach notification + UDAP only | n/a | No consent statute for collection | No cap | No (breach/UDAP theories only) | UDAP + breach penalties | 3 — low |",
+     "**Defence to preserve:** *Mayron v. Google* (Cal. Ct. App. 2020) held the unconditional-gift provision alone does **not** confer UCL standing — the plaintiff must tie the payment to the violation. Don't concede standing."
+    ],
+    "stop_reason": "end_turn"
+   }
+  ]
+ }
+}

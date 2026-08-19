@@ -1,0 +1,3701 @@
+{
+ "label": "cmp-naive-append",
+ "rep_dir": "experiments/t-compliance-naive-append/rep-1",
+ "report_source": "tree",
+ "graded_at": "2026-08-04T04:48:31.058Z",
+ "rubric_version": "compliance-1.1.0",
+ "rubric_sha256": "4770c241822ceb446f434b94fd1064f8b959ba71335d67f1d7f9e162ce798dbe",
+ "judge_prompt": "grader/judge_prompt-compliance.md",
+ "judge_prompt_sha256": "8760020a3fc285ba4cd78f04f411c01446ceeb581820ed0077315a9f5a3a0538",
+ "judge_payload_sha256": "6b0df28e3ed0ef209398fabab216359241903d2dacb557012b50f05630633ca1",
+ "normalizer_version": "normalizer_v1",
+ "seed_check_ok": true,
+ "run_id": "exp-naive-append-r1-mse4h16h",
+ "task_id": "t-compliance",
+ "judge": {
+  "model": "claude-opus-5",
+  "effort": "high",
+  "passes": 3,
+  "structured_output": "json_schema"
+ },
+ "axes_evaluated": [
+  "A",
+  "B",
+  "C"
+ ],
+ "score_total": 83.19,
+ "points_available": 100,
+ "score_normalized_100": 83.19,
+ "score_A_content": 60,
+ "score_B_grounding": 3.19,
+ "score_C_scope": 20,
+ "judge_agreement_pct": 95,
+ "contested_items": [
+  "B2"
+ ],
+ "items": {
+  "A1": {
+   "axis": "A",
+   "points": 4,
+   "type": "J",
+   "verdict": 1,
+   "score": 4,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "BIPA covers a scan of face geometry regardless of whether you match against a database of strangers.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "BIPA covers a scan of face geometry regardless of whether you match against a database of strangers.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "Selfie-identity-verification-at-signup has produced two settlements on the precise theory that would be pled against us",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A2": {
+   "axis": "A",
+   "points": 5,
+   "type": "J",
+   "verdict": 1,
+   "score": 5,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "So at launch the binding constraints are the **no-threshold regimes**: Illinois BIPA, Texas CUBI + TDPSA, Nebraska NDPA, Colorado's biometric amendment, and Washington MHMDA.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "So at launch the binding constraints are the **no-threshold regimes**: Illinois BIPA, Texas CUBI + TDPSA, Nebraska NDPA, Colorado's biometric amendment, and Washington MHMDA.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "So at launch the binding constraints are the **no-threshold regimes**: Illinois BIPA, Texas CUBI + TDPSA, Nebraska NDPA, Colorado's biometric amendment, and Washington MHMDA.",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A3": {
+   "axis": "A",
+   "points": 6,
+   "type": "J",
+   "verdict": 1,
+   "score": 6,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "§15(b): inform in writing that biometric data is collected/stored; inform in writing of the **specific purpose and length of term**; obtain a **written release**",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**Pre-capture** notice + **separate, unchecked** e-signature consent, never bundled into ToS | BIPA §15(b) is a pre-collection duty; post-capture consent violates it even if the user agrees",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**Notice copy must say:** that a scan of **face geometry** is collected and stored (use the word — not \"photo check\"); the **specific purpose**, stated narrowly as identity verification at signup; the **specific length of term**",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A4": {
+   "axis": "A",
+   "points": 4,
+   "type": "J",
+   "verdict": 1,
+   "score": 4,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "expressly confirmed electronic signature satisfies \"written release\"",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "§15(b): inform in writing that biometric data is collected/stored; inform in writing of the **specific purpose and length of term**; obtain a **written release**",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "§15(b): inform in writing that biometric data is collected/stored",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A5": {
+   "axis": "A",
+   "points": 5,
+   "type": "J",
+   "verdict": 1,
+   "score": 5,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "**no later than one year after the purpose for collection expires**",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "destroy within a reasonable time after capture and **no later than one year after the purpose for collection expires**",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**no later than one year after the purpose for collection expires**",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A6": {
+   "axis": "A",
+   "points": 4,
+   "type": "J",
+   "verdict": 1,
+   "score": 4,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "**Destruction must actually reach everything:** primary storage, backups, caches, application logs, crash dumps, analytics pipelines, and the vendor's copy.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**Destroy template within 30 days**, ideally immediately on verification. Keep only the outcome",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "destroy when purpose satisfied or within 3 years of last interaction, whichever is first",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A7": {
+   "axis": "A",
+   "points": 6,
+   "type": "J",
+   "verdict": 1,
+   "score": 6,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "No state except Illinois and Washington gives consumers a private right of action reaching a consent failure.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**No state except Illinois and Washington gives consumers a private right of action reaching a consent failure.** California's is breach-only.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**No state except Illinois and Washington gives consumers a private right of action reaching a consent failure.**",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A8": {
+   "axis": "A",
+   "points": 6,
+   "type": "J",
+   "verdict": 1,
+   "score": 6,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "the AG extracted **$1.4 billion from Meta** over face tagging, and reads CUBI so that continued possession and use multiply violations, each carrying **up to $25,000**.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "reads CUBI so that continued possession and use multiply violations, each carrying **up to $25,000**",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "each carrying **up to $25,000**",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A9": {
+   "axis": "A",
+   "points": 6,
+   "type": "J",
+   "verdict": 1,
+   "score": 6,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "The only state where the downside is existential, for one reason: **a private right of action, with statutory damages, fee-shifting, and no requirement to prove actual harm**",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "The only state where the downside is existential, for one reason: **a private right of action, with statutory damages, fee-shifting, and no requirement to prove actual harm** (*Rosenbach*).",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "The only state where the downside is existential, for one reason: **a private right of action, with statutory damages, fee-shifting, and no requirement to prove actual harm**",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A10": {
+   "axis": "A",
+   "points": 4,
+   "type": "J",
+   "verdict": 1,
+   "score": 4,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "Of 50 states, **one** can end the company (Illinois), **three more** are seriously dangerous (Texas, Washington, Colorado)",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "MARYLAND — MEDIUM-HIGH (design constraint, not litigation risk)",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "### 🟡 MARYLAND — MEDIUM-HIGH (design constraint, not litigation risk)",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A11": {
+   "axis": "A",
+   "points": 4,
+   "type": "J",
+   "verdict": 1,
+   "score": 4,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "**Launch in all 50 states — after items 1–4 above are built and counsel has reviewed the Illinois notice text.**",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**Launch in all 50 states — after items 1–4 above are built and counsel has reviewed the Illinois notice text.**",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**Launch in all 50 states — after items 1–4 above are built and counsel has reviewed the Illinois notice text.**",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A12": {
+   "axis": "A",
+   "points": 3,
+   "type": "J",
+   "verdict": 1,
+   "score": 3,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "*Not legal advice. This is a scoping document to make outside counsel faster and cheaper, and it assumes templates reach our servers — the worse case.*",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "*Not legal advice. This is a scoping document to make outside counsel faster and cheaper, and it assumes templates reach our servers — the worse case.*",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "*Not legal advice. This is a scoping document to make outside counsel faster and cheaper, and it assumes templates reach our servers — the worse case.*",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A13": {
+   "axis": "A",
+   "points": 3,
+   "type": "J",
+   "verdict": 1,
+   "score": 3,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "§15(a): a **publicly available** written retention and destruction policy",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "| Illinois users | Negligent @ $1,000 | Reckless/intentional @ $5,000 |",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "ABSENT",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "C2": {
+   "axis": "C",
+   "points": 4,
+   "type": "J",
+   "verdict": 1,
+   "score": 4,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "ABSENT",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**One flag outside this brief:** the monthly subscription creates a **second, unrelated compliance surface**",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "ABSENT",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "C3": {
+   "axis": "C",
+   "points": 4,
+   "type": "J",
+   "verdict": 1,
+   "score": 4,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "we have a strong, well-supported argument that BIPA §15 never attaches. That is worth more than any consent screen.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**We are probably saved by an exemption.** MHMDA does not apply to information used to prevent, detect, protect against or respond to security incidents",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "ABSENT",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "C4": {
+   "axis": "C",
+   "points": 3,
+   "type": "J",
+   "verdict": 1,
+   "score": 3,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "A Massachusetts BIPA clone with a PRA would materially change this analysis.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**Watch list:** South Carolina (biometric-only bill pending), Massachusetts and Michigan (BIPA-style bills with private rights of action repeatedly introduced). A Massachusetts BIPA clone with a PRA would materially change this analysis.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "Whether that applies retroactively is being fought over in the Seventh Circuit, but all of *our* conduct post-dates the amendment, so it's not our problem.",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "C1": {
+   "axis": "C",
+   "points": 6,
+   "type": "J",
+   "level": 6,
+   "score": 6,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    6,
+    6,
+    6
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "level": 6,
+     "count": 6,
+     "evidence": "Of 50 states, **one** can end the company (Illinois), **three more** are seriously dangerous (Texas, Washington, Colorado)",
+     "voided": false
+    },
+    {
+     "level": 6,
+     "count": 6,
+     "evidence": "**Bottom line:** Of 50 states, **one** can end the company (Illinois), **three more** are seriously dangerous (Texas, Washington, Colorado)",
+     "voided": false
+    },
+    {
+     "level": 6,
+     "count": 6,
+     "evidence": "Of 50 states, **one** can end the company (Illinois), **three more** are seriously dangerous (Texas, Washington, Colorado)",
+     "voided": false
+    }
+   ]
+  },
+  "C5": {
+   "axis": "C",
+   "points": 3,
+   "type": "H",
+   "fraction": 1,
+   "score": 3,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "human_subtasks": 11,
+   "evidence": [
+    {
+     "fraction": 1,
+     "numerator": 11,
+     "denominator": 11,
+     "reported": 11,
+     "matched": 11,
+     "entries": [
+      {
+       "task_title": "DECIDE: can the face match run entirely on-device, so no template ever reaches our servers?",
+       "self_contained": true,
+       "evidence": "Record the answer here, then tell me and I can re-scope the remaining compliance work — an on-device answer materially shrinks it.",
+       "matched": "DECIDE: can the face match run entirely on-device, so no template ever reaches our servers?",
+       "voided": false
+      },
+      {
+       "task_title": "Get outside privacy counsel to review the Illinois BIPA notice + consent text before launch",
+       "self_contained": true,
+       "evidence": "Ask for a written opinion, not a call — you want something to point at later. Look for a firm with actual BIPA defence experience; this is a specialised bar.",
+       "matched": "Get outside privacy counsel to review the Illinois BIPA notice + consent text before launch",
+       "voided": false
+      },
+      {
+       "task_title": "Build the pre-capture notice screen and standalone consent control",
+       "self_contained": true,
+       "evidence": "- Notice and consent must BOTH complete BEFORE the camera activates. BIPA §15(b) is a pre-collection duty; post-capture consent is a violation even if the user agrees.",
+       "matched": "Build the pre-capture notice screen and standalone consent control",
+       "voided": false
+      },
+      {
+       "task_title": "Build versioned immutable consent logging",
+       "self_contained": true,
+       "evidence": "Per user, store immutably: user ID; UTC consent timestamp; the EXACT VERSION of notice text displayed (full rendered text or content hash + versioned copy of that text); consent method; app version and platform; and the timestamp of first biometric capture, which must be strictly AFTER the consent timestamp.",
+       "matched": "Build versioned immutable consent logging",
+       "voided": false
+      },
+      {
+       "task_title": "Implement automated 30-day template destruction with logged proof",
+       "self_contained": true,
+       "evidence": "RECOMMENDED POLICY: destroy the face template immediately on completion of verification, and in no case later than 30 days after capture.",
+       "matched": "Implement automated 30-day template destruction with logged proof",
+       "voided": false
+      },
+      {
+       "task_title": "Publish the public biometric retention policy page",
+       "self_contained": true,
+       "evidence": "- Publicly accessible with NO login and NO account required",
+       "matched": "Publish the public biometric retention policy page",
+       "voided": false
+      },
+      {
+       "task_title": "Write the Washington MHMDA exemption memo before launch",
+       "self_contained": true,
+       "evidence": "The memo should record: (1) the precise purpose of the scan; (2) why that purpose falls within the identity-theft/fraud limb of the exemption",
+       "matched": "Write the Washington MHMDA exemption memo before launch",
+       "voided": false
+      },
+      {
+       "task_title": "Write one DPIA covering the face-scan flow",
+       "self_contained": true,
+       "evidence": "Should cover: the categories of data processed (face geometry template, raw capture frames); purpose (identity verification at signup)",
+       "matched": "Write one DPIA covering the face-scan flow",
+       "voided": false
+      },
+      {
+       "task_title": "Fix IDV vendor contract terms — retention, no-training, deletion proof, BIPA indemnity",
+       "self_contained": true,
+       "evidence": "- Bind the vendor to OUR retention schedule (30 days) and require verifiable deletion WITH EVIDENCE",
+       "matched": "Fix IDV vendor contract terms — retention, no-training, deletion proof, BIPA indemnity",
+       "voided": false
+      },
+      {
+       "task_title": "Decide whether under-18 signup is permitted, and block it if not",
+       "self_contained": true,
+       "evidence": "SIMPLEST SAFE ANSWER AT LAUNCH: restrict to 18+, enforced at signup, and state it in the terms.",
+       "matched": "Decide whether under-18 signup is permitted, and block it if not",
+       "voided": false
+      },
+      {
+       "task_title": "Separately scope subscription auto-renewal compliance (out of scope here, but a real launch blocker)",
+       "self_contained": true,
+       "evidence": "Suggest raising this as its own top-level task so it gets proper research rather than living as a footnote under a biometrics task.",
+       "matched": "Separately scope subscription auto-renewal compliance (out of scope here, but a real launch blocker)",
+       "voided": false
+      }
+     ]
+    },
+    {
+     "fraction": 1,
+     "numerator": 11,
+     "denominator": 11,
+     "reported": 11,
+     "matched": 11,
+     "entries": [
+      {
+       "task_title": "DECIDE: can the face match run entirely on-device, so no template ever reaches our servers?",
+       "self_contained": true,
+       "evidence": "What you need to establish with engineering:\n- Does the chosen SDK/vendor do matching locally or server-side?",
+       "matched": "DECIDE: can the face match run entirely on-device, so no template ever reaches our servers?",
+       "voided": false
+      },
+      {
+       "task_title": "Get outside privacy counsel to review the Illinois BIPA notice + consent text before launch",
+       "self_contained": true,
+       "evidence": "Ask for a written opinion, not a call — you want something to point at later. Look for a firm with actual BIPA defence experience; this is a specialised bar.",
+       "matched": "Get outside privacy counsel to review the Illinois BIPA notice + consent text before launch",
+       "voided": false
+      },
+      {
+       "task_title": "Build the pre-capture notice screen and standalone consent control",
+       "self_contained": true,
+       "evidence": "- Notice and consent must BOTH complete BEFORE the camera activates. BIPA §15(b) is a pre-collection duty; post-capture consent is a violation even if the user agrees.",
+       "matched": "Build the pre-capture notice screen and standalone consent control",
+       "voided": false
+      },
+      {
+       "task_title": "Build versioned immutable consent logging",
+       "self_contained": true,
+       "evidence": "Per user, store immutably: user ID; UTC consent timestamp; the EXACT VERSION of notice text displayed (full rendered text or content hash + versioned copy of that text); consent method; app version and platform",
+       "matched": "Build versioned immutable consent logging",
+       "voided": false
+      },
+      {
+       "task_title": "Implement automated 30-day template destruction with logged proof",
+       "self_contained": true,
+       "evidence": "RECOMMENDED POLICY: destroy the face template immediately on completion of verification, and in no case later than 30 days after capture.",
+       "matched": "Implement automated 30-day template destruction with logged proof",
+       "voided": false
+      },
+      {
+       "task_title": "Publish the public biometric retention policy page",
+       "self_contained": true,
+       "evidence": "- Publicly accessible with NO login and NO account required\n- Must contain the retention schedule and the guidelines for permanent destruction (BIPA §15(a))",
+       "matched": "Publish the public biometric retention policy page",
+       "voided": false
+      },
+      {
+       "task_title": "Write the Washington MHMDA exemption memo before launch",
+       "self_contained": true,
+       "evidence": "The memo should record: (1) the precise purpose of the scan; (2) why that purpose falls within the identity-theft/fraud limb of the exemption",
+       "matched": "Write the Washington MHMDA exemption memo before launch",
+       "voided": false
+      },
+      {
+       "task_title": "Write one DPIA covering the face-scan flow",
+       "self_contained": true,
+       "evidence": "Should cover: the categories of data processed (face geometry template, raw capture frames); purpose (identity verification at signup); necessity and proportionality assessment",
+       "matched": "Write one DPIA covering the face-scan flow",
+       "voided": false
+      },
+      {
+       "task_title": "Fix IDV vendor contract terms — retention, no-training, deletion proof, BIPA indemnity",
+       "self_contained": true,
+       "evidence": "- Bind the vendor to OUR retention schedule (30 days) and require verifiable deletion WITH EVIDENCE",
+       "matched": "Fix IDV vendor contract terms — retention, no-training, deletion proof, BIPA indemnity",
+       "voided": false
+      },
+      {
+       "task_title": "Decide whether under-18 signup is permitted, and block it if not",
+       "self_contained": true,
+       "evidence": "SIMPLEST SAFE ANSWER AT LAUNCH: restrict to 18+, enforced at signup, and state it in the terms.",
+       "matched": "Decide whether under-18 signup is permitted, and block it if not",
+       "voided": false
+      },
+      {
+       "task_title": "Separately scope subscription auto-renewal compliance (out of scope here, but a real launch blocker)",
+       "self_contained": true,
+       "evidence": "Suggest raising this as its own top-level task so it gets proper research rather than living as a footnote under a biometrics task. Happy to take it if you assign it.",
+       "matched": "Separately scope subscription auto-renewal compliance (out of scope here, but a real launch blocker)",
+       "voided": false
+      }
+     ]
+    },
+    {
+     "fraction": 1,
+     "numerator": 11,
+     "denominator": 11,
+     "reported": 11,
+     "matched": 11,
+     "entries": [
+      {
+       "task_title": "DECIDE: can the face match run entirely on-device, so no template ever reaches our servers?",
+       "self_contained": true,
+       "evidence": "What you need to establish with engineering:\n- Does the chosen SDK/vendor do matching locally or server-side?",
+       "matched": "DECIDE: can the face match run entirely on-device, so no template ever reaches our servers?",
+       "voided": false
+      },
+      {
+       "task_title": "Get outside privacy counsel to review the Illinois BIPA notice + consent text before launch",
+       "self_contained": true,
+       "evidence": "Ask for a written opinion, not a call — you want something to point at later. Look for a firm with actual BIPA defence experience; this is a specialised bar.",
+       "matched": "Get outside privacy counsel to review the Illinois BIPA notice + consent text before launch",
+       "voided": false
+      },
+      {
+       "task_title": "Build the pre-capture notice screen and standalone consent control",
+       "self_contained": true,
+       "evidence": "Notice and consent must BOTH complete BEFORE the camera activates. BIPA §15(b) is a pre-collection duty; post-capture consent is a violation even if the user agrees.",
+       "matched": "Build the pre-capture notice screen and standalone consent control",
+       "voided": false
+      },
+      {
+       "task_title": "Build versioned immutable consent logging",
+       "self_contained": true,
+       "evidence": "Per user, store immutably: user ID; UTC consent timestamp; the EXACT VERSION of notice text displayed (full rendered text or content hash + versioned copy of that text); consent method; app version and platform",
+       "matched": "Build versioned immutable consent logging",
+       "voided": false
+      },
+      {
+       "task_title": "Implement automated 30-day template destruction with logged proof",
+       "self_contained": true,
+       "evidence": "RECOMMENDED POLICY: destroy the face template immediately on completion of verification, and in no case later than 30 days after capture.",
+       "matched": "Implement automated 30-day template destruction with logged proof",
+       "voided": false
+      },
+      {
+       "task_title": "Publish the public biometric retention policy page",
+       "self_contained": true,
+       "evidence": "Publicly accessible with NO login and NO account required",
+       "matched": "Publish the public biometric retention policy page",
+       "voided": false
+      },
+      {
+       "task_title": "Write the Washington MHMDA exemption memo before launch",
+       "self_contained": true,
+       "evidence": "The memo should record: (1) the precise purpose of the scan; (2) why that purpose falls within the identity-theft/fraud limb of the exemption",
+       "matched": "Write the Washington MHMDA exemption memo before launch",
+       "voided": false
+      },
+      {
+       "task_title": "Write one DPIA covering the face-scan flow",
+       "self_contained": true,
+       "evidence": "Should cover: the categories of data processed (face geometry template, raw capture frames); purpose (identity verification at signup); necessity and proportionality assessment",
+       "matched": "Write one DPIA covering the face-scan flow",
+       "voided": false
+      },
+      {
+       "task_title": "Fix IDV vendor contract terms — retention, no-training, deletion proof, BIPA indemnity",
+       "self_contained": true,
+       "evidence": "Bind the vendor to OUR retention schedule (30 days) and require verifiable deletion WITH EVIDENCE",
+       "matched": "Fix IDV vendor contract terms — retention, no-training, deletion proof, BIPA indemnity",
+       "voided": false
+      },
+      {
+       "task_title": "Decide whether under-18 signup is permitted, and block it if not",
+       "self_contained": true,
+       "evidence": "SIMPLEST SAFE ANSWER AT LAUNCH: restrict to 18+, enforced at signup, and state it in the terms.",
+       "matched": "Decide whether under-18 signup is permitted, and block it if not",
+       "voided": false
+      },
+      {
+       "task_title": "Separately scope subscription auto-renewal compliance (out of scope here, but a real launch blocker)",
+       "self_contained": true,
+       "evidence": "Suggest raising this as its own top-level task so it gets proper research rather than living as a footnote under a biometrics task. Happy to take it if you assign it.",
+       "matched": "Separately scope subscription auto-renewal compliance (out of scope here, but a real launch blocker)",
+       "voided": false
+      }
+     ]
+    }
+   ]
+  },
+  "B1": {
+   "axis": "B",
+   "points": 8,
+   "type": "D",
+   "ratio": 0.023809523809523808,
+   "numerator": 1,
+   "denominator": 42,
+   "score": 0.19047619047619047,
+   "agreement": 1,
+   "contested": false,
+   "inputs": {
+    "sources_raw": [
+     "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "https://www.quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act/",
+     "https://www.gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+     "https://www.insideprivacy.com/data-privacy/illinois-enacts-bipa-amendment-limiting-violation-accrual/",
+     "https://law.justia.com/cases/illinois/supreme-court/2023/128004.html",
+     "https://www.wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20260514-seventh-circuit-weighs-in-on-critical-bipa-retroactivity-question",
+     "https://www.privacyworld.blog/2023/04/selfie-id-biometric-verification-vendors-bid-for-dismissal-of-bipa-class-action-rejected-by-federal-court/",
+     "https://legalclarity.org/sosa-v-onfido-inc-no-20-cv-04247-class-action-status/",
+     "https://www.biometricupdate.com/202006/biometric-privacy-suit-alleges-onfido-violated-illinois-informed-consent-rules",
+     "https://lewisbrisbois.com/newsroom/legal-alerts/illinois-federal-judge-delivers-another-win-for-bipa-defendants",
+     "https://www.govinfo.gov/content/pkg/USCOURTS-ca9-22-16925/pdf/USCOURTS-ca9-22-16925-0.pdf",
+     "https://www.hunton.com/privacy-and-cybersecurity-law-blog/ninth-circuit-holds-face-signatures-used-for-photo-tag-suggestions-are-not-biometric-information",
+     "https://natlawreview.com/article/court-refuses-to-dismiss-biometric-privacy-action-over-facial-recognition-technology",
+     "https://www.americanbar.org/groups/business_law/resources/business-law-today/2021-february/historic-biometric-privacy-settlement/",
+     "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+     "https://www.bracewell.com/resources/billion-dollar-liability-understanding-your-obligations-under-the-texas-capture-or-use-of-biometric-identifier-act/",
+     "https://www.hklaw.com/en/insights/publications/2022/11/texas-enforcement-of-biometric-law-focuses-on-artificial-intelligence",
+     "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true&pdf=true",
+     "https://law.justia.com/codes/washington/2019/title-19/chapter-19-375/section-19-375-020/",
+     "https://www.bclplaw.com/en-US/events-insights-news/washington-my-health-my-data-act-compliance-hurdles-and-how-to-prepare.html",
+     "https://www.goodwinlaw.com/en/insights/publications/2024/03/alerts-technology-hltc-my-health-my-data-act-mhmda",
+     "https://www.wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20250220-first-lawsuit-filed-under-washingtons-my-health-my-data-act",
+     "https://fpf.org/blog/a-new-paradigm-for-consumer-health-data-privacy-in-washington-state/",
+     "https://www.venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+     "https://www.littler.com/news-analysis/asap/implications-employers-colorados-new-biometrics-law",
+     "https://www.recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy/",
+     "https://www.recordinglaw.com/us-laws/data-privacy-laws/maryland-data-privacy-laws/what-is-modpa/",
+     "https://www.osano.com/articles/maryland-online-data-privacy-act-modpa",
+     "https://www.afslaw.com/perspectives/privacy-counsel/new-state-privacy-laws-effective-second-half-2025",
+     "https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+     "https://privacylawmap.com/blog/texas-data-privacy-and-security-act-guide",
+     "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+     "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+     "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker/",
+     "https://www.koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+     "https://www.bclplaw.com/en-US/events-insights-news/a-kinder-gentler-consumer-health-data-bill-nevadas-sb-370.html",
+     "https://www.recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy/",
+     "https://www.varnumlaw.com/insights/first-of-its-kind-teen-privacy-law-passes-in-arkansas/",
+     "https://www.recordinglaw.com/us-laws/data-privacy-laws/biometric-privacy-laws/",
+     "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+     "https://www.security.org/resources/digital-privacy-legislation-by-state/",
+     "https://www.ketch.com/blog/posts/us-privacy-laws-2026"
+    ],
+    "sources_normalized": [
+     "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "https://quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act",
+     "https://gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+     "https://insideprivacy.com/data-privacy/illinois-enacts-bipa-amendment-limiting-violation-accrual",
+     "https://law.justia.com/cases/illinois/supreme-court/2023/128004.html",
+     "https://wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20260514-seventh-circuit-weighs-in-on-critical-bipa-retroactivity-question",
+     "https://privacyworld.blog/2023/04/selfie-id-biometric-verification-vendors-bid-for-dismissal-of-bipa-class-action-rejected-by-federal-court",
+     "https://legalclarity.org/sosa-v-onfido-inc-no-20-cv-04247-class-action-status",
+     "https://biometricupdate.com/202006/biometric-privacy-suit-alleges-onfido-violated-illinois-informed-consent-rules",
+     "https://lewisbrisbois.com/newsroom/legal-alerts/illinois-federal-judge-delivers-another-win-for-bipa-defendants",
+     "https://govinfo.gov/content/pkg/USCOURTS-ca9-22-16925/pdf/USCOURTS-ca9-22-16925-0.pdf",
+     "https://hunton.com/privacy-and-cybersecurity-law-blog/ninth-circuit-holds-face-signatures-used-for-photo-tag-suggestions-are-not-biometric-information",
+     "https://natlawreview.com/article/court-refuses-to-dismiss-biometric-privacy-action-over-facial-recognition-technology",
+     "https://americanbar.org/groups/business_law/resources/business-law-today/2021-february/historic-biometric-privacy-settlement",
+     "https://texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+     "https://bracewell.com/resources/billion-dollar-liability-understanding-your-obligations-under-the-texas-capture-or-use-of-biometric-identifier-act",
+     "https://hklaw.com/en/insights/publications/2022/11/texas-enforcement-of-biometric-law-focuses-on-artificial-intelligence",
+     "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true&pdf=true",
+     "https://law.justia.com/codes/washington/2019/title-19/chapter-19-375/section-19-375-020",
+     "https://bclplaw.com/en-US/events-insights-news/washington-my-health-my-data-act-compliance-hurdles-and-how-to-prepare.html",
+     "https://goodwinlaw.com/en/insights/publications/2024/03/alerts-technology-hltc-my-health-my-data-act-mhmda",
+     "https://wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20250220-first-lawsuit-filed-under-washingtons-my-health-my-data-act",
+     "https://fpf.org/blog/a-new-paradigm-for-consumer-health-data-privacy-in-washington-state",
+     "https://venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+     "https://littler.com/news-analysis/asap/implications-employers-colorados-new-biometrics-law",
+     "https://recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy",
+     "https://recordinglaw.com/us-laws/data-privacy-laws/maryland-data-privacy-laws/what-is-modpa",
+     "https://osano.com/articles/maryland-online-data-privacy-act-modpa",
+     "https://afslaw.com/perspectives/privacy-counsel/new-state-privacy-laws-effective-second-half-2025",
+     "https://multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+     "https://privacylawmap.com/blog/texas-data-privacy-and-security-act-guide",
+     "https://lutzker.com/insights/comprehensive-state-consumer-privacy-laws",
+     "https://coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update",
+     "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker",
+     "https://koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+     "https://bclplaw.com/en-US/events-insights-news/a-kinder-gentler-consumer-health-data-bill-nevadas-sb-370.html",
+     "https://recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy",
+     "https://varnumlaw.com/insights/first-of-its-kind-teen-privacy-law-passes-in-arkansas",
+     "https://recordinglaw.com/us-laws/data-privacy-laws/biometric-privacy-laws",
+     "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+     "https://security.org/resources/digital-privacy-legislation-by-state",
+     "https://ketch.com/blog/posts/us-privacy-laws-2026"
+    ],
+    "fetched_raw": [
+     "https://www.bclplaw.com/en-US/events-insights-news/washington-my-health-my-data-act-compliance-hurdles-and-how-to-prepare.html"
+    ],
+    "fetched_normalized": [
+     "https://bclplaw.com/en-US/events-insights-news/washington-my-health-my-data-act-compliance-hurdles-and-how-to-prepare.html"
+    ],
+    "unfetched_normalized": [
+     "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "https://quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act",
+     "https://gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+     "https://insideprivacy.com/data-privacy/illinois-enacts-bipa-amendment-limiting-violation-accrual",
+     "https://law.justia.com/cases/illinois/supreme-court/2023/128004.html",
+     "https://wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20260514-seventh-circuit-weighs-in-on-critical-bipa-retroactivity-question",
+     "https://privacyworld.blog/2023/04/selfie-id-biometric-verification-vendors-bid-for-dismissal-of-bipa-class-action-rejected-by-federal-court",
+     "https://legalclarity.org/sosa-v-onfido-inc-no-20-cv-04247-class-action-status",
+     "https://biometricupdate.com/202006/biometric-privacy-suit-alleges-onfido-violated-illinois-informed-consent-rules",
+     "https://lewisbrisbois.com/newsroom/legal-alerts/illinois-federal-judge-delivers-another-win-for-bipa-defendants",
+     "https://govinfo.gov/content/pkg/USCOURTS-ca9-22-16925/pdf/USCOURTS-ca9-22-16925-0.pdf",
+     "https://hunton.com/privacy-and-cybersecurity-law-blog/ninth-circuit-holds-face-signatures-used-for-photo-tag-suggestions-are-not-biometric-information",
+     "https://natlawreview.com/article/court-refuses-to-dismiss-biometric-privacy-action-over-facial-recognition-technology",
+     "https://americanbar.org/groups/business_law/resources/business-law-today/2021-february/historic-biometric-privacy-settlement",
+     "https://texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+     "https://bracewell.com/resources/billion-dollar-liability-understanding-your-obligations-under-the-texas-capture-or-use-of-biometric-identifier-act",
+     "https://hklaw.com/en/insights/publications/2022/11/texas-enforcement-of-biometric-law-focuses-on-artificial-intelligence",
+     "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true&pdf=true",
+     "https://law.justia.com/codes/washington/2019/title-19/chapter-19-375/section-19-375-020",
+     "https://goodwinlaw.com/en/insights/publications/2024/03/alerts-technology-hltc-my-health-my-data-act-mhmda",
+     "https://wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20250220-first-lawsuit-filed-under-washingtons-my-health-my-data-act",
+     "https://fpf.org/blog/a-new-paradigm-for-consumer-health-data-privacy-in-washington-state",
+     "https://venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+     "https://littler.com/news-analysis/asap/implications-employers-colorados-new-biometrics-law",
+     "https://recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy",
+     "https://recordinglaw.com/us-laws/data-privacy-laws/maryland-data-privacy-laws/what-is-modpa",
+     "https://osano.com/articles/maryland-online-data-privacy-act-modpa",
+     "https://afslaw.com/perspectives/privacy-counsel/new-state-privacy-laws-effective-second-half-2025",
+     "https://multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+     "https://privacylawmap.com/blog/texas-data-privacy-and-security-act-guide",
+     "https://lutzker.com/insights/comprehensive-state-consumer-privacy-laws",
+     "https://coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update",
+     "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker",
+     "https://koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+     "https://bclplaw.com/en-US/events-insights-news/a-kinder-gentler-consumer-health-data-bill-nevadas-sb-370.html",
+     "https://recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy",
+     "https://varnumlaw.com/insights/first-of-its-kind-teen-privacy-law-passes-in-arkansas",
+     "https://recordinglaw.com/us-laws/data-privacy-laws/biometric-privacy-laws",
+     "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+     "https://security.org/resources/digital-privacy-legislation-by-state",
+     "https://ketch.com/blog/posts/us-privacy-laws-2026"
+    ]
+   }
+  },
+  "B2": {
+   "axis": "B",
+   "points": 6,
+   "type": "H",
+   "fraction": 0,
+   "score": 0,
+   "agreement": 0.6666666666666666,
+   "contested": true,
+   "votes": [
+    0,
+    0,
+    0.02702702702702703
+   ],
+   "evidence": [
+    {
+     "numerator": 0,
+     "denominator": 48,
+     "unflagged_unverified": [
+      "Illinois BIPA 740 ILCS 14",
+      "Illinois BIPA $1,000 negligent / $5,000 reckless or intentional per person",
+      "Illinois BIPA §15(a) retention 3 years of last interaction",
+      "Illinois BIPA §15(a) §15(a)",
+      "Illinois BIPA §15(b) §15(b)",
+      "Illinois BIPA §15(d) §15(d)",
+      "Illinois BIPA (Rosenbach) Rosenbach",
+      "Illinois BIPA (Cothron v. White Castle) Cothron v. White Castle (2023)",
+      "Illinois BIPA (SB 2979 accrual) SB 2979, signed Aug 2 2024",
+      "Illinois BIPA (SB 2979 electronic signature) SB 2979 electronic signature = written release",
+      "Illinois BIPA (Rivera v. Google) Rivera v. Google",
+      "Illinois BIPA (G.T. v. Samsung) G.T. v. Samsung (N.D. Ill., July 2024)",
+      "Ninth Circuit (Zellmer v. Meta) Zellmer v. Meta (9th Cir., June 17 2024)",
+      "Illinois BIPA (Sosa v. Onfido) ~$28.5M settlement, No. 20-cv-04247",
+      "Illinois BIPA (Jumio) ~$7M settlement",
+      "Texas CUBI Tex. Bus. & Com. Code §503.001",
+      "Texas CUBI (Meta settlement) $1.4 billion from Meta",
+      "Texas CUBI penalty up to $25,000 per violation",
+      "Texas CUBI retention no later than one year after the purpose expires",
+      "Texas TRAIGA effective Jan 1 2026",
+      "Washington MHMDA RCW 19.373",
+      "Washington MHMDA litigation first class action filed Feb 10 2025",
+      "Colorado CPA / HB 24-1130 HB 24-1130, in force July 1 2025",
+      "Colorado CPA threshold 100,000-consumer threshold does not apply to biometric provisions",
+      "Colorado biometric retention 24 months after last interaction / 45 days after annual review",
+      "Maryland MODPA §14-4607(B)",
+      "Montana 25k",
+      "Maryland 25,000–35,000",
+      "New Hampshire 25,000–35,000",
+      "Delaware 25,000–35,000",
+      "Rhode Island 35k",
+      "Minnesota 50,000",
+      "Virginia 100,000",
+      "Connecticut 100,000",
+      "Oregon 100,000",
+      "New Jersey 100,000",
+      "Indiana 100,000",
+      "Kentucky 100,000",
+      "Tennessee 100,000",
+      "California $25M revenue or 100k",
+      "Utah $25M revenue or 100k",
+      "Florida Digital Bill of Rights $1B+ revenue",
+      "Comprehensive-act states (AG penalties) $7,500 per violation",
+      "Nevada SB 370 SB 370",
+      "Arkansas APDPA from July 1 2026",
+      "Arkansas APDPA penalty $10,000 per violation"
+     ],
+     "claims": [
+      {
+       "provider": "Illinois BIPA",
+       "price": "740 ILCS 14",
+       "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "normalized": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "BIPA, 740 ILCS 14. No volume threshold — applies from user one."
+      },
+      {
+       "provider": "Illinois BIPA",
+       "price": "$1,000 negligent / $5,000 reckless or intentional per person",
+       "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "normalized": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| Illinois users | Negligent @ $1,000 | Reckless/intentional @ $5,000 |"
+      },
+      {
+       "provider": "Illinois BIPA §15(a) retention",
+       "price": "3 years of last interaction",
+       "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "normalized": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "destroy when purpose satisfied or within 3 years of last interaction, whichever is first"
+      },
+      {
+       "provider": "Illinois BIPA §15(a)",
+       "price": "§15(a)",
+       "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "normalized": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "§15(a): a **publicly available** written retention and destruction policy"
+      },
+      {
+       "provider": "Illinois BIPA §15(b)",
+       "price": "§15(b)",
+       "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "normalized": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "§15(b): inform in writing that biometric data is collected/stored; inform in writing of the **specific purpose and length of term**; obtain a **written release**"
+      },
+      {
+       "provider": "Illinois BIPA §15(d)",
+       "price": "§15(d)",
+       "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "normalized": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "§15(d): separate consent before disclosing to any third party"
+      },
+      {
+       "provider": "Illinois BIPA (Rosenbach)",
+       "price": "Rosenbach",
+       "source_url": "https://www.quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act/",
+       "normalized": "https://quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "no requirement to prove actual harm** (*Rosenbach*)"
+      },
+      {
+       "provider": "Illinois BIPA (Cothron v. White Castle)",
+       "price": "Cothron v. White Castle (2023)",
+       "source_url": "https://law.justia.com/cases/illinois/supreme-court/2023/128004.html",
+       "normalized": "https://law.justia.com/cases/illinois/supreme-court/2023/128004.html",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "*Cothron v. White Castle* (2023) held a claim accrues on **every** scan"
+      },
+      {
+       "provider": "Illinois BIPA (SB 2979 accrual)",
+       "price": "SB 2979, signed Aug 2 2024",
+       "source_url": "https://www.insideprivacy.com/data-privacy/illinois-enacts-bipa-amendment-limiting-violation-accrual/",
+       "normalized": "https://insideprivacy.com/data-privacy/illinois-enacts-bipa-amendment-limiting-violation-accrual",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "SB 2979 (signed Aug 2 2024) legislatively overturned it"
+      },
+      {
+       "provider": "Illinois BIPA (SB 2979 electronic signature)",
+       "price": "SB 2979 electronic signature = written release",
+       "source_url": "https://www.gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+       "normalized": "https://gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "expressly confirmed electronic signature satisfies \"written release\""
+      },
+      {
+       "provider": "Illinois BIPA (Rivera v. Google)",
+       "price": "Rivera v. Google",
+       "source_url": "https://natlawreview.com/article/court-refuses-to-dismiss-biometric-privacy-action-over-facial-recognition-technology",
+       "normalized": "https://natlawreview.com/article/court-refuses-to-dismiss-biometric-privacy-action-over-facial-recognition-technology",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "face-geometry scan derived from a photograph is covered** (*Rivera v. Google*)"
+      },
+      {
+       "provider": "Illinois BIPA (G.T. v. Samsung)",
+       "price": "G.T. v. Samsung (N.D. Ill., July 2024)",
+       "source_url": "https://lewisbrisbois.com/newsroom/legal-alerts/illinois-federal-judge-delivers-another-win-for-bipa-defendants",
+       "normalized": "https://lewisbrisbois.com/newsroom/legal-alerts/illinois-federal-judge-delivers-another-win-for-bipa-defendants",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**G.T. v. Samsung** (N.D. Ill., July 2024) — BIPA claims dismissed"
+      },
+      {
+       "provider": "Ninth Circuit (Zellmer v. Meta)",
+       "price": "Zellmer v. Meta (9th Cir., June 17 2024)",
+       "source_url": "https://www.govinfo.gov/content/pkg/USCOURTS-ca9-22-16925/pdf/USCOURTS-ca9-22-16925-0.pdf",
+       "normalized": "https://govinfo.gov/content/pkg/USCOURTS-ca9-22-16925/pdf/USCOURTS-ca9-22-16925-0.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Zellmer v. Meta** (9th Cir., June 17 2024) — summary judgment affirmed."
+      },
+      {
+       "provider": "Illinois BIPA (Sosa v. Onfido)",
+       "price": "~$28.5M settlement, No. 20-cv-04247",
+       "source_url": "https://legalclarity.org/sosa-v-onfido-inc-no-20-cv-04247-class-action-status/",
+       "normalized": "https://legalclarity.org/sosa-v-onfido-inc-no-20-cv-04247-class-action-status",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| **Sosa v. Onfido** (N.D. Ill., 20-cv-04247) | **~$28.5M** |"
+      },
+      {
+       "provider": "Illinois BIPA (Jumio)",
+       "price": "~$7M settlement",
+       "source_url": "https://www.privacyworld.blog/2023/04/selfie-id-biometric-verification-vendors-bid-for-dismissal-of-bipa-class-action-rejected-by-federal-court/",
+       "normalized": "https://privacyworld.blog/2023/04/selfie-id-biometric-verification-vendors-bid-for-dismissal-of-bipa-class-action-rejected-by-federal-court",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| **Jumio** | **~$7M** |"
+      },
+      {
+       "provider": "Texas CUBI",
+       "price": "Tex. Bus. & Com. Code §503.001",
+       "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "normalized": "https://texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**CUBI (Tex. Bus. & Com. Code §503.001) + TDPSA + TRAIGA.**"
+      },
+      {
+       "provider": "Texas CUBI (Meta settlement)",
+       "price": "$1.4 billion from Meta",
+       "source_url": "https://www.bracewell.com/resources/billion-dollar-liability-understanding-your-obligations-under-the-texas-capture-or-use-of-biometric-identifier-act/",
+       "normalized": "https://bracewell.com/resources/billion-dollar-liability-understanding-your-obligations-under-the-texas-capture-or-use-of-biometric-identifier-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "the AG extracted **$1.4 billion from Meta** over face tagging"
+      },
+      {
+       "provider": "Texas CUBI penalty",
+       "price": "up to $25,000 per violation",
+       "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "normalized": "https://texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "each carrying **up to $25,000**"
+      },
+      {
+       "provider": "Texas CUBI retention",
+       "price": "no later than one year after the purpose expires",
+       "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "normalized": "https://texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**no later than one year after the purpose for collection expires**"
+      },
+      {
+       "provider": "Texas TRAIGA",
+       "price": "effective Jan 1 2026",
+       "source_url": "https://privacylawmap.com/blog/texas-data-privacy-and-security-act-guide",
+       "normalized": "https://privacylawmap.com/blog/texas-data-privacy-and-security-act-guide",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**TRAIGA** (effective Jan 1 2026)"
+      },
+      {
+       "provider": "Washington RCW 19.375",
+       "price": "RCW 19.375",
+       "source_url": "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true&pdf=true",
+       "normalized": "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true&pdf=true",
+       "fetched": false,
+       "flagged_approximate": true,
+       "evidence": "RCW 19.375 probably doesn't even apply to us."
+      },
+      {
+       "provider": "Washington MHMDA",
+       "price": "RCW 19.373",
+       "source_url": "https://www.goodwinlaw.com/en/insights/publications/2024/03/alerts-technology-hltc-my-health-my-data-act-mhmda",
+       "normalized": "https://goodwinlaw.com/en/insights/publications/2024/03/alerts-technology-hltc-my-health-my-data-act-mhmda",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "MHMDA (RCW 19.373) is the real risk."
+      },
+      {
+       "provider": "Washington MHMDA litigation",
+       "price": "first class action filed Feb 10 2025",
+       "source_url": "https://www.wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20250220-first-lawsuit-filed-under-washingtons-my-health-my-data-act",
+       "normalized": "https://wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20250220-first-lawsuit-filed-under-washingtons-my-health-my-data-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "First class action filed **Feb 10 2025**."
+      },
+      {
+       "provider": "Colorado CPA / HB 24-1130",
+       "price": "HB 24-1130, in force July 1 2025",
+       "source_url": "https://www.venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+       "normalized": "https://venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**CPA as amended by HB 24-1130, in force July 1 2025.**"
+      },
+      {
+       "provider": "Colorado CPA threshold",
+       "price": "100,000-consumer threshold does not apply to biometric provisions",
+       "source_url": "https://www.venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+       "normalized": "https://venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**regardless of the CPA's usual 100,000-consumer threshold**"
+      },
+      {
+       "provider": "Colorado biometric retention",
+       "price": "24 months after last interaction / 45 days after annual review",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "destroy at the **earliest** of purpose satisfied / 24 months after last interaction / 45 days after an annual review finds it unnecessary."
+      },
+      {
+       "provider": "Maryland MODPA",
+       "price": "§14-4607(B)",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/maryland-data-privacy-laws/what-is-modpa/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/maryland-data-privacy-laws/what-is-modpa",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Hard data minimisation** (§14-4607(B))"
+      },
+      {
+       "provider": "Montana",
+       "price": "25k",
+       "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+       "normalized": "https://coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k)"
+      },
+      {
+       "provider": "Maryland",
+       "price": "25,000–35,000",
+       "source_url": "https://www.afslaw.com/perspectives/privacy-counsel/new-state-privacy-laws-effective-second-half-2025",
+       "normalized": "https://afslaw.com/perspectives/privacy-counsel/new-state-privacy-laws-effective-second-half-2025",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 25,000–35,000 | Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k) |"
+      },
+      {
+       "provider": "New Hampshire",
+       "price": "25,000–35,000",
+       "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+       "normalized": "https://coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 25,000–35,000 | Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k) |"
+      },
+      {
+       "provider": "Delaware",
+       "price": "25,000–35,000",
+       "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+       "normalized": "https://coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 25,000–35,000 | Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k) |"
+      },
+      {
+       "provider": "Rhode Island",
+       "price": "35k",
+       "source_url": "https://www.koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+       "normalized": "https://koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k)"
+      },
+      {
+       "provider": "Minnesota",
+       "price": "50,000",
+       "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+       "normalized": "https://coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 50,000 | Minnesota |"
+      },
+      {
+       "provider": "Virginia",
+       "price": "100,000",
+       "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+       "normalized": "https://lutzker.com/insights/comprehensive-state-consumer-privacy-laws",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+      },
+      {
+       "provider": "Connecticut",
+       "price": "100,000",
+       "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+       "normalized": "https://lutzker.com/insights/comprehensive-state-consumer-privacy-laws",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+      },
+      {
+       "provider": "Oregon",
+       "price": "100,000",
+       "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+       "normalized": "https://lutzker.com/insights/comprehensive-state-consumer-privacy-laws",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+      },
+      {
+       "provider": "New Jersey",
+       "price": "100,000",
+       "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+       "normalized": "https://lutzker.com/insights/comprehensive-state-consumer-privacy-laws",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+      },
+      {
+       "provider": "Indiana",
+       "price": "100,000",
+       "source_url": "https://www.koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+       "normalized": "https://koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+      },
+      {
+       "provider": "Kentucky",
+       "price": "100,000",
+       "source_url": "https://www.koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+       "normalized": "https://koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+      },
+      {
+       "provider": "Tennessee",
+       "price": "100,000",
+       "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+       "normalized": "https://lutzker.com/insights/comprehensive-state-consumer-privacy-laws",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+      },
+      {
+       "provider": "California",
+       "price": "$25M revenue or 100k",
+       "source_url": "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker/",
+       "normalized": "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| $25M revenue or 100k | California, Utah |"
+      },
+      {
+       "provider": "Utah",
+       "price": "$25M revenue or 100k",
+       "source_url": "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker/",
+       "normalized": "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| $25M revenue or 100k | California, Utah |"
+      },
+      {
+       "provider": "Florida Digital Bill of Rights",
+       "price": "$1B+ revenue",
+       "source_url": "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker/",
+       "normalized": "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| $1B+ revenue | Florida — effectively never applies to us |"
+      },
+      {
+       "provider": "Comprehensive-act states (AG penalties)",
+       "price": "$7,500 per violation",
+       "source_url": "https://www.koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+       "normalized": "https://koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "typically capped at $7,500 per violation"
+      },
+      {
+       "provider": "Nevada SB 370",
+       "price": "SB 370",
+       "source_url": "https://www.bclplaw.com/en-US/events-insights-news/a-kinder-gentler-consumer-health-data-bill-nevadas-sb-370.html",
+       "normalized": "https://bclplaw.com/en-US/events-insights-news/a-kinder-gentler-consumer-health-data-bill-nevadas-sb-370.html",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Nevada SB 370** covers biometric data as consumer health data"
+      },
+      {
+       "provider": "Arkansas APDPA",
+       "price": "from July 1 2026",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Arkansas APDPA** (from July 1 2026) treats \"biometric data used for identification\" as sensitive"
+      },
+      {
+       "provider": "Arkansas APDPA penalty",
+       "price": "$10,000 per violation",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "at **$10,000 per violation** — higher than the tier norm"
+      },
+      {
+       "provider": "NYC Biometric Identifier Ordinance",
+       "price": "NYC Biometric Identifier Ordinance",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/biometric-privacy-laws/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/biometric-privacy-laws",
+       "fetched": false,
+       "flagged_approximate": true,
+       "evidence": "the NYC Biometric Identifier Ordinance targets \"commercial establishments\""
+      }
+     ],
+     "voided": 0
+    },
+    {
+     "numerator": 0,
+     "denominator": 36,
+     "unflagged_unverified": [
+      "Illinois BIPA 740 ILCS 14",
+      "Illinois BIPA §15(a) 3 years of last interaction",
+      "Illinois BIPA §15(b) §15(b) written release",
+      "Illinois BIPA §15(d) §15(d)",
+      "Illinois BIPA $1,000 negligent / $5,000 reckless or intentional",
+      "Illinois BIPA (Rosenbach) Rosenbach",
+      "Illinois BIPA (Cothron v. White Castle) Cothron v. White Castle (2023)",
+      "Illinois BIPA (SB 2979) SB 2979 signed Aug 2 2024",
+      "Illinois BIPA (SB 2979 electronic signature) SB 2979 electronic signature definition",
+      "Illinois BIPA (Rivera v. Google) Rivera v. Google",
+      "Illinois BIPA (G.T. v. Samsung) G.T. v. Samsung (N.D. Ill., July 2024)",
+      "Ninth Circuit (Zellmer v. Meta) Zellmer v. Meta (9th Cir., June 17 2024)",
+      "Illinois BIPA (Sosa v. Onfido) ~$28.5M settlement, No. 20-cv-04247",
+      "Illinois BIPA (Jumio) ~$7M settlement",
+      "Texas CUBI Tex. Bus. & Com. Code §503.001",
+      "Texas CUBI up to $25,000 per violation",
+      "Texas CUBI no later than one year after the purpose for collection expires",
+      "Texas CUBI (Meta AG settlement) $1.4 billion from Meta",
+      "Texas TRAIGA effective Jan 1 2026",
+      "Washington MHMDA RCW 19.373",
+      "Washington MHMDA (first class action) Feb 10 2025",
+      "Colorado CPA / HB 24-1130 HB 24-1130, in force July 1 2025",
+      "Colorado CPA biometric provisions regardless of the CPA's usual 100,000-consumer threshold",
+      "Colorado CPA biometric retention 24 months after last interaction / 45 days after annual review",
+      "Maryland MODPA §14-4607(B)",
+      "Other state comprehensive privacy acts (AG enforcement) $7,500 per violation, 30-day cure period",
+      "Montana 25,000",
+      "Maryland, New Hampshire, Delaware, Rhode Island 35,000",
+      "Minnesota 50,000",
+      "Virginia, Connecticut, Colorado, Oregon, New Jersey, Indiana, Kentucky, Tennessee 100,000",
+      "California, Utah $25M revenue or 100k",
+      "Florida Digital Bill of Rights $1B+ revenue",
+      "Nevada SB 370 SB 370",
+      "Arkansas APDPA from July 1 2026",
+      "Arkansas APDPA $10,000 per violation"
+     ],
+     "claims": [
+      {
+       "provider": "Illinois BIPA",
+       "price": "740 ILCS 14",
+       "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "normalized": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**BIPA, 740 ILCS 14. No volume threshold — applies from user one.**"
+      },
+      {
+       "provider": "Illinois BIPA §15(a)",
+       "price": "3 years of last interaction",
+       "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "normalized": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "§15(a): a **publicly available** written retention and destruction policy — destroy when purpose satisfied or within 3 years of last interaction, whichever is first"
+      },
+      {
+       "provider": "Illinois BIPA §15(b)",
+       "price": "§15(b) written release",
+       "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "normalized": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "§15(b): inform in writing that biometric data is collected/stored; inform in writing of the **specific purpose and length of term**; obtain a **written release**"
+      },
+      {
+       "provider": "Illinois BIPA §15(d)",
+       "price": "§15(d)",
+       "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "normalized": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "§15(d): separate consent before disclosing to any third party"
+      },
+      {
+       "provider": "Illinois BIPA",
+       "price": "$1,000 negligent / $5,000 reckless or intentional",
+       "source_url": "https://www.quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act/",
+       "normalized": "https://quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| Illinois users | Negligent @ $1,000 | Reckless/intentional @ $5,000 |"
+      },
+      {
+       "provider": "Illinois BIPA (Rosenbach)",
+       "price": "Rosenbach",
+       "source_url": "https://www.quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act/",
+       "normalized": "https://quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**a private right of action, with statutory damages, fee-shifting, and no requirement to prove actual harm** (*Rosenbach*)"
+      },
+      {
+       "provider": "Illinois BIPA (Cothron v. White Castle)",
+       "price": "Cothron v. White Castle (2023)",
+       "source_url": "https://law.justia.com/cases/illinois/supreme-court/2023/128004.html",
+       "normalized": "https://law.justia.com/cases/illinois/supreme-court/2023/128004.html",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "*Cothron v. White Castle* (2023) held a claim accrues on **every** scan"
+      },
+      {
+       "provider": "Illinois BIPA (SB 2979)",
+       "price": "SB 2979 signed Aug 2 2024",
+       "source_url": "https://www.gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+       "normalized": "https://gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**SB 2979 (signed Aug 2 2024) legislatively overturned it**"
+      },
+      {
+       "provider": "Illinois BIPA (SB 2979 electronic signature)",
+       "price": "SB 2979 electronic signature definition",
+       "source_url": "https://www.gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+       "normalized": "https://gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "SB 2979 also **expressly confirmed electronic signature satisfies \"written release\"**"
+      },
+      {
+       "provider": "Illinois BIPA (Rivera v. Google)",
+       "price": "Rivera v. Google",
+       "source_url": "https://natlawreview.com/article/court-refuses-to-dismiss-biometric-privacy-action-over-facial-recognition-technology",
+       "normalized": "https://natlawreview.com/article/court-refuses-to-dismiss-biometric-privacy-action-over-facial-recognition-technology",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**face-geometry scan derived from a photograph is covered** (*Rivera v. Google*)"
+      },
+      {
+       "provider": "Illinois BIPA (G.T. v. Samsung)",
+       "price": "G.T. v. Samsung (N.D. Ill., July 2024)",
+       "source_url": "https://lewisbrisbois.com/newsroom/legal-alerts/illinois-federal-judge-delivers-another-win-for-bipa-defendants",
+       "normalized": "https://lewisbrisbois.com/newsroom/legal-alerts/illinois-federal-judge-delivers-another-win-for-bipa-defendants",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**G.T. v. Samsung** (N.D. Ill., July 2024) — BIPA claims dismissed"
+      },
+      {
+       "provider": "Ninth Circuit (Zellmer v. Meta)",
+       "price": "Zellmer v. Meta (9th Cir., June 17 2024)",
+       "source_url": "https://www.govinfo.gov/content/pkg/USCOURTS-ca9-22-16925/pdf/USCOURTS-ca9-22-16925-0.pdf",
+       "normalized": "https://govinfo.gov/content/pkg/USCOURTS-ca9-22-16925/pdf/USCOURTS-ca9-22-16925-0.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Zellmer v. Meta** (9th Cir., June 17 2024) — summary judgment affirmed."
+      },
+      {
+       "provider": "Illinois BIPA (Sosa v. Onfido)",
+       "price": "~$28.5M settlement, No. 20-cv-04247",
+       "source_url": "https://legalclarity.org/sosa-v-onfido-inc-no-20-cv-04247-class-action-status/",
+       "normalized": "https://legalclarity.org/sosa-v-onfido-inc-no-20-cv-04247-class-action-status",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Sosa v. Onfido** (N.D. Ill., 20-cv-04247) | **~$28.5M**"
+      },
+      {
+       "provider": "Illinois BIPA (Jumio)",
+       "price": "~$7M settlement",
+       "source_url": "https://www.privacyworld.blog/2023/04/selfie-id-biometric-verification-vendors-bid-for-dismissal-of-bipa-class-action-rejected-by-federal-court/",
+       "normalized": "https://privacyworld.blog/2023/04/selfie-id-biometric-verification-vendors-bid-for-dismissal-of-bipa-class-action-rejected-by-federal-court",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Jumio** | **~$7M**"
+      },
+      {
+       "provider": "Texas CUBI",
+       "price": "Tex. Bus. & Com. Code §503.001",
+       "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "normalized": "https://texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**CUBI (Tex. Bus. & Com. Code §503.001) + TDPSA + TRAIGA.**"
+      },
+      {
+       "provider": "Texas CUBI",
+       "price": "up to $25,000 per violation",
+       "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "normalized": "https://texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "reads CUBI so that continued possession and use multiply violations, each carrying **up to $25,000**"
+      },
+      {
+       "provider": "Texas CUBI",
+       "price": "no later than one year after the purpose for collection expires",
+       "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "normalized": "https://texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "destroy within a reasonable time after capture and **no later than one year after the purpose for collection expires**"
+      },
+      {
+       "provider": "Texas CUBI (Meta AG settlement)",
+       "price": "$1.4 billion from Meta",
+       "source_url": "https://www.bracewell.com/resources/billion-dollar-liability-understanding-your-obligations-under-the-texas-capture-or-use-of-biometric-identifier-act/",
+       "normalized": "https://bracewell.com/resources/billion-dollar-liability-understanding-your-obligations-under-the-texas-capture-or-use-of-biometric-identifier-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "the AG extracted **$1.4 billion from Meta** over face tagging"
+      },
+      {
+       "provider": "Texas TRAIGA",
+       "price": "effective Jan 1 2026",
+       "source_url": "https://privacylawmap.com/blog/texas-data-privacy-and-security-act-guide",
+       "normalized": "https://privacylawmap.com/blog/texas-data-privacy-and-security-act-guide",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**TRAIGA** (effective Jan 1 2026), which clarifies when someone is deemed to have consented to biometric capture"
+      },
+      {
+       "provider": "Washington RCW 19.375",
+       "price": "RCW 19.375",
+       "source_url": "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true&pdf=true",
+       "normalized": "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true&pdf=true",
+       "fetched": false,
+       "flagged_approximate": true,
+       "evidence": "**RCW 19.375 probably doesn't even apply to us.**"
+      },
+      {
+       "provider": "Washington MHMDA",
+       "price": "RCW 19.373",
+       "source_url": "https://www.goodwinlaw.com/en/insights/publications/2024/03/alerts-technology-hltc-my-health-my-data-act-mhmda",
+       "normalized": "https://goodwinlaw.com/en/insights/publications/2024/03/alerts-technology-hltc-my-health-my-data-act-mhmda",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**MHMDA (RCW 19.373) is the real risk.** It has a **private right of action** through the Consumer Protection Act"
+      },
+      {
+       "provider": "Washington MHMDA (first class action)",
+       "price": "Feb 10 2025",
+       "source_url": "https://www.wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20250220-first-lawsuit-filed-under-washingtons-my-health-my-data-act",
+       "normalized": "https://wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20250220-first-lawsuit-filed-under-washingtons-my-health-my-data-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "First class action filed **Feb 10 2025**."
+      },
+      {
+       "provider": "Colorado CPA / HB 24-1130",
+       "price": "HB 24-1130, in force July 1 2025",
+       "source_url": "https://www.venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+       "normalized": "https://venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**CPA as amended by HB 24-1130, in force July 1 2025.**"
+      },
+      {
+       "provider": "Colorado CPA biometric provisions",
+       "price": "regardless of the CPA's usual 100,000-consumer threshold",
+       "source_url": "https://www.venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+       "normalized": "https://venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "processes biometric identifiers, **regardless of the CPA's usual 100,000-consumer threshold**"
+      },
+      {
+       "provider": "Colorado CPA biometric retention",
+       "price": "24 months after last interaction / 45 days after annual review",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "destroy at the **earliest** of purpose satisfied / 24 months after last interaction / 45 days after an annual review finds it unnecessary."
+      },
+      {
+       "provider": "Maryland MODPA",
+       "price": "§14-4607(B)",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/maryland-data-privacy-laws/what-is-modpa/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/maryland-data-privacy-laws/what-is-modpa",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Hard data minimisation** (§14-4607(B)): collection limited to what is reasonably necessary and proportionate"
+      },
+      {
+       "provider": "Other state comprehensive privacy acts (AG enforcement)",
+       "price": "$7,500 per violation, 30-day cure period",
+       "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+       "normalized": "https://lutzker.com/insights/comprehensive-state-consumer-privacy-laws",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Everywhere else it's an AG fine, typically capped at $7,500 per violation, often with a 30-day cure period that lets you fix a defect before penalty."
+      },
+      {
+       "provider": "Montana",
+       "price": "25,000",
+       "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+       "normalized": "https://lutzker.com/insights/comprehensive-state-consumer-privacy-laws",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 25,000–35,000 | Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k) |"
+      },
+      {
+       "provider": "Maryland, New Hampshire, Delaware, Rhode Island",
+       "price": "35,000",
+       "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+       "normalized": "https://lutzker.com/insights/comprehensive-state-consumer-privacy-laws",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 25,000–35,000 | Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k) |"
+      },
+      {
+       "provider": "Minnesota",
+       "price": "50,000",
+       "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+       "normalized": "https://lutzker.com/insights/comprehensive-state-consumer-privacy-laws",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 50,000 | Minnesota |"
+      },
+      {
+       "provider": "Virginia, Connecticut, Colorado, Oregon, New Jersey, Indiana, Kentucky, Tennessee",
+       "price": "100,000",
+       "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+       "normalized": "https://coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+      },
+      {
+       "provider": "California, Utah",
+       "price": "$25M revenue or 100k",
+       "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+       "normalized": "https://coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| $25M revenue or 100k | California, Utah |"
+      },
+      {
+       "provider": "Florida Digital Bill of Rights",
+       "price": "$1B+ revenue",
+       "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+       "normalized": "https://coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| $1B+ revenue | Florida — effectively never applies to us |"
+      },
+      {
+       "provider": "Nevada SB 370",
+       "price": "SB 370",
+       "source_url": "https://www.bclplaw.com/en-US/events-insights-news/a-kinder-gentler-consumer-health-data-bill-nevadas-sb-370.html",
+       "normalized": "https://bclplaw.com/en-US/events-insights-news/a-kinder-gentler-consumer-health-data-bill-nevadas-sb-370.html",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Nevada SB 370** covers biometric data as consumer health data but — critically, unlike Washington — has **no private right of action**."
+      },
+      {
+       "provider": "Arkansas APDPA",
+       "price": "from July 1 2026",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Arkansas APDPA** (from July 1 2026) treats \"biometric data used for identification\" as sensitive"
+      },
+      {
+       "provider": "Arkansas APDPA",
+       "price": "$10,000 per violation",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "at **$10,000 per violation** — higher than the tier norm"
+      }
+     ],
+     "voided": 0
+    },
+    {
+     "numerator": 1,
+     "denominator": 37,
+     "unflagged_unverified": [
+      "Illinois BIPA 740 ILCS 14",
+      "Illinois BIPA §15(b) §15(b) written release before collection",
+      "Illinois BIPA §15(a) 3 years of last interaction",
+      "Illinois BIPA §15(d) §15(d) separate consent before third-party disclosure",
+      "Illinois BIPA damages $1,000 negligent / $5,000 reckless or intentional",
+      "Illinois BIPA (Rosenbach) Rosenbach — no actual harm required",
+      "Illinois BIPA (Cothron v. White Castle) Cothron v. White Castle (2023)",
+      "Illinois BIPA (SB 2979 accrual) SB 2979, signed Aug 2 2024 — single recovery",
+      "Illinois BIPA (SB 2979 e-signature) electronic signature satisfies written release",
+      "Illinois BIPA (Rivera v. Google) Rivera v. Google",
+      "Illinois BIPA (Sosa v. Onfido) ~$28.5M settlement, No. 20-cv-04247",
+      "Illinois BIPA (Jumio) ~$7M settlement",
+      "Illinois BIPA (G.T. v. Samsung) G.T. v. Samsung, N.D. Ill., July 2024",
+      "Illinois BIPA (Zellmer v. Meta) Zellmer v. Meta, 9th Cir., June 17 2024",
+      "Texas CUBI Tex. Bus. & Com. Code §503.001",
+      "Texas CUBI penalty up to $25,000 per violation",
+      "Texas CUBI retention no later than one year after the purpose expires",
+      "Texas (Meta AG settlement) $1.4 billion",
+      "Texas TRAIGA effective Jan 1 2026",
+      "Washington RCW 19.375 RCW 19.375 photograph/derived-data exclusion",
+      "Washington MHMDA litigation first class action filed Feb 10 2025",
+      "Colorado CPA / HB 24-1130 in force July 1 2025",
+      "Colorado biometric scope regardless of the 100,000-consumer threshold",
+      "Colorado retention 24 months after last interaction / 45 days after annual review",
+      "Maryland MODPA §14-4607(B)",
+      "Comprehensive state privacy acts (AG penalties) $7,500 per violation, 30-day cure",
+      "Montana 25,000 consumers",
+      "Maryland / New Hampshire / Delaware / Rhode Island 35,000 consumers",
+      "Minnesota 50,000",
+      "Virginia, Connecticut, Colorado, Oregon, New Jersey, Indiana, Kentucky, Tennessee 100,000",
+      "California / Utah $25M revenue or 100k",
+      "Florida Digital Bill of Rights $1B+ revenue",
+      "Nevada SB 370 SB 370",
+      "Arkansas APDPA (effective date) from July 1 2026",
+      "Arkansas APDPA (penalty) $10,000 per violation"
+     ],
+     "claims": [
+      {
+       "provider": "Illinois BIPA",
+       "price": "740 ILCS 14",
+       "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "normalized": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "BIPA, 740 ILCS 14. No volume threshold — applies from user one."
+      },
+      {
+       "provider": "Illinois BIPA §15(b)",
+       "price": "§15(b) written release before collection",
+       "source_url": "https://www.quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act/",
+       "normalized": "https://quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "§15(b): inform in writing that biometric data is collected/stored"
+      },
+      {
+       "provider": "Illinois BIPA §15(a)",
+       "price": "3 years of last interaction",
+       "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "normalized": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "destroy when purpose satisfied or within 3 years of last interaction, whichever is first"
+      },
+      {
+       "provider": "Illinois BIPA §15(d)",
+       "price": "§15(d) separate consent before third-party disclosure",
+       "source_url": "https://www.quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act/",
+       "normalized": "https://quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "§15(d): separate consent before disclosing to any third party"
+      },
+      {
+       "provider": "Illinois BIPA damages",
+       "price": "$1,000 negligent / $5,000 reckless or intentional",
+       "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "normalized": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| Illinois users | Negligent @ $1,000 | Reckless/intentional @ $5,000 |"
+      },
+      {
+       "provider": "Illinois BIPA (Rosenbach)",
+       "price": "Rosenbach — no actual harm required",
+       "source_url": "https://www.quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act/",
+       "normalized": "https://quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "(*Rosenbach*). A bare procedural violation is actionable."
+      },
+      {
+       "provider": "Illinois BIPA (Cothron v. White Castle)",
+       "price": "Cothron v. White Castle (2023)",
+       "source_url": "https://law.justia.com/cases/illinois/supreme-court/2023/128004.html",
+       "normalized": "https://law.justia.com/cases/illinois/supreme-court/2023/128004.html",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "*Cothron v. White Castle* (2023) held a claim accrues on"
+      },
+      {
+       "provider": "Illinois BIPA (SB 2979 accrual)",
+       "price": "SB 2979, signed Aug 2 2024 — single recovery",
+       "source_url": "https://www.insideprivacy.com/data-privacy/illinois-enacts-bipa-amendment-limiting-violation-accrual/",
+       "normalized": "https://insideprivacy.com/data-privacy/illinois-enacts-bipa-amendment-limiting-violation-accrual",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "SB 2979 (signed Aug 2 2024) legislatively overturned it"
+      },
+      {
+       "provider": "Illinois BIPA (SB 2979 e-signature)",
+       "price": "electronic signature satisfies written release",
+       "source_url": "https://www.gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+       "normalized": "https://gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "defined as an electronic sound, symbol or process attached to or logically associated with a record and executed with intent to sign."
+      },
+      {
+       "provider": "Illinois BIPA (Rivera v. Google)",
+       "price": "Rivera v. Google",
+       "source_url": "https://natlawreview.com/article/court-refuses-to-dismiss-biometric-privacy-action-over-facial-recognition-technology",
+       "normalized": "https://natlawreview.com/article/court-refuses-to-dismiss-biometric-privacy-action-over-facial-recognition-technology",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "(*Rivera v. Google*). A photo-based flow does not escape BIPA."
+      },
+      {
+       "provider": "Illinois BIPA (Sosa v. Onfido)",
+       "price": "~$28.5M settlement, No. 20-cv-04247",
+       "source_url": "https://legalclarity.org/sosa-v-onfido-inc-no-20-cv-04247-class-action-status/",
+       "normalized": "https://legalclarity.org/sosa-v-onfido-inc-no-20-cv-04247-class-action-status",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "(N.D. Ill., 20-cv-04247) | **~$28.5M**"
+      },
+      {
+       "provider": "Illinois BIPA (Jumio)",
+       "price": "~$7M settlement",
+       "source_url": "https://www.privacyworld.blog/2023/04/selfie-id-biometric-verification-vendors-bid-for-dismissal-of-bipa-class-action-rejected-by-federal-court/",
+       "normalized": "https://privacyworld.blog/2023/04/selfie-id-biometric-verification-vendors-bid-for-dismissal-of-bipa-class-action-rejected-by-federal-court",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Jumio** | **~$7M** | Materially the same informed-consent failure on selfie ID verification."
+      },
+      {
+       "provider": "Illinois BIPA (G.T. v. Samsung)",
+       "price": "G.T. v. Samsung, N.D. Ill., July 2024",
+       "source_url": "https://lewisbrisbois.com/newsroom/legal-alerts/illinois-federal-judge-delivers-another-win-for-bipa-defendants",
+       "normalized": "https://lewisbrisbois.com/newsroom/legal-alerts/illinois-federal-judge-delivers-another-win-for-bipa-defendants",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "(N.D. Ill., July 2024) — BIPA claims dismissed"
+      },
+      {
+       "provider": "Illinois BIPA (Zellmer v. Meta)",
+       "price": "Zellmer v. Meta, 9th Cir., June 17 2024",
+       "source_url": "https://www.govinfo.gov/content/pkg/USCOURTS-ca9-22-16925/pdf/USCOURTS-ca9-22-16925-0.pdf",
+       "normalized": "https://govinfo.gov/content/pkg/USCOURTS-ca9-22-16925/pdf/USCOURTS-ca9-22-16925-0.pdf",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "(9th Cir., June 17 2024) — summary judgment affirmed."
+      },
+      {
+       "provider": "Texas CUBI",
+       "price": "Tex. Bus. & Com. Code §503.001",
+       "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "normalized": "https://texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "CUBI (Tex. Bus. & Com. Code §503.001) + TDPSA + TRAIGA."
+      },
+      {
+       "provider": "Texas CUBI penalty",
+       "price": "up to $25,000 per violation",
+       "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "normalized": "https://texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "each carrying **up to $25,000**"
+      },
+      {
+       "provider": "Texas CUBI retention",
+       "price": "no later than one year after the purpose expires",
+       "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "normalized": "https://texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**no later than one year after the purpose for collection expires**"
+      },
+      {
+       "provider": "Texas (Meta AG settlement)",
+       "price": "$1.4 billion",
+       "source_url": "https://www.bracewell.com/resources/billion-dollar-liability-understanding-your-obligations-under-the-texas-capture-or-use-of-biometric-identifier-act/",
+       "normalized": "https://bracewell.com/resources/billion-dollar-liability-understanding-your-obligations-under-the-texas-capture-or-use-of-biometric-identifier-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "the AG extracted **$1.4 billion from Meta** over face tagging"
+      },
+      {
+       "provider": "Texas TRAIGA",
+       "price": "effective Jan 1 2026",
+       "source_url": "https://privacylawmap.com/blog/texas-data-privacy-and-security-act-guide",
+       "normalized": "https://privacylawmap.com/blog/texas-data-privacy-and-security-act-guide",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "(effective Jan 1 2026), which clarifies when someone is deemed to have consented to biometric capture"
+      },
+      {
+       "provider": "Washington RCW 19.375",
+       "price": "RCW 19.375 photograph/derived-data exclusion",
+       "source_url": "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true&pdf=true",
+       "normalized": "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true&pdf=true",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Its definition of \"biometric identifier\" expressly excludes"
+      },
+      {
+       "provider": "Washington MHMDA",
+       "price": "RCW 19.373",
+       "source_url": "https://www.bclplaw.com/en-US/events-insights-news/washington-my-health-my-data-act-compliance-hurdles-and-how-to-prepare.html",
+       "normalized": "https://bclplaw.com/en-US/events-insights-news/washington-my-health-my-data-act-compliance-hurdles-and-how-to-prepare.html",
+       "fetched": true,
+       "flagged_approximate": false,
+       "evidence": "MHMDA (RCW 19.373) is the real risk."
+      },
+      {
+       "provider": "Washington MHMDA litigation",
+       "price": "first class action filed Feb 10 2025",
+       "source_url": "https://www.wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20250220-first-lawsuit-filed-under-washingtons-my-health-my-data-act",
+       "normalized": "https://wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20250220-first-lawsuit-filed-under-washingtons-my-health-my-data-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "First class action filed **Feb 10 2025**."
+      },
+      {
+       "provider": "Colorado CPA / HB 24-1130",
+       "price": "in force July 1 2025",
+       "source_url": "https://www.venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+       "normalized": "https://venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "CPA as amended by HB 24-1130, in force July 1 2025."
+      },
+      {
+       "provider": "Colorado biometric scope",
+       "price": "regardless of the 100,000-consumer threshold",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**regardless of the CPA's usual 100,000-consumer threshold**"
+      },
+      {
+       "provider": "Colorado retention",
+       "price": "24 months after last interaction / 45 days after annual review",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "24 months after last interaction / 45 days after an annual review finds it unnecessary"
+      },
+      {
+       "provider": "Maryland MODPA",
+       "price": "§14-4607(B)",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/maryland-data-privacy-laws/what-is-modpa/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/maryland-data-privacy-laws/what-is-modpa",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "(§14-4607(B)): collection limited to what is reasonably necessary and proportionate"
+      },
+      {
+       "provider": "Comprehensive state privacy acts (AG penalties)",
+       "price": "$7,500 per violation, 30-day cure",
+       "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+       "normalized": "https://lutzker.com/insights/comprehensive-state-consumer-privacy-laws",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "typically capped at $7,500 per violation, often with a 30-day cure period"
+      },
+      {
+       "provider": "Montana",
+       "price": "25,000 consumers",
+       "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+       "normalized": "https://coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 25,000–35,000 | Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k) |"
+      },
+      {
+       "provider": "Maryland / New Hampshire / Delaware / Rhode Island",
+       "price": "35,000 consumers",
+       "source_url": "https://www.afslaw.com/perspectives/privacy-counsel/new-state-privacy-laws-effective-second-half-2025",
+       "normalized": "https://afslaw.com/perspectives/privacy-counsel/new-state-privacy-laws-effective-second-half-2025",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 25,000–35,000 | Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k) |"
+      },
+      {
+       "provider": "Minnesota",
+       "price": "50,000",
+       "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+       "normalized": "https://coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 50,000 | Minnesota |"
+      },
+      {
+       "provider": "Virginia, Connecticut, Colorado, Oregon, New Jersey, Indiana, Kentucky, Tennessee",
+       "price": "100,000",
+       "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+       "normalized": "https://lutzker.com/insights/comprehensive-state-consumer-privacy-laws",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+      },
+      {
+       "provider": "California / Utah",
+       "price": "$25M revenue or 100k",
+       "source_url": "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker/",
+       "normalized": "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| $25M revenue or 100k | California, Utah |"
+      },
+      {
+       "provider": "Florida Digital Bill of Rights",
+       "price": "$1B+ revenue",
+       "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+       "normalized": "https://coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "| $1B+ revenue | Florida — effectively never applies to us |"
+      },
+      {
+       "provider": "Nevada SB 370",
+       "price": "SB 370",
+       "source_url": "https://www.bclplaw.com/en-US/events-insights-news/a-kinder-gentler-consumer-health-data-bill-nevadas-sb-370.html",
+       "normalized": "https://bclplaw.com/en-US/events-insights-news/a-kinder-gentler-consumer-health-data-bill-nevadas-sb-370.html",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Nevada SB 370** covers biometric data as consumer health data"
+      },
+      {
+       "provider": "Arkansas APDPA (effective date)",
+       "price": "from July 1 2026",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "(from July 1 2026) treats \"biometric data used for identification\" as sensitive"
+      },
+      {
+       "provider": "Arkansas APDPA (penalty)",
+       "price": "$10,000 per violation",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "at **$10,000 per violation** — higher than the tier norm"
+      },
+      {
+       "provider": "New York City Biometric Identifier Ordinance",
+       "price": "NYC Biometric Identifier Ordinance",
+       "source_url": "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+       "normalized": "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+       "fetched": false,
+       "flagged_approximate": true,
+       "evidence": "Likely outside our scope as a pure app, but confirm if we ever have physical premises or kiosks."
+      }
+     ],
+     "voided": 0
+    }
+   ]
+  },
+  "B3": {
+   "axis": "B",
+   "points": 3,
+   "type": "H",
+   "verdict": 0,
+   "score": 0,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    0,
+    0,
+    0
+   ]
+  },
+  "B4": {
+   "axis": "B",
+   "points": 3,
+   "type": "D",
+   "verdict": 1,
+   "score": 3,
+   "agreement": 1,
+   "contested": false,
+   "inputs": {
+    "agent_subtasks": [
+     {
+      "title": "Tier 1: Research dedicated biometric privacy statutes (IL, TX, WA, CO, plus any new for 2025-26)",
+      "status": "done"
+     },
+     {
+      "title": "Tier 2: Research comprehensive state privacy acts that classify biometrics as sensitive data",
+      "status": "done"
+     },
+     {
+      "title": "Tier 3: Confirm the remaining states have no applicable biometric regime",
+      "status": "done"
+     },
+     {
+      "title": "Research the identity-verification carve-outs and exemptions that could reduce exposure",
+      "status": "done"
+     },
+     {
+      "title": "Research BIPA damages exposure and the class-action settlement record",
+      "status": "done"
+     },
+     {
+      "title": "Draft the consent flow and notice requirements spec",
+      "status": "done"
+     },
+     {
+      "title": "Produce the 50-state disposition table and danger ranking",
+      "status": "done"
+     }
+    ],
+    "parent_status": "needs_review",
+    "justified": true
+   }
+  }
+ },
+ "behavioural": {
+  "report_chars": 16251,
+  "sources_count": 42,
+  "cite_count": 0,
+  "human_subtasks": 11,
+  "agent_subtasks": 7,
+  "abandoned_subtasks": 0,
+  "trace_available": true,
+  "searches_trace": 25,
+  "distinct_searches": 25,
+  "dup_search_pct": 0,
+  "fetches_trace": 1,
+  "distinct_fetches": 1,
+  "wasted_fetch_pct": 0,
+  "near_dup_searches": 1,
+  "cited_sources": 42,
+  "cited_fetched": 1,
+  "cited_unfetched_ratio": 0.9761904761904762,
+  "cited_unfetched": [
+   "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+   "https://quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act",
+   "https://gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+   "https://insideprivacy.com/data-privacy/illinois-enacts-bipa-amendment-limiting-violation-accrual",
+   "https://law.justia.com/cases/illinois/supreme-court/2023/128004.html",
+   "https://wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20260514-seventh-circuit-weighs-in-on-critical-bipa-retroactivity-question",
+   "https://privacyworld.blog/2023/04/selfie-id-biometric-verification-vendors-bid-for-dismissal-of-bipa-class-action-rejected-by-federal-court",
+   "https://legalclarity.org/sosa-v-onfido-inc-no-20-cv-04247-class-action-status",
+   "https://biometricupdate.com/202006/biometric-privacy-suit-alleges-onfido-violated-illinois-informed-consent-rules",
+   "https://lewisbrisbois.com/newsroom/legal-alerts/illinois-federal-judge-delivers-another-win-for-bipa-defendants",
+   "https://govinfo.gov/content/pkg/USCOURTS-ca9-22-16925/pdf/USCOURTS-ca9-22-16925-0.pdf",
+   "https://hunton.com/privacy-and-cybersecurity-law-blog/ninth-circuit-holds-face-signatures-used-for-photo-tag-suggestions-are-not-biometric-information",
+   "https://natlawreview.com/article/court-refuses-to-dismiss-biometric-privacy-action-over-facial-recognition-technology",
+   "https://americanbar.org/groups/business_law/resources/business-law-today/2021-february/historic-biometric-privacy-settlement",
+   "https://texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+   "https://bracewell.com/resources/billion-dollar-liability-understanding-your-obligations-under-the-texas-capture-or-use-of-biometric-identifier-act",
+   "https://hklaw.com/en/insights/publications/2022/11/texas-enforcement-of-biometric-law-focuses-on-artificial-intelligence",
+   "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true&pdf=true",
+   "https://law.justia.com/codes/washington/2019/title-19/chapter-19-375/section-19-375-020",
+   "https://goodwinlaw.com/en/insights/publications/2024/03/alerts-technology-hltc-my-health-my-data-act-mhmda",
+   "https://wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20250220-first-lawsuit-filed-under-washingtons-my-health-my-data-act",
+   "https://fpf.org/blog/a-new-paradigm-for-consumer-health-data-privacy-in-washington-state",
+   "https://venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+   "https://littler.com/news-analysis/asap/implications-employers-colorados-new-biometrics-law",
+   "https://recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy",
+   "https://recordinglaw.com/us-laws/data-privacy-laws/maryland-data-privacy-laws/what-is-modpa",
+   "https://osano.com/articles/maryland-online-data-privacy-act-modpa",
+   "https://afslaw.com/perspectives/privacy-counsel/new-state-privacy-laws-effective-second-half-2025",
+   "https://multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+   "https://privacylawmap.com/blog/texas-data-privacy-and-security-act-guide",
+   "https://lutzker.com/insights/comprehensive-state-consumer-privacy-laws",
+   "https://coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update",
+   "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker",
+   "https://koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+   "https://bclplaw.com/en-US/events-insights-news/a-kinder-gentler-consumer-health-data-bill-nevadas-sb-370.html",
+   "https://recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy",
+   "https://varnumlaw.com/insights/first-of-its-kind-teen-privacy-law-passes-in-arkansas",
+   "https://recordinglaw.com/us-laws/data-privacy-laws/biometric-privacy-laws",
+   "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+   "https://security.org/resources/digital-privacy-legislation-by-state",
+   "https://ketch.com/blog/posts/us-privacy-laws-2026"
+  ],
+  "subtasks_created": 18,
+  "recreated_subtasks": 0,
+  "recreated_pairs": [],
+  "update_task_noops": 0,
+  "re_research_after_close": 0,
+  "re_research_pairs": [],
+  "turns": 16,
+  "comments": 3,
+  "wallclock_s": 897.039,
+  "completed": true,
+  "failure_mode": null,
+  "usage_available": true,
+  "api_calls": 16,
+  "tokens_uncached_input": 606164,
+  "tokens_cache_write": 424497,
+  "tokens_cache_read": 817617,
+  "tokens_output": 50021,
+  "searches": 25,
+  "fetches": 1,
+  "cost_uncached_input": 3.03082,
+  "cost_cache_write": 2.65310625,
+  "cost_cache_read": 0.4088085,
+  "cost_output": 1.250525,
+  "cost_search": 0.25,
+  "cost_usd_recomputed": 7.59325975,
+  "cost_usd_reported": 7.593259749999999,
+  "latency_total_s": 896.905,
+  "cache_hit_call1": false,
+  "search_count_mismatch": false,
+  "fetch_count_mismatch": false,
+  "extracted_claims": 37
+ },
+ "raw_passes": [
+  {
+   "binary_verdicts": [
+    {
+     "id": "A1",
+     "verdict": "pass",
+     "evidence": "BIPA covers a scan of face geometry regardless of whether you match against a database of strangers."
+    },
+    {
+     "id": "A2",
+     "verdict": "pass",
+     "evidence": "So at launch the binding constraints are the **no-threshold regimes**: Illinois BIPA, Texas CUBI + TDPSA, Nebraska NDPA, Colorado's biometric amendment, and Washington MHMDA."
+    },
+    {
+     "id": "A3",
+     "verdict": "pass",
+     "evidence": "§15(b): inform in writing that biometric data is collected/stored; inform in writing of the **specific purpose and length of term**; obtain a **written release**"
+    },
+    {
+     "id": "A4",
+     "verdict": "pass",
+     "evidence": "expressly confirmed electronic signature satisfies \"written release\""
+    },
+    {
+     "id": "A5",
+     "verdict": "pass",
+     "evidence": "**no later than one year after the purpose for collection expires**"
+    },
+    {
+     "id": "A6",
+     "verdict": "pass",
+     "evidence": "**Destruction must actually reach everything:** primary storage, backups, caches, application logs, crash dumps, analytics pipelines, and the vendor's copy."
+    },
+    {
+     "id": "A7",
+     "verdict": "pass",
+     "evidence": "No state except Illinois and Washington gives consumers a private right of action reaching a consent failure."
+    },
+    {
+     "id": "A8",
+     "verdict": "pass",
+     "evidence": "the AG extracted **$1.4 billion from Meta** over face tagging, and reads CUBI so that continued possession and use multiply violations, each carrying **up to $25,000**."
+    },
+    {
+     "id": "A9",
+     "verdict": "pass",
+     "evidence": "The only state where the downside is existential, for one reason: **a private right of action, with statutory damages, fee-shifting, and no requirement to prove actual harm**"
+    },
+    {
+     "id": "A10",
+     "verdict": "pass",
+     "evidence": "Of 50 states, **one** can end the company (Illinois), **three more** are seriously dangerous (Texas, Washington, Colorado)"
+    },
+    {
+     "id": "A11",
+     "verdict": "pass",
+     "evidence": "**Launch in all 50 states — after items 1–4 above are built and counsel has reviewed the Illinois notice text.**"
+    },
+    {
+     "id": "A12",
+     "verdict": "pass",
+     "evidence": "*Not legal advice. This is a scoping document to make outside counsel faster and cheaper, and it assumes templates reach our servers — the worse case.*"
+    },
+    {
+     "id": "A13",
+     "verdict": "pass",
+     "evidence": "§15(a): a **publicly available** written retention and destruction policy"
+    },
+    {
+     "id": "C2",
+     "verdict": "pass",
+     "evidence": "ABSENT"
+    },
+    {
+     "id": "C3",
+     "verdict": "pass",
+     "evidence": "we have a strong, well-supported argument that BIPA §15 never attaches. That is worth more than any consent screen."
+    },
+    {
+     "id": "C4",
+     "verdict": "pass",
+     "evidence": "A Massachusetts BIPA clone with a PRA would materially change this analysis."
+    }
+   ],
+   "c1": {
+    "level": 6,
+    "primary_option_count": 6,
+    "evidence": "Of 50 states, **one** can end the company (Illinois), **three more** are seriously dangerous (Texas, Washington, Colorado)"
+   },
+   "price_claims": [
+    {
+     "provider": "Illinois BIPA",
+     "price": "740 ILCS 14",
+     "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "flagged_approximate": false,
+     "evidence": "BIPA, 740 ILCS 14. No volume threshold — applies from user one."
+    },
+    {
+     "provider": "Illinois BIPA",
+     "price": "$1,000 negligent / $5,000 reckless or intentional per person",
+     "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "flagged_approximate": false,
+     "evidence": "| Illinois users | Negligent @ $1,000 | Reckless/intentional @ $5,000 |"
+    },
+    {
+     "provider": "Illinois BIPA §15(a) retention",
+     "price": "3 years of last interaction",
+     "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "flagged_approximate": false,
+     "evidence": "destroy when purpose satisfied or within 3 years of last interaction, whichever is first"
+    },
+    {
+     "provider": "Illinois BIPA §15(a)",
+     "price": "§15(a)",
+     "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "flagged_approximate": false,
+     "evidence": "§15(a): a **publicly available** written retention and destruction policy"
+    },
+    {
+     "provider": "Illinois BIPA §15(b)",
+     "price": "§15(b)",
+     "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "flagged_approximate": false,
+     "evidence": "§15(b): inform in writing that biometric data is collected/stored; inform in writing of the **specific purpose and length of term**; obtain a **written release**"
+    },
+    {
+     "provider": "Illinois BIPA §15(d)",
+     "price": "§15(d)",
+     "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "flagged_approximate": false,
+     "evidence": "§15(d): separate consent before disclosing to any third party"
+    },
+    {
+     "provider": "Illinois BIPA (Rosenbach)",
+     "price": "Rosenbach",
+     "source_url": "https://www.quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act/",
+     "flagged_approximate": false,
+     "evidence": "no requirement to prove actual harm** (*Rosenbach*)"
+    },
+    {
+     "provider": "Illinois BIPA (Cothron v. White Castle)",
+     "price": "Cothron v. White Castle (2023)",
+     "source_url": "https://law.justia.com/cases/illinois/supreme-court/2023/128004.html",
+     "flagged_approximate": false,
+     "evidence": "*Cothron v. White Castle* (2023) held a claim accrues on **every** scan"
+    },
+    {
+     "provider": "Illinois BIPA (SB 2979 accrual)",
+     "price": "SB 2979, signed Aug 2 2024",
+     "source_url": "https://www.insideprivacy.com/data-privacy/illinois-enacts-bipa-amendment-limiting-violation-accrual/",
+     "flagged_approximate": false,
+     "evidence": "SB 2979 (signed Aug 2 2024) legislatively overturned it"
+    },
+    {
+     "provider": "Illinois BIPA (SB 2979 electronic signature)",
+     "price": "SB 2979 electronic signature = written release",
+     "source_url": "https://www.gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+     "flagged_approximate": false,
+     "evidence": "expressly confirmed electronic signature satisfies \"written release\""
+    },
+    {
+     "provider": "Illinois BIPA (Rivera v. Google)",
+     "price": "Rivera v. Google",
+     "source_url": "https://natlawreview.com/article/court-refuses-to-dismiss-biometric-privacy-action-over-facial-recognition-technology",
+     "flagged_approximate": false,
+     "evidence": "face-geometry scan derived from a photograph is covered** (*Rivera v. Google*)"
+    },
+    {
+     "provider": "Illinois BIPA (G.T. v. Samsung)",
+     "price": "G.T. v. Samsung (N.D. Ill., July 2024)",
+     "source_url": "https://lewisbrisbois.com/newsroom/legal-alerts/illinois-federal-judge-delivers-another-win-for-bipa-defendants",
+     "flagged_approximate": false,
+     "evidence": "**G.T. v. Samsung** (N.D. Ill., July 2024) — BIPA claims dismissed"
+    },
+    {
+     "provider": "Ninth Circuit (Zellmer v. Meta)",
+     "price": "Zellmer v. Meta (9th Cir., June 17 2024)",
+     "source_url": "https://www.govinfo.gov/content/pkg/USCOURTS-ca9-22-16925/pdf/USCOURTS-ca9-22-16925-0.pdf",
+     "flagged_approximate": false,
+     "evidence": "**Zellmer v. Meta** (9th Cir., June 17 2024) — summary judgment affirmed."
+    },
+    {
+     "provider": "Illinois BIPA (Sosa v. Onfido)",
+     "price": "~$28.5M settlement, No. 20-cv-04247",
+     "source_url": "https://legalclarity.org/sosa-v-onfido-inc-no-20-cv-04247-class-action-status/",
+     "flagged_approximate": false,
+     "evidence": "| **Sosa v. Onfido** (N.D. Ill., 20-cv-04247) | **~$28.5M** |"
+    },
+    {
+     "provider": "Illinois BIPA (Jumio)",
+     "price": "~$7M settlement",
+     "source_url": "https://www.privacyworld.blog/2023/04/selfie-id-biometric-verification-vendors-bid-for-dismissal-of-bipa-class-action-rejected-by-federal-court/",
+     "flagged_approximate": false,
+     "evidence": "| **Jumio** | **~$7M** |"
+    },
+    {
+     "provider": "Texas CUBI",
+     "price": "Tex. Bus. & Com. Code §503.001",
+     "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+     "flagged_approximate": false,
+     "evidence": "**CUBI (Tex. Bus. & Com. Code §503.001) + TDPSA + TRAIGA.**"
+    },
+    {
+     "provider": "Texas CUBI (Meta settlement)",
+     "price": "$1.4 billion from Meta",
+     "source_url": "https://www.bracewell.com/resources/billion-dollar-liability-understanding-your-obligations-under-the-texas-capture-or-use-of-biometric-identifier-act/",
+     "flagged_approximate": false,
+     "evidence": "the AG extracted **$1.4 billion from Meta** over face tagging"
+    },
+    {
+     "provider": "Texas CUBI penalty",
+     "price": "up to $25,000 per violation",
+     "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+     "flagged_approximate": false,
+     "evidence": "each carrying **up to $25,000**"
+    },
+    {
+     "provider": "Texas CUBI retention",
+     "price": "no later than one year after the purpose expires",
+     "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+     "flagged_approximate": false,
+     "evidence": "**no later than one year after the purpose for collection expires**"
+    },
+    {
+     "provider": "Texas TRAIGA",
+     "price": "effective Jan 1 2026",
+     "source_url": "https://privacylawmap.com/blog/texas-data-privacy-and-security-act-guide",
+     "flagged_approximate": false,
+     "evidence": "**TRAIGA** (effective Jan 1 2026)"
+    },
+    {
+     "provider": "Washington RCW 19.375",
+     "price": "RCW 19.375",
+     "source_url": "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true&pdf=true",
+     "flagged_approximate": true,
+     "evidence": "RCW 19.375 probably doesn't even apply to us."
+    },
+    {
+     "provider": "Washington MHMDA",
+     "price": "RCW 19.373",
+     "source_url": "https://www.goodwinlaw.com/en/insights/publications/2024/03/alerts-technology-hltc-my-health-my-data-act-mhmda",
+     "flagged_approximate": false,
+     "evidence": "MHMDA (RCW 19.373) is the real risk."
+    },
+    {
+     "provider": "Washington MHMDA litigation",
+     "price": "first class action filed Feb 10 2025",
+     "source_url": "https://www.wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20250220-first-lawsuit-filed-under-washingtons-my-health-my-data-act",
+     "flagged_approximate": false,
+     "evidence": "First class action filed **Feb 10 2025**."
+    },
+    {
+     "provider": "Colorado CPA / HB 24-1130",
+     "price": "HB 24-1130, in force July 1 2025",
+     "source_url": "https://www.venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+     "flagged_approximate": false,
+     "evidence": "**CPA as amended by HB 24-1130, in force July 1 2025.**"
+    },
+    {
+     "provider": "Colorado CPA threshold",
+     "price": "100,000-consumer threshold does not apply to biometric provisions",
+     "source_url": "https://www.venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+     "flagged_approximate": false,
+     "evidence": "**regardless of the CPA's usual 100,000-consumer threshold**"
+    },
+    {
+     "provider": "Colorado biometric retention",
+     "price": "24 months after last interaction / 45 days after annual review",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy/",
+     "flagged_approximate": false,
+     "evidence": "destroy at the **earliest** of purpose satisfied / 24 months after last interaction / 45 days after an annual review finds it unnecessary."
+    },
+    {
+     "provider": "Maryland MODPA",
+     "price": "§14-4607(B)",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/maryland-data-privacy-laws/what-is-modpa/",
+     "flagged_approximate": false,
+     "evidence": "**Hard data minimisation** (§14-4607(B))"
+    },
+    {
+     "provider": "Montana",
+     "price": "25k",
+     "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+     "flagged_approximate": false,
+     "evidence": "Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k)"
+    },
+    {
+     "provider": "Maryland",
+     "price": "25,000–35,000",
+     "source_url": "https://www.afslaw.com/perspectives/privacy-counsel/new-state-privacy-laws-effective-second-half-2025",
+     "flagged_approximate": false,
+     "evidence": "| 25,000–35,000 | Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k) |"
+    },
+    {
+     "provider": "New Hampshire",
+     "price": "25,000–35,000",
+     "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+     "flagged_approximate": false,
+     "evidence": "| 25,000–35,000 | Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k) |"
+    },
+    {
+     "provider": "Delaware",
+     "price": "25,000–35,000",
+     "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+     "flagged_approximate": false,
+     "evidence": "| 25,000–35,000 | Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k) |"
+    },
+    {
+     "provider": "Rhode Island",
+     "price": "35k",
+     "source_url": "https://www.koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+     "flagged_approximate": false,
+     "evidence": "Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k)"
+    },
+    {
+     "provider": "Minnesota",
+     "price": "50,000",
+     "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+     "flagged_approximate": false,
+     "evidence": "| 50,000 | Minnesota |"
+    },
+    {
+     "provider": "Virginia",
+     "price": "100,000",
+     "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+     "flagged_approximate": false,
+     "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+    },
+    {
+     "provider": "Connecticut",
+     "price": "100,000",
+     "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+     "flagged_approximate": false,
+     "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+    },
+    {
+     "provider": "Oregon",
+     "price": "100,000",
+     "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+     "flagged_approximate": false,
+     "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+    },
+    {
+     "provider": "New Jersey",
+     "price": "100,000",
+     "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+     "flagged_approximate": false,
+     "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+    },
+    {
+     "provider": "Indiana",
+     "price": "100,000",
+     "source_url": "https://www.koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+     "flagged_approximate": false,
+     "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+    },
+    {
+     "provider": "Kentucky",
+     "price": "100,000",
+     "source_url": "https://www.koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+     "flagged_approximate": false,
+     "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+    },
+    {
+     "provider": "Tennessee",
+     "price": "100,000",
+     "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+     "flagged_approximate": false,
+     "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+    },
+    {
+     "provider": "California",
+     "price": "$25M revenue or 100k",
+     "source_url": "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker/",
+     "flagged_approximate": false,
+     "evidence": "| $25M revenue or 100k | California, Utah |"
+    },
+    {
+     "provider": "Utah",
+     "price": "$25M revenue or 100k",
+     "source_url": "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker/",
+     "flagged_approximate": false,
+     "evidence": "| $25M revenue or 100k | California, Utah |"
+    },
+    {
+     "provider": "Florida Digital Bill of Rights",
+     "price": "$1B+ revenue",
+     "source_url": "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker/",
+     "flagged_approximate": false,
+     "evidence": "| $1B+ revenue | Florida — effectively never applies to us |"
+    },
+    {
+     "provider": "Comprehensive-act states (AG penalties)",
+     "price": "$7,500 per violation",
+     "source_url": "https://www.koleyjessen.com/insights/publications/new-state-privacy-laws-effective-january-1-2026-indiana-kentucky-and-rhode-island",
+     "flagged_approximate": false,
+     "evidence": "typically capped at $7,500 per violation"
+    },
+    {
+     "provider": "Nevada SB 370",
+     "price": "SB 370",
+     "source_url": "https://www.bclplaw.com/en-US/events-insights-news/a-kinder-gentler-consumer-health-data-bill-nevadas-sb-370.html",
+     "flagged_approximate": false,
+     "evidence": "**Nevada SB 370** covers biometric data as consumer health data"
+    },
+    {
+     "provider": "Arkansas APDPA",
+     "price": "from July 1 2026",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy/",
+     "flagged_approximate": false,
+     "evidence": "**Arkansas APDPA** (from July 1 2026) treats \"biometric data used for identification\" as sensitive"
+    },
+    {
+     "provider": "Arkansas APDPA penalty",
+     "price": "$10,000 per violation",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy/",
+     "flagged_approximate": false,
+     "evidence": "at **$10,000 per violation** — higher than the tier norm"
+    },
+    {
+     "provider": "NYC Biometric Identifier Ordinance",
+     "price": "NYC Biometric Identifier Ordinance",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/biometric-privacy-laws/",
+     "flagged_approximate": true,
+     "evidence": "the NYC Biometric Identifier Ordinance targets \"commercial establishments\""
+    }
+   ],
+   "handoffs": [
+    {
+     "task_title": "DECIDE: can the face match run entirely on-device, so no template ever reaches our servers?",
+     "self_contained": true,
+     "evidence": "Record the answer here, then tell me and I can re-scope the remaining compliance work — an on-device answer materially shrinks it."
+    },
+    {
+     "task_title": "Get outside privacy counsel to review the Illinois BIPA notice + consent text before launch",
+     "self_contained": true,
+     "evidence": "Ask for a written opinion, not a call — you want something to point at later. Look for a firm with actual BIPA defence experience; this is a specialised bar."
+    },
+    {
+     "task_title": "Build the pre-capture notice screen and standalone consent control",
+     "self_contained": true,
+     "evidence": "- Notice and consent must BOTH complete BEFORE the camera activates. BIPA §15(b) is a pre-collection duty; post-capture consent is a violation even if the user agrees."
+    },
+    {
+     "task_title": "Build versioned immutable consent logging",
+     "self_contained": true,
+     "evidence": "Per user, store immutably: user ID; UTC consent timestamp; the EXACT VERSION of notice text displayed (full rendered text or content hash + versioned copy of that text); consent method; app version and platform; and the timestamp of first biometric capture, which must be strictly AFTER the consent timestamp."
+    },
+    {
+     "task_title": "Implement automated 30-day template destruction with logged proof",
+     "self_contained": true,
+     "evidence": "RECOMMENDED POLICY: destroy the face template immediately on completion of verification, and in no case later than 30 days after capture."
+    },
+    {
+     "task_title": "Publish the public biometric retention policy page",
+     "self_contained": true,
+     "evidence": "- Publicly accessible with NO login and NO account required"
+    },
+    {
+     "task_title": "Write the Washington MHMDA exemption memo before launch",
+     "self_contained": true,
+     "evidence": "The memo should record: (1) the precise purpose of the scan; (2) why that purpose falls within the identity-theft/fraud limb of the exemption"
+    },
+    {
+     "task_title": "Write one DPIA covering the face-scan flow",
+     "self_contained": true,
+     "evidence": "Should cover: the categories of data processed (face geometry template, raw capture frames); purpose (identity verification at signup)"
+    },
+    {
+     "task_title": "Fix IDV vendor contract terms — retention, no-training, deletion proof, BIPA indemnity",
+     "self_contained": true,
+     "evidence": "- Bind the vendor to OUR retention schedule (30 days) and require verifiable deletion WITH EVIDENCE"
+    },
+    {
+     "task_title": "Decide whether under-18 signup is permitted, and block it if not",
+     "self_contained": true,
+     "evidence": "SIMPLEST SAFE ANSWER AT LAUNCH: restrict to 18+, enforced at signup, and state it in the terms."
+    },
+    {
+     "task_title": "Separately scope subscription auto-renewal compliance (out of scope here, but a real launch blocker)",
+     "self_contained": true,
+     "evidence": "Suggest raising this as its own top-level task so it gets proper research rather than living as a footnote under a biometrics task."
+    }
+   ]
+  },
+  {
+   "binary_verdicts": [
+    {
+     "id": "A1",
+     "verdict": "pass",
+     "evidence": "BIPA covers a scan of face geometry regardless of whether you match against a database of strangers."
+    },
+    {
+     "id": "A2",
+     "verdict": "pass",
+     "evidence": "So at launch the binding constraints are the **no-threshold regimes**: Illinois BIPA, Texas CUBI + TDPSA, Nebraska NDPA, Colorado's biometric amendment, and Washington MHMDA."
+    },
+    {
+     "id": "A3",
+     "verdict": "pass",
+     "evidence": "**Pre-capture** notice + **separate, unchecked** e-signature consent, never bundled into ToS | BIPA §15(b) is a pre-collection duty; post-capture consent violates it even if the user agrees"
+    },
+    {
+     "id": "A4",
+     "verdict": "pass",
+     "evidence": "§15(b): inform in writing that biometric data is collected/stored; inform in writing of the **specific purpose and length of term**; obtain a **written release**"
+    },
+    {
+     "id": "A5",
+     "verdict": "pass",
+     "evidence": "destroy within a reasonable time after capture and **no later than one year after the purpose for collection expires**"
+    },
+    {
+     "id": "A6",
+     "verdict": "pass",
+     "evidence": "**Destroy template within 30 days**, ideally immediately on verification. Keep only the outcome"
+    },
+    {
+     "id": "A7",
+     "verdict": "pass",
+     "evidence": "**No state except Illinois and Washington gives consumers a private right of action reaching a consent failure.** California's is breach-only."
+    },
+    {
+     "id": "A8",
+     "verdict": "pass",
+     "evidence": "reads CUBI so that continued possession and use multiply violations, each carrying **up to $25,000**"
+    },
+    {
+     "id": "A9",
+     "verdict": "pass",
+     "evidence": "The only state where the downside is existential, for one reason: **a private right of action, with statutory damages, fee-shifting, and no requirement to prove actual harm** (*Rosenbach*)."
+    },
+    {
+     "id": "A10",
+     "verdict": "pass",
+     "evidence": "MARYLAND — MEDIUM-HIGH (design constraint, not litigation risk)"
+    },
+    {
+     "id": "A11",
+     "verdict": "pass",
+     "evidence": "**Launch in all 50 states — after items 1–4 above are built and counsel has reviewed the Illinois notice text.**"
+    },
+    {
+     "id": "A12",
+     "verdict": "pass",
+     "evidence": "*Not legal advice. This is a scoping document to make outside counsel faster and cheaper, and it assumes templates reach our servers — the worse case.*"
+    },
+    {
+     "id": "A13",
+     "verdict": "pass",
+     "evidence": "| Illinois users | Negligent @ $1,000 | Reckless/intentional @ $5,000 |"
+    },
+    {
+     "id": "C2",
+     "verdict": "pass",
+     "evidence": "**One flag outside this brief:** the monthly subscription creates a **second, unrelated compliance surface**"
+    },
+    {
+     "id": "C3",
+     "verdict": "pass",
+     "evidence": "**We are probably saved by an exemption.** MHMDA does not apply to information used to prevent, detect, protect against or respond to security incidents"
+    },
+    {
+     "id": "C4",
+     "verdict": "pass",
+     "evidence": "**Watch list:** South Carolina (biometric-only bill pending), Massachusetts and Michigan (BIPA-style bills with private rights of action repeatedly introduced). A Massachusetts BIPA clone with a PRA would materially change this analysis."
+    }
+   ],
+   "c1": {
+    "level": 6,
+    "primary_option_count": 6,
+    "evidence": "**Bottom line:** Of 50 states, **one** can end the company (Illinois), **three more** are seriously dangerous (Texas, Washington, Colorado)"
+   },
+   "price_claims": [
+    {
+     "provider": "Illinois BIPA",
+     "price": "740 ILCS 14",
+     "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "flagged_approximate": false,
+     "evidence": "**BIPA, 740 ILCS 14. No volume threshold — applies from user one.**"
+    },
+    {
+     "provider": "Illinois BIPA §15(a)",
+     "price": "3 years of last interaction",
+     "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "flagged_approximate": false,
+     "evidence": "§15(a): a **publicly available** written retention and destruction policy — destroy when purpose satisfied or within 3 years of last interaction, whichever is first"
+    },
+    {
+     "provider": "Illinois BIPA §15(b)",
+     "price": "§15(b) written release",
+     "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "flagged_approximate": false,
+     "evidence": "§15(b): inform in writing that biometric data is collected/stored; inform in writing of the **specific purpose and length of term**; obtain a **written release**"
+    },
+    {
+     "provider": "Illinois BIPA §15(d)",
+     "price": "§15(d)",
+     "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "flagged_approximate": false,
+     "evidence": "§15(d): separate consent before disclosing to any third party"
+    },
+    {
+     "provider": "Illinois BIPA",
+     "price": "$1,000 negligent / $5,000 reckless or intentional",
+     "source_url": "https://www.quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act/",
+     "flagged_approximate": false,
+     "evidence": "| Illinois users | Negligent @ $1,000 | Reckless/intentional @ $5,000 |"
+    },
+    {
+     "provider": "Illinois BIPA (Rosenbach)",
+     "price": "Rosenbach",
+     "source_url": "https://www.quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act/",
+     "flagged_approximate": false,
+     "evidence": "**a private right of action, with statutory damages, fee-shifting, and no requirement to prove actual harm** (*Rosenbach*)"
+    },
+    {
+     "provider": "Illinois BIPA (Cothron v. White Castle)",
+     "price": "Cothron v. White Castle (2023)",
+     "source_url": "https://law.justia.com/cases/illinois/supreme-court/2023/128004.html",
+     "flagged_approximate": false,
+     "evidence": "*Cothron v. White Castle* (2023) held a claim accrues on **every** scan"
+    },
+    {
+     "provider": "Illinois BIPA (SB 2979)",
+     "price": "SB 2979 signed Aug 2 2024",
+     "source_url": "https://www.gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+     "flagged_approximate": false,
+     "evidence": "**SB 2979 (signed Aug 2 2024) legislatively overturned it**"
+    },
+    {
+     "provider": "Illinois BIPA (SB 2979 electronic signature)",
+     "price": "SB 2979 electronic signature definition",
+     "source_url": "https://www.gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+     "flagged_approximate": false,
+     "evidence": "SB 2979 also **expressly confirmed electronic signature satisfies \"written release\"**"
+    },
+    {
+     "provider": "Illinois BIPA (Rivera v. Google)",
+     "price": "Rivera v. Google",
+     "source_url": "https://natlawreview.com/article/court-refuses-to-dismiss-biometric-privacy-action-over-facial-recognition-technology",
+     "flagged_approximate": false,
+     "evidence": "**face-geometry scan derived from a photograph is covered** (*Rivera v. Google*)"
+    },
+    {
+     "provider": "Illinois BIPA (G.T. v. Samsung)",
+     "price": "G.T. v. Samsung (N.D. Ill., July 2024)",
+     "source_url": "https://lewisbrisbois.com/newsroom/legal-alerts/illinois-federal-judge-delivers-another-win-for-bipa-defendants",
+     "flagged_approximate": false,
+     "evidence": "**G.T. v. Samsung** (N.D. Ill., July 2024) — BIPA claims dismissed"
+    },
+    {
+     "provider": "Ninth Circuit (Zellmer v. Meta)",
+     "price": "Zellmer v. Meta (9th Cir., June 17 2024)",
+     "source_url": "https://www.govinfo.gov/content/pkg/USCOURTS-ca9-22-16925/pdf/USCOURTS-ca9-22-16925-0.pdf",
+     "flagged_approximate": false,
+     "evidence": "**Zellmer v. Meta** (9th Cir., June 17 2024) — summary judgment affirmed."
+    },
+    {
+     "provider": "Illinois BIPA (Sosa v. Onfido)",
+     "price": "~$28.5M settlement, No. 20-cv-04247",
+     "source_url": "https://legalclarity.org/sosa-v-onfido-inc-no-20-cv-04247-class-action-status/",
+     "flagged_approximate": false,
+     "evidence": "**Sosa v. Onfido** (N.D. Ill., 20-cv-04247) | **~$28.5M**"
+    },
+    {
+     "provider": "Illinois BIPA (Jumio)",
+     "price": "~$7M settlement",
+     "source_url": "https://www.privacyworld.blog/2023/04/selfie-id-biometric-verification-vendors-bid-for-dismissal-of-bipa-class-action-rejected-by-federal-court/",
+     "flagged_approximate": false,
+     "evidence": "**Jumio** | **~$7M**"
+    },
+    {
+     "provider": "Texas CUBI",
+     "price": "Tex. Bus. & Com. Code §503.001",
+     "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+     "flagged_approximate": false,
+     "evidence": "**CUBI (Tex. Bus. & Com. Code §503.001) + TDPSA + TRAIGA.**"
+    },
+    {
+     "provider": "Texas CUBI",
+     "price": "up to $25,000 per violation",
+     "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+     "flagged_approximate": false,
+     "evidence": "reads CUBI so that continued possession and use multiply violations, each carrying **up to $25,000**"
+    },
+    {
+     "provider": "Texas CUBI",
+     "price": "no later than one year after the purpose for collection expires",
+     "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+     "flagged_approximate": false,
+     "evidence": "destroy within a reasonable time after capture and **no later than one year after the purpose for collection expires**"
+    },
+    {
+     "provider": "Texas CUBI (Meta AG settlement)",
+     "price": "$1.4 billion from Meta",
+     "source_url": "https://www.bracewell.com/resources/billion-dollar-liability-understanding-your-obligations-under-the-texas-capture-or-use-of-biometric-identifier-act/",
+     "flagged_approximate": false,
+     "evidence": "the AG extracted **$1.4 billion from Meta** over face tagging"
+    },
+    {
+     "provider": "Texas TRAIGA",
+     "price": "effective Jan 1 2026",
+     "source_url": "https://privacylawmap.com/blog/texas-data-privacy-and-security-act-guide",
+     "flagged_approximate": false,
+     "evidence": "**TRAIGA** (effective Jan 1 2026), which clarifies when someone is deemed to have consented to biometric capture"
+    },
+    {
+     "provider": "Washington RCW 19.375",
+     "price": "RCW 19.375",
+     "source_url": "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true&pdf=true",
+     "flagged_approximate": true,
+     "evidence": "**RCW 19.375 probably doesn't even apply to us.**"
+    },
+    {
+     "provider": "Washington MHMDA",
+     "price": "RCW 19.373",
+     "source_url": "https://www.goodwinlaw.com/en/insights/publications/2024/03/alerts-technology-hltc-my-health-my-data-act-mhmda",
+     "flagged_approximate": false,
+     "evidence": "**MHMDA (RCW 19.373) is the real risk.** It has a **private right of action** through the Consumer Protection Act"
+    },
+    {
+     "provider": "Washington MHMDA (first class action)",
+     "price": "Feb 10 2025",
+     "source_url": "https://www.wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20250220-first-lawsuit-filed-under-washingtons-my-health-my-data-act",
+     "flagged_approximate": false,
+     "evidence": "First class action filed **Feb 10 2025**."
+    },
+    {
+     "provider": "Colorado CPA / HB 24-1130",
+     "price": "HB 24-1130, in force July 1 2025",
+     "source_url": "https://www.venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+     "flagged_approximate": false,
+     "evidence": "**CPA as amended by HB 24-1130, in force July 1 2025.**"
+    },
+    {
+     "provider": "Colorado CPA biometric provisions",
+     "price": "regardless of the CPA's usual 100,000-consumer threshold",
+     "source_url": "https://www.venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+     "flagged_approximate": false,
+     "evidence": "processes biometric identifiers, **regardless of the CPA's usual 100,000-consumer threshold**"
+    },
+    {
+     "provider": "Colorado CPA biometric retention",
+     "price": "24 months after last interaction / 45 days after annual review",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy/",
+     "flagged_approximate": false,
+     "evidence": "destroy at the **earliest** of purpose satisfied / 24 months after last interaction / 45 days after an annual review finds it unnecessary."
+    },
+    {
+     "provider": "Maryland MODPA",
+     "price": "§14-4607(B)",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/maryland-data-privacy-laws/what-is-modpa/",
+     "flagged_approximate": false,
+     "evidence": "**Hard data minimisation** (§14-4607(B)): collection limited to what is reasonably necessary and proportionate"
+    },
+    {
+     "provider": "Other state comprehensive privacy acts (AG enforcement)",
+     "price": "$7,500 per violation, 30-day cure period",
+     "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+     "flagged_approximate": false,
+     "evidence": "Everywhere else it's an AG fine, typically capped at $7,500 per violation, often with a 30-day cure period that lets you fix a defect before penalty."
+    },
+    {
+     "provider": "Montana",
+     "price": "25,000",
+     "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+     "flagged_approximate": false,
+     "evidence": "| 25,000–35,000 | Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k) |"
+    },
+    {
+     "provider": "Maryland, New Hampshire, Delaware, Rhode Island",
+     "price": "35,000",
+     "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+     "flagged_approximate": false,
+     "evidence": "| 25,000–35,000 | Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k) |"
+    },
+    {
+     "provider": "Minnesota",
+     "price": "50,000",
+     "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+     "flagged_approximate": false,
+     "evidence": "| 50,000 | Minnesota |"
+    },
+    {
+     "provider": "Virginia, Connecticut, Colorado, Oregon, New Jersey, Indiana, Kentucky, Tennessee",
+     "price": "100,000",
+     "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+     "flagged_approximate": false,
+     "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+    },
+    {
+     "provider": "California, Utah",
+     "price": "$25M revenue or 100k",
+     "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+     "flagged_approximate": false,
+     "evidence": "| $25M revenue or 100k | California, Utah |"
+    },
+    {
+     "provider": "Florida Digital Bill of Rights",
+     "price": "$1B+ revenue",
+     "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+     "flagged_approximate": false,
+     "evidence": "| $1B+ revenue | Florida — effectively never applies to us |"
+    },
+    {
+     "provider": "Nevada SB 370",
+     "price": "SB 370",
+     "source_url": "https://www.bclplaw.com/en-US/events-insights-news/a-kinder-gentler-consumer-health-data-bill-nevadas-sb-370.html",
+     "flagged_approximate": false,
+     "evidence": "**Nevada SB 370** covers biometric data as consumer health data but — critically, unlike Washington — has **no private right of action**."
+    },
+    {
+     "provider": "Arkansas APDPA",
+     "price": "from July 1 2026",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy/",
+     "flagged_approximate": false,
+     "evidence": "**Arkansas APDPA** (from July 1 2026) treats \"biometric data used for identification\" as sensitive"
+    },
+    {
+     "provider": "Arkansas APDPA",
+     "price": "$10,000 per violation",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy/",
+     "flagged_approximate": false,
+     "evidence": "at **$10,000 per violation** — higher than the tier norm"
+    }
+   ],
+   "handoffs": [
+    {
+     "task_title": "DECIDE: can the face match run entirely on-device, so no template ever reaches our servers?",
+     "self_contained": true,
+     "evidence": "What you need to establish with engineering:\n- Does the chosen SDK/vendor do matching locally or server-side?"
+    },
+    {
+     "task_title": "Get outside privacy counsel to review the Illinois BIPA notice + consent text before launch",
+     "self_contained": true,
+     "evidence": "Ask for a written opinion, not a call — you want something to point at later. Look for a firm with actual BIPA defence experience; this is a specialised bar."
+    },
+    {
+     "task_title": "Build the pre-capture notice screen and standalone consent control",
+     "self_contained": true,
+     "evidence": "- Notice and consent must BOTH complete BEFORE the camera activates. BIPA §15(b) is a pre-collection duty; post-capture consent is a violation even if the user agrees."
+    },
+    {
+     "task_title": "Build versioned immutable consent logging",
+     "self_contained": true,
+     "evidence": "Per user, store immutably: user ID; UTC consent timestamp; the EXACT VERSION of notice text displayed (full rendered text or content hash + versioned copy of that text); consent method; app version and platform"
+    },
+    {
+     "task_title": "Implement automated 30-day template destruction with logged proof",
+     "self_contained": true,
+     "evidence": "RECOMMENDED POLICY: destroy the face template immediately on completion of verification, and in no case later than 30 days after capture."
+    },
+    {
+     "task_title": "Publish the public biometric retention policy page",
+     "self_contained": true,
+     "evidence": "- Publicly accessible with NO login and NO account required\n- Must contain the retention schedule and the guidelines for permanent destruction (BIPA §15(a))"
+    },
+    {
+     "task_title": "Write the Washington MHMDA exemption memo before launch",
+     "self_contained": true,
+     "evidence": "The memo should record: (1) the precise purpose of the scan; (2) why that purpose falls within the identity-theft/fraud limb of the exemption"
+    },
+    {
+     "task_title": "Write one DPIA covering the face-scan flow",
+     "self_contained": true,
+     "evidence": "Should cover: the categories of data processed (face geometry template, raw capture frames); purpose (identity verification at signup); necessity and proportionality assessment"
+    },
+    {
+     "task_title": "Fix IDV vendor contract terms — retention, no-training, deletion proof, BIPA indemnity",
+     "self_contained": true,
+     "evidence": "- Bind the vendor to OUR retention schedule (30 days) and require verifiable deletion WITH EVIDENCE"
+    },
+    {
+     "task_title": "Decide whether under-18 signup is permitted, and block it if not",
+     "self_contained": true,
+     "evidence": "SIMPLEST SAFE ANSWER AT LAUNCH: restrict to 18+, enforced at signup, and state it in the terms."
+    },
+    {
+     "task_title": "Separately scope subscription auto-renewal compliance (out of scope here, but a real launch blocker)",
+     "self_contained": true,
+     "evidence": "Suggest raising this as its own top-level task so it gets proper research rather than living as a footnote under a biometrics task. Happy to take it if you assign it."
+    }
+   ]
+  },
+  {
+   "binary_verdicts": [
+    {
+     "id": "A1",
+     "verdict": "pass",
+     "evidence": "Selfie-identity-verification-at-signup has produced two settlements on the precise theory that would be pled against us"
+    },
+    {
+     "id": "A2",
+     "verdict": "pass",
+     "evidence": "So at launch the binding constraints are the **no-threshold regimes**: Illinois BIPA, Texas CUBI + TDPSA, Nebraska NDPA, Colorado's biometric amendment, and Washington MHMDA."
+    },
+    {
+     "id": "A3",
+     "verdict": "pass",
+     "evidence": "**Notice copy must say:** that a scan of **face geometry** is collected and stored (use the word — not \"photo check\"); the **specific purpose**, stated narrowly as identity verification at signup; the **specific length of term**"
+    },
+    {
+     "id": "A4",
+     "verdict": "pass",
+     "evidence": "§15(b): inform in writing that biometric data is collected/stored"
+    },
+    {
+     "id": "A5",
+     "verdict": "pass",
+     "evidence": "**no later than one year after the purpose for collection expires**"
+    },
+    {
+     "id": "A6",
+     "verdict": "pass",
+     "evidence": "destroy when purpose satisfied or within 3 years of last interaction, whichever is first"
+    },
+    {
+     "id": "A7",
+     "verdict": "pass",
+     "evidence": "**No state except Illinois and Washington gives consumers a private right of action reaching a consent failure.**"
+    },
+    {
+     "id": "A8",
+     "verdict": "pass",
+     "evidence": "each carrying **up to $25,000**"
+    },
+    {
+     "id": "A9",
+     "verdict": "pass",
+     "evidence": "The only state where the downside is existential, for one reason: **a private right of action, with statutory damages, fee-shifting, and no requirement to prove actual harm**"
+    },
+    {
+     "id": "A10",
+     "verdict": "pass",
+     "evidence": "### 🟡 MARYLAND — MEDIUM-HIGH (design constraint, not litigation risk)"
+    },
+    {
+     "id": "A11",
+     "verdict": "pass",
+     "evidence": "**Launch in all 50 states — after items 1–4 above are built and counsel has reviewed the Illinois notice text.**"
+    },
+    {
+     "id": "A12",
+     "verdict": "pass",
+     "evidence": "*Not legal advice. This is a scoping document to make outside counsel faster and cheaper, and it assumes templates reach our servers — the worse case.*"
+    },
+    {
+     "id": "A13",
+     "verdict": "pass",
+     "evidence": "ABSENT"
+    },
+    {
+     "id": "C2",
+     "verdict": "pass",
+     "evidence": "ABSENT"
+    },
+    {
+     "id": "C3",
+     "verdict": "pass",
+     "evidence": "ABSENT"
+    },
+    {
+     "id": "C4",
+     "verdict": "pass",
+     "evidence": "Whether that applies retroactively is being fought over in the Seventh Circuit, but all of *our* conduct post-dates the amendment, so it's not our problem."
+    }
+   ],
+   "c1": {
+    "level": 6,
+    "primary_option_count": 6,
+    "evidence": "Of 50 states, **one** can end the company (Illinois), **three more** are seriously dangerous (Texas, Washington, Colorado)"
+   },
+   "price_claims": [
+    {
+     "provider": "Illinois BIPA",
+     "price": "740 ILCS 14",
+     "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "flagged_approximate": false,
+     "evidence": "BIPA, 740 ILCS 14. No volume threshold — applies from user one."
+    },
+    {
+     "provider": "Illinois BIPA §15(b)",
+     "price": "§15(b) written release before collection",
+     "source_url": "https://www.quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act/",
+     "flagged_approximate": false,
+     "evidence": "§15(b): inform in writing that biometric data is collected/stored"
+    },
+    {
+     "provider": "Illinois BIPA §15(a)",
+     "price": "3 years of last interaction",
+     "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "flagged_approximate": false,
+     "evidence": "destroy when purpose satisfied or within 3 years of last interaction, whichever is first"
+    },
+    {
+     "provider": "Illinois BIPA §15(d)",
+     "price": "§15(d) separate consent before third-party disclosure",
+     "source_url": "https://www.quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act/",
+     "flagged_approximate": false,
+     "evidence": "§15(d): separate consent before disclosing to any third party"
+    },
+    {
+     "provider": "Illinois BIPA damages",
+     "price": "$1,000 negligent / $5,000 reckless or intentional",
+     "source_url": "https://legislature.vermont.gov/Documents/2020/WorkGroups/House%20Commerce/Bills/H.595/Witness%20Testimony/H.595~Ryan%20Kriger~Testimony~2-27-2020.pdf",
+     "flagged_approximate": false,
+     "evidence": "| Illinois users | Negligent @ $1,000 | Reckless/intentional @ $5,000 |"
+    },
+    {
+     "provider": "Illinois BIPA (Rosenbach)",
+     "price": "Rosenbach — no actual harm required",
+     "source_url": "https://www.quinnemanuel.com/the-firm/publications/avoiding-liability-under-the-illinois-biometric-information-privacy-act/",
+     "flagged_approximate": false,
+     "evidence": "(*Rosenbach*). A bare procedural violation is actionable."
+    },
+    {
+     "provider": "Illinois BIPA (Cothron v. White Castle)",
+     "price": "Cothron v. White Castle (2023)",
+     "source_url": "https://law.justia.com/cases/illinois/supreme-court/2023/128004.html",
+     "flagged_approximate": false,
+     "evidence": "*Cothron v. White Castle* (2023) held a claim accrues on"
+    },
+    {
+     "provider": "Illinois BIPA (SB 2979 accrual)",
+     "price": "SB 2979, signed Aug 2 2024 — single recovery",
+     "source_url": "https://www.insideprivacy.com/data-privacy/illinois-enacts-bipa-amendment-limiting-violation-accrual/",
+     "flagged_approximate": false,
+     "evidence": "SB 2979 (signed Aug 2 2024) legislatively overturned it"
+    },
+    {
+     "provider": "Illinois BIPA (SB 2979 e-signature)",
+     "price": "electronic signature satisfies written release",
+     "source_url": "https://www.gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+     "flagged_approximate": false,
+     "evidence": "defined as an electronic sound, symbol or process attached to or logically associated with a record and executed with intent to sign."
+    },
+    {
+     "provider": "Illinois BIPA (Rivera v. Google)",
+     "price": "Rivera v. Google",
+     "source_url": "https://natlawreview.com/article/court-refuses-to-dismiss-biometric-privacy-action-over-facial-recognition-technology",
+     "flagged_approximate": false,
+     "evidence": "(*Rivera v. Google*). A photo-based flow does not escape BIPA."
+    },
+    {
+     "provider": "Illinois BIPA (Sosa v. Onfido)",
+     "price": "~$28.5M settlement, No. 20-cv-04247",
+     "source_url": "https://legalclarity.org/sosa-v-onfido-inc-no-20-cv-04247-class-action-status/",
+     "flagged_approximate": false,
+     "evidence": "(N.D. Ill., 20-cv-04247) | **~$28.5M**"
+    },
+    {
+     "provider": "Illinois BIPA (Jumio)",
+     "price": "~$7M settlement",
+     "source_url": "https://www.privacyworld.blog/2023/04/selfie-id-biometric-verification-vendors-bid-for-dismissal-of-bipa-class-action-rejected-by-federal-court/",
+     "flagged_approximate": false,
+     "evidence": "**Jumio** | **~$7M** | Materially the same informed-consent failure on selfie ID verification."
+    },
+    {
+     "provider": "Illinois BIPA (G.T. v. Samsung)",
+     "price": "G.T. v. Samsung, N.D. Ill., July 2024",
+     "source_url": "https://lewisbrisbois.com/newsroom/legal-alerts/illinois-federal-judge-delivers-another-win-for-bipa-defendants",
+     "flagged_approximate": false,
+     "evidence": "(N.D. Ill., July 2024) — BIPA claims dismissed"
+    },
+    {
+     "provider": "Illinois BIPA (Zellmer v. Meta)",
+     "price": "Zellmer v. Meta, 9th Cir., June 17 2024",
+     "source_url": "https://www.govinfo.gov/content/pkg/USCOURTS-ca9-22-16925/pdf/USCOURTS-ca9-22-16925-0.pdf",
+     "flagged_approximate": false,
+     "evidence": "(9th Cir., June 17 2024) — summary judgment affirmed."
+    },
+    {
+     "provider": "Texas CUBI",
+     "price": "Tex. Bus. & Com. Code §503.001",
+     "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+     "flagged_approximate": false,
+     "evidence": "CUBI (Tex. Bus. & Com. Code §503.001) + TDPSA + TRAIGA."
+    },
+    {
+     "provider": "Texas CUBI penalty",
+     "price": "up to $25,000 per violation",
+     "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+     "flagged_approximate": false,
+     "evidence": "each carrying **up to $25,000**"
+    },
+    {
+     "provider": "Texas CUBI retention",
+     "price": "no later than one year after the purpose expires",
+     "source_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+     "flagged_approximate": false,
+     "evidence": "**no later than one year after the purpose for collection expires**"
+    },
+    {
+     "provider": "Texas (Meta AG settlement)",
+     "price": "$1.4 billion",
+     "source_url": "https://www.bracewell.com/resources/billion-dollar-liability-understanding-your-obligations-under-the-texas-capture-or-use-of-biometric-identifier-act/",
+     "flagged_approximate": false,
+     "evidence": "the AG extracted **$1.4 billion from Meta** over face tagging"
+    },
+    {
+     "provider": "Texas TRAIGA",
+     "price": "effective Jan 1 2026",
+     "source_url": "https://privacylawmap.com/blog/texas-data-privacy-and-security-act-guide",
+     "flagged_approximate": false,
+     "evidence": "(effective Jan 1 2026), which clarifies when someone is deemed to have consented to biometric capture"
+    },
+    {
+     "provider": "Washington RCW 19.375",
+     "price": "RCW 19.375 photograph/derived-data exclusion",
+     "source_url": "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true&pdf=true",
+     "flagged_approximate": false,
+     "evidence": "Its definition of \"biometric identifier\" expressly excludes"
+    },
+    {
+     "provider": "Washington MHMDA",
+     "price": "RCW 19.373",
+     "source_url": "https://www.bclplaw.com/en-US/events-insights-news/washington-my-health-my-data-act-compliance-hurdles-and-how-to-prepare.html",
+     "flagged_approximate": false,
+     "evidence": "MHMDA (RCW 19.373) is the real risk."
+    },
+    {
+     "provider": "Washington MHMDA litigation",
+     "price": "first class action filed Feb 10 2025",
+     "source_url": "https://www.wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20250220-first-lawsuit-filed-under-washingtons-my-health-my-data-act",
+     "flagged_approximate": false,
+     "evidence": "First class action filed **Feb 10 2025**."
+    },
+    {
+     "provider": "Colorado CPA / HB 24-1130",
+     "price": "in force July 1 2025",
+     "source_url": "https://www.venable.com/insights/publications/2024/06/colorado-amends-state-privacy-law-to-include",
+     "flagged_approximate": false,
+     "evidence": "CPA as amended by HB 24-1130, in force July 1 2025."
+    },
+    {
+     "provider": "Colorado biometric scope",
+     "price": "regardless of the 100,000-consumer threshold",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy/",
+     "flagged_approximate": false,
+     "evidence": "**regardless of the CPA's usual 100,000-consumer threshold**"
+    },
+    {
+     "provider": "Colorado retention",
+     "price": "24 months after last interaction / 45 days after annual review",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/colorado-data-privacy-laws/biometric-privacy/",
+     "flagged_approximate": false,
+     "evidence": "24 months after last interaction / 45 days after an annual review finds it unnecessary"
+    },
+    {
+     "provider": "Maryland MODPA",
+     "price": "§14-4607(B)",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/maryland-data-privacy-laws/what-is-modpa/",
+     "flagged_approximate": false,
+     "evidence": "(§14-4607(B)): collection limited to what is reasonably necessary and proportionate"
+    },
+    {
+     "provider": "Comprehensive state privacy acts (AG penalties)",
+     "price": "$7,500 per violation, 30-day cure",
+     "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+     "flagged_approximate": false,
+     "evidence": "typically capped at $7,500 per violation, often with a 30-day cure period"
+    },
+    {
+     "provider": "Montana",
+     "price": "25,000 consumers",
+     "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+     "flagged_approximate": false,
+     "evidence": "| 25,000–35,000 | Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k) |"
+    },
+    {
+     "provider": "Maryland / New Hampshire / Delaware / Rhode Island",
+     "price": "35,000 consumers",
+     "source_url": "https://www.afslaw.com/perspectives/privacy-counsel/new-state-privacy-laws-effective-second-half-2025",
+     "flagged_approximate": false,
+     "evidence": "| 25,000–35,000 | Montana (25k), Maryland, New Hampshire, Delaware, Rhode Island (35k) |"
+    },
+    {
+     "provider": "Minnesota",
+     "price": "50,000",
+     "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+     "flagged_approximate": false,
+     "evidence": "| 50,000 | Minnesota |"
+    },
+    {
+     "provider": "Virginia, Connecticut, Colorado, Oregon, New Jersey, Indiana, Kentucky, Tennessee",
+     "price": "100,000",
+     "source_url": "https://www.lutzker.com/insights/comprehensive-state-consumer-privacy-laws/",
+     "flagged_approximate": false,
+     "evidence": "| 100,000 | Virginia, Connecticut, Colorado (general CPA), Oregon, New Jersey, Indiana, Kentucky, Tennessee |"
+    },
+    {
+     "provider": "California / Utah",
+     "price": "$25M revenue or 100k",
+     "source_url": "https://pro.bloomberglaw.com/insights/privacy/state-privacy-legislation-tracker/",
+     "flagged_approximate": false,
+     "evidence": "| $25M revenue or 100k | California, Utah |"
+    },
+    {
+     "provider": "Florida Digital Bill of Rights",
+     "price": "$1B+ revenue",
+     "source_url": "https://www.coblentzlaw.com/news/u-s-state-privacy-laws-2025-status-update/",
+     "flagged_approximate": false,
+     "evidence": "| $1B+ revenue | Florida — effectively never applies to us |"
+    },
+    {
+     "provider": "Nevada SB 370",
+     "price": "SB 370",
+     "source_url": "https://www.bclplaw.com/en-US/events-insights-news/a-kinder-gentler-consumer-health-data-bill-nevadas-sb-370.html",
+     "flagged_approximate": false,
+     "evidence": "Nevada SB 370** covers biometric data as consumer health data"
+    },
+    {
+     "provider": "Arkansas APDPA (effective date)",
+     "price": "from July 1 2026",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy/",
+     "flagged_approximate": false,
+     "evidence": "(from July 1 2026) treats \"biometric data used for identification\" as sensitive"
+    },
+    {
+     "provider": "Arkansas APDPA (penalty)",
+     "price": "$10,000 per violation",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/arkansas-data-privacy-laws/biometric-privacy/",
+     "flagged_approximate": false,
+     "evidence": "at **$10,000 per violation** — higher than the tier norm"
+    },
+    {
+     "provider": "New York City Biometric Identifier Ordinance",
+     "price": "NYC Biometric Identifier Ordinance",
+     "source_url": "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+     "flagged_approximate": true,
+     "evidence": "Likely outside our scope as a pure app, but confirm if we ever have physical premises or kiosks."
+    }
+   ],
+   "handoffs": [
+    {
+     "task_title": "DECIDE: can the face match run entirely on-device, so no template ever reaches our servers?",
+     "self_contained": true,
+     "evidence": "What you need to establish with engineering:\n- Does the chosen SDK/vendor do matching locally or server-side?"
+    },
+    {
+     "task_title": "Get outside privacy counsel to review the Illinois BIPA notice + consent text before launch",
+     "self_contained": true,
+     "evidence": "Ask for a written opinion, not a call — you want something to point at later. Look for a firm with actual BIPA defence experience; this is a specialised bar."
+    },
+    {
+     "task_title": "Build the pre-capture notice screen and standalone consent control",
+     "self_contained": true,
+     "evidence": "Notice and consent must BOTH complete BEFORE the camera activates. BIPA §15(b) is a pre-collection duty; post-capture consent is a violation even if the user agrees."
+    },
+    {
+     "task_title": "Build versioned immutable consent logging",
+     "self_contained": true,
+     "evidence": "Per user, store immutably: user ID; UTC consent timestamp; the EXACT VERSION of notice text displayed (full rendered text or content hash + versioned copy of that text); consent method; app version and platform"
+    },
+    {
+     "task_title": "Implement automated 30-day template destruction with logged proof",
+     "self_contained": true,
+     "evidence": "RECOMMENDED POLICY: destroy the face template immediately on completion of verification, and in no case later than 30 days after capture."
+    },
+    {
+     "task_title": "Publish the public biometric retention policy page",
+     "self_contained": true,
+     "evidence": "Publicly accessible with NO login and NO account required"
+    },
+    {
+     "task_title": "Write the Washington MHMDA exemption memo before launch",
+     "self_contained": true,
+     "evidence": "The memo should record: (1) the precise purpose of the scan; (2) why that purpose falls within the identity-theft/fraud limb of the exemption"
+    },
+    {
+     "task_title": "Write one DPIA covering the face-scan flow",
+     "self_contained": true,
+     "evidence": "Should cover: the categories of data processed (face geometry template, raw capture frames); purpose (identity verification at signup); necessity and proportionality assessment"
+    },
+    {
+     "task_title": "Fix IDV vendor contract terms — retention, no-training, deletion proof, BIPA indemnity",
+     "self_contained": true,
+     "evidence": "Bind the vendor to OUR retention schedule (30 days) and require verifiable deletion WITH EVIDENCE"
+    },
+    {
+     "task_title": "Decide whether under-18 signup is permitted, and block it if not",
+     "self_contained": true,
+     "evidence": "SIMPLEST SAFE ANSWER AT LAUNCH: restrict to 18+, enforced at signup, and state it in the terms."
+    },
+    {
+     "task_title": "Separately scope subscription auto-renewal compliance (out of scope here, but a real launch blocker)",
+     "self_contained": true,
+     "evidence": "Suggest raising this as its own top-level task so it gets proper research rather than living as a footnote under a biometrics task. Happy to take it if you assign it."
+    }
+   ]
+  }
+ ]
+}

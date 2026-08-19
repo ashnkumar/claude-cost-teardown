@@ -1,0 +1,98 @@
+{
+ "version": "1.0.0",
+ "task_id": "t-compliance",
+ "verified_at": "2026-08-06",
+ "why": "The t-dog ledger checks prices. This checks law. Same discipline: every cell below was read off a primary source or a firm memo citing the enacted text, and the source is recorded next to it. Where a fact is time-sensitive the effective date is part of the fact.",
+ "method_warning": [
+  "This is a VERIFIED WHITELIST of the cells that discriminate, not a 50-state census. A report saying something about a state absent from this file is UNVERIFIED, never 'wrong'. The t-dog ledger taught this the hard way: 14 runs were flagged for inventing a price that was published verbatim on the page they cited.",
+  "The single highest-value check here is the BIPA amendment. A report that describes per-scan damage accrual under Cothron WITHOUT the August 2024 amendment is materially out of date, and it is the error most likely to change what a founder does -- it makes a face scan at every login look catastrophic when the statute now caps recovery at one per person per method."
+ ],
+ "states": [
+  {
+   "state": "Illinois",
+   "statute": "Biometric Information Privacy Act, 740 ILCS 14",
+   "applies_to_face_scan_at_signup": true,
+   "private_right_of_action": true,
+   "pra_note": "The only state biometric statute with a broad private right of action. This is the field that decides whether Illinois is dangerous, and it is the field a report most needs to get right.",
+   "damages": "$1,000 per negligent violation; $5,000 per reckless or intentional violation; plus reasonable attorneys' fees and costs",
+   "consent_required": "Informed written release, obtained before collection, after written notice of the purpose and the retention period",
+   "electronic_signature_ok": true,
+   "electronic_signature_note": "Confirmed by P.A. 103-0769 (SB 2979), effective 2024-08-02. Before that it was contested.",
+   "retention_rule": "Written, PUBLICLY AVAILABLE retention schedule and destruction guidelines; destroy when the collection purpose is satisfied or within 3 years of the individual's last interaction, whichever comes first",
+   "amendment_2024": {
+    "cite": "P.A. 103-0769 (SB 2979)",
+    "effective": "2024-08-02",
+    "what_changed": "Collecting or disclosing the same biometric identifier from the same person by the same method more than once is ONE violation with at most ONE recovery, under s.15(b) and s.15(d). This overrides Cothron v. White Castle (2023), which had held that a claim accrues on every scan. The amendment also confirms an electronic signature satisfies the written-release requirement.",
+    "retroactive": "The Seventh Circuit has held the damages limitation applies retroactively.",
+    "why_it_matters": "Post-Cothron, pre-amendment analysis makes a per-login face scan look like unbounded liability. That is no longer the law."
+   },
+   "sources": [
+    "https://www.kslaw.com/news-and-insights/illinois-bipa-reform-takes-effect",
+    "https://www.seyfarth.com/news-insights/bipa-legislative-update-governor-pritzker-signs-amendment-limiting-damages-to-a-single-recovery-1.html",
+    "https://www.gtlaw.com/en/insights/2024/8/bipa-update-illinois-limits-liability-and-clarifies-electronic-consent-for-biometric-data-collection",
+    "https://legiscan.com/IL/text/SB2979/id/2908858",
+    "https://www.dwt.com/blogs/privacy--security-law-blog/2024/08/illinois-bipa-biometrics-law-amended-for-damages"
+   ]
+  },
+  {
+   "state": "Texas",
+   "statute": "Capture or Use of Biometric Identifier Act (CUBI), Tex. Bus. & Com. Code s.503.001",
+   "applies_to_face_scan_at_signup": true,
+   "private_right_of_action": false,
+   "pra_note": "No private right of action. Enforcement rests exclusively with the Texas Attorney General.",
+   "damages": "Civil penalty of not more than $25,000 for each violation, recoverable by the Attorney General",
+   "consent_required": "Informed consent before capture of a biometric identifier for a commercial purpose; CUBI imposes no separate written-policy mandate",
+   "retention_rule": "Destroy within a reasonable time, and not later than the first anniversary of the date the purpose for collection expires",
+   "enforcement_reality": "Do not read 'no private right of action' as 'low risk'. Texas settled with Meta for $1.4 billion in 2024 by alleging a separate violation for each Texas resident whose facial geometry was captured, and has an active petition against Google.",
+   "sources": [
+    "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act",
+    "https://codes.findlaw.com/tx/business-and-commerce-code/bus-com-sect-503-001/",
+    "https://tcss.legis.texas.gov/resources/BC/htm/BC.503.htm",
+    "https://www.bracewell.com/resources/billion-dollar-liability-understanding-your-obligations-under-the-texas-capture-or-use-of-biometric-identifier-act/"
+   ]
+  },
+  {
+   "state": "Washington",
+   "statute": "Biometric Identifiers, RCW 19.375 (HB 1493)",
+   "applies_to_face_scan_at_signup": true,
+   "private_right_of_action": false,
+   "pra_note": "No private right of action. The chapter 'may be enforced solely by the attorney general under the consumer protection act, chapter 19.86 RCW'.",
+   "damages": "Enforced as an unfair or deceptive act under the Consumer Protection Act; penalties up to $7,500 per violation",
+   "consent_required": "Notice and consent before enrolling a biometric identifier in a database for a commercial purpose",
+   "retention_rule": "Retain no longer than reasonably necessary to fulfil the stated purpose, comply with a court order, or protect against fraud/theft",
+   "sources": [
+    "https://app.leg.wa.gov/RCW/default.aspx?cite=19.375&full=true",
+    "https://www.goodwinlaw.com/en/insights/blogs/2023/05/washingtons-biometric-data-regime-advances-privacy-regulation"
+   ]
+  },
+  {
+   "state": "Colorado",
+   "statute": "Colorado Privacy Act as amended by HB 24-1130",
+   "applies_to_face_scan_at_signup": true,
+   "effective": "2025-07-01",
+   "private_right_of_action": false,
+   "pra_note": "No private right of action. Enforceable only by the Colorado Attorney General and district attorneys.",
+   "damages": "Up to $20,000 per violation; up to $50,000 per violation where the affected individual is 60 or older",
+   "consent_required": "Consent before collection of a biometric identifier",
+   "retention_rule": "A publicly available written policy covering retention, destruction and breach response",
+   "other_duties": "Prohibits sale, lease or trade of biometric identifiers; extends protection to employees; gives consumers a right to access their biometric data. An employer may require biometric consent as a condition of employment ONLY for secure facility access, recording work start/end times, workplace safety monitoring, or public safety emergencies.",
+   "sources": [
+    "https://leg.colorado.gov/bills/hb24-1130",
+    "https://content.leg.colorado.gov/sites/default/files/2024a_1130_signed.pdf",
+    "https://www.paulhastings.com/insights/ph-privacy/colorado-imposes-new-privacy-requirements-on-organizations-collecting-biometric-identifiers-and-data",
+    "https://www.insideprivacy.com/data-privacy/colorado-privacy-act-amended-to-include-biometric-data-provisions/"
+   ]
+  }
+ ],
+ "the_shape_of_the_answer": {
+  "note": "Not scored directly -- context so the judge knows what a competent answer looks like structurally.",
+  "dedicated_biometric_statutes": "Illinois, Texas, Washington are the long-standing three. Colorado joined via the HB 24-1130 amendment effective 2025-07-01.",
+  "only_pra": "Illinois",
+  "wider_layer": "Most comprehensive state consumer-privacy statutes classify biometric data as sensitive data requiring opt-in consent, which reaches far more than four states. A report that covers only the dedicated statutes and says nothing about that layer has answered a narrower question than the one asked.",
+  "asked_for": ["which laws apply", "notice and written consent required", "retention limits", "private right of action", "penalties", "which states are genuinely dangerous to launch in"]
+ },
+ "pending": [
+  "Per-state cells for the ~20 comprehensive-privacy states are not yet verified individually; only the four dedicated-statute states above are.",
+  "NYC biometric identifier ordinance and Portland OR face-recognition ban not yet verified."
+ ]
+}

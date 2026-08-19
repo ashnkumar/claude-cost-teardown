@@ -1,0 +1,402 @@
+{
+ "version": "1.1.0",
+ "task_id": "t-dog",
+ "verified_at": "2026-08-05",
+ "verified_by": "manual fetch of each provider's own page",
+ "why": [
+  "The rubric's grounding axis (B1, B2) only checks whether a source was FETCHED.",
+  "It has never checked whether the NUMBER is right. A report can cite ten pages,",
+  "score full marks for provenance, and still quote a price that does not exist.",
+  "This ledger is the ground truth that turns provenance into accuracy."
+ ],
+ "method_warning": [
+  "VERIFY AGAINST THE PAGE THE REPORT CITED, NOT MERELY 'THE PROVIDER'S SITE'.",
+  "Providers run several pricing pages with genuinely different packages. While",
+  "building this ledger I checked wagntrain.com/services/ and",
+  "wagntrain.com/expert-personal-training/, found none of the report's figures,",
+  "and was about to record three fabricated prices. All three were exact -- they",
+  "live on /private-dog-training-lessons/, which is the page the report actually",
+  "cited. A ledger keyed to domains instead of pages produces false fabrication",
+  "findings, which is worse than the hole it closes.",
+  "2026-08-06: THIRD failure of the same kind, and the decisive one. 14 runs were flagged for 'fabricating' D For Dogz $595. The figure is published verbatim ('$595 for 9 Sessions to be completed in 5 weeks') on the very page those runs cited -- the ledger simply had no entry for that product. CONCLUSION, now structural: this ledger is a VERIFIED WHITELIST, not a catalogue of everything a provider sells. A figure absent from it is UNVERIFIED, never 'contradicted' and never 'fabricated'. Only a positively checked claim may be called a fabrication, and that call belongs to the judge with the provider's known published prices in front of it."
+ ],
+ "providers": [
+  {
+   "name": "Humane Society Silicon Valley",
+   "aliases": [
+    "HSSV",
+    "Humane Society Silicon Valley",
+    "Top Dogs"
+   ],
+   "domain": "hssv.org",
+   "prices": [
+    {
+     "item": "Top Dogs Level 1",
+     "amount": 300,
+     "display": "$300",
+     "detail": "6 weeks, online via Zoom, reactive dogs; first session 90 min then 5 x 50 min. Dogs 8+ months, no bite history",
+     "page": "https://www.hssv.org/behavior-management-classes/",
+     "verified": true
+    },
+    {
+     "item": "Top Dogs Level 2",
+     "amount": 300,
+     "display": "$300",
+     "detail": "6 weeks, in-person, 50 min/wk; requires Level 1 or instructor approval",
+     "page": "https://www.hssv.org/behavior-management-classes/",
+     "verified": true
+    },
+    {
+     "item": "Top Dogs Level 3",
+     "amount": 300,
+     "display": "$300",
+     "detail": "6 weeks, in-person, sports/activities for reactive dogs",
+     "page": "https://www.hssv.org/behavior-management-classes/",
+     "verified": true
+    },
+    {
+     "item": "Separation Anxiety",
+     "amount": 250,
+     "display": "$250",
+     "detail": "4 weeks online; starts 2026-08-19 at 7:00pm",
+     "page": "https://www.hssv.org/behavior-management-classes/",
+     "verified": true
+    }
+   ],
+   "facts": [
+    {
+     "claim": "Top Dogs Level 1 next cohort starts 2026-08-19 at 6:15pm",
+     "verified": true
+    }
+   ],
+   "unverifiable_claims": [
+    {
+     "claim": "Beginning and Intermediate Obedience classes are typically $150",
+     "amount": 150,
+     "cited_url": "http://www.hssv.org/what-we-do/behavior-and-training/training/faq.html",
+     "status": "SOURCE_DEAD",
+     "note": "The cited URL returns 404. No Beginning/Intermediate Obedience class appears on the live classes page. Reports asserting this figure are citing a source that cannot be checked and that they did not fetch."
+    }
+   ]
+  },
+  {
+   "name": "In Tune Dog Training",
+   "aliases": [
+    "In Tune",
+    "Nancy Le"
+   ],
+   "domain": "intunedogtraining.com",
+   "prices": [
+    {
+     "item": "Initial consultation",
+     "amount_low": 195,
+     "amount_high": 325,
+     "display": "$195 - $325",
+     "page": "https://www.intunedogtraining.com/faqs",
+     "verified": true
+    },
+    {
+     "item": "Follow-up session",
+     "amount_low": 130,
+     "amount_high": 215,
+     "display": "$130 - $215",
+     "page": "https://www.intunedogtraining.com/faqs",
+     "verified": true
+    }
+   ],
+   "facts": [
+    {
+     "claim": "Recommends starting with 6 sessions, meeting about twice a month",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "name": "Stacy's Wag'N'Train",
+   "aliases": [
+    "Wag'N'Train",
+    "Wag N Train",
+    "Stacy Braslau-Schneck",
+    "Stacy's Wag'n Train"
+   ],
+   "domain": "wagntrain.com",
+   "prices": [
+    {
+     "item": "Basic \"4-pack\" Package",
+     "amount": 800,
+     "display": "$800",
+     "detail": "4 x 1-hour private lessons: virtual Evaluation + 3 coaching sessions",
+     "page": "https://www.wagntrain.com/private-dog-training-lessons/",
+     "verified": true
+    },
+    {
+     "item": "Beginning Behavior Modification \"6-pack\"",
+     "amount": 1500,
+     "display": "$1500",
+     "detail": "6 x 1-hour private lessons: virtual Evaluation + 5 coaching sessions",
+     "page": "https://www.wagntrain.com/private-dog-training-lessons/",
+     "verified": true
+    },
+    {
+     "item": "Behavior Modification Foundation",
+     "amount": 3000,
+     "display": "$3000",
+     "detail": "14 x 1-hour lessons: Evaluation + 5 weekly + 8 biweekly",
+     "page": "https://www.wagntrain.com/private-dog-training-lessons/",
+     "verified": true
+    },
+    {
+     "item": "Virtual lessons hourly",
+     "amount": 145,
+     "display": "$145/hr",
+     "page": "https://www.wagntrain.com/virtual-dog-training/",
+     "verified": true
+    },
+    {
+     "item": "Virtual 4-pack (basic training)",
+     "amount": 580,
+     "display": "$580",
+     "page": "https://www.wagntrain.com/virtual-dog-training/",
+     "verified": true
+    },
+    {
+     "item": "Virtual 6-pack (aggression / serious issues)",
+     "amount": 870,
+     "display": "$870",
+     "page": "https://www.wagntrain.com/virtual-dog-training/",
+     "verified": true
+    },
+    {
+     "item": "Puppy Package (two 1-hour meetings)",
+     "amount": 290,
+     "display": "$290",
+     "page": "https://www.wagntrain.com/virtual-dog-training/",
+     "verified": true
+    },
+    {
+     "item": "Behavior Consultation / Evaluation",
+     "amount": 190,
+     "display": "$190",
+     "detail": "or included in any package",
+     "page": "https://www.wagntrain.com/services/",
+     "verified": true
+    },
+    {
+     "item": "Ongoing individual session",
+     "amount": 130,
+     "display": "$130",
+     "page": "https://www.wagntrain.com/services/",
+     "verified": true
+    },
+    {
+     "item": "Behavior Modification Personal Trainer Package",
+     "amount": 4500,
+     "display": "$4500",
+     "page": "https://www.wagntrain.com/expert-personal-training/",
+     "verified": true
+    },
+    {
+     "item": "Basic \"Kickstart\" Personal Trainer Package",
+     "amount": 1300,
+     "display": "$1300",
+     "page": "https://www.wagntrain.com/expert-personal-training/",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "name": "D For Dogz",
+   "aliases": [
+    "D For Dogz",
+    "D For Dog",
+    "Kaajal Tiwary"
+   ],
+   "domain": "dfordogtraining.com",
+   "prices": [
+    {
+     "item": "Private Coaching",
+     "amount": 2400,
+     "display": "$2,400",
+     "detail": "6 weeks; 90-min consultation to build a roadmap, then weekly coaching on neighbourhood walks",
+     "page": "https://dfordogtraining.com/private-dog-training-silicon-valley/leash-reactive-dog-private-training/",
+     "verified": true
+    },
+    {
+     "item": "Day Training",
+     "amount": 4200,
+     "display": "$4,200",
+     "detail": "6 weeks; trainer works the dog twice weekly, owner joins every third session",
+     "page": "https://dfordogtraining.com/private-dog-training-silicon-valley/leash-reactive-dog-private-training/",
+     "verified": true
+    },
+    {
+     "item": "Leash Reactive Dog Foundations Class (Growly Dog Foundations)",
+     "amount": 595,
+     "display": "$595",
+     "detail": "9 sessions completed in 5 weeks; in-person Saturdays 9:30-10:30am plus live Zoom Q&A Wednesdays 6:30-7:15pm",
+     "quote": "$595 for 9 Sessions to be completed in 5 weeks.",
+     "page": "https://dfordogtraining.com/growly-dog-foundations-class/",
+     "verified": true
+    },
+    {
+     "item": "Reactive to Distinguished Dogz Club membership",
+     "amount": 500,
+     "display": "$500/month",
+     "detail": "group sessions 1st and 3rd Saturdays, Zoom skill-building 2nd and 4th Wednesdays, one 60-min monthly private coaching session, community access",
+     "quote": "$500 per month",
+     "page": "https://dfordogtraining.com/growly-dog-foundations-class/",
+     "verified": true
+    }
+   ],
+   "facts": [
+    {
+     "claim": "Availability is Monday-Friday 9am-7pm and Saturday 9am-3pm",
+     "verified": true,
+     "contradicts": "Reports claiming Sunday morning availability are wrong -- the weekend slot is SATURDAY."
+    }
+   ]
+  },
+  {
+   "name": "Off Leash K9 Training of San Jose",
+   "aliases": [
+    "Off Leash K9",
+    "Off-Leash K9"
+   ],
+   "domain": "dogtrainerssanjose.com",
+   "flags": [
+    "AVERSIVE_TOOLS"
+   ],
+   "flag_note": "The page states packages 'include e-collar and leash unless otherwise noted'. Rubric item C3 forbids recommending aversive tools. Any report recommending this provider without flagging the e-collar is a C3 failure, and that is now checkable against ground truth rather than judge opinion.",
+   "prices": [
+    {
+     "item": "Basic Obedience Training (4 week)",
+     "amount": 800,
+     "display": "$800.00",
+     "page": "https://dogtrainerssanjose.com/prices/",
+     "verified": true
+    },
+    {
+     "item": "2 Week Board & Train",
+     "amount": 2800,
+     "display": "$2,800.00",
+     "page": "https://dogtrainerssanjose.com/prices/",
+     "verified": true
+    },
+    {
+     "item": "1 Week Freedom Board & Train",
+     "amount": 1400,
+     "display": "$1,400.00",
+     "page": "https://dogtrainerssanjose.com/prices/",
+     "verified": true
+    },
+    {
+     "item": "Puppy Training Consultation",
+     "amount": 150,
+     "display": "$150.00",
+     "page": "https://dogtrainerssanjose.com/prices/",
+     "verified": true
+    },
+    {
+     "item": "Basic & Advanced Obedience (8 week)",
+     "amount": 1200,
+     "display": "$1,200.00",
+     "page": "https://dogtrainerssanjose.com/prices/",
+     "verified": true
+    },
+    {
+     "item": "Aggressive Dog Training (8 week)",
+     "amount": 1200,
+     "display": "$1,200.00",
+     "page": "https://dogtrainerssanjose.com/prices/",
+     "verified": true
+    },
+    {
+     "item": "Obedience starter (first lesson w/ equipment)",
+     "amount": 500,
+     "display": "$500.00",
+     "detail": "additional lessons $100 each",
+     "page": "https://dogtrainerssanjose.com/prices/",
+     "verified": true
+    },
+    {
+     "item": "In-home Basic Obedience (8 week)",
+     "amount": 1200,
+     "display": "$1,200.00",
+     "page": "https://dogtrainerssanjose.com/prices/",
+     "verified": true
+    },
+    {
+     "item": "In-home Basic & Advanced (8 week)",
+     "amount": 2000,
+     "display": "$2,000.00",
+     "page": "https://dogtrainerssanjose.com/prices/",
+     "verified": true
+    },
+    {
+     "item": "Therapy Dog Development (8 week)",
+     "amount": 1200,
+     "display": "$1,200.00",
+     "page": "https://dogtrainerssanjose.com/prices/",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "name": "Orion Dog Training",
+   "aliases": [
+    "Orion"
+   ],
+   "domain": "oriondogtraining.com",
+   "prices": [
+    {
+     "item": "\"My dog is reactive, now what?\" course",
+     "amount": 395,
+     "display": "$395",
+     "detail": "six-week class; sessions listed for Sat Aug 1 5:30pm, Fri Aug 28 1pm, Sat Sep 26 5:30pm",
+     "page": "https://www.oriondogtraining.com/reactivedog",
+     "verified": true
+    }
+   ]
+  },
+  {
+   "name": "Zoom Room",
+   "aliases": [
+    "Zoom Room",
+    "ZoomRoom"
+   ],
+   "domain": "zoomroom.com",
+   "flags": [
+    "PRICES_NOT_PUBLISHED"
+   ],
+   "flag_note": "zoomroom.com/prices publishes NO class prices. The only figure on it is 'FREE - 30 min' for an Orientation. The page says: 'Please contact the store - they'd be delighted to share pricing information.' Any report asserting a specific Zoom Room dollar figure is asserting an unpublished number, and must cite a location-specific page for it. Reports quoting a Zoom Room price with only a national-site citation fail the grounding check.",
+   "prices": [
+    {
+     "item": "Orientation session",
+     "amount": 0,
+     "display": "FREE",
+     "detail": "30 min",
+     "page": "https://www.zoomroom.com/prices",
+     "verified": true
+    }
+   ],
+   "facts": [
+    {
+     "claim": "Santa Clara location serves Mountain View; hours Mon 4:30-8:30pm, Tue/Wed/Fri 12-8:30pm, Thu closed, Sat/Sun 9am-5pm",
+     "verified": true
+    }
+   ]
+  }
+ ],
+ "aggregator_domains": [
+  "goodydoggy.com",
+  "dogtrainermatch.com",
+  "yelp.com",
+  "sniffspot.com"
+ ],
+ "aggregator_note": "Third-party listing sites. A price sourced ONLY to one of these is second-hand and must be flagged in the report text (rubric B3). They are not ground truth and are not used to verify this ledger.",
+ "pending": [
+  "southbaydog.training -- cited by 19 runs, not yet verified",
+  "caninehighschool.com, lynnthedogtrainer.com -- long tail, low citation counts",
+  "t-compliance ledger -- separate file, not yet built"
+ ]
+}

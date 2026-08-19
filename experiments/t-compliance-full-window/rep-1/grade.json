@@ -1,0 +1,2638 @@
+{
+ "label": "cmp-full-window",
+ "rep_dir": "experiments/t-compliance-full-window/rep-1",
+ "report_source": "tree",
+ "graded_at": "2026-08-04T05:33:10.761Z",
+ "rubric_version": "compliance-1.1.0",
+ "rubric_sha256": "4770c241822ceb446f434b94fd1064f8b959ba71335d67f1d7f9e162ce798dbe",
+ "judge_prompt": "grader/judge_prompt-compliance.md",
+ "judge_prompt_sha256": "8760020a3fc285ba4cd78f04f411c01446ceeb581820ed0077315a9f5a3a0538",
+ "judge_payload_sha256": "6b0df28e3ed0ef209398fabab216359241903d2dacb557012b50f05630633ca1",
+ "normalizer_version": "normalizer_v1",
+ "seed_check_ok": true,
+ "run_id": "exp-full-window-r1-mse714vf",
+ "task_id": "t-compliance",
+ "judge": {
+  "model": "claude-opus-5",
+  "effort": "high",
+  "passes": 3,
+  "structured_output": "json_schema"
+ },
+ "axes_evaluated": [
+  "A",
+  "B",
+  "C"
+ ],
+ "score_total": 76,
+ "points_available": 100,
+ "score_normalized_100": 76,
+ "score_A_content": 60,
+ "score_B_grounding": 0,
+ "score_C_scope": 16,
+ "judge_agreement_pct": 100,
+ "contested_items": [],
+ "items": {
+  "A1": {
+   "axis": "A",
+   "points": 4,
+   "type": "J",
+   "verdict": 1,
+   "score": 4,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "Our signup flow gates access on a face scan. That is the direct collision, and it is why the fallback verification path is not optional.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "Our signup flow gates access on a face scan. That is the direct collision, and it is why the fallback verification path is not optional.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "Our signup flow gates access on a face scan. That is the direct collision, and it is why the fallback verification path is not optional.",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A2": {
+   "axis": "A",
+   "points": 5,
+   "type": "J",
+   "verdict": 1,
+   "score": 5,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "Amends the CPA with biometric-specific rules that apply with **no volume threshold**, so we're in scope immediately.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "Most comprehensive privacy laws have volume thresholds we're under at launch. **Every biometric-specific statute that matters — Illinois, Texas, Washington, Colorado's HB 24-1130 — has no threshold at all.**",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "Most comprehensive privacy laws have volume thresholds we're under at launch. **Every biometric-specific statute that matters — Illinois, Texas, Washington, Colorado's HB 24-1130 — has no threshold at all.**",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A3": {
+   "axis": "A",
+   "points": 6,
+   "type": "J",
+   "verdict": 1,
+   "score": 6,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "Requirements: a **written release** obtained *before* collection, disclosing that biometric data is being collected, the **specific purpose**, and the **length of term** for which it's stored (§15(b));",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "disclosing that biometric data is being collected, the **specific purpose**, and the **length of term** for which it's stored (§15(b))",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "Requirements: a **written release** obtained *before* collection, disclosing that biometric data is being collected, the **specific purpose**, and the **length of term** for which it's stored (§15(b))",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A4": {
+   "axis": "A",
+   "points": 4,
+   "type": "J",
+   "verdict": 1,
+   "score": 4,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "a **written release** obtained *before* collection",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "Requirements: a **written release** obtained *before* collection",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "a **written release** obtained *before* collection",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A5": {
+   "axis": "A",
+   "points": 5,
+   "type": "J",
+   "verdict": 1,
+   "score": 5,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "destruction at purpose-satisfaction or 3 years from last interaction, **whichever comes first** (§15(a))",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "destruction within a reasonable time **not later than one year** after the purpose expires — stricter than Illinois.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "and destruction within a reasonable time **not later than one year** after the purpose expires — stricter than Illinois.",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A6": {
+   "axis": "A",
+   "points": 4,
+   "type": "J",
+   "verdict": 1,
+   "score": 4,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "Then **actually build the deletion job**; an unfollowed published policy converts a technical violation into a deceptive-practice claim in all 50 states.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "Then **actually build the deletion job**; an unfollowed published policy converts a technical violation into a deceptive-practice claim in all 50 states.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "Then **actually build the deletion job**; an unfollowed published policy converts a technical violation into a deceptive-practice claim in all 50 states.",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A7": {
+   "axis": "A",
+   "points": 6,
+   "type": "J",
+   "verdict": 1,
+   "score": 6,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "**Everywhere else, only the Attorney General can act** — which is meaningfully less dangerous, with the sharp exception of Texas.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**Everywhere else, only the Attorney General can act** — which is meaningfully less dangerous, with the sharp exception of Texas.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**Everywhere else, only the Attorney General can act** — which is meaningfully less dangerous, with the sharp exception of Texas.",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A8": {
+   "axis": "A",
+   "points": 6,
+   "type": "J",
+   "verdict": 1,
+   "score": 6,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "**$1,000** per negligent violation, **$5,000** per reckless or intentional violation, or actual damages if greater, plus fees.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**$1,000** per negligent violation, **$5,000** per reckless or intentional violation, or actual damages if greater, plus fees.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**$1,000** per negligent violation, **$5,000** per reckless or intentional violation, or actual damages if greater, plus fees.",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A9": {
+   "axis": "A",
+   "points": 6,
+   "type": "J",
+   "verdict": 1,
+   "score": 6,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "Private right of action + $1k/$5k liquidated damages + no injury required + mandatory fee-shifting",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "Private right of action + $1k/$5k liquidated damages + no injury required + mandatory fee-shifting",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "Private right of action + $1k/$5k liquidated damages + no injury required + mandatory fee-shifting",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A10": {
+   "axis": "A",
+   "points": 4,
+   "type": "J",
+   "verdict": 1,
+   "score": 4,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "| **4 — Low** | The other ~43 | Notice + opt-in consent + DPIA, AG-enforced, no PRA | One document set covers all |",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "Tier | States | Why | Launch posture",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**4 — Low** | The other ~43 | Notice + opt-in consent + DPIA, AG-enforced, no PRA",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A11": {
+   "axis": "A",
+   "points": 4,
+   "type": "J",
+   "verdict": 1,
+   "score": 4,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "## 6. What to do before launch",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "## 6. What to do before launch",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "## 6. What to do before launch",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A12": {
+   "axis": "A",
+   "points": 3,
+   "type": "J",
+   "verdict": 1,
+   "score": 3,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "**Open question for counsel:** does a face scan revealing nothing about health qualify as \"consumer health data\"? Unresolved.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**Not legal advice.** I am not a lawyer. This is a research map built to make your counsel engagement short and cheap. The Illinois decision in particular should not be made off this document alone.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**Not legal advice.** I am not a lawyer. This is a research map built to make your counsel engagement short and cheap.",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "A13": {
+   "axis": "A",
+   "points": 3,
+   "type": "J",
+   "verdict": 1,
+   "score": 3,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "destruction within a reasonable time **not later than one year** after the purpose expires — stricter than Illinois.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**$25,000 per violation**, AG-enforced exclusively.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "ABSENT",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "C2": {
+   "axis": "C",
+   "points": 4,
+   "type": "J",
+   "verdict": 0,
+   "score": 0,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    0,
+    0,
+    0
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "Separate exposure from biometrics: we charge a recurring monthly fee. Map the strict auto-renewal / negative option statutes (CA ARL, NY, OR, Colorado, Virginia, Illinois ADAA...)",
+     "verdict": 0,
+     "voided": false
+    },
+    {
+     "evidence": "Separate exposure from biometrics: we charge a recurring monthly fee.",
+     "verdict": 0,
+     "voided": false
+    },
+    {
+     "evidence": "Separate exposure from biometrics: we charge a recurring monthly fee. Map the strict auto-renewal / negative option statutes (CA ARL, NY, OR, Colorado, Virginia, Illinois ADAA...)",
+     "verdict": 0,
+     "voided": false
+    }
+   ]
+  },
+  "C3": {
+   "axis": "C",
+   "points": 4,
+   "type": "J",
+   "verdict": 1,
+   "score": 4,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "Neither has been tested against a mobile app; my read is neither reaches us.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "Neither has been tested against a mobile app; my read is neither reaches us.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "Neither has been tested against a mobile app; my read is neither reaches us.",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "C4": {
+   "axis": "C",
+   "points": 3,
+   "type": "J",
+   "verdict": 1,
+   "score": 3,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "evidence": "Unresolved. Plaintiffs argue biometric data is covered *per se*. This determines whether Washington is Tier 1 or a non-issue.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**Open question for counsel:** does a face scan revealing nothing about health qualify as \"consumer health data\"? Unresolved.",
+     "verdict": 1,
+     "voided": false
+    },
+    {
+     "evidence": "**Open question for counsel:** does a face scan revealing nothing about health qualify as \"consumer health data\"? Unresolved.",
+     "verdict": 1,
+     "voided": false
+    }
+   ]
+  },
+  "C1": {
+   "axis": "C",
+   "points": 6,
+   "type": "J",
+   "level": 6,
+   "score": 6,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    6,
+    6,
+    6
+   ],
+   "voided_passes": 0,
+   "evidence": [
+    {
+     "level": 6,
+     "count": 6,
+     "evidence": "**You do not have a 50-state problem. You have a five-state problem, and one of those five can end the company.**",
+     "voided": false
+    },
+    {
+     "level": 6,
+     "count": 6,
+     "evidence": "Of 50 states, only **three** have biometric-specific statutes that meaningfully bind a consumer app (Illinois, Texas, Washington)",
+     "voided": false
+    },
+    {
+     "level": 6,
+     "count": 6,
+     "evidence": "**Only four jurisdiction-level regimes let users sue us directly:** Illinois BIPA, Washington's My Health My Data Act, California's breach-only right of action, and two city ordinances (NYC, Portland) that probably don't reach a mobile app.",
+     "voided": false
+    }
+   ]
+  },
+  "C5": {
+   "axis": "C",
+   "points": 3,
+   "type": "H",
+   "fraction": 1,
+   "score": 3,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    1,
+    1,
+    1
+   ],
+   "human_subtasks": 6,
+   "evidence": [
+    {
+     "fraction": 1,
+     "numerator": 6,
+     "denominator": 6,
+     "reported": 6,
+     "matched": 6,
+     "entries": [
+      {
+       "task_title": "DECIDE: do we persist the face template at all, or verify-and-delete?",
+       "self_contained": true,
+       "evidence": "Output: a one-paragraph written decision, dated, with the four items above if Option B. Attach it here.",
+       "matched": "DECIDE: do we persist the face template at all, or verify-and-delete?",
+       "voided": false
+      },
+      {
+       "task_title": "DECIDE: launch in Illinois, geofence it, or delay it",
+       "self_contained": true,
+       "evidence": "THE OPTIONS:\n1. LAUNCH WITH A FULLY BIPA-COMPLIANT FLOW.",
+       "matched": "DECIDE: launch in Illinois, geofence it, or delay it",
+       "voided": false
+      },
+      {
+       "task_title": "Book a scoping call with privacy counsel who has actually litigated BIPA",
+       "self_contained": true,
+       "evidence": "Ask for a written memo, and ask specifically for the Illinois go/no-go recommendation.",
+       "matched": "Book a scoping call with privacy counsel who has actually litigated BIPA",
+       "voided": false
+      },
+      {
+       "task_title": "Decide and build the non-biometric verification fallback path",
+       "self_contained": true,
+       "evidence": "DECIDE: which path, what it costs per verification, what the SLA is, and who staffs it.",
+       "matched": "Decide and build the non-biometric verification fallback path",
+       "voided": false
+      },
+      {
+       "task_title": "Get biometric covenants into the IDV vendor contract / DPA",
+       "self_contained": true,
+       "evidence": "GET THESE IN WRITING FROM [VENDOR] BEFORE LAUNCH:",
+       "matched": "Get biometric covenants into the IDV vendor contract / DPA",
+       "voided": false
+      },
+      {
+       "task_title": "Set a quarterly review reminder for biometric legislation",
+       "self_contained": true,
+       "evidence": "HOW TO DO THIS CHEAPLY IN 15 MINUTES A QUARTER: check the IAPP US State Privacy Legislation Tracker, skim one or two law-firm biometric-privacy roundups, and confirm nothing on the list above has moved.",
+       "matched": "Set a quarterly review reminder for biometric legislation",
+       "voided": false
+      }
+     ]
+    },
+    {
+     "fraction": 1,
+     "numerator": 6,
+     "denominator": 6,
+     "reported": 6,
+     "matched": 6,
+     "entries": [
+      {
+       "task_title": "DECIDE: do we persist the face template at all, or verify-and-delete?",
+       "self_contained": true,
+       "evidence": "Output: a one-paragraph written decision, dated, with the four items above if Option B. Attach it here.",
+       "matched": "DECIDE: do we persist the face template at all, or verify-and-delete?",
+       "voided": false
+      },
+      {
+       "task_title": "DECIDE: launch in Illinois, geofence it, or delay it",
+       "self_contained": true,
+       "evidence": "GO/NO-GO CALL. Only a human can make this one — it is a risk-appetite and revenue trade-off, not a research question.",
+       "matched": "DECIDE: launch in Illinois, geofence it, or delay it",
+       "voided": false
+      },
+      {
+       "task_title": "Book a scoping call with privacy counsel who has actually litigated BIPA",
+       "self_contained": true,
+       "evidence": "BRING TO THE CALL: the attached report from the parent task, the retention decision, and the draft consent screen copy.",
+       "matched": "Book a scoping call with privacy counsel who has actually litigated BIPA",
+       "voided": false
+      },
+      {
+       "task_title": "Decide and build the non-biometric verification fallback path",
+       "self_contained": true,
+       "evidence": "DECIDE: which path, what it costs per verification, what the SLA is, and who staffs it.",
+       "matched": "Decide and build the non-biometric verification fallback path",
+       "voided": false
+      },
+      {
+       "task_title": "Get biometric covenants into the IDV vendor contract / DPA",
+       "self_contained": true,
+       "evidence": "GET THESE IN WRITING FROM [VENDOR] BEFORE LAUNCH:",
+       "matched": "Get biometric covenants into the IDV vendor contract / DPA",
+       "voided": false
+      },
+      {
+       "task_title": "Set a quarterly review reminder for biometric legislation",
+       "self_contained": true,
+       "evidence": "HOW TO DO THIS CHEAPLY IN 15 MINUTES A QUARTER: check the IAPP US State Privacy Legislation Tracker, skim one or two law-firm biometric-privacy roundups, and confirm nothing on the list above has moved.",
+       "matched": "Set a quarterly review reminder for biometric legislation",
+       "voided": false
+      }
+     ]
+    },
+    {
+     "fraction": 1,
+     "numerator": 6,
+     "denominator": 6,
+     "reported": 6,
+     "matched": 6,
+     "entries": [
+      {
+       "task_title": "DECIDE: do we persist the face template at all, or verify-and-delete?",
+       "self_contained": true,
+       "evidence": "Output: a one-paragraph written decision, dated, with the four items above if Option B. Attach it here.",
+       "matched": "DECIDE: do we persist the face template at all, or verify-and-delete?",
+       "voided": false
+      },
+      {
+       "task_title": "DECIDE: launch in Illinois, geofence it, or delay it",
+       "self_contained": true,
+       "evidence": "GO/NO-GO CALL. Only a human can make this one — it is a risk-appetite and revenue trade-off, not a research question.",
+       "matched": "DECIDE: launch in Illinois, geofence it, or delay it",
+       "voided": false
+      },
+      {
+       "task_title": "Book a scoping call with privacy counsel who has actually litigated BIPA",
+       "self_contained": true,
+       "evidence": "BRING TO THE CALL: the attached report from the parent task, the retention decision, and the draft consent screen copy.",
+       "matched": "Book a scoping call with privacy counsel who has actually litigated BIPA",
+       "voided": false
+      },
+      {
+       "task_title": "Decide and build the non-biometric verification fallback path",
+       "self_contained": true,
+       "evidence": "DECIDE: which path, what it costs per verification, what the SLA is, and who staffs it.",
+       "matched": "Decide and build the non-biometric verification fallback path",
+       "voided": false
+      },
+      {
+       "task_title": "Get biometric covenants into the IDV vendor contract / DPA",
+       "self_contained": true,
+       "evidence": "GET THESE IN WRITING FROM [VENDOR] BEFORE LAUNCH:",
+       "matched": "Get biometric covenants into the IDV vendor contract / DPA",
+       "voided": false
+      },
+      {
+       "task_title": "Set a quarterly review reminder for biometric legislation",
+       "self_contained": true,
+       "evidence": "HOW TO DO THIS CHEAPLY IN 15 MINUTES A QUARTER: check the IAPP US State Privacy Legislation Tracker, skim one or two law-firm biometric-privacy roundups, and confirm nothing on the list above has moved.",
+       "matched": "Set a quarterly review reminder for biometric legislation",
+       "voided": false
+      }
+     ]
+    }
+   ]
+  },
+  "B1": {
+   "axis": "B",
+   "points": 8,
+   "type": "D",
+   "ratio": 0,
+   "numerator": 0,
+   "denominator": 24,
+   "score": 0,
+   "agreement": 1,
+   "contested": false,
+   "inputs": {
+    "sources_raw": [
+     "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+     "https://www.atg.wa.gov/my-health-my-data-act",
+     "https://app.leg.wa.gov/rcw/default.aspx?cite=19.375",
+     "https://leg.colorado.gov/bills/hb24-1130",
+     "https://www.dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+     "https://www.osano.com/articles/maryland-online-data-privacy-act-modpa",
+     "https://www.koleyjessen.com/insights/publications/maryland-online-data-privacy-act",
+     "https://www.whitecase.com/insight-alert/maryland-enacts-comprehensive-data-privacy-law",
+     "https://www.recordinglaw.com/us-laws/data-privacy-laws/california-data-privacy-laws/biometric-privacy/",
+     "https://legalclarity.org/private-right-of-action-under-ccpa-and-state-privacy-laws/",
+     "https://iapp.org/news/a/ccpa-litigation-shaping-the-contours-of-the-private-right-of-action",
+     "https://www.lexology.com/library/detail.aspx?g=8c367308-a89c-4919-9204-1fd7ed4b1729",
+     "https://natlawreview.com/article/update-processing-sensitive-personal-information-under-us-state-privacy-laws",
+     "https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+     "https://www.clym.io/blog/us-privacy-law-comparison-map",
+     "https://www.axiomlaw.com/blog/state-privacy-laws",
+     "https://www.osano.com/us-data-privacy-laws",
+     "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+     "https://www.mintz.com/insights-center/viewpoints/2826/2021-06-22-get-ready-new-york-citys-new-biometric-identifier",
+     "https://www.dwt.com/blogs/privacy--security-law-blog/2021/06/nyc-biometrics-law",
+     "https://iapp.org/news/a/iowa-becomes-sixth-us-state-to-enact-comprehensive-consumer-privacy-legislation",
+     "https://www.privado.ai/post/marylands-strict-new-privacy-law-effective-october-2025-what-companies-should-know",
+     "https://www.onetrust.com/blog/marylands-online-data-privacy-act-modpa-key-rules-and-requirements/"
+    ],
+    "sources_normalized": [
+     "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+     "https://atg.wa.gov/my-health-my-data-act",
+     "https://app.leg.wa.gov/rcw/default.aspx?cite=19.375",
+     "https://leg.colorado.gov/bills/hb24-1130",
+     "https://dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+     "https://osano.com/articles/maryland-online-data-privacy-act-modpa",
+     "https://koleyjessen.com/insights/publications/maryland-online-data-privacy-act",
+     "https://whitecase.com/insight-alert/maryland-enacts-comprehensive-data-privacy-law",
+     "https://recordinglaw.com/us-laws/data-privacy-laws/california-data-privacy-laws/biometric-privacy",
+     "https://legalclarity.org/private-right-of-action-under-ccpa-and-state-privacy-laws",
+     "https://iapp.org/news/a/ccpa-litigation-shaping-the-contours-of-the-private-right-of-action",
+     "https://lexology.com/library/detail.aspx?g=8c367308-a89c-4919-9204-1fd7ed4b1729",
+     "https://natlawreview.com/article/update-processing-sensitive-personal-information-under-us-state-privacy-laws",
+     "https://multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+     "https://clym.io/blog/us-privacy-law-comparison-map",
+     "https://axiomlaw.com/blog/state-privacy-laws",
+     "https://osano.com/us-data-privacy-laws",
+     "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+     "https://mintz.com/insights-center/viewpoints/2826/2021-06-22-get-ready-new-york-citys-new-biometric-identifier",
+     "https://dwt.com/blogs/privacy--security-law-blog/2021/06/nyc-biometrics-law",
+     "https://iapp.org/news/a/iowa-becomes-sixth-us-state-to-enact-comprehensive-consumer-privacy-legislation",
+     "https://privado.ai/post/marylands-strict-new-privacy-law-effective-october-2025-what-companies-should-know",
+     "https://onetrust.com/blog/marylands-online-data-privacy-act-modpa-key-rules-and-requirements"
+    ],
+    "fetched_raw": [
+     "https://law.justia.com/codes/washington/title-19/chapter-19-375/section-19-375-010/"
+    ],
+    "fetched_normalized": [
+     "https://law.justia.com/codes/washington/title-19/chapter-19-375/section-19-375-010"
+    ],
+    "unfetched_normalized": [
+     "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+     "https://atg.wa.gov/my-health-my-data-act",
+     "https://app.leg.wa.gov/rcw/default.aspx?cite=19.375",
+     "https://leg.colorado.gov/bills/hb24-1130",
+     "https://dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+     "https://osano.com/articles/maryland-online-data-privacy-act-modpa",
+     "https://koleyjessen.com/insights/publications/maryland-online-data-privacy-act",
+     "https://whitecase.com/insight-alert/maryland-enacts-comprehensive-data-privacy-law",
+     "https://recordinglaw.com/us-laws/data-privacy-laws/california-data-privacy-laws/biometric-privacy",
+     "https://legalclarity.org/private-right-of-action-under-ccpa-and-state-privacy-laws",
+     "https://iapp.org/news/a/ccpa-litigation-shaping-the-contours-of-the-private-right-of-action",
+     "https://lexology.com/library/detail.aspx?g=8c367308-a89c-4919-9204-1fd7ed4b1729",
+     "https://natlawreview.com/article/update-processing-sensitive-personal-information-under-us-state-privacy-laws",
+     "https://multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+     "https://clym.io/blog/us-privacy-law-comparison-map",
+     "https://axiomlaw.com/blog/state-privacy-laws",
+     "https://osano.com/us-data-privacy-laws",
+     "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+     "https://mintz.com/insights-center/viewpoints/2826/2021-06-22-get-ready-new-york-citys-new-biometric-identifier",
+     "https://dwt.com/blogs/privacy--security-law-blog/2021/06/nyc-biometrics-law",
+     "https://iapp.org/news/a/iowa-becomes-sixth-us-state-to-enact-comprehensive-consumer-privacy-legislation",
+     "https://privado.ai/post/marylands-strict-new-privacy-law-effective-october-2025-what-companies-should-know",
+     "https://onetrust.com/blog/marylands-online-data-privacy-act-modpa-key-rules-and-requirements"
+    ]
+   }
+  },
+  "B2": {
+   "axis": "B",
+   "points": 6,
+   "type": "H",
+   "fraction": 0,
+   "score": 0,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    0,
+    0,
+    0
+   ],
+   "evidence": [
+    {
+     "numerator": 0,
+     "denominator": 23,
+     "unflagged_unverified": [
+      "Illinois BIPA 740 ILCS 14",
+      "Illinois BIPA $1,000 negligent / $5,000 reckless or intentional per violation",
+      "Illinois BIPA §15(b) written release before collection",
+      "Illinois BIPA 3 years from last interaction, whichever comes first (§15(a))",
+      "Illinois BIPA 2024 SB 2979 amendment",
+      "Illinois BIPA Rosenbach (no injury requirement)",
+      "Texas CUBI Bus. & Com. Code §503.001",
+      "Texas CUBI $25,000 per violation",
+      "Texas CUBI not later than one year after purpose expires",
+      "Washington RCW 19.375 RCW 19.375",
+      "Colorado HB 24-1130 HB 24-1130",
+      "Colorado HB 24-1130 cure period expired 1 January 2025",
+      "Maryland MODPA 35,000 Maryland consumers",
+      "Maryland MODPA $10,000 per violation ($25,000 for repeats)",
+      "Maryland MODPA discretionary cure sunsetting 1 April 2027",
+      "California CCPA/CPRA ~$2,663 per violation and ~$7,988 per intentional violation",
+      "California §1798.150 $100–$750 per consumer per incident",
+      "Florida $1 billion in global revenue",
+      "Comprehensive state privacy law thresholds most 100,000 consumers; 35,000 in CT, RI, MD, NH, DE",
+      "US states generally (comprehensive privacy laws) ~20 states in effect in 2026"
+     ],
+     "claims": [
+      {
+       "provider": "Illinois BIPA",
+       "price": "740 ILCS 14",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Illinois — BIPA (740 ILCS 14)"
+      },
+      {
+       "provider": "Illinois BIPA",
+       "price": "$1,000 negligent / $5,000 reckless or intentional per violation",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**$1,000** per negligent violation, **$5,000** per reckless or intentional violation, or actual damages if greater, plus fees."
+      },
+      {
+       "provider": "Illinois BIPA",
+       "price": "§15(b) written release before collection",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "a **written release** obtained *before* collection, disclosing that biometric data is being collected, the **specific purpose**, and the **length of term** for which it's stored (§15(b))"
+      },
+      {
+       "provider": "Illinois BIPA",
+       "price": "3 years from last interaction, whichever comes first (§15(a))",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "destruction at purpose-satisfaction or 3 years from last interaction, **whichever comes first** (§15(a))"
+      },
+      {
+       "provider": "Illinois BIPA",
+       "price": "2024 SB 2979 amendment",
+       "source_url": "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+       "normalized": "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "The **2024 SB 2979 amendment** helps but less than the headlines suggest: it made repeated collection from the same person by the same method a *single* violation"
+      },
+      {
+       "provider": "Illinois BIPA",
+       "price": "Rosenbach (no injury requirement)",
+       "source_url": "NONE",
+       "normalized": "none",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "no injury requirement (*Rosenbach*)"
+      },
+      {
+       "provider": "Texas CUBI",
+       "price": "Bus. & Com. Code §503.001",
+       "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "normalized": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Texas — CUBI (Bus. & Com. Code §503.001)"
+      },
+      {
+       "provider": "Texas CUBI",
+       "price": "$25,000 per violation",
+       "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "normalized": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**$25,000 per violation**, AG-enforced exclusively."
+      },
+      {
+       "provider": "Texas CUBI",
+       "price": "not later than one year after purpose expires",
+       "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "normalized": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "destruction within a reasonable time **not later than one year** after the purpose expires"
+      },
+      {
+       "provider": "Washington RCW 19.375",
+       "price": "RCW 19.375",
+       "source_url": "https://app.leg.wa.gov/rcw/default.aspx?cite=19.375",
+       "normalized": "https://app.leg.wa.gov/rcw/default.aspx?cite=19.375",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**RCW 19.375** requires notice and consent before *enrolling* a biometric identifier in a database for a commercial purpose. It has **no private right of action**"
+      },
+      {
+       "provider": "Washington My Health My Data Act",
+       "price": "private right of action via the Consumer Protection Act",
+       "source_url": "https://www.atg.wa.gov/my-health-my-data-act",
+       "normalized": "https://atg.wa.gov/my-health-my-data-act",
+       "fetched": false,
+       "flagged_approximate": true,
+       "evidence": "MHMDA carries a **private right of action** via the Consumer Protection Act"
+      },
+      {
+       "provider": "Colorado HB 24-1130",
+       "price": "HB 24-1130",
+       "source_url": "https://leg.colorado.gov/bills/hb24-1130",
+       "normalized": "https://leg.colorado.gov/bills/hb24-1130",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Colorado — HB 24-1130. **The one that conflicts with our product design.**"
+      },
+      {
+       "provider": "Colorado HB 24-1130",
+       "price": "cure period expired 1 January 2025",
+       "source_url": "https://leg.colorado.gov/bills/hb24-1130",
+       "normalized": "https://leg.colorado.gov/bills/hb24-1130",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "and its cure period expired 1 January 2025."
+      },
+      {
+       "provider": "Maryland MODPA",
+       "price": "35,000 Maryland consumers",
+       "source_url": "https://www.dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+       "normalized": "https://dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "In scope only above **35,000 Maryland consumers**, so not at launch."
+      },
+      {
+       "provider": "Maryland MODPA",
+       "price": "$10,000 per violation ($25,000 for repeats)",
+       "source_url": "https://www.dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+       "normalized": "https://dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Penalties to $10,000 per violation ($25,000 for repeats), AG-enforced, no PRA"
+      },
+      {
+       "provider": "Maryland MODPA",
+       "price": "discretionary cure sunsetting 1 April 2027",
+       "source_url": "https://www.osano.com/articles/maryland-online-data-privacy-act-modpa",
+       "normalized": "https://osano.com/articles/maryland-online-data-privacy-act-modpa",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "discretionary cure sunsetting 1 April 2027."
+      },
+      {
+       "provider": "California CCPA/CPRA",
+       "price": "~$2,663 per violation and ~$7,988 per intentional violation",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/california-data-privacy-laws/biometric-privacy/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/california-data-privacy-laws/biometric-privacy",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Administrative fines run ~$2,663 per violation and ~$7,988 per intentional violation (2025 inflation-adjusted), CPPA and AG enforced."
+      },
+      {
+       "provider": "California §1798.150",
+       "price": "$100–$750 per consumer per incident",
+       "source_url": "https://legalclarity.org/private-right-of-action-under-ccpa-and-state-privacy-laws/",
+       "normalized": "https://legalclarity.org/private-right-of-action-under-ccpa-and-state-privacy-laws",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**$100–$750 per consumer per incident**, class-wide."
+      },
+      {
+       "provider": "Florida",
+       "price": "$1 billion in global revenue",
+       "source_url": "https://www.clym.io/blog/us-privacy-law-comparison-map",
+       "normalized": "https://clym.io/blog/us-privacy-law-comparison-map",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Florida** — applies only above **$1 billion** in global revenue. Ignore it entirely."
+      },
+      {
+       "provider": "Comprehensive state privacy law thresholds",
+       "price": "most 100,000 consumers; 35,000 in CT, RI, MD, NH, DE",
+       "source_url": "https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+       "normalized": "https://multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Thresholds:** most 100,000 consumers; **35,000** in Connecticut, Rhode Island, Maryland, New Hampshire and Delaware"
+      },
+      {
+       "provider": "US states generally (comprehensive privacy laws)",
+       "price": "~20 states in effect in 2026",
+       "source_url": "https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+       "normalized": "https://multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**~20 states have comprehensive privacy laws in effect in 2026.**"
+      },
+      {
+       "provider": "New York City biometric identifier ordinance",
+       "price": "$500 negligent / $5,000 intentional",
+       "source_url": "https://www.mintz.com/insights-center/viewpoints/2826/2021-06-22-get-ready-new-york-citys-new-biometric-identifier",
+       "normalized": "https://mintz.com/insights-center/viewpoints/2826/2021-06-22-get-ready-new-york-citys-new-biometric-identifier",
+       "fetched": false,
+       "flagged_approximate": true,
+       "evidence": "($500 negligent / $5,000 intentional, private right of action, no cure for the sale ban)"
+      },
+      {
+       "provider": "Portland facial recognition ban",
+       "price": "$1,000 per day",
+       "source_url": "NONE",
+       "normalized": "none",
+       "fetched": false,
+       "flagged_approximate": true,
+       "evidence": "Portland bans private face recognition in **places of public accommodation** outright ($1,000 per day, private right of action)."
+      }
+     ],
+     "voided": 0
+    },
+    {
+     "numerator": 0,
+     "denominator": 24,
+     "unflagged_unverified": [
+      "Illinois BIPA 740 ILCS 14",
+      "Illinois BIPA $1,000 negligent / $5,000 reckless or intentional",
+      "Illinois BIPA §15(b) §15(b) written release before collection",
+      "Illinois BIPA §15(a) 3 years from last interaction, whichever comes first",
+      "Illinois BIPA §15(c) §15(c)",
+      "Illinois BIPA §15(e) §15(e)",
+      "Illinois BIPA (case law) Rosenbach",
+      "Illinois BIPA amendment 2024 SB 2979",
+      "Texas CUBI Bus. & Com. Code §503.001",
+      "Texas CUBI $25,000 per violation",
+      "Texas CUBI not later than one year after the purpose expires",
+      "Washington RCW 19.375 RCW 19.375",
+      "Colorado HB 24-1130 HB 24-1130",
+      "Colorado CPA cure period expired 1 January 2025",
+      "Maryland MODPA 35,000 Maryland consumers",
+      "Maryland MODPA $10,000 per violation ($25,000 for repeats)",
+      "Maryland MODPA cure period sunsetting 1 April 2027",
+      "California CCPA/CPRA ~$2,663 per violation and ~$7,988 per intentional violation",
+      "California Civil Code §1798.150 $100–$750 per consumer per incident",
+      "Florida Digital Bill of Rights $1 billion in global revenue",
+      "State comprehensive privacy law thresholds most 100,000 consumers; 35,000 in CT, RI, MD, NH, DE",
+      "US state comprehensive privacy laws ~20 states in effect in 2026"
+     ],
+     "claims": [
+      {
+       "provider": "Illinois BIPA",
+       "price": "740 ILCS 14",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Illinois — BIPA (740 ILCS 14)"
+      },
+      {
+       "provider": "Illinois BIPA",
+       "price": "$1,000 negligent / $5,000 reckless or intentional",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**$1,000** per negligent violation, **$5,000** per reckless or intentional violation, or actual damages if greater, plus fees."
+      },
+      {
+       "provider": "Illinois BIPA §15(b)",
+       "price": "§15(b) written release before collection",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Requirements: a **written release** obtained *before* collection, disclosing that biometric data is being collected, the **specific purpose**, and the **length of term** for which it's stored (§15(b))"
+      },
+      {
+       "provider": "Illinois BIPA §15(a)",
+       "price": "3 years from last interaction, whichever comes first",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "plus a **publicly available written retention and destruction policy** with destruction at purpose-satisfaction or 3 years from last interaction, **whichever comes first** (§15(a))"
+      },
+      {
+       "provider": "Illinois BIPA §15(c)",
+       "price": "§15(c)",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "plus no sale or profit from it (§15(c))"
+      },
+      {
+       "provider": "Illinois BIPA §15(e)",
+       "price": "§15(e)",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "plus reasonable security (§15(e))"
+      },
+      {
+       "provider": "Illinois BIPA (case law)",
+       "price": "Rosenbach",
+       "source_url": "NONE",
+       "normalized": "none",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "no injury requirement (*Rosenbach*)"
+      },
+      {
+       "provider": "Illinois BIPA amendment",
+       "price": "2024 SB 2979",
+       "source_url": "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+       "normalized": "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "The **2024 SB 2979 amendment** helps but less than the headlines suggest: it made repeated collection from the same person by the same method a *single* violation, converting per-scan into per-person accrual, and expressly permitted electronic signatures for the release."
+      },
+      {
+       "provider": "Texas CUBI",
+       "price": "Bus. & Com. Code §503.001",
+       "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "normalized": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Texas — CUBI (Bus. & Com. Code §503.001)"
+      },
+      {
+       "provider": "Texas CUBI",
+       "price": "$25,000 per violation",
+       "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "normalized": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**$25,000 per violation**, AG-enforced exclusively."
+      },
+      {
+       "provider": "Texas CUBI",
+       "price": "not later than one year after the purpose expires",
+       "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "normalized": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "destruction within a reasonable time **not later than one year** after the purpose expires"
+      },
+      {
+       "provider": "Washington RCW 19.375",
+       "price": "RCW 19.375",
+       "source_url": "https://app.leg.wa.gov/rcw/default.aspx?cite=19.375",
+       "normalized": "https://app.leg.wa.gov/rcw/default.aspx?cite=19.375",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**RCW 19.375** requires notice and consent before *enrolling* a biometric identifier in a database for a commercial purpose."
+      },
+      {
+       "provider": "Colorado HB 24-1130",
+       "price": "HB 24-1130",
+       "source_url": "https://leg.colorado.gov/bills/hb24-1130",
+       "normalized": "https://leg.colorado.gov/bills/hb24-1130",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Colorado — HB 24-1130"
+      },
+      {
+       "provider": "Colorado CPA cure period",
+       "price": "expired 1 January 2025",
+       "source_url": "https://leg.colorado.gov/bills/hb24-1130",
+       "normalized": "https://leg.colorado.gov/bills/hb24-1130",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Colorado also requires deletion or permanent anonymisation on withdrawal of consent, and its cure period expired 1 January 2025."
+      },
+      {
+       "provider": "Maryland MODPA",
+       "price": "35,000 Maryland consumers",
+       "source_url": "https://www.dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+       "normalized": "https://dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "In scope only above **35,000 Maryland consumers**, so not at launch."
+      },
+      {
+       "provider": "Maryland MODPA",
+       "price": "$10,000 per violation ($25,000 for repeats)",
+       "source_url": "https://www.koleyjessen.com/insights/publications/maryland-online-data-privacy-act",
+       "normalized": "https://koleyjessen.com/insights/publications/maryland-online-data-privacy-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Penalties to $10,000 per violation ($25,000 for repeats), AG-enforced, no PRA, discretionary cure sunsetting 1 April 2027."
+      },
+      {
+       "provider": "Maryland MODPA cure period",
+       "price": "sunsetting 1 April 2027",
+       "source_url": "https://www.privado.ai/post/marylands-strict-new-privacy-law-effective-october-2025-what-companies-should-know",
+       "normalized": "https://privado.ai/post/marylands-strict-new-privacy-law-effective-october-2025-what-companies-should-know",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "discretionary cure sunsetting 1 April 2027"
+      },
+      {
+       "provider": "California CCPA/CPRA",
+       "price": "~$2,663 per violation and ~$7,988 per intentional violation",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/california-data-privacy-laws/biometric-privacy/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/california-data-privacy-laws/biometric-privacy",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Administrative fines run ~$2,663 per violation and ~$7,988 per intentional violation (2025 inflation-adjusted), CPPA and AG enforced."
+      },
+      {
+       "provider": "California Civil Code §1798.150",
+       "price": "$100–$750 per consumer per incident",
+       "source_url": "https://legalclarity.org/private-right-of-action-under-ccpa-and-state-privacy-laws/",
+       "normalized": "https://legalclarity.org/private-right-of-action-under-ccpa-and-state-privacy-laws",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**$100–$750 per consumer per incident**, class-wide."
+      },
+      {
+       "provider": "NYC Biometric Identifier Information Law",
+       "price": "$500 negligent / $5,000 intentional",
+       "source_url": "https://www.mintz.com/insights-center/viewpoints/2826/2021-06-22-get-ready-new-york-citys-new-biometric-identifier",
+       "normalized": "https://mintz.com/insights-center/viewpoints/2826/2021-06-22-get-ready-new-york-citys-new-biometric-identifier",
+       "fetched": false,
+       "flagged_approximate": true,
+       "evidence": "($500 negligent / $5,000 intentional, private right of action, no cure for the sale ban)"
+      },
+      {
+       "provider": "Portland facial recognition ban",
+       "price": "$1,000 per day",
+       "source_url": "NONE",
+       "normalized": "none",
+       "fetched": false,
+       "flagged_approximate": true,
+       "evidence": "Portland bans private face recognition in **places of public accommodation** outright ($1,000 per day, private right of action)."
+      },
+      {
+       "provider": "Florida Digital Bill of Rights",
+       "price": "$1 billion in global revenue",
+       "source_url": "https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+       "normalized": "https://multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Florida** — applies only above **$1 billion** in global revenue. Ignore it entirely."
+      },
+      {
+       "provider": "State comprehensive privacy law thresholds",
+       "price": "most 100,000 consumers; 35,000 in CT, RI, MD, NH, DE",
+       "source_url": "https://www.clym.io/blog/us-privacy-law-comparison-map",
+       "normalized": "https://clym.io/blog/us-privacy-law-comparison-map",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Thresholds:** most 100,000 consumers; **35,000** in Connecticut, Rhode Island, Maryland, New Hampshire and Delaware (these bite first as we scale)"
+      },
+      {
+       "provider": "US state comprehensive privacy laws",
+       "price": "~20 states in effect in 2026",
+       "source_url": "https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+       "normalized": "https://multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**~20 states have comprehensive privacy laws in effect in 2026.**"
+      }
+     ],
+     "voided": 0
+    },
+    {
+     "numerator": 0,
+     "denominator": 26,
+     "unflagged_unverified": [
+      "Illinois BIPA 740 ILCS 14",
+      "Illinois BIPA $1,000 negligent / $5,000 reckless or intentional",
+      "Illinois BIPA §15(a) 3 years from last interaction",
+      "Illinois BIPA §15(b) §15(b) written release before collection",
+      "Illinois BIPA §15(c) §15(c)",
+      "Illinois BIPA §15(e) §15(e)",
+      "Illinois BIPA (2024 amendment) SB 2979 (2024)",
+      "Illinois BIPA (case law) Rosenbach",
+      "Texas CUBI Bus. & Com. Code §503.001",
+      "Texas CUBI $25,000 per violation",
+      "Texas CUBI not later than one year after the purpose expires",
+      "Washington RCW 19.375 RCW 19.375",
+      "Colorado HB 24-1130 HB 24-1130",
+      "Colorado HB 24-1130 cure period expired 1 January 2025",
+      "Maryland MODPA 35,000 Maryland consumers",
+      "Maryland MODPA $10,000 per violation ($25,000 for repeats)",
+      "Maryland MODPA cure sunsetting 1 April 2027",
+      "California CCPA §1798.150 $100–$750 per consumer per incident",
+      "California CCPA/CPRA ~$2,663 per violation / ~$7,988 per intentional violation",
+      "US states generally ~20 states with comprehensive privacy laws in effect in 2026",
+      "Florida $1 billion in global revenue threshold",
+      "Multi-state applicability thresholds 100,000 consumers; 35,000 in CT, RI, MD, NH, DE",
+      "FTC Act §5 FTC Act §5"
+     ],
+     "claims": [
+      {
+       "provider": "Illinois BIPA",
+       "price": "740 ILCS 14",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "### Illinois — BIPA (740 ILCS 14)."
+      },
+      {
+       "provider": "Illinois BIPA",
+       "price": "$1,000 negligent / $5,000 reckless or intentional",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**$1,000** per negligent violation, **$5,000** per reckless or intentional violation, or actual damages if greater, plus fees."
+      },
+      {
+       "provider": "Illinois BIPA §15(a)",
+       "price": "3 years from last interaction",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "plus a **publicly available written retention and destruction policy** with destruction at purpose-satisfaction or 3 years from last interaction, **whichever comes first** (§15(a))"
+      },
+      {
+       "provider": "Illinois BIPA §15(b)",
+       "price": "§15(b) written release before collection",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "a **written release** obtained *before* collection, disclosing that biometric data is being collected, the **specific purpose**, and the **length of term** for which it's stored (§15(b))"
+      },
+      {
+       "provider": "Illinois BIPA §15(c)",
+       "price": "§15(c)",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "plus no sale or profit from it (§15(c))"
+      },
+      {
+       "provider": "Illinois BIPA §15(e)",
+       "price": "§15(e)",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "plus reasonable security (§15(e))"
+      },
+      {
+       "provider": "Illinois BIPA (2024 amendment)",
+       "price": "SB 2979 (2024)",
+       "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "normalized": "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "The **2024 SB 2979 amendment** helps but less than the headlines suggest: it made repeated collection from the same person by the same method a *single* violation"
+      },
+      {
+       "provider": "Illinois BIPA (case law)",
+       "price": "Rosenbach",
+       "source_url": "NONE",
+       "normalized": "none",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "no injury requirement (*Rosenbach*)"
+      },
+      {
+       "provider": "Texas CUBI",
+       "price": "Bus. & Com. Code §503.001",
+       "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "normalized": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "### Texas — CUBI (Bus. & Com. Code §503.001)."
+      },
+      {
+       "provider": "Texas CUBI",
+       "price": "$25,000 per violation",
+       "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "normalized": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**$25,000 per violation**, AG-enforced exclusively."
+      },
+      {
+       "provider": "Texas CUBI",
+       "price": "not later than one year after the purpose expires",
+       "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "normalized": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "destruction within a reasonable time **not later than one year** after the purpose expires"
+      },
+      {
+       "provider": "Washington RCW 19.375",
+       "price": "RCW 19.375",
+       "source_url": "https://app.leg.wa.gov/rcw/default.aspx?cite=19.375",
+       "normalized": "https://app.leg.wa.gov/rcw/default.aspx?cite=19.375",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**RCW 19.375** requires notice and consent before *enrolling* a biometric identifier in a database for a commercial purpose. It has **no private right of action**"
+      },
+      {
+       "provider": "Washington My Health My Data Act",
+       "price": "private right of action via the Consumer Protection Act",
+       "source_url": "https://www.atg.wa.gov/my-health-my-data-act",
+       "normalized": "https://atg.wa.gov/my-health-my-data-act",
+       "fetched": false,
+       "flagged_approximate": true,
+       "evidence": "MHMDA carries a **private right of action** via the Consumer Protection Act."
+      },
+      {
+       "provider": "Colorado HB 24-1130",
+       "price": "HB 24-1130",
+       "source_url": "https://leg.colorado.gov/bills/hb24-1130",
+       "normalized": "https://leg.colorado.gov/bills/hb24-1130",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "### Colorado — HB 24-1130. **The one that conflicts with our product design.**"
+      },
+      {
+       "provider": "Colorado HB 24-1130",
+       "price": "cure period expired 1 January 2025",
+       "source_url": "https://leg.colorado.gov/bills/hb24-1130",
+       "normalized": "https://leg.colorado.gov/bills/hb24-1130",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "and its cure period expired 1 January 2025."
+      },
+      {
+       "provider": "Maryland MODPA",
+       "price": "35,000 Maryland consumers",
+       "source_url": "https://www.dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+       "normalized": "https://dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "In scope only above **35,000 Maryland consumers**, so not at launch."
+      },
+      {
+       "provider": "Maryland MODPA",
+       "price": "$10,000 per violation ($25,000 for repeats)",
+       "source_url": "https://www.dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+       "normalized": "https://dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Penalties to $10,000 per violation ($25,000 for repeats), AG-enforced, no PRA, discretionary cure sunsetting 1 April 2027."
+      },
+      {
+       "provider": "Maryland MODPA",
+       "price": "cure sunsetting 1 April 2027",
+       "source_url": "https://www.koleyjessen.com/insights/publications/maryland-online-data-privacy-act",
+       "normalized": "https://koleyjessen.com/insights/publications/maryland-online-data-privacy-act",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "discretionary cure sunsetting 1 April 2027"
+      },
+      {
+       "provider": "California CCPA §1798.150",
+       "price": "$100–$750 per consumer per incident",
+       "source_url": "https://legalclarity.org/private-right-of-action-under-ccpa-and-state-privacy-laws/",
+       "normalized": "https://legalclarity.org/private-right-of-action-under-ccpa-and-state-privacy-laws",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**$100–$750 per consumer per incident**, class-wide."
+      },
+      {
+       "provider": "California CCPA/CPRA",
+       "price": "~$2,663 per violation / ~$7,988 per intentional violation",
+       "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/california-data-privacy-laws/biometric-privacy/",
+       "normalized": "https://recordinglaw.com/us-laws/data-privacy-laws/california-data-privacy-laws/biometric-privacy",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "Administrative fines run ~$2,663 per violation and ~$7,988 per intentional violation (2025 inflation-adjusted), CPPA and AG enforced."
+      },
+      {
+       "provider": "US states generally",
+       "price": "~20 states with comprehensive privacy laws in effect in 2026",
+       "source_url": "https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+       "normalized": "https://multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**~20 states have comprehensive privacy laws in effect in 2026.**"
+      },
+      {
+       "provider": "Florida",
+       "price": "$1 billion in global revenue threshold",
+       "source_url": "https://www.clym.io/blog/us-privacy-law-comparison-map",
+       "normalized": "https://clym.io/blog/us-privacy-law-comparison-map",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Florida** — applies only above **$1 billion** in global revenue. Ignore it entirely."
+      },
+      {
+       "provider": "Multi-state applicability thresholds",
+       "price": "100,000 consumers; 35,000 in CT, RI, MD, NH, DE",
+       "source_url": "https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+       "normalized": "https://multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "**Thresholds:** most 100,000 consumers; **35,000** in Connecticut, Rhode Island, Maryland, New Hampshire and Delaware"
+      },
+      {
+       "provider": "New York City biometric identifier ordinance",
+       "price": "$500 negligent / $5,000 intentional",
+       "source_url": "https://www.mintz.com/insights-center/viewpoints/2826/2021-06-22-get-ready-new-york-citys-new-biometric-identifier",
+       "normalized": "https://mintz.com/insights-center/viewpoints/2826/2021-06-22-get-ready-new-york-citys-new-biometric-identifier",
+       "fetched": false,
+       "flagged_approximate": true,
+       "evidence": "($500 negligent / $5,000 intentional, private right of action, no cure for the sale ban)"
+      },
+      {
+       "provider": "Portland, Oregon face recognition ban",
+       "price": "$1,000 per day",
+       "source_url": "NONE",
+       "normalized": "none",
+       "fetched": false,
+       "flagged_approximate": true,
+       "evidence": "Portland bans private face recognition in **places of public accommodation** outright ($1,000 per day, private right of action)."
+      },
+      {
+       "provider": "FTC Act §5",
+       "price": "FTC Act §5",
+       "source_url": "NONE",
+       "normalized": "none",
+       "fetched": false,
+       "flagged_approximate": false,
+       "evidence": "FTC Act §5 remedies include algorithmic disgorgement — deletion of the model."
+      }
+     ],
+     "voided": 0
+    }
+   ]
+  },
+  "B3": {
+   "axis": "B",
+   "points": 3,
+   "type": "H",
+   "verdict": 0,
+   "score": 0,
+   "agreement": 1,
+   "contested": false,
+   "votes": [
+    0,
+    0,
+    0
+   ]
+  },
+  "B4": {
+   "axis": "B",
+   "points": 3,
+   "type": "D",
+   "verdict": 0,
+   "score": 0,
+   "agreement": 1,
+   "contested": false,
+   "inputs": {
+    "agent_subtasks": [
+     {
+      "title": "Layer 1: Dedicated biometric privacy statutes (IL, TX, WA, CO, OR + new 2024-2026 entrants)",
+      "status": "in_progress"
+     },
+     {
+      "title": "Layer 2: Comprehensive state privacy laws — biometrics as 'sensitive data'",
+      "status": "not_started"
+     },
+     {
+      "title": "Layer 3: Adjacent regimes that specifically catch face scanning",
+      "status": "not_started"
+     },
+     {
+      "title": "Layer 4: Monthly subscription — auto-renewal laws + FTC click-to-cancel",
+      "status": "not_started"
+     },
+     {
+      "title": "Build the 50-state matrix",
+      "status": "not_started"
+     },
+     {
+      "title": "Flag the genuinely dangerous states and write the launch recommendation",
+      "status": "not_started"
+     },
+     {
+      "title": "Draft the biometric consent screen — copy is written below, needs counsel review",
+      "status": "needs_review"
+     },
+     {
+      "title": "Write the public biometric data retention and destruction schedule",
+      "status": "not_started"
+     },
+     {
+      "title": "Write the DPIA, with a dedicated Maryland strict-necessity section",
+      "status": "not_started"
+     }
+    ],
+    "parent_status": "waiting",
+    "justified": true
+   }
+  }
+ },
+ "behavioural": {
+  "report_chars": 12952,
+  "sources_count": 24,
+  "cite_count": 0,
+  "human_subtasks": 6,
+  "agent_subtasks": 9,
+  "abandoned_subtasks": 7,
+  "trace_available": true,
+  "searches_trace": 20,
+  "distinct_searches": 20,
+  "dup_search_pct": 0,
+  "fetches_trace": 1,
+  "distinct_fetches": 1,
+  "wasted_fetch_pct": 0,
+  "near_dup_searches": 1,
+  "cited_sources": 24,
+  "cited_fetched": 0,
+  "cited_unfetched_ratio": 1,
+  "cited_unfetched": [
+   "https://ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+   "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+   "https://atg.wa.gov/my-health-my-data-act",
+   "https://app.leg.wa.gov/rcw/default.aspx?cite=19.375",
+   "https://leg.colorado.gov/bills/hb24-1130",
+   "https://dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+   "https://osano.com/articles/maryland-online-data-privacy-act-modpa",
+   "https://koleyjessen.com/insights/publications/maryland-online-data-privacy-act",
+   "https://whitecase.com/insight-alert/maryland-enacts-comprehensive-data-privacy-law",
+   "https://recordinglaw.com/us-laws/data-privacy-laws/california-data-privacy-laws/biometric-privacy",
+   "https://legalclarity.org/private-right-of-action-under-ccpa-and-state-privacy-laws",
+   "https://iapp.org/news/a/ccpa-litigation-shaping-the-contours-of-the-private-right-of-action",
+   "https://lexology.com/library/detail.aspx?g=8c367308-a89c-4919-9204-1fd7ed4b1729",
+   "https://natlawreview.com/article/update-processing-sensitive-personal-information-under-us-state-privacy-laws",
+   "https://multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+   "https://clym.io/blog/us-privacy-law-comparison-map",
+   "https://axiomlaw.com/blog/state-privacy-laws",
+   "https://osano.com/us-data-privacy-laws",
+   "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+   "https://mintz.com/insights-center/viewpoints/2826/2021-06-22-get-ready-new-york-citys-new-biometric-identifier",
+   "https://dwt.com/blogs/privacy--security-law-blog/2021/06/nyc-biometrics-law",
+   "https://iapp.org/news/a/iowa-becomes-sixth-us-state-to-enact-comprehensive-consumer-privacy-legislation",
+   "https://privado.ai/post/marylands-strict-new-privacy-law-effective-october-2025-what-companies-should-know",
+   "https://onetrust.com/blog/marylands-online-data-privacy-act-modpa-key-rules-and-requirements"
+  ],
+  "subtasks_created": 25,
+  "recreated_subtasks": 0,
+  "recreated_pairs": [],
+  "update_task_noops": 0,
+  "re_research_after_close": 0,
+  "re_research_pairs": [],
+  "turns": 16,
+  "comments": 2,
+  "wallclock_s": 809.347,
+  "completed": true,
+  "failure_mode": null,
+  "usage_available": true,
+  "api_calls": 16,
+  "tokens_uncached_input": 68,
+  "tokens_cache_write": 360688,
+  "tokens_cache_read": 680201,
+  "tokens_output": 47447,
+  "searches": 20,
+  "fetches": 1,
+  "cost_uncached_input": 0.00034,
+  "cost_cache_write": 2.2543,
+  "cost_cache_read": 0.3401005,
+  "cost_output": 1.186175,
+  "cost_search": 0.2,
+  "cost_usd_recomputed": 3.9809155000000005,
+  "cost_usd_reported": 3.9809155,
+  "latency_total_s": 809.25,
+  "cache_hit_call1": false,
+  "search_count_mismatch": false,
+  "fetch_count_mismatch": false,
+  "extracted_claims": 24
+ },
+ "raw_passes": [
+  {
+   "binary_verdicts": [
+    {
+     "id": "A1",
+     "verdict": "pass",
+     "evidence": "Our signup flow gates access on a face scan. That is the direct collision, and it is why the fallback verification path is not optional."
+    },
+    {
+     "id": "A2",
+     "verdict": "pass",
+     "evidence": "Amends the CPA with biometric-specific rules that apply with **no volume threshold**, so we're in scope immediately."
+    },
+    {
+     "id": "A3",
+     "verdict": "pass",
+     "evidence": "Requirements: a **written release** obtained *before* collection, disclosing that biometric data is being collected, the **specific purpose**, and the **length of term** for which it's stored (§15(b));"
+    },
+    {
+     "id": "A4",
+     "verdict": "pass",
+     "evidence": "a **written release** obtained *before* collection"
+    },
+    {
+     "id": "A5",
+     "verdict": "pass",
+     "evidence": "destruction at purpose-satisfaction or 3 years from last interaction, **whichever comes first** (§15(a))"
+    },
+    {
+     "id": "A6",
+     "verdict": "pass",
+     "evidence": "Then **actually build the deletion job**; an unfollowed published policy converts a technical violation into a deceptive-practice claim in all 50 states."
+    },
+    {
+     "id": "A7",
+     "verdict": "pass",
+     "evidence": "**Everywhere else, only the Attorney General can act** — which is meaningfully less dangerous, with the sharp exception of Texas."
+    },
+    {
+     "id": "A8",
+     "verdict": "pass",
+     "evidence": "**$1,000** per negligent violation, **$5,000** per reckless or intentional violation, or actual damages if greater, plus fees."
+    },
+    {
+     "id": "A9",
+     "verdict": "pass",
+     "evidence": "Private right of action + $1k/$5k liquidated damages + no injury required + mandatory fee-shifting"
+    },
+    {
+     "id": "A10",
+     "verdict": "pass",
+     "evidence": "| **4 — Low** | The other ~43 | Notice + opt-in consent + DPIA, AG-enforced, no PRA | One document set covers all |"
+    },
+    {
+     "id": "A11",
+     "verdict": "pass",
+     "evidence": "## 6. What to do before launch"
+    },
+    {
+     "id": "A12",
+     "verdict": "pass",
+     "evidence": "**Open question for counsel:** does a face scan revealing nothing about health qualify as \"consumer health data\"? Unresolved."
+    },
+    {
+     "id": "A13",
+     "verdict": "pass",
+     "evidence": "destruction within a reasonable time **not later than one year** after the purpose expires — stricter than Illinois."
+    },
+    {
+     "id": "C2",
+     "verdict": "fail",
+     "evidence": "Separate exposure from biometrics: we charge a recurring monthly fee. Map the strict auto-renewal / negative option statutes (CA ARL, NY, OR, Colorado, Virginia, Illinois ADAA...)"
+    },
+    {
+     "id": "C3",
+     "verdict": "pass",
+     "evidence": "Neither has been tested against a mobile app; my read is neither reaches us."
+    },
+    {
+     "id": "C4",
+     "verdict": "pass",
+     "evidence": "Unresolved. Plaintiffs argue biometric data is covered *per se*. This determines whether Washington is Tier 1 or a non-issue."
+    }
+   ],
+   "c1": {
+    "level": 6,
+    "primary_option_count": 6,
+    "evidence": "**You do not have a 50-state problem. You have a five-state problem, and one of those five can end the company.**"
+   },
+   "price_claims": [
+    {
+     "provider": "Illinois BIPA",
+     "price": "740 ILCS 14",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "Illinois — BIPA (740 ILCS 14)"
+    },
+    {
+     "provider": "Illinois BIPA",
+     "price": "$1,000 negligent / $5,000 reckless or intentional per violation",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "**$1,000** per negligent violation, **$5,000** per reckless or intentional violation, or actual damages if greater, plus fees."
+    },
+    {
+     "provider": "Illinois BIPA",
+     "price": "§15(b) written release before collection",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "a **written release** obtained *before* collection, disclosing that biometric data is being collected, the **specific purpose**, and the **length of term** for which it's stored (§15(b))"
+    },
+    {
+     "provider": "Illinois BIPA",
+     "price": "3 years from last interaction, whichever comes first (§15(a))",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "destruction at purpose-satisfaction or 3 years from last interaction, **whichever comes first** (§15(a))"
+    },
+    {
+     "provider": "Illinois BIPA",
+     "price": "2024 SB 2979 amendment",
+     "source_url": "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+     "flagged_approximate": false,
+     "evidence": "The **2024 SB 2979 amendment** helps but less than the headlines suggest: it made repeated collection from the same person by the same method a *single* violation"
+    },
+    {
+     "provider": "Illinois BIPA",
+     "price": "Rosenbach (no injury requirement)",
+     "source_url": "NONE",
+     "flagged_approximate": false,
+     "evidence": "no injury requirement (*Rosenbach*)"
+    },
+    {
+     "provider": "Texas CUBI",
+     "price": "Bus. & Com. Code §503.001",
+     "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+     "flagged_approximate": false,
+     "evidence": "Texas — CUBI (Bus. & Com. Code §503.001)"
+    },
+    {
+     "provider": "Texas CUBI",
+     "price": "$25,000 per violation",
+     "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+     "flagged_approximate": false,
+     "evidence": "**$25,000 per violation**, AG-enforced exclusively."
+    },
+    {
+     "provider": "Texas CUBI",
+     "price": "not later than one year after purpose expires",
+     "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+     "flagged_approximate": false,
+     "evidence": "destruction within a reasonable time **not later than one year** after the purpose expires"
+    },
+    {
+     "provider": "Washington RCW 19.375",
+     "price": "RCW 19.375",
+     "source_url": "https://app.leg.wa.gov/rcw/default.aspx?cite=19.375",
+     "flagged_approximate": false,
+     "evidence": "**RCW 19.375** requires notice and consent before *enrolling* a biometric identifier in a database for a commercial purpose. It has **no private right of action**"
+    },
+    {
+     "provider": "Washington My Health My Data Act",
+     "price": "private right of action via the Consumer Protection Act",
+     "source_url": "https://www.atg.wa.gov/my-health-my-data-act",
+     "flagged_approximate": true,
+     "evidence": "MHMDA carries a **private right of action** via the Consumer Protection Act"
+    },
+    {
+     "provider": "Colorado HB 24-1130",
+     "price": "HB 24-1130",
+     "source_url": "https://leg.colorado.gov/bills/hb24-1130",
+     "flagged_approximate": false,
+     "evidence": "Colorado — HB 24-1130. **The one that conflicts with our product design.**"
+    },
+    {
+     "provider": "Colorado HB 24-1130",
+     "price": "cure period expired 1 January 2025",
+     "source_url": "https://leg.colorado.gov/bills/hb24-1130",
+     "flagged_approximate": false,
+     "evidence": "and its cure period expired 1 January 2025."
+    },
+    {
+     "provider": "Maryland MODPA",
+     "price": "35,000 Maryland consumers",
+     "source_url": "https://www.dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+     "flagged_approximate": false,
+     "evidence": "In scope only above **35,000 Maryland consumers**, so not at launch."
+    },
+    {
+     "provider": "Maryland MODPA",
+     "price": "$10,000 per violation ($25,000 for repeats)",
+     "source_url": "https://www.dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+     "flagged_approximate": false,
+     "evidence": "Penalties to $10,000 per violation ($25,000 for repeats), AG-enforced, no PRA"
+    },
+    {
+     "provider": "Maryland MODPA",
+     "price": "discretionary cure sunsetting 1 April 2027",
+     "source_url": "https://www.osano.com/articles/maryland-online-data-privacy-act-modpa",
+     "flagged_approximate": false,
+     "evidence": "discretionary cure sunsetting 1 April 2027."
+    },
+    {
+     "provider": "California CCPA/CPRA",
+     "price": "~$2,663 per violation and ~$7,988 per intentional violation",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/california-data-privacy-laws/biometric-privacy/",
+     "flagged_approximate": false,
+     "evidence": "Administrative fines run ~$2,663 per violation and ~$7,988 per intentional violation (2025 inflation-adjusted), CPPA and AG enforced."
+    },
+    {
+     "provider": "California §1798.150",
+     "price": "$100–$750 per consumer per incident",
+     "source_url": "https://legalclarity.org/private-right-of-action-under-ccpa-and-state-privacy-laws/",
+     "flagged_approximate": false,
+     "evidence": "**$100–$750 per consumer per incident**, class-wide."
+    },
+    {
+     "provider": "Florida",
+     "price": "$1 billion in global revenue",
+     "source_url": "https://www.clym.io/blog/us-privacy-law-comparison-map",
+     "flagged_approximate": false,
+     "evidence": "**Florida** — applies only above **$1 billion** in global revenue. Ignore it entirely."
+    },
+    {
+     "provider": "Comprehensive state privacy law thresholds",
+     "price": "most 100,000 consumers; 35,000 in CT, RI, MD, NH, DE",
+     "source_url": "https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+     "flagged_approximate": false,
+     "evidence": "**Thresholds:** most 100,000 consumers; **35,000** in Connecticut, Rhode Island, Maryland, New Hampshire and Delaware"
+    },
+    {
+     "provider": "US states generally (comprehensive privacy laws)",
+     "price": "~20 states in effect in 2026",
+     "source_url": "https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+     "flagged_approximate": false,
+     "evidence": "**~20 states have comprehensive privacy laws in effect in 2026.**"
+    },
+    {
+     "provider": "New York City biometric identifier ordinance",
+     "price": "$500 negligent / $5,000 intentional",
+     "source_url": "https://www.mintz.com/insights-center/viewpoints/2826/2021-06-22-get-ready-new-york-citys-new-biometric-identifier",
+     "flagged_approximate": true,
+     "evidence": "($500 negligent / $5,000 intentional, private right of action, no cure for the sale ban)"
+    },
+    {
+     "provider": "Portland facial recognition ban",
+     "price": "$1,000 per day",
+     "source_url": "NONE",
+     "flagged_approximate": true,
+     "evidence": "Portland bans private face recognition in **places of public accommodation** outright ($1,000 per day, private right of action)."
+    }
+   ],
+   "handoffs": [
+    {
+     "task_title": "DECIDE: do we persist the face template at all, or verify-and-delete?",
+     "self_contained": true,
+     "evidence": "Output: a one-paragraph written decision, dated, with the four items above if Option B. Attach it here."
+    },
+    {
+     "task_title": "DECIDE: launch in Illinois, geofence it, or delay it",
+     "self_contained": true,
+     "evidence": "THE OPTIONS:\n1. LAUNCH WITH A FULLY BIPA-COMPLIANT FLOW."
+    },
+    {
+     "task_title": "Book a scoping call with privacy counsel who has actually litigated BIPA",
+     "self_contained": true,
+     "evidence": "Ask for a written memo, and ask specifically for the Illinois go/no-go recommendation."
+    },
+    {
+     "task_title": "Decide and build the non-biometric verification fallback path",
+     "self_contained": true,
+     "evidence": "DECIDE: which path, what it costs per verification, what the SLA is, and who staffs it."
+    },
+    {
+     "task_title": "Get biometric covenants into the IDV vendor contract / DPA",
+     "self_contained": true,
+     "evidence": "GET THESE IN WRITING FROM [VENDOR] BEFORE LAUNCH:"
+    },
+    {
+     "task_title": "Set a quarterly review reminder for biometric legislation",
+     "self_contained": true,
+     "evidence": "HOW TO DO THIS CHEAPLY IN 15 MINUTES A QUARTER: check the IAPP US State Privacy Legislation Tracker, skim one or two law-firm biometric-privacy roundups, and confirm nothing on the list above has moved."
+    }
+   ]
+  },
+  {
+   "binary_verdicts": [
+    {
+     "id": "A1",
+     "verdict": "pass",
+     "evidence": "Our signup flow gates access on a face scan. That is the direct collision, and it is why the fallback verification path is not optional."
+    },
+    {
+     "id": "A2",
+     "verdict": "pass",
+     "evidence": "Most comprehensive privacy laws have volume thresholds we're under at launch. **Every biometric-specific statute that matters — Illinois, Texas, Washington, Colorado's HB 24-1130 — has no threshold at all.**"
+    },
+    {
+     "id": "A3",
+     "verdict": "pass",
+     "evidence": "disclosing that biometric data is being collected, the **specific purpose**, and the **length of term** for which it's stored (§15(b))"
+    },
+    {
+     "id": "A4",
+     "verdict": "pass",
+     "evidence": "Requirements: a **written release** obtained *before* collection"
+    },
+    {
+     "id": "A5",
+     "verdict": "pass",
+     "evidence": "destruction within a reasonable time **not later than one year** after the purpose expires — stricter than Illinois."
+    },
+    {
+     "id": "A6",
+     "verdict": "pass",
+     "evidence": "Then **actually build the deletion job**; an unfollowed published policy converts a technical violation into a deceptive-practice claim in all 50 states."
+    },
+    {
+     "id": "A7",
+     "verdict": "pass",
+     "evidence": "**Everywhere else, only the Attorney General can act** — which is meaningfully less dangerous, with the sharp exception of Texas."
+    },
+    {
+     "id": "A8",
+     "verdict": "pass",
+     "evidence": "**$1,000** per negligent violation, **$5,000** per reckless or intentional violation, or actual damages if greater, plus fees."
+    },
+    {
+     "id": "A9",
+     "verdict": "pass",
+     "evidence": "Private right of action + $1k/$5k liquidated damages + no injury required + mandatory fee-shifting"
+    },
+    {
+     "id": "A10",
+     "verdict": "pass",
+     "evidence": "Tier | States | Why | Launch posture"
+    },
+    {
+     "id": "A11",
+     "verdict": "pass",
+     "evidence": "## 6. What to do before launch"
+    },
+    {
+     "id": "A12",
+     "verdict": "pass",
+     "evidence": "**Not legal advice.** I am not a lawyer. This is a research map built to make your counsel engagement short and cheap. The Illinois decision in particular should not be made off this document alone."
+    },
+    {
+     "id": "A13",
+     "verdict": "pass",
+     "evidence": "**$25,000 per violation**, AG-enforced exclusively."
+    },
+    {
+     "id": "C2",
+     "verdict": "fail",
+     "evidence": "Separate exposure from biometrics: we charge a recurring monthly fee."
+    },
+    {
+     "id": "C3",
+     "verdict": "pass",
+     "evidence": "Neither has been tested against a mobile app; my read is neither reaches us."
+    },
+    {
+     "id": "C4",
+     "verdict": "pass",
+     "evidence": "**Open question for counsel:** does a face scan revealing nothing about health qualify as \"consumer health data\"? Unresolved."
+    }
+   ],
+   "c1": {
+    "level": 6,
+    "primary_option_count": 6,
+    "evidence": "Of 50 states, only **three** have biometric-specific statutes that meaningfully bind a consumer app (Illinois, Texas, Washington)"
+   },
+   "price_claims": [
+    {
+     "provider": "Illinois BIPA",
+     "price": "740 ILCS 14",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "Illinois — BIPA (740 ILCS 14)"
+    },
+    {
+     "provider": "Illinois BIPA",
+     "price": "$1,000 negligent / $5,000 reckless or intentional",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "**$1,000** per negligent violation, **$5,000** per reckless or intentional violation, or actual damages if greater, plus fees."
+    },
+    {
+     "provider": "Illinois BIPA §15(b)",
+     "price": "§15(b) written release before collection",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "Requirements: a **written release** obtained *before* collection, disclosing that biometric data is being collected, the **specific purpose**, and the **length of term** for which it's stored (§15(b))"
+    },
+    {
+     "provider": "Illinois BIPA §15(a)",
+     "price": "3 years from last interaction, whichever comes first",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "plus a **publicly available written retention and destruction policy** with destruction at purpose-satisfaction or 3 years from last interaction, **whichever comes first** (§15(a))"
+    },
+    {
+     "provider": "Illinois BIPA §15(c)",
+     "price": "§15(c)",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "plus no sale or profit from it (§15(c))"
+    },
+    {
+     "provider": "Illinois BIPA §15(e)",
+     "price": "§15(e)",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "plus reasonable security (§15(e))"
+    },
+    {
+     "provider": "Illinois BIPA (case law)",
+     "price": "Rosenbach",
+     "source_url": "NONE",
+     "flagged_approximate": false,
+     "evidence": "no injury requirement (*Rosenbach*)"
+    },
+    {
+     "provider": "Illinois BIPA amendment",
+     "price": "2024 SB 2979",
+     "source_url": "https://lewisbrisbois.com/newsroom/legal-alerts/state-biometric-legislation-developments",
+     "flagged_approximate": false,
+     "evidence": "The **2024 SB 2979 amendment** helps but less than the headlines suggest: it made repeated collection from the same person by the same method a *single* violation, converting per-scan into per-person accrual, and expressly permitted electronic signatures for the release."
+    },
+    {
+     "provider": "Texas CUBI",
+     "price": "Bus. & Com. Code §503.001",
+     "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+     "flagged_approximate": false,
+     "evidence": "Texas — CUBI (Bus. & Com. Code §503.001)"
+    },
+    {
+     "provider": "Texas CUBI",
+     "price": "$25,000 per violation",
+     "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+     "flagged_approximate": false,
+     "evidence": "**$25,000 per violation**, AG-enforced exclusively."
+    },
+    {
+     "provider": "Texas CUBI",
+     "price": "not later than one year after the purpose expires",
+     "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+     "flagged_approximate": false,
+     "evidence": "destruction within a reasonable time **not later than one year** after the purpose expires"
+    },
+    {
+     "provider": "Washington RCW 19.375",
+     "price": "RCW 19.375",
+     "source_url": "https://app.leg.wa.gov/rcw/default.aspx?cite=19.375",
+     "flagged_approximate": false,
+     "evidence": "**RCW 19.375** requires notice and consent before *enrolling* a biometric identifier in a database for a commercial purpose."
+    },
+    {
+     "provider": "Colorado HB 24-1130",
+     "price": "HB 24-1130",
+     "source_url": "https://leg.colorado.gov/bills/hb24-1130",
+     "flagged_approximate": false,
+     "evidence": "Colorado — HB 24-1130"
+    },
+    {
+     "provider": "Colorado CPA cure period",
+     "price": "expired 1 January 2025",
+     "source_url": "https://leg.colorado.gov/bills/hb24-1130",
+     "flagged_approximate": false,
+     "evidence": "Colorado also requires deletion or permanent anonymisation on withdrawal of consent, and its cure period expired 1 January 2025."
+    },
+    {
+     "provider": "Maryland MODPA",
+     "price": "35,000 Maryland consumers",
+     "source_url": "https://www.dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+     "flagged_approximate": false,
+     "evidence": "In scope only above **35,000 Maryland consumers**, so not at launch."
+    },
+    {
+     "provider": "Maryland MODPA",
+     "price": "$10,000 per violation ($25,000 for repeats)",
+     "source_url": "https://www.koleyjessen.com/insights/publications/maryland-online-data-privacy-act",
+     "flagged_approximate": false,
+     "evidence": "Penalties to $10,000 per violation ($25,000 for repeats), AG-enforced, no PRA, discretionary cure sunsetting 1 April 2027."
+    },
+    {
+     "provider": "Maryland MODPA cure period",
+     "price": "sunsetting 1 April 2027",
+     "source_url": "https://www.privado.ai/post/marylands-strict-new-privacy-law-effective-october-2025-what-companies-should-know",
+     "flagged_approximate": false,
+     "evidence": "discretionary cure sunsetting 1 April 2027"
+    },
+    {
+     "provider": "California CCPA/CPRA",
+     "price": "~$2,663 per violation and ~$7,988 per intentional violation",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/california-data-privacy-laws/biometric-privacy/",
+     "flagged_approximate": false,
+     "evidence": "Administrative fines run ~$2,663 per violation and ~$7,988 per intentional violation (2025 inflation-adjusted), CPPA and AG enforced."
+    },
+    {
+     "provider": "California Civil Code §1798.150",
+     "price": "$100–$750 per consumer per incident",
+     "source_url": "https://legalclarity.org/private-right-of-action-under-ccpa-and-state-privacy-laws/",
+     "flagged_approximate": false,
+     "evidence": "**$100–$750 per consumer per incident**, class-wide."
+    },
+    {
+     "provider": "NYC Biometric Identifier Information Law",
+     "price": "$500 negligent / $5,000 intentional",
+     "source_url": "https://www.mintz.com/insights-center/viewpoints/2826/2021-06-22-get-ready-new-york-citys-new-biometric-identifier",
+     "flagged_approximate": true,
+     "evidence": "($500 negligent / $5,000 intentional, private right of action, no cure for the sale ban)"
+    },
+    {
+     "provider": "Portland facial recognition ban",
+     "price": "$1,000 per day",
+     "source_url": "NONE",
+     "flagged_approximate": true,
+     "evidence": "Portland bans private face recognition in **places of public accommodation** outright ($1,000 per day, private right of action)."
+    },
+    {
+     "provider": "Florida Digital Bill of Rights",
+     "price": "$1 billion in global revenue",
+     "source_url": "https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+     "flagged_approximate": false,
+     "evidence": "**Florida** — applies only above **$1 billion** in global revenue. Ignore it entirely."
+    },
+    {
+     "provider": "State comprehensive privacy law thresholds",
+     "price": "most 100,000 consumers; 35,000 in CT, RI, MD, NH, DE",
+     "source_url": "https://www.clym.io/blog/us-privacy-law-comparison-map",
+     "flagged_approximate": false,
+     "evidence": "**Thresholds:** most 100,000 consumers; **35,000** in Connecticut, Rhode Island, Maryland, New Hampshire and Delaware (these bite first as we scale)"
+    },
+    {
+     "provider": "US state comprehensive privacy laws",
+     "price": "~20 states in effect in 2026",
+     "source_url": "https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+     "flagged_approximate": false,
+     "evidence": "**~20 states have comprehensive privacy laws in effect in 2026.**"
+    }
+   ],
+   "handoffs": [
+    {
+     "task_title": "DECIDE: do we persist the face template at all, or verify-and-delete?",
+     "self_contained": true,
+     "evidence": "Output: a one-paragraph written decision, dated, with the four items above if Option B. Attach it here."
+    },
+    {
+     "task_title": "DECIDE: launch in Illinois, geofence it, or delay it",
+     "self_contained": true,
+     "evidence": "GO/NO-GO CALL. Only a human can make this one — it is a risk-appetite and revenue trade-off, not a research question."
+    },
+    {
+     "task_title": "Book a scoping call with privacy counsel who has actually litigated BIPA",
+     "self_contained": true,
+     "evidence": "BRING TO THE CALL: the attached report from the parent task, the retention decision, and the draft consent screen copy."
+    },
+    {
+     "task_title": "Decide and build the non-biometric verification fallback path",
+     "self_contained": true,
+     "evidence": "DECIDE: which path, what it costs per verification, what the SLA is, and who staffs it."
+    },
+    {
+     "task_title": "Get biometric covenants into the IDV vendor contract / DPA",
+     "self_contained": true,
+     "evidence": "GET THESE IN WRITING FROM [VENDOR] BEFORE LAUNCH:"
+    },
+    {
+     "task_title": "Set a quarterly review reminder for biometric legislation",
+     "self_contained": true,
+     "evidence": "HOW TO DO THIS CHEAPLY IN 15 MINUTES A QUARTER: check the IAPP US State Privacy Legislation Tracker, skim one or two law-firm biometric-privacy roundups, and confirm nothing on the list above has moved."
+    }
+   ]
+  },
+  {
+   "binary_verdicts": [
+    {
+     "id": "A1",
+     "verdict": "pass",
+     "evidence": "Our signup flow gates access on a face scan. That is the direct collision, and it is why the fallback verification path is not optional."
+    },
+    {
+     "id": "A2",
+     "verdict": "pass",
+     "evidence": "Most comprehensive privacy laws have volume thresholds we're under at launch. **Every biometric-specific statute that matters — Illinois, Texas, Washington, Colorado's HB 24-1130 — has no threshold at all.**"
+    },
+    {
+     "id": "A3",
+     "verdict": "pass",
+     "evidence": "Requirements: a **written release** obtained *before* collection, disclosing that biometric data is being collected, the **specific purpose**, and the **length of term** for which it's stored (§15(b))"
+    },
+    {
+     "id": "A4",
+     "verdict": "pass",
+     "evidence": "a **written release** obtained *before* collection"
+    },
+    {
+     "id": "A5",
+     "verdict": "pass",
+     "evidence": "and destruction within a reasonable time **not later than one year** after the purpose expires — stricter than Illinois."
+    },
+    {
+     "id": "A6",
+     "verdict": "pass",
+     "evidence": "Then **actually build the deletion job**; an unfollowed published policy converts a technical violation into a deceptive-practice claim in all 50 states."
+    },
+    {
+     "id": "A7",
+     "verdict": "pass",
+     "evidence": "**Everywhere else, only the Attorney General can act** — which is meaningfully less dangerous, with the sharp exception of Texas."
+    },
+    {
+     "id": "A8",
+     "verdict": "pass",
+     "evidence": "**$1,000** per negligent violation, **$5,000** per reckless or intentional violation, or actual damages if greater, plus fees."
+    },
+    {
+     "id": "A9",
+     "verdict": "pass",
+     "evidence": "Private right of action + $1k/$5k liquidated damages + no injury required + mandatory fee-shifting"
+    },
+    {
+     "id": "A10",
+     "verdict": "pass",
+     "evidence": "**4 — Low** | The other ~43 | Notice + opt-in consent + DPIA, AG-enforced, no PRA"
+    },
+    {
+     "id": "A11",
+     "verdict": "pass",
+     "evidence": "## 6. What to do before launch"
+    },
+    {
+     "id": "A12",
+     "verdict": "pass",
+     "evidence": "**Not legal advice.** I am not a lawyer. This is a research map built to make your counsel engagement short and cheap."
+    },
+    {
+     "id": "A13",
+     "verdict": "pass",
+     "evidence": "ABSENT"
+    },
+    {
+     "id": "C2",
+     "verdict": "fail",
+     "evidence": "Separate exposure from biometrics: we charge a recurring monthly fee. Map the strict auto-renewal / negative option statutes (CA ARL, NY, OR, Colorado, Virginia, Illinois ADAA...)"
+    },
+    {
+     "id": "C3",
+     "verdict": "pass",
+     "evidence": "Neither has been tested against a mobile app; my read is neither reaches us."
+    },
+    {
+     "id": "C4",
+     "verdict": "pass",
+     "evidence": "**Open question for counsel:** does a face scan revealing nothing about health qualify as \"consumer health data\"? Unresolved."
+    }
+   ],
+   "c1": {
+    "level": 6,
+    "primary_option_count": 6,
+    "evidence": "**Only four jurisdiction-level regimes let users sue us directly:** Illinois BIPA, Washington's My Health My Data Act, California's breach-only right of action, and two city ordinances (NYC, Portland) that probably don't reach a mobile app."
+   },
+   "price_claims": [
+    {
+     "provider": "Illinois BIPA",
+     "price": "740 ILCS 14",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "### Illinois — BIPA (740 ILCS 14)."
+    },
+    {
+     "provider": "Illinois BIPA",
+     "price": "$1,000 negligent / $5,000 reckless or intentional",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "**$1,000** per negligent violation, **$5,000** per reckless or intentional violation, or actual damages if greater, plus fees."
+    },
+    {
+     "provider": "Illinois BIPA §15(a)",
+     "price": "3 years from last interaction",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "plus a **publicly available written retention and destruction policy** with destruction at purpose-satisfaction or 3 years from last interaction, **whichever comes first** (§15(a))"
+    },
+    {
+     "provider": "Illinois BIPA §15(b)",
+     "price": "§15(b) written release before collection",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "a **written release** obtained *before* collection, disclosing that biometric data is being collected, the **specific purpose**, and the **length of term** for which it's stored (§15(b))"
+    },
+    {
+     "provider": "Illinois BIPA §15(c)",
+     "price": "§15(c)",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "plus no sale or profit from it (§15(c))"
+    },
+    {
+     "provider": "Illinois BIPA §15(e)",
+     "price": "§15(e)",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "plus reasonable security (§15(e))"
+    },
+    {
+     "provider": "Illinois BIPA (2024 amendment)",
+     "price": "SB 2979 (2024)",
+     "source_url": "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004&ChapterID=57",
+     "flagged_approximate": false,
+     "evidence": "The **2024 SB 2979 amendment** helps but less than the headlines suggest: it made repeated collection from the same person by the same method a *single* violation"
+    },
+    {
+     "provider": "Illinois BIPA (case law)",
+     "price": "Rosenbach",
+     "source_url": "NONE",
+     "flagged_approximate": false,
+     "evidence": "no injury requirement (*Rosenbach*)"
+    },
+    {
+     "provider": "Texas CUBI",
+     "price": "Bus. & Com. Code §503.001",
+     "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+     "flagged_approximate": false,
+     "evidence": "### Texas — CUBI (Bus. & Com. Code §503.001)."
+    },
+    {
+     "provider": "Texas CUBI",
+     "price": "$25,000 per violation",
+     "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+     "flagged_approximate": false,
+     "evidence": "**$25,000 per violation**, AG-enforced exclusively."
+    },
+    {
+     "provider": "Texas CUBI",
+     "price": "not later than one year after the purpose expires",
+     "source_url": "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.503.htm",
+     "flagged_approximate": false,
+     "evidence": "destruction within a reasonable time **not later than one year** after the purpose expires"
+    },
+    {
+     "provider": "Washington RCW 19.375",
+     "price": "RCW 19.375",
+     "source_url": "https://app.leg.wa.gov/rcw/default.aspx?cite=19.375",
+     "flagged_approximate": false,
+     "evidence": "**RCW 19.375** requires notice and consent before *enrolling* a biometric identifier in a database for a commercial purpose. It has **no private right of action**"
+    },
+    {
+     "provider": "Washington My Health My Data Act",
+     "price": "private right of action via the Consumer Protection Act",
+     "source_url": "https://www.atg.wa.gov/my-health-my-data-act",
+     "flagged_approximate": true,
+     "evidence": "MHMDA carries a **private right of action** via the Consumer Protection Act."
+    },
+    {
+     "provider": "Colorado HB 24-1130",
+     "price": "HB 24-1130",
+     "source_url": "https://leg.colorado.gov/bills/hb24-1130",
+     "flagged_approximate": false,
+     "evidence": "### Colorado — HB 24-1130. **The one that conflicts with our product design.**"
+    },
+    {
+     "provider": "Colorado HB 24-1130",
+     "price": "cure period expired 1 January 2025",
+     "source_url": "https://leg.colorado.gov/bills/hb24-1130",
+     "flagged_approximate": false,
+     "evidence": "and its cure period expired 1 January 2025."
+    },
+    {
+     "provider": "Maryland MODPA",
+     "price": "35,000 Maryland consumers",
+     "source_url": "https://www.dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+     "flagged_approximate": false,
+     "evidence": "In scope only above **35,000 Maryland consumers**, so not at launch."
+    },
+    {
+     "provider": "Maryland MODPA",
+     "price": "$10,000 per violation ($25,000 for repeats)",
+     "source_url": "https://www.dlapiper.com/en/insights/publications/2024/07/us-maryland-online-data-privacy-act-summary-and-comparative-analysis",
+     "flagged_approximate": false,
+     "evidence": "Penalties to $10,000 per violation ($25,000 for repeats), AG-enforced, no PRA, discretionary cure sunsetting 1 April 2027."
+    },
+    {
+     "provider": "Maryland MODPA",
+     "price": "cure sunsetting 1 April 2027",
+     "source_url": "https://www.koleyjessen.com/insights/publications/maryland-online-data-privacy-act",
+     "flagged_approximate": false,
+     "evidence": "discretionary cure sunsetting 1 April 2027"
+    },
+    {
+     "provider": "California CCPA §1798.150",
+     "price": "$100–$750 per consumer per incident",
+     "source_url": "https://legalclarity.org/private-right-of-action-under-ccpa-and-state-privacy-laws/",
+     "flagged_approximate": false,
+     "evidence": "**$100–$750 per consumer per incident**, class-wide."
+    },
+    {
+     "provider": "California CCPA/CPRA",
+     "price": "~$2,663 per violation / ~$7,988 per intentional violation",
+     "source_url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/california-data-privacy-laws/biometric-privacy/",
+     "flagged_approximate": false,
+     "evidence": "Administrative fines run ~$2,663 per violation and ~$7,988 per intentional violation (2025 inflation-adjusted), CPPA and AG enforced."
+    },
+    {
+     "provider": "US states generally",
+     "price": "~20 states with comprehensive privacy laws in effect in 2026",
+     "source_url": "https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+     "flagged_approximate": false,
+     "evidence": "**~20 states have comprehensive privacy laws in effect in 2026.**"
+    },
+    {
+     "provider": "Florida",
+     "price": "$1 billion in global revenue threshold",
+     "source_url": "https://www.clym.io/blog/us-privacy-law-comparison-map",
+     "flagged_approximate": false,
+     "evidence": "**Florida** — applies only above **$1 billion** in global revenue. Ignore it entirely."
+    },
+    {
+     "provider": "Multi-state applicability thresholds",
+     "price": "100,000 consumers; 35,000 in CT, RI, MD, NH, DE",
+     "source_url": "https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026",
+     "flagged_approximate": false,
+     "evidence": "**Thresholds:** most 100,000 consumers; **35,000** in Connecticut, Rhode Island, Maryland, New Hampshire and Delaware"
+    },
+    {
+     "provider": "New York City biometric identifier ordinance",
+     "price": "$500 negligent / $5,000 intentional",
+     "source_url": "https://www.mintz.com/insights-center/viewpoints/2826/2021-06-22-get-ready-new-york-citys-new-biometric-identifier",
+     "flagged_approximate": true,
+     "evidence": "($500 negligent / $5,000 intentional, private right of action, no cure for the sale ban)"
+    },
+    {
+     "provider": "Portland, Oregon face recognition ban",
+     "price": "$1,000 per day",
+     "source_url": "NONE",
+     "flagged_approximate": true,
+     "evidence": "Portland bans private face recognition in **places of public accommodation** outright ($1,000 per day, private right of action)."
+    },
+    {
+     "provider": "FTC Act §5",
+     "price": "FTC Act §5",
+     "source_url": "NONE",
+     "flagged_approximate": false,
+     "evidence": "FTC Act §5 remedies include algorithmic disgorgement — deletion of the model."
+    }
+   ],
+   "handoffs": [
+    {
+     "task_title": "DECIDE: do we persist the face template at all, or verify-and-delete?",
+     "self_contained": true,
+     "evidence": "Output: a one-paragraph written decision, dated, with the four items above if Option B. Attach it here."
+    },
+    {
+     "task_title": "DECIDE: launch in Illinois, geofence it, or delay it",
+     "self_contained": true,
+     "evidence": "GO/NO-GO CALL. Only a human can make this one — it is a risk-appetite and revenue trade-off, not a research question."
+    },
+    {
+     "task_title": "Book a scoping call with privacy counsel who has actually litigated BIPA",
+     "self_contained": true,
+     "evidence": "BRING TO THE CALL: the attached report from the parent task, the retention decision, and the draft consent screen copy."
+    },
+    {
+     "task_title": "Decide and build the non-biometric verification fallback path",
+     "self_contained": true,
+     "evidence": "DECIDE: which path, what it costs per verification, what the SLA is, and who staffs it."
+    },
+    {
+     "task_title": "Get biometric covenants into the IDV vendor contract / DPA",
+     "self_contained": true,
+     "evidence": "GET THESE IN WRITING FROM [VENDOR] BEFORE LAUNCH:"
+    },
+    {
+     "task_title": "Set a quarterly review reminder for biometric legislation",
+     "self_contained": true,
+     "evidence": "HOW TO DO THIS CHEAPLY IN 15 MINUTES A QUARTER: check the IAPP US State Privacy Legislation Tracker, skim one or two law-firm biometric-privacy roundups, and confirm nothing on the list above has moved."
+    }
+   ]
+  }
+ ]
+}

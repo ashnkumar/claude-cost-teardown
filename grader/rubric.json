@@ -1,0 +1,238 @@
+{
+  "rubric_version": "1.0.2",
+  "normalizer_version": "normalizer_v1",
+  "task_id": "t-dog",
+  "axes": {
+    "A": { "label": "Content", "points": 60 },
+    "B": { "label": "Grounding & verification", "points": 20 },
+    "C": { "label": "Scope & handoff discipline", "points": 20 }
+  },
+  "principle": "Criteria satisfaction, not run-1 replication. No item requires a specific trainer, provider set, or verdict. Retrieval redundancy is deliberately excluded from the score — it is a cost-side symptom reported as a behavioral column instead.",
+  "types": {
+    "J": "LLM judge, binary with verbatim evidence",
+    "D": "deterministic script",
+    "H": "hybrid — judge extracts, script verifies"
+  },
+  "items": [
+    {
+      "id": "A1",
+      "axis": "A",
+      "points": 4,
+      "type": "J",
+      "criterion": "An explicit DIY-vs-hire verdict is stated, not left as an unresolved \"it depends\". Hybrid verdicts (\"DIY plus one class\", \"split by capability\") count as verdicts."
+    },
+    {
+      "id": "A2",
+      "axis": "A",
+      "points": 4,
+      "type": "J",
+      "criterion": "The verdict is justified by THIS dog's specifics (adolescence / 14 months, herding-breed arousal, leash reactivity), and at least one cited behavioral source backs the reasoning."
+    },
+    {
+      "id": "A3",
+      "axis": "A",
+      "points": 4,
+      "type": "J",
+      "criterion": "Escalation criteria are present: concrete, observable conditions under which DIY stops and a professional is engaged."
+    },
+    {
+      "id": "A4",
+      "axis": "A",
+      "points": 4,
+      "type": "J",
+      "criterion": "Frustration-based reactivity is distinguished from fear-based reactivity, AND the text states why that distinction changes the plan."
+    },
+    {
+      "id": "A5",
+      "axis": "A",
+      "points": 8,
+      "type": "J",
+      "criterion": "At least two South Bay providers are named, each with a concrete price attached to a named program, and each tied to a cited source. Any valid providers count."
+    },
+    {
+      "id": "A6",
+      "axis": "A",
+      "points": 4,
+      "type": "J",
+      "criterion": "For at least two providers the price is a concrete dollar figure rather than \"contact for quote\", and any estimated or derived figure is explicitly flagged as approximate."
+    },
+    {
+      "id": "A7",
+      "axis": "A",
+      "points": 4,
+      "type": "J",
+      "criterion": "At least one budget-tier option (total cost at or under $400, e.g. a group class) appears among the options presented."
+    },
+    {
+      "id": "A8",
+      "axis": "A",
+      "points": 6,
+      "type": "J",
+      "criterion": "A week-by-week plan covers exactly weeks 1 through 4, each week has distinct content, and progression gates or criteria are stated between weeks. A preparatory Week 0 does not break this."
+    },
+    {
+      "id": "A9",
+      "axis": "A",
+      "points": 6,
+      "type": "J",
+      "criterion": "The plan addresses BOTH presenting problems — loose-leash walking AND dog-reactivity — with a named method for each (Pryor loose-leash, engage-disengage, BAT, LAT, counterconditioning, etc. all acceptable)."
+    },
+    {
+      "id": "A10",
+      "axis": "A",
+      "points": 4,
+      "type": "J",
+      "criterion": "Threshold or management guidance is present: working sub-threshold, session-length limits, and what to do during an over-threshold encounter."
+    },
+    {
+      "id": "A11",
+      "axis": "A",
+      "points": 3,
+      "type": "J",
+      "criterion": "A specific equipment recommendation is present (front-clip harness / head halter, fixed-length leash, etc.), or its absence is explicitly justified."
+    },
+    {
+      "id": "A12",
+      "axis": "A",
+      "points": 3,
+      "type": "J",
+      "criterion": "A total-cost estimate for the recommended path is present and is internally consistent with the itemized figures elsewhere in this run (report body plus subtask descriptions). Judge only against numbers present in the material supplied; market prices differing from your own knowledge are not an inconsistency."
+    },
+    {
+      "id": "A13",
+      "axis": "A",
+      "points": 6,
+      "type": "J",
+      "criterion": "Anchor contradiction check: no factual claim in the material contradicts the frozen anchor set below. Mentioning none of the anchors is a pass. Only a direct contradiction of a listed anchor fails this item."
+    },
+    {
+      "id": "B1",
+      "axis": "B",
+      "points": 8,
+      "type": "D",
+      "criterion": "Source-verification ratio V = |report.sources normalized that appear in trace web_fetch events| / |report.sources|. Score = 8 * V.",
+      "formula": "8 * fetched_sources / total_sources"
+    },
+    {
+      "id": "B2",
+      "axis": "B",
+      "points": 6,
+      "type": "H",
+      "criterion": "Price-claim verification. The judge extracts price claims from the REPORT; the script computes the fraction whose source_url was actually fetched. Score = 6 * fraction.",
+      "formula": "6 * verified_price_claims / total_price_claims",
+      "claim_definition": {
+        "note": "Mechanical, so the denominator is reproducible across passes. Added in 1.0.2 after the 1.0.1 denominator varied 10-13 on identical material.",
+        "unit": "one claim per distinct (provider, program or package, dollar figure) triple asserted in the report",
+        "scope": "the report only — not subtask descriptions or comments",
+        "rules": [
+          "Packages and tiers count once per package.",
+          "A per-session price and a package price for the same provider are separate claims.",
+          "A price range for one program is one claim.",
+          "Repeated statements of the same triple dedupe to one claim.",
+          "Prices for providers the report excludes or rejects DO count — a reader may still rely on them.",
+          "An aside price counts if and only if it is attached to a named provider and program: an obedience-class price mentioned in passing counts.",
+          "A general market rate with no named provider is NOT a price claim and stays out of the denominator."
+        ]
+      }
+    },
+    {
+      "id": "B3",
+      "axis": "B",
+      "points": 3,
+      "type": "H",
+      "criterion": "Every price claim whose source was not fetched is flagged in the text as approximate or unverified. Binary. Derived from the same extraction as B2: the judge records whether each claim is flagged; the script decides which claims rest on unfetched sources."
+    },
+    {
+      "id": "B4",
+      "axis": "B",
+      "points": 3,
+      "type": "D",
+      "criterion": "Subtask hygiene: every agent-assigned subtask is terminal at run end AND the parent is in a justified non-open state (status in {waiting, needs_review, done} and a comment or attached report states why)."
+    },
+    {
+      "id": "C1",
+      "axis": "C",
+      "points": 6,
+      "type": "J",
+      "criterion": "\"Two or three options\" compliance. Three levels, not binary. First count the LIVE options: every named provider or program the material leaves available to the reader, whether it is presented as a main pick, a supplementary pick, an optional extra, a fallback, a backup, or a later-stage destination. An entry is NOT live only when the material tells the reader not to use it — an exclusion or a rejected alternative.",
+      "levels": {
+        "6": "Two or three live options, and every further named provider is an explicit exclusion or rejected alternative.",
+        "3": "More than three live options, but a primary set is still distinguishable — the extras are ranked below, labelled supplementary or optional, or deferred to a later stage rather than being presented as equals.",
+        "0": "More than three live options with no ranking, no distinguishable primary set, and no labelled exclusions."
+      }
+    },
+    {
+      "id": "C2",
+      "axis": "C",
+      "points": 4,
+      "type": "J",
+      "criterion": "Stays inside the three questions asked. No research sections or deliverables beyond DIY-vs-hire, local options with prices, and the four-week plan. Brief supporting detail that serves one of the three questions is in scope; a standalone section on an unasked topic (nutrition, crate training, genetics, vet workup as its own deliverable) is not."
+    },
+    {
+      "id": "C3",
+      "axis": "C",
+      "points": 4,
+      "type": "J",
+      "criterion": "No aversive tool (e-collar, shock collar, prong collar, choke chain) is recommended. Naming one in order to exclude, warn against, or rule it out passes."
+    },
+    {
+      "id": "C4",
+      "axis": "C",
+      "points": 3,
+      "type": "J",
+      "criterion": "No promise of a \"fixed\" or finished dog in four weeks; realistic expectations about timeline and continued work are set."
+    },
+    {
+      "id": "C5",
+      "axis": "C",
+      "points": 3,
+      "type": "H",
+      "criterion": "Handoff quality. For each human-assigned subtask, binary: is it self-contained and actionable without reading the transcript (who / what / where / how much, as the task requires)? Score = 3 * fraction self-contained."
+    }
+  ],
+  "anchors": {
+    "as_of": "2026-08-03",
+    "note": "Durable HSSV facts both banked runs converged on. Used ONLY as a contradiction detector for A13 — never as required coverage. Mentioning none of them passes A13.",
+    "excluded": [
+      {
+        "fact": "Top Dogs Level 1 cohort starting 08/19/26 at 6:15pm",
+        "why": "Perishable. Descriptive metadata only; never scored."
+      }
+    ],
+    "facts": [
+      "Humane Society Silicon Valley runs a reactivity class called Top Dogs Level 1.",
+      "Top Dogs Level 1 costs $300 at general registration.",
+      "Top Dogs Level 1 runs six weeks: one 90-minute session followed by five 50-minute sessions.",
+      "Top Dogs Level 1 is delivered online.",
+      "Top Dogs Level 1 requires the dog to be at least 8 months old and to have no bite history.",
+      "HSSV adopters can get complimentary training by emailing dogtraining@hssv.org with the dog's Animal ID."
+    ]
+  },
+  "normalizer_v1": {
+    "url": [
+      "lowercase the scheme and host",
+      "strip a leading www. from the host",
+      "strip the fragment",
+      "strip a single trailing slash",
+      "keep the path and query verbatim"
+    ],
+    "query": [
+      "lowercase",
+      "collapse runs of whitespace to one space",
+      "trim",
+      "strip trailing punctuation"
+    ],
+    "near_dup_search": "additional pairs with token-Jaccard >= 0.8 beyond the exact-duplicate pairs",
+    "recreated_subtask": "normalized title token-set ratio >= 0.9 or normalized Levenshtein similarity >= 0.85 against an earlier subtask_created",
+    "re_research": "web_search after an agent subtask's terminal status_changed whose query shares content-word Jaccard >= 0.5 with that subtask's title (stopwords removed)"
+  },
+  "scoring": {
+    "total": "sum of item scores, 0-100",
+    "binary_items": "3 judge passes, per-item majority verdict over passes that survived evidence validation",
+    "fraction_items": ["B2", "C5"],
+    "level_items": ["C1"],
+    "fraction_and_level_aggregation": "median across the 3 passes",
+    "axis_na": "If an axis cannot be evaluated (no trace/usage for axis B), its items are omitted and score_normalized reports the total over the remaining points.",
+    "contested": "an item where the surviving passes did not agree unanimously"
+  }
+}

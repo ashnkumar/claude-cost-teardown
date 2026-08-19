@@ -1,0 +1,176 @@
+{
+  "cell": "live-append",
+  "rep": 2,
+  "task_id": "t-dog",
+  "run_id": "exp-live-append-r2-msfftgzl",
+  "dry_run": false,
+  "config": {
+    "cache": "live",
+    "context": "append"
+  },
+  "git_sha": "5420072",
+  "started_at": "2026-08-05T01:57:57.441Z",
+  "finished_at": "2026-08-05T01:58:23.588Z",
+  "wall_ms": 26117,
+  "turns": null,
+  "stop_reason": null,
+  "status": "error",
+  "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.5: `code_execution` tool use with id `srvtoolu_018g3e4xvLbmW5EweZU9fYJt` was found without a corresponding `code_execution_tool_result` block\"},\"request_id\":\"req_011CdimoZGD5ytBcQ8dypBDU\"}",
+  "seed_check_ok": true,
+  "cache_hit_call1": false,
+  "totals": {
+    "api_calls": 4,
+    "summarizer_calls": 0,
+    "input_tokens": 6,
+    "output_tokens": 1633,
+    "cache_creation_input_tokens": 11575,
+    "cache_read_input_tokens": 20048,
+    "web_search_requests": 0,
+    "web_fetch_requests": 0,
+    "cost_usd": 0.12322275,
+    "computed_cost_usd": 0.12322275,
+    "summarizer_cost_usd": 0
+  },
+  "behavior": {
+    "subtasks_created": 4,
+    "comments": 1,
+    "report_attached": false,
+    "statuses_set": 2,
+    "searches": 0,
+    "fetches": 0
+  },
+  "final_task_tree": {
+    "id": "t-dog",
+    "title": "Figure out a training plan for my dog",
+    "description": "Rescue border collie mix, 14 months. Pulls hard on the leash and barks at every other dog on walks. South Bay, California; I can do evenings and weekends.\n\nThree things only:\n1. Whether to hire a trainer or do it myself.\n2. If hiring — two or three local options with real prices.\n3. A week-by-week plan for the first four weeks.\n\nDon't research anything beyond those three.",
+    "status": "in_progress",
+    "assignee": "agent",
+    "parentId": null,
+    "needsHumanReview": false,
+    "priority": "medium",
+    "energy": "medium",
+    "timeEstimate": 60,
+    "taskType": [
+      "researching",
+      "planning",
+      "decision"
+    ],
+    "dueDate": "2026-08-07",
+    "project": "Personal",
+    "section": "This week",
+    "comments": [
+      {
+        "id": "c-94449550",
+        "body": "Picking this up. Scoping to exactly the three things you asked for: (1) DIY vs. hire, (2) 2–3 South Bay options with real prices, (3) a 4-week week-by-week plan. Nothing beyond that — no nutrition, no gear rabbit holes, no crate/separation stuff.\n\nBuilding the subtask tree now, then researching.",
+        "author": "agent",
+        "createdAt": "2026-08-05T01:58:02.769Z"
+      }
+    ],
+    "report": null,
+    "createdAt": "2026-07-31T09:12:00.000Z",
+    "updatedAt": "2026-08-05T01:58:02.769Z",
+    "subtasks": [
+      {
+        "id": "t-694d05ad",
+        "title": "Decide: DIY vs. hired trainer for leash pulling + dog reactivity",
+        "description": "Determine whether a 14-month rescue border collie mix with (a) hard leash pulling and (b) barking at every dog on walks is a DIY case or a hire-a-pro case. Two behaviours, so judge separately — loose-leash walking and reactivity are not the same difficulty. Output: a clear recommendation with the reasoning, written into this description, plus the specific red flags that would change the answer.",
+        "status": "in_progress",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching",
+          "decision"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T01:58:17.694Z",
+        "updatedAt": "2026-08-05T01:58:23.363Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-5ef00b3c",
+        "title": "Find South Bay trainers who handle leash reactivity, with real prices",
+        "description": "Find 2–3 South Bay CA (Sunnyvale / Santa Clara / San Jose / Mountain View / Campbell) trainers or behaviour consultants who explicitly work on leash reactivity with positive-reinforcement / LIMA methods. Must capture: actual price per session or package price, what the package includes, format (in-home / private / class), evening+weekend availability, and phone/email. No 'contact for pricing' entries unless nothing else exists.",
+        "status": "not_started",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 60,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T01:58:17.694Z",
+        "updatedAt": "2026-08-05T01:58:17.694Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-bbe39ca1",
+        "title": "Verify credentials and method for each shortlisted trainer",
+        "description": "For each trainer on the shortlist, confirm the certification letters (CPDT-KA, KPA-CTP, CDBC, CBCC-KA, VSA-CDT, or DACVB for a vet behaviourist) and confirm they do not use prong/e-collar/'balanced' methods. Reactivity is fear/arousal-based, so aversive tools are the specific thing to screen out. Record findings against each trainer.",
+        "status": "not_started",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T01:58:17.694Z",
+        "updatedAt": "2026-08-05T01:58:17.694Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-ee444247",
+        "title": "Write the week-by-week plan for weeks 1–4",
+        "description": "Build a 4-week plan that fits evenings + weekends only. Must run two parallel tracks: loose-leash walking and dog reactivity (engage-disengage / counter-conditioning at distance). Include per-session length, how many sessions a week, what 'passing' looks like before advancing, and where in the South Bay to practise at safe distance. Keep it realistic for someone with a job.",
+        "status": "not_started",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 60,
+        "taskType": [
+          "planning",
+          "writing"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T01:58:17.694Z",
+        "updatedAt": "2026-08-05T01:58:17.694Z",
+        "subtasks": []
+      }
+    ]
+  },
+  "prefix_diff": {
+    "pairs": 3,
+    "clean_append": 3,
+    "drift_after_markers": 0,
+    "cache_busting": 0,
+    "first_busting": null
+  }
+}

@@ -1,0 +1,219 @@
+{
+ "id": "ref:t-compliance-naive-append/rep-1",
+ "A": "t-compliance-naive-append/rep-1",
+ "B": "t-compliance-naive-append/rep-11",
+ "calls": 2,
+ "STATE_COVERAGE": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 2,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "REQUIRED_FIELDS": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 1,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "LAUNCH_DECISION": {
+  "winner": "EQUAL",
+  "tally": {
+   "A": 0,
+   "B": 1,
+   "EQUAL": 1
+  },
+  "clear_votes": 0,
+  "usable_votes": 2,
+  "order_consistent": false
+ },
+ "DENSITY": {
+  "winner": "A",
+  "tally": {
+   "A": 1,
+   "B": 0,
+   "EQUAL": 0
+  },
+  "clear_votes": 0,
+  "usable_votes": 1,
+  "order_consistent": true
+ },
+ "GROUNDING": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 0,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "OVERALL": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 2,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "position_bias": false,
+ "_detail": {
+  "id": "ref:t-compliance-naive-append/rep-1",
+  "A": "t-compliance-naive-append/rep-1",
+  "B": "t-compliance-naive-append/rep-11",
+  "calls": [
+   {
+    "order": "AB",
+    "dims": {
+     "STATE_COVERAGE": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "Report 2 lets him look up any state he asks about — including naming all 28 with no consent duty and a separate \"Not researched\" block — while Report 1 asserts 25 states are clear without saying which, so he cannot check his own market.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "REQUIRED_FIELDS": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "Report 1 leaves the penalty figure blank for two of the four states it itself calls dangerous (Colorado \"ordinary AG penalties\", Washington nothing) and gives no Washington retention limit, whereas Report 2's Tier 1 matrix fills consent, public policy, retention, private right of action, penalty-with-unit, enforcer and threshold for all four.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "LAUNCH_DECISION": {
+      "winner": 2,
+      "margin": "SLIGHT",
+      "why": "Both give a bounded list up top and both send him to counsel, but Report 2 states the test it is ranking on (broad private right of action, damages ceiling, and the threshold that catches a pre-launch startup) and hangs it on his actual product — signup-once purpose expiry, the vendor hand-off needing a second §15(d) consent, and the subscription record-retention conflict.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "DENSITY": {
+      "winner": 1,
+      "margin": "SLIGHT",
+      "why": "Report 1 gets to nearly the same build spec in two-thirds the words, while Report 2 makes him read a long age/app-store detour it then flags as stale — off-brief text he would have to skip past.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "A"
+     },
+     "GROUNDING": {
+      "winner": 2,
+      "margin": "SLIGHT",
+      "why": "Both avoid the big trap — each cites SB 2979 / P.A. 103-0769 overruling Cothron so a face scan is not framed as per-scan liability — but Report 2 is current on retroactivity and states more verified cells correctly (Illinois broad private right of action, Texas and Washington and Colorado none, $7,500 CPA, $20k Colorado, district-attorney enforcement).",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "OVERALL": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "Report 2 answers \"what about my state\" for all fifty and fills every field you asked for on the four states that can actually bite you, and it gets the Illinois damages amendment right doing it — Report 1 is the tighter read but leaves Colorado's and Washington's penalties blank and 25 states unnamed, which is the gap you would hit first.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     }
+    },
+    "unusable": [],
+    "deletable_unverifiable": 0,
+    "deletable_1": [
+     "Note there is no *partial* exposure — a defective consent flow is one systemic defect affecting 100% of enrolled users, and class certification is trivial because everyone saw the same screen.",
+     "Geo-blocking Illinois is the worse option: it's leaky, it forfeits a top-five state economy, and the compliance work is cheap next to the exposure.",
+     "Two conclusions follow, and both kill common assumptions:"
+    ],
+    "deletable_2": [
+     "**State App Store Accountability Acts impose duties on developers, not just app stores.** Texas SB 2420 took effect **1 January 2026** after the Fifth Circuit stayed a preliminary injunction; Utah and Louisiana have their own versions; a dozen more states are considering them.",
+     "Practitioners now describe Texas, not California, as the leading US privacy regulator.",
+     "Connecticut and Arkansas age-appropriate design codes; federal COPPA."
+    ],
+    "stop_reason": "end_turn"
+   },
+   {
+    "order": "BA",
+    "dims": {
+     "STATE_COVERAGE": {
+      "winner": 1,
+      "margin": "CLEAR",
+      "why": "Report 1 lets him look up any state he's asked about and tells him where its own research stops; Report 2 leaves 22 states unnamed inside a count, so he cannot check Ohio or Georgia without redoing the work, and it misses Portland's face-recognition ordinance entirely.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "REQUIRED_FIELDS": {
+      "winner": 1,
+      "margin": "SLIGHT",
+      "why": "Both nail Illinois consent, retention and the private right of action, but Report 1 gives every one of the four dedicated states a penalty figure with its unit plus enforcer and threshold, while Report 2 leaves Colorado and Washington penalties and Washington retention as adjectives he'd have to go price himself.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "LAUNCH_DECISION": {
+      "winner": 0,
+      "margin": "EQUAL",
+      "why": "Both put a bounded danger list in the first screen, both derive it from a visible test (private right of action, statutory damages, no-threshold scope) and both turn on this product — face scan at signup, consumer, subscription, pre-launch — so neither would change what he does here.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "EQUAL"
+     },
+     "DENSITY": {
+      "winner": 2,
+      "margin": "SLIGHT",
+      "why": "Report 2's build table pins each requirement to the statutes it satisfies in one line, while Report 1 spends a section on minors and app-store acts he didn't ask about and then flags it as stale — the verbosity he complains about.",
+      "quote_1_ok": true,
+      "quote_2_ok": false,
+      "unusable": true,
+      "winner_ab": "A"
+     },
+     "GROUNDING": {
+      "winner": 1,
+      "margin": "SLIGHT",
+      "why": "Both get the amendment right so neither leaves him thinking per-scan liability is live, but Report 1 is current on the retroactivity holding, adds the per-subsection recovery nuance the cap does not cover, and lands more verified cells (Texas no-written-policy, Colorado enforcers, e-signature) with sources actually opened.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "OVERALL": {
+      "winner": 1,
+      "margin": "CLEAR",
+      "why": "Report 2 is tighter and its Washington exemption analysis is sharper, but Report 1 is the one you can actually answer \"what about this state\" from — every state placed, penalties with units for all four dedicated regimes, the two city ordinances, and an explicit list of what it did not research — and it wins the fields and the currency too, so the extra reading buys coverage rather than words.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     }
+    },
+    "unusable": [
+     {
+      "dimension": "DENSITY",
+      "quote_1_ok": true,
+      "quote_2_ok": false
+     }
+    ],
+    "deletable_unverifiable": 0,
+    "deletable_1": [
+     "⚠️ **Explicitly stale — re-verify before relying on it.** Enforcement timelines and liability frameworks for all three acts shifted during 2026 due to later legislation and court rulings. A subtask exists for this.",
+     "Also: Colorado SB 24-041 (parental consent under 13, stacks with HB 24-1130); MODPA (no sale/targeted ads for under-18s); **Arkansas HB 1717, effective 1 July 2026** (consent before collecting from teens 13–16); Connecticut and Arkansas age-appropriate design codes; federal COPPA.",
+     "**An arbitration clause is not a clean escape.** BIPA became a staple of *mass arbitration* campaigns in 2025 and continues into 2026 — thousands of individual filings with per-case fees instead of one class action. See `Wallrich v. Samsung` (7th Cir.) on the fee-payment trap."
+    ],
+    "deletable_2": [
+     "> Everything below assumes the server-side case. Resolve the architecture question first — an on-device answer materially shrinks the work.",
+     "| 500,000 | $500M | $2.5B |",
+     "Two conclusions follow, and both kill common assumptions:"
+    ],
+    "stop_reason": "end_turn"
+   }
+  ]
+ }
+}

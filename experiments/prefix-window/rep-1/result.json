@@ -1,0 +1,216 @@
+{
+  "cell": "prefix-window",
+  "rep": 1,
+  "task_id": "t-dog",
+  "run_id": "exp-prefix-window-r1-msdyy9n5",
+  "dry_run": false,
+  "config": {
+    "cache": "prefix",
+    "context": "window"
+  },
+  "git_sha": "3304843",
+  "started_at": "2026-08-04T01:18:01.553Z",
+  "finished_at": "2026-08-04T01:22:52.805Z",
+  "wall_ms": 291213,
+  "turns": null,
+  "stop_reason": null,
+  "status": "error",
+  "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"source tool `srvtoolu_01QxiH4cSSWEoAMLxSZ1CLni` not found for tool use block `srvtoolu_014EDqs8c6kdZSYymJSuZnkX`\"},\"request_id\":\"req_011CdgqHa2URNqvDfNuNiCtu\"}",
+  "seed_check_ok": true,
+  "cache_hit_call1": false,
+  "totals": {
+    "api_calls": 7,
+    "summarizer_calls": 0,
+    "input_tokens": 1904,
+    "output_tokens": 12273,
+    "cache_creation_input_tokens": 112722,
+    "cache_read_input_tokens": 653873,
+    "web_search_requests": 16,
+    "web_fetch_requests": 15,
+    "cost_usd": 1.5077939999999999,
+    "computed_cost_usd": 1.5077939999999999,
+    "summarizer_cost_usd": 0
+  },
+  "behavior": {
+    "subtasks_created": 6,
+    "comments": 0,
+    "report_attached": false,
+    "statuses_set": 5,
+    "searches": 16,
+    "fetches": 15
+  },
+  "final_task_tree": {
+    "id": "t-dog",
+    "title": "Figure out a training plan for my dog",
+    "description": "Rescue border collie mix, 14 months. Pulls hard on the leash and barks at every other dog on walks. South Bay, California; I can do evenings and weekends.\n\nThree things only:\n1. Whether to hire a trainer or do it myself.\n2. If hiring — two or three local options with real prices.\n3. A week-by-week plan for the first four weeks.\n\nDon't research anything beyond those three.",
+    "status": "in_progress",
+    "assignee": "agent",
+    "parentId": null,
+    "needsHumanReview": false,
+    "priority": "medium",
+    "energy": "medium",
+    "timeEstimate": 60,
+    "taskType": [
+      "researching",
+      "planning",
+      "decision"
+    ],
+    "dueDate": "2026-08-06",
+    "project": "Personal",
+    "section": "This week",
+    "comments": [],
+    "report": null,
+    "createdAt": "2026-07-30T09:12:00.000Z",
+    "updatedAt": "2026-08-04T01:18:13.108Z",
+    "subtasks": [
+      {
+        "id": "t-a4ce7cb0",
+        "title": "Decide: DIY training vs. hiring a pro for leash pulling + dog reactivity",
+        "description": "Question 1 of the brief. Determine whether a 14-month rescue border collie mix with hard leash pulling and barking/lunging at other dogs on walks is a DIY case or a hire-a-professional case. Look specifically at whether reactivity (barking at every dog) changes the answer vs. plain pulling. Output: a clear recommendation with the reasoning, written into this description.",
+        "status": "in_progress",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching",
+          "decision"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T01:18:13.109Z",
+        "updatedAt": "2026-08-04T01:18:18.754Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-ddd94c23",
+        "title": "Find South Bay trainers who handle leash reactivity, with real prices",
+        "description": "Question 2 of the brief. Find 2-3 professionals serving the South Bay (San Jose / Sunnyvale / Santa Clara / Mountain View / Campbell area) who work on leash reactivity and leash skills with positive-reinforcement methods. Must capture actual dollar prices, format (private / group / board), and whether they have evening or weekend availability. Owner is only free evenings and weekends.",
+        "status": "in_progress",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 60,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T01:18:13.109Z",
+        "updatedAt": "2026-08-04T01:19:02.840Z",
+        "subtasks": [
+          {
+            "id": "t-7cb3ac58",
+            "title": "Option A — Humane Society Silicon Valley \"Top Dogs\" reactive dog series",
+            "description": "CONFIRMED PRICES (fetched from hssv.org, page modified Feb 2026).\n\nOrg: Humane Society Silicon Valley, 901 Ames Ave, Milpitas CA. Contact: dogtraining@hssv.org\n\nTOP DOGS LEVEL 1 (Reactive Dogs) — $300 general registration.\n- Built specifically for dogs struggling with leash or barrier reactivity.\n- Format: ALL ONLINE via Zoom, for safety/control. Six-week course, one session/week. First session 90 min, then 5 sessions of 50 min.\n- Eligibility: dogs 8 months and older (our dog is 14 mo = eligible); no prior bite history on dogs or people. For dogs who bark, lunge, or worry but have NOT caused injury.\n- Curriculum: science-based positive reinforcement — threshold work, impulse control, calm exits, real-life coping skills.\n- Next listed start: 08/19/26 at 6:15pm — an EVENING slot, fits the owner's availability.\n\nTOP DOGS LEVEL 2 — $300. IN-PERSON, six weeks, one 50-min session/week. Prerequisite: Level 1 or instructor approval. Real-time coaching in a controlled group setting; impulse control, threshold management, coping skills, emergency exits. For reactivity only — does not address aggression.\n\nTOP DOGS LEVEL 3 — $300. Six weeks, 50 min/week in person. Prereq L1+L2. Topic-based (rally obedience, urban agility/parkour, tricks) that continues counterconditioning around other dogs while building a sport skill.\n\nWHY THIS FITS: cheapest credible reactivity-specific option, correct method, evening schedule, and a defined progression L1 (online, safe) -> L2 (in person around real dogs) -> L3. Note: Level 1 being online means no live practice around other dogs until Level 2.\n\nIf the dog had a bite history, HSSV asks you to email dogtraining@hssv.org for evaluation first.",
+            "status": "done",
+            "assignee": "agent",
+            "parentId": "t-ddd94c23",
+            "needsHumanReview": false,
+            "priority": "high",
+            "energy": "low",
+            "timeEstimate": 15,
+            "taskType": [
+              "researching"
+            ],
+            "dueDate": null,
+            "project": "Personal",
+            "section": null,
+            "comments": [],
+            "report": null,
+            "createdAt": "2026-08-04T01:20:10.834Z",
+            "updatedAt": "2026-08-04T01:22:52.315Z",
+            "subtasks": []
+          },
+          {
+            "id": "t-163d0dd0",
+            "title": "Option B — Orion Dog Training (San Jose) reactive dog class",
+            "description": "CONFIRMED PRICES (fetched from oriondogtraining.com).\n\nOrg: Orion Dog Training, 576 E Santa Clara Street, San Jose (own parking lot).\nPhone: 650-996-6708 (text preferred). Email: oriondogtraining@gmail.com\nThey offer a FREE 20-minute phone consult — start there.\n\n\"MY DOG IS REACTIVE, NOW WHAT?\" — $395\n- Six-week, science-based class for dogs who struggle with reactivity.\n- IN PERSON, small group: 4-5 teams in a 3,000 sq ft indoor space. Whole family welcome. Homework included with video explanations.\n- Schedule of the cohort found: Saturdays 5:30pm — fits weekend availability.\n- *** STATUS: the Aug 1 cohort is listed FULLY BOOKED and has already started. Must call/text to ask when the next cohort opens and to get on the waitlist. ***\n- Skills covered: differential marker words, emergency U-turn, reliable recall, Up & Down game, management, settle skills, Look At That (LAT) game, Catch 1-2-3 game, long-line walking and leash handling, safety gear, why dogs react.\n\nRELATED CLASS — \"CU: Pattern Games for the Distracted Dog\" — $295\n- Control Unleashed pattern games (Leslie McDevitt method); listed start Wednesday Aug 5 @ 7:45pm (evening).\n- Good adjunct or fallback if the reactive class is full — pattern games are a core reactivity tool.\n\nCANCELLATION POLICY: full refund within 24 hrs of booking; full refund minus 10% surcharge if more than 72 hrs before class start; no refund inside 72 hrs. No make-up classes.\n\nWHY THIS FITS: in-person practice around other reactive dogs in a controlled indoor space, which is the thing HSSV Level 1 (online) can't give you. Curriculum is exactly the right toolkit (LAT, U-turns, pattern games).",
+            "status": "done",
+            "assignee": "agent",
+            "parentId": "t-ddd94c23",
+            "needsHumanReview": false,
+            "priority": "high",
+            "energy": "low",
+            "timeEstimate": 15,
+            "taskType": [
+              "researching"
+            ],
+            "dueDate": null,
+            "project": "Personal",
+            "section": null,
+            "comments": [],
+            "report": null,
+            "createdAt": "2026-08-04T01:21:14.698Z",
+            "updatedAt": "2026-08-04T01:22:52.316Z",
+            "subtasks": []
+          },
+          {
+            "id": "t-89b12b7b",
+            "title": "Option C — D For Dogz (Palo Alto / South Bay) Leash Reactive Dog Foundations",
+            "description": "CONFIRMED PRICES (fetched from dfordogtraining.com).\n\nOrg: D For Dogz — trainer KT / Kaajal Tiwary. Serves Palo Alto, San Jose and the South Bay; says it has worked with 500+ Silicon Valley families. Force-free / positive reinforcement.\nPhone: 650-538-3011. Free 15-minute discovery call with KT (booking widget on their site).\n\nLEASH REACTIVE DOG FOUNDATIONS (\"Growly Dog\") — $595 tuition\n- 9 sessions to be completed in 5 weeks.\n- In-person classroom sessions: SATURDAYS 9:30-10:30 AM.\n- Live Zoom Q&A / troubleshooting: WEDNESDAYS 6:30-7:15 PM (evening).\n- Structure worth noting: the FIRST TWO in-person sessions are PEOPLE-ONLY, so you learn concepts and handling skills before any pressure is put on the dog. The FINAL session is a guided neighborhood walk to transition the skills to the real world.\n- Content: desensitisation/counterconditioning to previously stressful stimuli, engagement games, guidance for managing reactivity outside class, owner community.\n\nFOLLOW-ON: \"Leash Reactive Dogs — About Town\" membership — $500 per month\n- In-person group sessions in real-world public settings, 1st and 3rd Saturdays 10:00-10:50 AM.\n- Live Zoom skill-building 2nd and 4th Wednesdays.\n- Includes one 60-min in-person private session OR two 30-min virtual private sessions per month, plus community access and an optional bi-weekly reactive dog support group.\n- Expensive as an ongoing commitment — treat as optional, not part of the first four weeks.\n\nFREE RESOURCE (no purchase, not a client): D For Dogz runs monthly Leash Reactive Dog Support Groups, free and open to ALL reactive dog owners in Silicon Valley. Topic-based with open Q&A, live (not recorded). Registration via their site. Worth joining regardless of which trainer you pick.\n\nWHY THIS FITS: the people-only first sessions and the guided real-world walk at the end are the best-designed structure of the three. Most expensive of the three group options at $595.",
+            "status": "not_started",
+            "assignee": "agent",
+            "parentId": "t-ddd94c23",
+            "needsHumanReview": false,
+            "priority": "high",
+            "energy": "low",
+            "timeEstimate": 15,
+            "taskType": [
+              "researching"
+            ],
+            "dueDate": null,
+            "project": "Personal",
+            "section": null,
+            "comments": [],
+            "report": null,
+            "createdAt": "2026-08-04T01:22:52.315Z",
+            "updatedAt": "2026-08-04T01:22:52.315Z",
+            "subtasks": []
+          }
+        ]
+      },
+      {
+        "id": "t-c380940e",
+        "title": "Write the week-by-week plan for weeks 1-4",
+        "description": "Question 3 of the brief. Build a concrete 4-week plan the owner can start this week, working evenings and weekends only. Must cover both problems: loose-leash walking and reactivity to other dogs. Each week needs specific drills, session lengths, and a way to tell whether it's working.",
+        "status": "not_started",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 60,
+        "taskType": [
+          "planning",
+          "writing"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T01:18:13.109Z",
+        "updatedAt": "2026-08-04T01:18:13.109Z",
+        "subtasks": []
+      }
+    ]
+  },
+  "prefix_diff": {
+    "pairs": 6,
+    "clean_append": 0,
+    "drift_after_markers": 6,
+    "cache_busting": 0,
+    "first_busting": null
+  }
+}

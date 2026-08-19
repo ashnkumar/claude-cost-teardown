@@ -1,0 +1,212 @@
+{
+ "id": "ref:t-compliance-live-append-effort-low/rep-12",
+ "A": "t-compliance-live-append-effort-low/rep-12",
+ "B": "t-compliance-naive-append/rep-11",
+ "calls": 2,
+ "STATE_COVERAGE": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 2,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "REQUIRED_FIELDS": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 2,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "LAUNCH_DECISION": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 0,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "DENSITY": {
+  "winner": "EQUAL",
+  "tally": {
+   "A": 1,
+   "B": 1,
+   "EQUAL": 0
+  },
+  "clear_votes": 0,
+  "usable_votes": 2,
+  "order_consistent": false
+ },
+ "GROUNDING": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 2,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "OVERALL": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 2,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "position_bias": false,
+ "_detail": {
+  "id": "ref:t-compliance-live-append-effort-low/rep-12",
+  "A": "t-compliance-live-append-effort-low/rep-12",
+  "B": "t-compliance-naive-append/rep-11",
+  "calls": [
+   {
+    "order": "AB",
+    "dims": {
+     "STATE_COVERAGE": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "Report 1 leaves the whole tail of the country as an unnamed bucket you have to trust, while Report 2 enumerates all fifty plus DC, does four dedicated statutes in one matrix, and names the Tier-2 states where the rule actually differs (Maryland necessity, Utah opt-out, Rhode Island no cure, Florida's $1B floor) instead of collapsing nineteen states into one sentence.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "REQUIRED_FIELDS": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "Both get the private right of action right everywhere, but Report 1's dedicated-statute table has only three columns and never gives Colorado a penalty figure or any state a size threshold, whereas Report 2 fills the fourth column, adds enforcer and threshold rows, and turns notice into a buildable five-part spec including the separate §15(d) consent for the vendor hand-off.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "LAUNCH_DECISION": {
+      "winner": 2,
+      "margin": "SLIGHT",
+      "why": "Report 1's colour-coded ladder is beautifully scannable and names its test, but Report 2 applies the same test to *this* pre-launch company — thresholds, the Jumio signup-IDV fact pattern, the subscription's collision with retention — and catches Colorado, which Report 1 files under \"moderate, procedural.\"",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "DENSITY": {
+      "winner": 1,
+      "margin": "SLIGHT",
+      "why": "Report 1 gets you the shape of the problem in three minutes with no wasted per-state boilerplate, whereas Report 2 spends a few thousand characters on auto-renewal, minors and App Store Accountability Acts it admits weren't asked for — though Report 1 pays for its brevity by saying \"Illinois is the only red flag\" and \"here are the five controls\" twice each.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "A"
+     },
+     "GROUNDING": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "Neither commits the fatal per-scan error — both correctly say SB 2979 killed Cothron's per-capture theory — but Report 2 lands more verified cells (the Colorado $20k penalty, the Texas Meta figure, the electronic-signature confirmation, the Seventh Circuit retroactivity holding, and the RCW 19.375 \"data generated therefrom\" photo carve-out that may put you outside Washington entirely), while Report 1 omits Colorado's penalty and tells you \"Design to Texas and Illinois follows automatically,\" which is wrong because Illinois's purpose-satisfied trigger fires long before Texas's one-year cap.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "OVERALL": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "Report 2 fills in every state with real cells instead of an unnamed bucket, gets Colorado's penalty, Texas's $1.4B enforcement record and Washington's photo carve-out where Report 1 has gaps, and hands engineering a consent screen and retention rule you can build today — the extra reading buys coverage, not padding.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     }
+    },
+    "unusable": [],
+    "deletable_unverifiable": 0,
+    "deletable_1": [
+     "Do not launch without: a standalone signed consent screen before camera access, a publicly posted retention/destruction policy, template deletion on a 1-year-max clock (Texas, shorter than Illinois' 3), encryption at rest, and a vendor DPA that forbids model training.",
+     "Whether \"places of public accommodation\" reaches an online service in Portland — needs a counsel opinion, not a search.",
+     "**🟢 Everywhere else — green** once the universal controls ship."
+    ],
+    "deletable_2": [
+     "**Product analysed:** consumer mobile app, face scan (selfie + government ID, 1:1 match) for identity verification at signup, third-party IDV vendor, monthly subscription.",
+     "**State App Store Accountability Acts impose duties on developers, not just app stores.** Texas SB 2420 took effect **1 January 2026** after the Fifth Circuit stayed a preliminary injunction; Utah and Louisiana have their own versions; a dozen more states are considering them.",
+     "| 11 | Set the quarterly threshold review | You |"
+    ],
+    "stop_reason": "end_turn"
+   },
+   {
+    "order": "BA",
+    "dims": {
+     "STATE_COVERAGE": {
+      "winner": 1,
+      "margin": "CLEAR",
+      "why": "Report 1 puts every state in a named bucket with the operative rule for that bucket, individually explains the seven Tier 2 states that break the pattern, and declares its own not-researched boundary; Report 2 leaves roughly twenty-nine states unnamed behind one paragraph, so he cannot look up his own state.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "REQUIRED_FIELDS": {
+      "winner": 1,
+      "margin": "CLEAR",
+      "why": "Both nail the private right of action everywhere and both give Illinois, Texas and Washington penalties with units, but Report 2 gives no penalty figure for Colorado and no applicability thresholds anywhere — the two fields that decide whether a pre-launch startup is even in scope — while Report 1 gives thresholds with numbers, Colorado's $20k-per-violation and its enforcers, and a five-part spec of what the notice screen must actually say.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "LAUNCH_DECISION": {
+      "winner": 1,
+      "margin": "SLIGHT",
+      "why": "Report 2's traffic-light block is the nicer thing to skim, but Report 1 applies a second axis — who has jurisdiction over a company this size — and turns on more of his actual product (signup-only capture, subscription record-keeping, pre-launch thresholds), which is what changes the build.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "DENSITY": {
+      "winner": 1,
+      "margin": "SLIGHT",
+      "why": "Report 2 is faster to read but spends a real fraction of its length saying the same five controls three times, whereas almost all of Report 1's length is new facts in tables plus an ordered, owner-assigned action block — its only genuine padding is the auto-renewal and minors detour he did not ask for.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "GROUNDING": {
+      "winner": 1,
+      "margin": "CLEAR",
+      "why": "Both avoid the big trap and get the 2024 Illinois amendment right, but Report 2 inverts the binding retention constraint — for a signup-only scan Illinois's purpose-satisfied trigger bites immediately, not Texas's one year — and leaves Colorado's penalty blank, while Report 1 fills every Colorado cell, names the public act and the retroactivity holding, and cites real BIPA case law.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "OVERALL": {
+      "winner": 1,
+      "margin": "CLEAR",
+      "why": "Report 1 gives you the same fast danger call plus the things you'd otherwise have to go find yourself — Colorado as a fourth dedicated-statute state with its penalty and its no-threshold trap, the scope thresholds that decide whether the twenty-state sensitive-data layer touches you at all, the exact notice content, and an honest list of what it didn't research — where Report 2 reads quickly but leaves twenty-nine states unnamed and tells you to design to a one-year clock that Illinois won't accept for a signup-only scan.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     }
+    },
+    "unusable": [],
+    "deletable_unverifiable": 0,
+    "deletable_1": [
+     "Practitioners now describe Texas, not California, as the leading US privacy regulator.",
+     "on procedural grounds, days before its main provisions took effect. Check the date on any checklist you're handed.",
+     "It's more engineering work than complying, it breaks with travel and VPNs, residency is unreliable to determine, and you're still non-compliant for anyone misclassified."
+    ],
+    "deletable_2": [
+     "Do not launch without: a standalone signed consent screen before camera access, a publicly posted retention/destruction policy, template deletion on a 1-year-max clock (Texas, shorter than Illinois' 3), encryption at rest, and a vendor DPA that forbids model training.",
+     "The $1,000 isn't what hurts; plaintiff's-side attorneys' fees are what make sub-$1,000 claims worth aggregating into a class.",
+     "**🟢 Everywhere else — green** once the universal controls ship."
+    ],
+    "stop_reason": "end_turn"
+   }
+  ]
+ }
+}

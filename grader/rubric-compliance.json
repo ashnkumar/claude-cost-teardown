@@ -1,0 +1,280 @@
+{
+  "rubric_version": "compliance-1.1.0",
+  "rubric_id": "t-compliance",
+  "judge_prompt": "judge_prompt-compliance.md",
+  "normalizer_version": "normalizer_v1",
+  "task_id": "t-compliance",
+  "axes": {
+    "A": {
+      "label": "Content",
+      "points": 60
+    },
+    "B": {
+      "label": "Grounding & verification",
+      "points": 20
+    },
+    "C": {
+      "label": "Scope & handoff discipline",
+      "points": 20
+    }
+  },
+  "brief": {
+    "product": "consumer mobile app that scans a user's face to verify identity at signup, charging a monthly subscription",
+    "asks": [
+      "state by state, which biometric privacy laws apply to us",
+      "what notice and written consent we have to collect",
+      "how long we are allowed to retain the scan",
+      "whether there is a private right of action",
+      "what the penalties are",
+      "flag the states that are genuinely dangerous to launch in"
+    ]
+  },
+  "principle": "Criteria satisfaction, not sample replication. No item requires a particular state, statute, figure or risk ranking. A run that reaches different conclusions from different jurisdictions passes wherever the criterion's own wording is met. Retrieval redundancy stays out of the score — it is a cost-side symptom reported as a behavioral column.",
+  "types": {
+    "J": "LLM judge, binary with verbatim evidence",
+    "D": "deterministic script",
+    "H": "hybrid — judge extracts, script verifies"
+  },
+  "items": [
+    {
+      "id": "A1",
+      "axis": "A",
+      "points": 4,
+      "type": "J",
+      "criterion": "The analysis is applied to THIS product, not delivered as a generic biometric-law survey. It states that a face scan used for identity verification is a regulated biometric identifier under the laws it names, and reasons from the product's own facts (consumer mobile app, scan at signup, paid subscription)."
+    },
+    {
+      "id": "A2",
+      "axis": "A",
+      "points": 5,
+      "type": "J",
+      "criterion": "Distinguishes laws that bind immediately from laws gated by a size, revenue or volume threshold, and says which the product is subject to now versus later. A clear statement that some obligations are live from the first user, with a reason, satisfies this."
+    },
+    {
+      "id": "A3",
+      "axis": "A",
+      "points": 6,
+      "type": "J",
+      "criterion": "Notice and consent requirements are concrete enough to build from: what must be disclosed to the user, and that consent must be obtained before the biometric is captured. Vague direction to 'get consent' without content or timing fails."
+    },
+    {
+      "id": "A4",
+      "axis": "A",
+      "points": 4,
+      "type": "J",
+      "criterion": "Addresses the brief's 'written consent' question specifically — identifies where a written or signed release is required as distinct from notice alone, or states with reasoning that no named jurisdiction imposes one."
+    },
+    {
+      "id": "A5",
+      "axis": "A",
+      "points": 5,
+      "type": "J",
+      "criterion": "Gives a time-bounded retention answer that includes at least one numeric period with a unit (e.g. \"no more than 3 years\", \"within 1 year of purpose expiring\") tied to a named jurisdiction's requirement — as a deadline, a maximum period, or an event trigger paired with its numeric backstop. A purely event-based trigger with no numeric bound anywhere fails, as does \"no longer than necessary\" with no bound."
+    },
+    {
+      "id": "A6",
+      "axis": "A",
+      "points": 4,
+      "type": "J",
+      "criterion": "Covers destruction as well as duration: what must actually happen at the end of the retention period, and/or the obligation to have a retention-and-destruction policy. Merely stating a period, with nothing about deleting, fails."
+    },
+    {
+      "id": "A7",
+      "axis": "A",
+      "points": 6,
+      "type": "J",
+      "criterion": "Answers the private-right-of-action question explicitly: identifies which named jurisdictions give private plaintiffs a cause of action and which are regulator-enforced only. Any defensible mapping counts; silence on the distinction fails."
+    },
+    {
+      "id": "A8",
+      "axis": "A",
+      "points": 6,
+      "type": "J",
+      "criterion": "Penalties are given as concrete figures — statutory damages, per-violation amounts or a stated exposure range — for at least three named jurisdictions, each tied to a cited source. Qualitative severity words alone ('significant fines') fail."
+    },
+    {
+      "id": "A9",
+      "axis": "A",
+      "points": 6,
+      "type": "J",
+      "criterion": "Explicitly flags the jurisdictions that are most dangerous to launch in AND gives the mechanism that makes each one dangerous. The mechanism must be NAMED (private right of action, statutory damages, an outright prohibition, a necessity test, per-day accrual, and so on) or stated with its operative particular. A paraphrase that names no mechanism — \"a route for claims with monetary consequences\", \"restrictive\", \"notable\" — fails. Damages figures are NOT required here; that is A8's job, and an item like \"Illinois: private right of action with statutory damages\" passes A9 with no dollar figure in it."
+    },
+    {
+      "id": "A10",
+      "axis": "A",
+      "points": 4,
+      "type": "J",
+      "criterion": "Risk is differentiated rather than flat — tiers, a ranking, or an explicit severity ordering that separates existential exposure from routine overhead. An undifferentiated state-by-state list with no relative weighting fails."
+    },
+    {
+      "id": "A11",
+      "axis": "A",
+      "points": 4,
+      "type": "J",
+      "criterion": "States concrete conditions that must be true before launch — an actionable pre-launch checklist, gating requirements, or a go/no-go framing — rather than leaving the reader with analysis alone."
+    },
+    {
+      "id": "A12",
+      "axis": "A",
+      "points": 3,
+      "type": "J",
+      "criterion": "Carries an explicit not-legal-advice framing AND at least one specific item escalated to counsel or flagged as legally unresolved. Both halves are required: a bare disclaimer with no escalations, or escalations with no disclaimer, fails."
+    },
+    {
+      "id": "A13",
+      "axis": "A",
+      "points": 3,
+      "type": "J",
+      "criterion": "Anchor contradiction check: no factual claim contradicts the frozen anchor set below. Mentioning none of the anchors is a pass. Only a direct contradiction of a listed anchor fails this item."
+    },
+    {
+      "id": "B1",
+      "axis": "B",
+      "points": 8,
+      "type": "D",
+      "criterion": "Source-verification ratio V = |report.sources normalized that appear in trace web_fetch events| / |report.sources|. Score = 8 * V.",
+      "formula": "8 * fetched_sources / total_sources"
+    },
+    {
+      "id": "B2",
+      "axis": "B",
+      "points": 6,
+      "type": "H",
+      "criterion": "Legal-claim verification. The judge extracts the load-bearing legal claims from the REPORT; the script computes the fraction whose source_url was actually fetched. Score = 6 * fraction.",
+      "formula": "6 * verified_legal_claims / total_legal_claims",
+      "claim_definition": {
+        "note": "Mechanical, so the denominator is reproducible across passes. Mirrors the price-claim rule in the t-dog rubric.",
+        "unit": "one claim per distinct (jurisdiction, legal proposition, figure or citation) triple asserted in the report",
+        "scope": "the report only — not subtask descriptions or comments",
+        "rules": [
+          "A claim counts only if it carries a hard, checkable particular: a dollar amount, a numeric period, a statute or ordinance citation, or a named case.",
+          "Two different figures about the same jurisdiction are two claims — statutory damages and a retention deadline are separate.",
+          "A damages figure stated as a pair or range for one provision is one claim.",
+          "The same triple stated twice dedupes to one claim.",
+          "Claims about jurisdictions the report rules out or de-prioritises still count.",
+          "A general characterisation with no figure, period, citation or case is NOT a claim and stays out of the denominator.",
+          "Forward-looking claims about pending or proposed legislation count if they carry a particular."
+        ]
+      }
+    },
+    {
+      "id": "B3",
+      "axis": "B",
+      "points": 3,
+      "type": "H",
+      "criterion": "Every legal claim whose source was not fetched is flagged in the text as unverified, uncertain, or requiring confirmation. Binary. Derived from the same extraction as B2: the judge records whether each claim is flagged; the script decides which claims rest on unfetched sources."
+    },
+    {
+      "id": "B4",
+      "axis": "B",
+      "points": 3,
+      "type": "D",
+      "criterion": "Subtask hygiene: every agent-assigned subtask is terminal at run end AND the parent is in a justified non-open state (status in {waiting, needs_review, done} and a comment or attached report states why)."
+    },
+    {
+      "id": "C1",
+      "axis": "C",
+      "points": 6,
+      "type": "J",
+      "criterion": "Coverage of the six things the brief actually asked for: (1) which laws apply state by state, (2) notice and written consent, (3) retention duration, (4) private right of action, (5) penalties, (6) which states are genuinely dangerous. Count how many of the six the material answers substantively — a passing mention that does not answer the question does not count.",
+      "levels": {
+        "0": "Three or fewer answered substantively.",
+        "3": "Four or five answered substantively.",
+        "6": "All six asks answered substantively."
+      }
+    },
+    {
+      "id": "C2",
+      "axis": "C",
+      "points": 4,
+      "type": "J",
+      "criterion": "Stays anchored to the question asked. No standalone research sections or deliverables on topics outside the six asks — general data-security architecture, marketing, pricing strategy, unrelated regulatory regimes. Detail that serves one of the six asks is in scope however long it runs."
+    },
+    {
+      "id": "C3",
+      "axis": "C",
+      "points": 4,
+      "type": "J",
+      "criterion": "Does not present itself as legal advice or issue an unqualified legal conclusion — no flat assertion that the product IS compliant, IS lawful, or that a given practice is definitively permitted. Reasoned probabilistic assessments, recommendations and risk rankings all pass; only unhedged legal conclusions fail."
+    },
+    {
+      "id": "C4",
+      "axis": "C",
+      "points": 3,
+      "type": "J",
+      "criterion": "No claim of exhaustive or guaranteed compliance. Acknowledges that the law changes, that the survey may not be complete, or that open questions remain. Presenting the analysis as final and total fails."
+    },
+    {
+      "id": "C5",
+      "axis": "C",
+      "points": 3,
+      "type": "H",
+      "criterion": "Handoff quality. For each human-assigned subtask, binary: is it self-contained and actionable without reading the transcript (what to do, who to ask, what decision is being made)? Score = 3 * fraction self-contained."
+    }
+  ],
+  "anchors": {
+    "as_of": "2026-08-04",
+    "note": "Durable, independently verifiable facts about the two longest-standing dedicated biometric statutes. Used ONLY as a contradiction detector for A13 — never as required coverage. A report that mentions none of them passes A13.",
+    "excluded": [
+      {
+        "fact": "Counts of suits filed, settlement amounts, and the status of pending or recently amended legislation",
+        "why": "Perishable and litigation-dependent. Descriptive only; never scored."
+      },
+      {
+        "fact": "Whether any particular open legal question resolves one way or the other",
+        "why": "Genuinely unsettled. A run taking either side must not be penalised."
+      }
+    ],
+    "facts": [
+      "Illinois BIPA (740 ILCS 14) provides a private right of action to an aggrieved person.",
+      "BIPA sets liquidated damages of $1,000 per negligent violation and $5,000 per intentional or reckless violation, plus attorneys' fees.",
+      "BIPA section 15(b) requires a written release before a private entity collects a biometric identifier.",
+      "BIPA section 15(a) requires a publicly available written retention and destruction policy.",
+      "Texas CUBI (Business & Commerce Code chapter 503) has no private right of action and is enforced by the Texas Attorney General, with a civil penalty of up to $25,000 per violation.",
+      "Texas CUBI requires destruction of a biometric identifier within a reasonable time and no later than one year after the purpose for collection expires."
+    ]
+  },
+  "normalizer_v1": {
+    "url": [
+      "lowercase the scheme and host",
+      "strip a leading www. from the host",
+      "strip the fragment",
+      "strip a single trailing slash",
+      "keep the path and query verbatim"
+    ],
+    "query": [
+      "lowercase",
+      "collapse runs of whitespace to one space",
+      "trim",
+      "strip trailing punctuation"
+    ],
+    "near_dup_search": "additional pairs with token-Jaccard >= 0.8 beyond the exact-duplicate pairs",
+    "recreated_subtask": "normalized title token-set ratio >= 0.9 or normalized Levenshtein similarity >= 0.85 against an earlier subtask_created",
+    "re_research": "web_search after an agent subtask's terminal status_changed whose query shares content-word Jaccard >= 0.5 with that subtask's title (stopwords removed)"
+  },
+  "scoring": {
+    "total": "sum of item scores, 0-100",
+    "binary_items": "3 judge passes, per-item majority verdict over passes that survived evidence validation",
+    "fraction_items": [
+      "B2",
+      "C5"
+    ],
+    "level_items": [
+      "C1"
+    ],
+    "fraction_and_level_aggregation": "median across the 3 passes",
+    "axis_na": "If an axis cannot be evaluated (no trace/usage for axis B), its items are omitted and score_normalized reports the total over the remaining points.",
+    "contested": "an item where the surviving passes did not agree unanimously"
+  },
+  "changelog": [
+    {
+      "version": "compliance-1.0.0",
+      "note": "Initial. Sample 80/80, section-cut −9, particulars-stripped −6."
+    },
+    {
+      "version": "compliance-1.1.0",
+      "note": "A5 and A9 tightened to demand checkable particulars after the particulars-stripped CALIBRATION CONTROL — a constructed artifact, not a real run — exposed topic-passes-on-vague-text (the control scored only -6 under 1.0.0, with A8 the sole item to fire). No real-run grade motivated this change, and no experiment cell had been graded on this rubric when it was made. A2/A4/A6 deliberately left untightened: the same control demonstrated zero blindness in them, their passes on vague text being correct.",
+      "provenance": "constructed control artifact (grader/calibration/compliance-vague), not a real run"
+    }
+  ]
+}

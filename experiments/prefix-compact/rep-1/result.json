@@ -1,0 +1,512 @@
+{
+  "cell": "prefix-compact",
+  "rep": 1,
+  "task_id": "t-dog",
+  "run_id": "exp-prefix-compact-r1-mse0tuzk",
+  "dry_run": false,
+  "config": {
+    "cache": "prefix",
+    "context": "compact"
+  },
+  "git_sha": "3304843",
+  "started_at": "2026-08-04T02:10:35.168Z",
+  "finished_at": "2026-08-04T02:28:40.704Z",
+  "wall_ms": 1085245,
+  "turns": 17,
+  "stop_reason": "end_turn",
+  "status": "ok",
+  "error": null,
+  "seed_check_ok": true,
+  "cache_hit_call1": false,
+  "totals": {
+    "api_calls": 17,
+    "summarizer_calls": 3,
+    "input_tokens": 352674,
+    "output_tokens": 41922,
+    "cache_creation_input_tokens": 166751,
+    "cache_read_input_tokens": 773466,
+    "web_search_requests": 16,
+    "web_fetch_requests": 11,
+    "cost_usd": 4.400346750000001,
+    "computed_cost_usd": 4.400346750000001,
+    "summarizer_cost_usd": 0.43405000000000005
+  },
+  "behavior": {
+    "subtasks_created": 15,
+    "comments": 2,
+    "report_attached": true,
+    "statuses_set": 12,
+    "searches": 16,
+    "fetches": 11
+  },
+  "final_task_tree": {
+    "id": "t-dog",
+    "title": "Figure out a training plan for my dog",
+    "description": "Rescue border collie mix, 14 months. Pulls hard on the leash and barks at every other dog on walks. South Bay, California; I can do evenings and weekends.\n\nThree things only:\n1. Whether to hire a trainer or do it myself.\n2. If hiring — two or three local options with real prices.\n3. A week-by-week plan for the first four weeks.\n\nDon't research anything beyond those three.",
+    "status": "needs_review",
+    "assignee": "agent",
+    "parentId": null,
+    "needsHumanReview": false,
+    "priority": "medium",
+    "energy": "medium",
+    "timeEstimate": 60,
+    "taskType": [
+      "researching",
+      "planning"
+    ],
+    "dueDate": "2026-08-06",
+    "project": "Personal",
+    "section": "This week",
+    "comments": [
+      {
+        "id": "c-64450091",
+        "body": "Starting. Scoping to exactly the three things you asked for: (1) DIY vs. hire decision, (2) 2–3 South Bay options with real prices, (3) a 4-week week-by-week plan. Breaking into subtasks now, then researching.\n\nNote on the behaviour pattern: leash pulling + barking at every dog is textbook adolescent leash reactivity in a herding breed — that combination is what I'll be evaluating trainers against, not general obedience.",
+        "author": "agent",
+        "createdAt": "2026-08-04T02:10:41.059Z"
+      },
+      {
+        "id": "c-dcbef5e5",
+        "body": "Done — report attached. Short version of all three answers:\n\n**1. Hire or DIY? Hire, but cheap and structured — ~$300, and you still do the daily work.** He barks at *every* dog, which means the response has fully generalised; that's the point where pure DIY tends to stall. What you're buying is a curriculum and someone who can tell you his real threshold distance, because misjudging that distance is how people spend four weeks rehearsing the reaction instead of fixing it. 14 months is the window to interrupt this cheaply. But do **not** buy a $1,500+ private programme — nothing you described (no bite history, no redirection onto you) warrants it.\n\n**2. Three options, prices from their own pages:**\n- **HSSV \"Top Dogs Level 1\" (Reactive Dogs) — $300**, 6 weeks online, cohort listed **Tue 19 Aug, 6:15 PM**. Fits your evenings, dogs 8 months+. This is the pick.\n- **Stacy's Wag'N'Train (San Jose) — $190** single behaviour consult (CPDT-KA + CBCC-KA, 25+ yrs) or $1,500 for six sessions. Use the $190 as a diagnostic, skip the package. ⚠️ Evening/weekend availability isn't published — you have to ask. Only open question on the shortlist.\n- **D For Dogz (Palo Alto) — $595** for 9 sessions. Legit but ~$66/wk vs HSSV's $50; fallback only.\n- Ruled out the e-collar/\"balanced\" franchises on AVSAB grounds — those can silence the barking while leaving how he feels about dogs unchanged or worse.\n\n**3. Four-week plan** — one subtask per week under `t-c3d249b0`, each with the drills, session counts, and a go/no-go check at the end. Engine is the Engage-Disengage Game. Week 1 is **zero trigger walks** on purpose (stop the daily rehearsals, build the mechanics indoors), Week 2 marks him noticing a dog at a distance where he can still eat, Week 3 moves the reward to him looking back at you and starts closing distance 10–20% at a time, Week 4 goes onto real walks and re-measures against baseline.\n\nTwo things I'd flag before you start:\n- **The weeks are a guide, not a deadline.** Fail the end-of-week check, repeat the week.\n- **Total silence is not the Week 4 goal.** The first thing that improves is recovery time — he still barks but comes back to you faster. If you only watch the barking you'll think it failed when it hasn't.\n\nEverything from here is yours to physically do, so I've left the five weekly subtasks `not_started` and assigned to you rather than closing them out. Start with the prep task — gear plus the three baseline numbers — this week.\n\nOne decision I made on your behalf: I recommended a specific enrolment (HSSV, 19 Aug) rather than handing you a neutral comparison, because the timing forces it. If you'd rather go 1:1 with Stacy from the start, the four-week plan works unchanged either way.",
+        "author": "agent",
+        "createdAt": "2026-08-04T02:27:24.350Z"
+      }
+    ],
+    "report": {
+      "markdown": "« # Training Plan — 14-month rescue border collie mix, leash pulling + barking at every dog\n\n**Three answers, nothing else.**\n\n---\n\n## 1. Hire, or do it yourself?\n\n**Hire — but hire cheap and structured, and do the daily work yourself.** Budget ~$300. Do *not* buy a $1,500+ private programme at this stage.\n\nYou are the one on the end of the leash six evenings a week; no trainer changes this dog for you. What you're buying is a curriculum and a second pair of eyes, not a service.\n\n**Why not pure DIY:**\n\n| | |\n|---|---|\n| **He barks at *every* dog** | Not a mild or situational thing — the response has fully generalised. DIY tends to work for dogs that react to *some* dogs and stall on dogs that react to all of them. |\n| **Threshold distance is the whole method** | The entire protocol depends on working at a distance where he can still notice a dog *and eat*. Misjudge it and you spend four weeks rehearsing the reaction instead of fixing it. This is the single hardest thing to self-assess, and it's what an instructor's eyes are actually for. |\n| **14 months is the window** | Adolescence is when reactivity consolidates into a lifelong habit. Cheap to interrupt now, expensive later. |\n| **You have the time** | Evenings and weekends is genuinely enough — this needs 5–10 minute sessions, not hours. Your time isn't the constraint. Knowing whether you're doing it right is. |\n\n**Why not full private:** $1,500–$4,200 programmes are for dogs with a bite history, redirection onto the handler, or an owner who can't safely hold the leash. Nothing in your description says that. Start with a group reactive-dog course; escalate to private 1:1 only if the four-week check-in shows no movement.\n\n**On method — this is not a matter of taste.** Use reward-based training only. The American Veterinary Society of Animal Behavior's position statement is explicit that reward-based methods should be used for all training <em>\"including the treatment of behavior problems\"</em> — reactivity is named in scope, not carved out as the exception where corrections become acceptable. Aversive tools are associated with increased stress, a worse dog-owner relationship, and more pessimistic dogs. Practically: a prong or e-collar can stop the barking while leaving the underlying feeling about other dogs intact or worse. You get a silent dog who still hates dogs — with the warning system switched off.\n\n**Credentials worth filtering on:** **CBCC-KA** (CCPDT's behaviour-consultant certification — the reactivity-relevant one) and **CPDT-KA** (knowledge-assessed trainer). Anyone advertising \"balanced\", \"pack leader\", or e-collars for a dog like this is a decline, on the AVSAB grounds above.\n\n**DIY-only cost floor, if you overrule the recommendation:** ~$20 for Patricia McConnell's *Feisty Fido: Help for the Leash Reactive Dog* plus ~$80 of equipment. The 4-week plan in section 3 stands on its own either way.\n\n---\n\n## 2. Local options — real prices\n\nAll three are reward-based. Prices taken from each provider's own page.\n\n### ★ Option A — Humane Society Silicon Valley, \"Top Dogs Level 1\" (Reactive Dogs) — **$300**\nThe recommendation. Best fit and best value.\n\n- 6 weeks, one session/week. First session 90 min, then 5 × 50 min.\n- **All online via Zoom** — meaning you attend without your reactive dog in a room full of trigger dogs, which for a dog at your stage is a feature, not a compromise.\n- Listed cohort starts **Tue 19 Aug 2026, 6:15 PM** — fits your evenings.\n- Eligibility: dogs 8 months+. He qualifies.\n- Level 2 is the in-person follow-on, also $300 — the natural next step once the foundation is in.\n\n**Why first:** purpose-built for exactly your presentation, priced like a class rather than a consultancy, and the schedule already matches your availability. $50/week.\n\n### Option B — Stacy's Wag'N'Train (San Jose) — **$190** one-hour behaviour consult, or **$1,500** for a 6-session package\nThe tailored option. Stacy Braslau-Schneck, MA, **CPDT-KA, CBCC-KA**, 25+ years. 1:1, virtual or in-home.\n\n- **Use the $190 single consult as a diagnostic**, not the $1,500 package. One hour with a CBCC-KA who watches your actual dog on your actual street, tells you his real threshold distance and whether this is frustration or fear, is the highest-value single purchase available to you.\n- Strong play: $300 HSSV course for the curriculum + one $190 consult if you get stuck. ~$490 total, still far under a private programme.\n- ⚠️ **Evening/weekend availability is not published — you have to ask.** This is the one open question on the shortlist.\n\n### Option C — D For Dogz (Palo Alto) — **$595** for 9 sessions\n\"Growly Dog Foundations\" / leash-reactive class. Legitimate, structured, reactivity-specific — and the most expensive per week of the three (~$66). Reasonable fallback if HSSV's cohort fills or the timing slips, but nothing here justifies double the HSSV price for your situation.\n\n### Ruled out\nAversive/e-collar-based outfits — including the national franchises that market heavily in the South Bay (Bark Busters, Sit Means Sit). Excluded on the AVSAB grounds in section 1, not on price or reviews.\n\n### Side by side\n\n| | HSSV Top Dogs L1 | Stacy's Wag'N'Train | D For Dogz |\n|---|---|---|---|\n| Price | **$300** | $190 consult / $1,500 pkg | $595 |\n| Sessions | 6 | 1 / 6 | 9 |\n| Per week | ~$50 | — | ~$66 |\n| Format | Group, online | 1:1, virtual or in-home | Group class |\n| Reactivity-specific | Yes | Yes (CBCC-KA) | Yes |\n| Evenings confirmed | **Yes** — 6:15 PM Tue | Unknown — ask | Check current schedule |\n\n**Do this:** enrol in HSSV Top Dogs Level 1 for the 19 Aug cohort. Hold Stacy's $190 consult in reserve for the Week 4 check-in.\n\n---\n\n## 3. Week-by-week — first four weeks\n\nThe engine is the **Engage-Disengage Game** (Karen Pryor Clicker Training). Two levels: first you mark him *noticing* a dog, then you mark him *looking back at you* after noticing. That's it. Everything below is scaffolding around those two moves.\n\n**Two rules that outrank the schedule:**\n1. **The weeks are a guide, not a deadline.** Each week has an end-of-week check. Fail it, repeat the week. Dogs don't read calendars.\n2. **Never let him rehearse.** If he's barking and lunging, you are too close. Distance is the dial that controls everything else.\n\n### Before Week 1 — gear and baseline (one evening)\n**Buy:** front-clip/Y-front harness (~$30–45; kills the leverage he pulls with), 10–15 ft long line (~$20, open space only), **waist treat pouch (~$15 — if treats are in your pocket you won't deploy them fast enough; this matters more than it sounds)**, high-value soft treats he never otherwise gets (~$20 — kibble will not hold up at these distances).\n**Don't buy:** prong, e-collar, choke chain, slip lead.\n\n**Record three numbers** — you compare against them in Week 4:\n1. **Threshold distance** — how far away is a dog when he first *locks on and stiffens*? (Not when he barks. Locking on is earlier and it's the number that matters.)\n2. **Recovery time** — after a reaction, how many seconds until he'll take food again?\n3. **Reactions per walk** — count across two typical walks.\n\nAlso note **frustration vs. fear**: lunging *forward* toward the dog (wants to get there) vs. barking while trying to *increase* distance, backing up, freezing. Border collie mixes at 14 months skew frustration, and it changes the emphasis. Take a phone video of one reaction — it's the most useful thing you can hand a trainer.\n\n### Week 1 — zero trigger walks\n**Goal: no reactions at all.** Every barking walk is a rep that strengthens the habit; this week buys a clean slate.\n- Walk at the quietest times you have. Drive to an empty school field or a business park after hours if your street won't cooperate.\n- Dog appears → turn and leave *before* he locks on. No words, no correction. That's the plan, not a failure of it.\n- Swap mileage for sniffing: two 20-min long-line sniff-and-wanders beat one tense 45-min street walk. Sniffing lowers arousal, and a collie mix needs the mental work more than the distance.\n- **Train 2×5 min/day, indoors and in the yard only:** charge a marker word (\"yes\" → treat, 20 reps, until the word snaps his head round); teach **\"find it\"** (treat tossed on the ground — your no-confrontation emergency head-turn); loose-leash walking where nothing is interesting — slack leash → mark and feed at your leg seam; leash tightens → stop dead, wait, *never pull back*, move the instant it slackens.\n\n**Check:** 10 slack-leash steps in the yard, and a head-snap to the marker word.\n\n### Week 2 — Engage-Disengage Level 1\n**He looks at a dog → you mark the instant he looks → you feed.** You are rewarding *looking at the dog*. No sit, no eye contact with you, no obedience. You're changing how he feels, not what he does.\n\nSetup is where people go wrong: a spot where *you* control distance — park bench 100+ ft off a path, open car hatch, far corner of a field, parking lot above a trail. **Start farther out than your baseline threshold** (locked on at 50 ft → work at 80–100).\n\n**The test of correct distance: he can look at the dog and still take the treat.** If he won't eat, you're too close — move away immediately. That's information, not failure.\n\n3–4 sessions, 5–10 min each. Stop while he's still winning. Staged sessions on weekends; weekday evenings stay management walks plus the 5-minute drills.\n\n**Check:** at your distance, he looks at a dog and turns back for food without barking, most of the time.\n\n### Week 3 — Level 2, and start closing distance\nNow **wait**. He looks at the dog → hold the mark → he looks **back at you on his own** → *that's* what you mark and feed. The payment moves from the noticing to the looking-away. This is where reactivity actually breaks: \"dog appears → check in with my human\" overwrites \"dog appears → explode.\"\n\nOnly run Level 2 at a distance where Level 1 is already easy. Bouncing between levels is normal.\n\n**Closing-distance rules:** cut 10–20% at a time, never half. Only after a session where he ate readily throughout. **Change one variable at a time** — distance, *or* busier location, *or* a moving dog instead of a stationary one. Never two.\n\nAdd the **emergency U-turn as a trained cue**: bright \"let's go,\" pivot 180°, feed as he catches up, 10 reps. Practise it with no dog present so it works when there is one. Loose-leash work moves to real sidewalks at quiet times — expect it to fall apart versus the yard.\n\n**Check:** the look-back loop working meaningfully closer than Week 2, and \"let's go\" turning him with you.\n\n### Week 4 — real walks, then measure\nYou stop being a trainer and become a driver: scan ahead, see the other dog before he does, run the protocol at distance or bail early. Cross the street, step behind a parked car, break line of sight — that's a skilled move, not cheating. Treat pouch loaded every single walk. One sniffing session most days. One new challenge per outing, maximum.\n\n**Re-measure all three baseline numbers, then read the result:**\n\n| Result | What it means | What you do |\n|---|---|---|\n| **Progressing** | Recovery time down, and/or check-ins at distances that triggered him in Week 1 | Continue. Weeks 5–12 are Weeks 3–4 at shorter distances in busier places. |\n| **Stalled** | No movement on any of the three after four consistent weeks | Book the **$190** Stacy consult, or enrol in **HSSV, $300** if you haven't |\n| **Worse** — snapping, redirecting onto you or the leash | Beyond DIY escalation | CBCC-KA or veterinary behaviourist referral |\n\n**Set expectations honestly: total silence is not the Week 4 goal.** The first thing to improve is usually *recovery time* — he still barks, but he comes back to you faster. That's the real signal, and if you're only watching the barking you'll conclude you failed when you didn't. Reactivity is measured in months. Four weeks gets you a trend line, not a cure.\n\n**Once walks are manageable,** give the collie brain a job: Santa Clara Dog Training Club (non-profit AKC member club, San Jose) lists scent work at **$100 + $2.50 registration for a 5-week Tuesday session**. Cheap, and the focus and confidence it builds feeds straight back into the reactivity work.\n\n---\n\n## Your next three actions\n1. **Enrol** in HSSV Top Dogs Level 1, $300, Tue 19 Aug 6:15 PM cohort — dogs 8 months+, he qualifies.\n2. **Email Stacy's Wag'N'Train** to ask whether evening/weekend slots exist for the $190 consult. Only open question on the shortlist.\n3. **Buy the gear and record the three baseline numbers** this week, before any of the above starts.\n\nThe task tree has all of this: one subtask per week under \"Write the week-by-week plan,\" each with its drills and its go/no-go check. »",
+      "sources": [
+        {
+          "title": "AVSAB Humane Dog Training Position Statement (2021)",
+          "url": "https://avsab.org/wp-content/uploads/2021/08/AVSAB-Humane-Dog-Training-Position-Statement-2021.pdf"
+        },
+        {
+          "title": "AVSAB — What are reward-based training methods for dogs and cats?",
+          "url": "https://avsab.org/what-are-reward-based-training-methods-for-dogs-and-cats/"
+        },
+        {
+          "title": "CCPDT — Certified Behavior Consultant Canine Knowledge Assessed (CBCC-KA)",
+          "url": "https://www.ccpdt.org/certification/dog-behavior-consultant/"
+        },
+        {
+          "title": "CCPDT — Certification overview",
+          "url": "https://www.ccpdt.org/"
+        },
+        {
+          "title": "APDT — Position Statement on LIMA",
+          "url": "https://apdt.com/wp-content/uploads/2017/01/position-statement-lima.pdf"
+        },
+        {
+          "title": "APDT — Training Methodologies",
+          "url": "https://apdt.com/training-methodologies/"
+        },
+        {
+          "title": "Karen Pryor Clicker Training — Reducing Leash Reactivity: The Engage-Disengage Game",
+          "url": "https://clickertraining.com/reducing-leash-reactivity-the-engage-disengage-game/"
+        },
+        {
+          "title": "Our Companions — Engage-Disengage Game for Fearful/Reactive Dogs",
+          "url": "https://www.ourcompanions.org/engage-disengage-game-for-fearful-reactive-dogs/"
+        },
+        {
+          "title": "Dog Nerdly — Engage-Disengage Game and Dog Reactivity",
+          "url": "https://www.dognerdly.com/behavior/engage-disengage-game-dog-reactivity/"
+        },
+        {
+          "title": "AKC — Reactivity vs. Aggression",
+          "url": "https://www.akc.org/expert-advice/training/reactivity-vs-aggression/"
+        },
+        {
+          "title": "Preventive Vet — What does that dog training certification mean?",
+          "url": "https://www.preventivevet.com/dogs/what-does-that-dog-training-certification-mean"
+        },
+        {
+          "title": "D For Dogz — Growly Dog Foundations Class (Palo Alto)",
+          "url": "https://dfordogtraining.com/growly-dog-foundations-class/"
+        },
+        {
+          "title": "D For Dogz — Reactive Dog Classes",
+          "url": "https://dfordogtraining.com/product-category/reactive-dog-classes/"
+        },
+        {
+          "title": "D For Dogz — Reactive Dog Training, Silicon Valley",
+          "url": "https://www.dfordogtraining.com/reactive-dog-training-silicon-valley"
+        },
+        {
+          "title": "Santa Clara Dog Training Club — Class registration and fees",
+          "url": "https://santa-clara-dog-training-club.coursestorm.com/"
+        },
+        {
+          "title": "Santa Clara Dog Training Club — Classes",
+          "url": "https://www.santaclaradog.org/classes"
+        },
+        {
+          "title": "Santa Clara Dog Training Club — Scentwork classes and pricing",
+          "url": "https://santa-clara-dog-training-club.coursestorm.com/category/scentwork"
+        }
+      ],
+      "createdAt": "2026-08-04T02:27:05.304Z"
+    },
+    "createdAt": "2026-07-30T09:12:00.000Z",
+    "updatedAt": "2026-08-04T02:27:27.472Z",
+    "subtasks": [
+      {
+        "id": "t-9f15a2a4",
+        "title": "Decide: DIY vs. hire a trainer for leash reactivity",
+        "description": "RECOMMENDATION: Hire — but hire cheap and structured, not expensive and hands-off. Specifically: pay ~$300–490 for a guided reactive-dog curriculum, and do 100% of the daily walking work yourself. Do NOT buy a $2,400–$4,200 private program at this stage.\n\nWHY NOT PURE DIY:\n1. Frequency. He barks at EVERY other dog, not some dogs. That's a fully generalised response, not a mild preference. Pure-DIY tends to succeed on mild, occasional reactivity and stall on the generalised kind.\n2. You'd be guessing at threshold distance. The whole method depends on working at the distance where he can see a dog and still eat and think. Guess too close and every walk becomes a rehearsal that makes him worse. An instructor watching your video/your dog tells you that distance in one session; alone you find it by trial and error, and the errors are expensive in lost progress.\n3. Your available window works against you. Evenings and weekends in the South Bay are peak dog-walking hours — the exact times you're free are the times the neighbourhood is fullest of triggers. Managing that needs deliberate route/time planning, which is precisely what a guided program forces you to do.\n4. Diagnosis matters and changes the plan. Fear-based reactivity (he wants distance) and frustration-based reactivity (he wants to GET to the dog and can't) look nearly identical on leash, and the handling differs. A border collie mix at 14 months is a strong candidate for the frustration flavour — herding breeds are motion-sensitive and arousal-prone. Getting this wrong wastes weeks.\n\nWHY NOT AN EXPENSIVE PRIVATE PROGRAM EITHER:\n- The behaviour happens on YOUR walks, on your street, at your times. A trainer cannot be there for those. Day-training packages ($4,200 at D For Dogz) hand the dog back to the same walks. The skill that has to change is largely yours.\n- $2,400–4,200 is not justified for a first attempt at a textbook, well-documented problem in a dog with no bite history.\n\nWHY TIMING IS GOOD, NOT BAD:\n14 months is adolescence — the behaviour is established enough to be a real habit but the dog is still highly plastic. This is close to the best moment to intervene. The cost of waiting is measured in rehearsals: every walk where he barks and lunges is a rep that strengthens it.\n\nCOST COMPARISON (real numbers):\n- Pure DIY: ~$100–130 one-off. Front-clip harness ~$30–45, 10–15ft long line ~$20, treat pouch ~$15, high-value treats ~$20/month, \"Feisty Fido\" by Patricia McConnell (the standard short book on exactly this problem) ~$12–15 new, ~$4 used.\n- Recommended hybrid: $300 (HSSV Top Dogs Level 1, 6 weeks) + the same ~$100 of equipment = ~$400. Optionally add the $190 CBCC-KA behavior consult with Stacy Braslau-Schneck for the fear-vs-frustration read = ~$590.\n- Structured in-person class instead: $595 (D For Dogz, 9 sessions/5 weeks).\n- Full private: $1,500 (Wag'N'Train 6-pack) to $4,200 (D For Dogz day training).\n\nSo the recommended route costs roughly $300–400 more than DIY and buys you the threshold calibration and the curriculum. That is the right trade.\n\nMETHOD CONSTRAINT (non-negotiable, from t-7097f261): reward-based / force-free only. AVSAB's position statement holds that current evidence supports reward-based methods for all training including the treatment of behaviour problems, and links aversive methods to increased stress and a worse owner-dog relationship. Anyone who proposes a prong collar, e-collar, or \"correcting\" the barking is disqualified — which rules out Off Leash K9 and Bark Busters.\n\nESCALATE TO A PRIVATE BEHAVIOUR CONSULTANT IF: no measurable change after ~6 weeks of consistent work; or he snaps/makes contact with a dog; or he starts redirecting onto you or the leash when aroused. Then go to a CBCC-KA (Stacy) or ask for a veterinary behaviourist referral.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching",
+          "decision"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T02:10:57.857Z",
+        "updatedAt": "2026-08-04T02:23:10.045Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-7097f261",
+        "title": "Confirm which category of trainer/method fits leash reactivity",
+        "description": "FINDINGS — what to filter trainers on.\n\nMETHOD: Reward-based / force-free only. AVSAB's position statement on humane dog training states that based on current scientific evidence, only reward-based methods should be used for all dog training \"including the treatment of behavior problems\" — i.e. reactivity is explicitly included, not an exception. Aversive methods are associated with increased stress, worse owner-dog relationship, and pessimism in dogs. Source: https://avsab.org/what-are-reward-based-training-methods-for-dogs-and-cats/\n\nWHY IT MATTERS HERE: barking/lunging at every dog is a \"fight\" stress response driven by fear, anxiety OR frustration. Punishing the bark suppresses the warning signal without changing the underlying emotion. For a 14-month herding-breed adolescent the most likely driver is frustrated greeting/arousal, which responds well to distance work and poorly to corrections.\n\nCREDENTIALS TO LOOK FOR (in rough order of relevance):\n- CBCC-KA (Certified Behavior Consultant Canine – Knowledge Assessed, CCPDT) — this is CCPDT's ADVANCED cert specifically for trainers doing behavior modification rather than basic obedience. Most directly relevant credential for reactivity. https://www.ccpdt.org/certification/dog-behavior-consultant/\n- CPDT-KA — solid general professional training cert (CCPDT).\n- KPA CTP — Karen Pryor Academy Certified Training Partner, clicker//R+ based.\n- CSAT, IAABC (CDBC), VSA-CDT — also fine.\n- DACVB (veterinary behaviorist) — only needed if there's an anxiety/medication component. Not indicated yet.\n\nLIMA / Humane Hierarchy = \"least intrusive, minimally aversive.\" Endorsed by APDT, CCPDT and IAABC. A trainer describing themselves as LIMA or force-free is aligned. https://apdt.com/training-methodologies/\n\nRED FLAGS / AVOID: \"balanced training,\" prong collar or e-collar as the core tool, \"pack leader\"/dominance framing, board-and-train that won't let you observe, any guarantee of a fixed outcome by a fixed date. Reactivity is emotional, and a dog trained away from home doesn't transfer the skill to your street.\n\nSERVICE FORMAT: private/in-home 1:1 or a dedicated \"reactive dog\" class — NOT a general group obedience class. A standard group class puts the dog in a room full of triggers at close range, which is over-threshold from minute one and will make things worse.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "low",
+        "timeEstimate": 15,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T02:10:57.857Z",
+        "updatedAt": "2026-08-04T02:14:02.664Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-ba6cf35e",
+        "title": "Shortlist 2–3 South Bay trainers with real prices and evening/weekend availability",
+        "description": "DONE — 3 verified options, prices taken from each provider's own page (not directory estimates). Full detail in the four child tasks.\n\nAT A GLANCE:\n- HSSV Top Dogs Level 1 — $300 — 6 weeks online Zoom, then Level 2 in-person $300 — evening cohort listed at 6:15 PM. Fits.\n- Stacy's Wag'N'Train (Stacy Braslau-Schneck, MA CPDT-KA CBCC-KA) — $190 one-hour behavior consult; $1,500 for the 6-session behavior-modification package — 1:1, virtual or in-home — evening/weekend availability NOT published, must ask.\n- D For Dogz — $595 for 9 sessions over 5 weeks — Saturdays 9:30–10:30 AM in person + Wednesdays 6:30–7:15 PM Zoom. Best schedule fit.\n\nRECOMMENDED SEQUENCE: book HSSV Top Dogs Level 1 ($300) as the spine, plus the one-off $190 Wag'N'Train behavior consult if you want a CBCC-KA read on whether the driver is fear or frustration. $490 total, covers both structured curriculum and expert diagnosis.\n\nD For Dogz is the pick instead if you want in-person from day one and the cleanest calendar fit, at roughly 2x the price.\n\nCHEAPEST PATH THAT STILL WORKS: HSSV Top Dogs L1 + L2 = $600 over 12 weeks, no private trainer at all.\n\nRULED OUT: Off Leash K9 (e-collar), Bark Busters (correction-based), HSSV general obedience and loose-leash workshop (both exclude leash-reactive dogs by their own policy). See the \"Ruled out\" child task.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 60,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T02:10:57.857Z",
+        "updatedAt": "2026-08-04T02:22:24.760Z",
+        "subtasks": [
+          {
+            "id": "t-3ce120bc",
+            "title": "Option A (best value + best fit) — HSSV \"Top Dogs Level 1\", $300",
+            "description": "Humane Society Silicon Valley — Top Dogs Level 1 (Reactive Dogs).\n\nPRICE: $300 general registration.\nFORMAT: Six-week course, one session/week, ALL ONLINE via Zoom. First session 90 min, then 5 sessions of 50 min.\nSCHEDULE: A cohort was listed starting Tue 08/19/26 at 6:15 PM — an evening slot, fits your availability. Cohorts run on a rolling basis; confirm the current start date.\nELIGIBILITY: dogs 8 months and older (your dog is 14 months — fine). Requires NO prior bite history on dogs or people. Explicitly for dogs who \"bark, lunge, or worry\" but have not caused injury — this is exactly your dog's profile.\nCURRICULUM: science-based positive reinforcement; threshold work, impulse control, calm exits, real-life coping skills.\nPROGRESSION LADDER (this is the strong point): Level 1 online -> Level 2 IN-PERSON with other reactive dogs in a controlled group, six weeks, $300 -> Level 3 \"topics\" courses (rally obedience, urban agility/parkour, tricks) also six weeks, $300, which continue counterconditioning while doing a sport. Total for all three levels = $900 spread over ~18 weeks.\nWHY ONLINE FIRST IS A FEATURE, NOT A BUG: you learn the handling mechanics without your dog being over threshold in a room full of triggers. Then Level 2 adds real dogs at controlled distance.\nCONTACT: dogtraining@hssv.org — training dept. Registration runs through their event links (pro.gofundme.com event pages linked from the class page).\nPAGE: https://www.hssv.org/behavior-management-classes/\nNOTE: HSSV's own FAQ says dogs who bark/growl at other dogs on leash are not appropriate for their general Beginning/Intermediate Obedience classes ($150/6 sessions) — so do NOT book the cheap general obedience class instead. Top Dogs is the correct product.",
+            "status": "done",
+            "assignee": "agent",
+            "parentId": "t-ba6cf35e",
+            "needsHumanReview": false,
+            "priority": "high",
+            "energy": "low",
+            "timeEstimate": 15,
+            "taskType": [
+              "researching"
+            ],
+            "dueDate": null,
+            "project": "Personal",
+            "section": null,
+            "comments": [],
+            "report": null,
+            "createdAt": "2026-08-04T02:21:21.166Z",
+            "updatedAt": "2026-08-04T02:21:39.877Z",
+            "subtasks": []
+          },
+          {
+            "id": "t-7fdb8f21",
+            "title": "Option B (most tailored) — Stacy's Wag'N'Train, $190 consult / $1,500 6-pack",
+            "description": "Stacy's Wag'N'Train — Stacy Braslau-Schneck, MA, CPDT-KA, CBCC-KA, CAP2. San Jose.\n\nWHY SHE STANDS OUT: she holds CBCC-KA, CCPDT's advanced behavior-modification credential — the most on-point certification for reactivity of anyone found. Listed on the SF SPCA's private training referral list with \"leash-reactivity\" and \"hyper/impulse control issues\" named as specialties. Science-based, positive reinforcement.\n\nPRICES (from her own site):\n- Behavior Consultation/Evaluation: ~1 hour, $190 — via Zoom. INCLUDED free in any package. This is the entry point for everything.\n- Basic \"4-pack\": $800 — 4 x 1hr (evaluation + 3 coaching). Explicitly described as for dogs WITHOUT real behavior-mod needs. NOT your dog.\n- Beginning Behavior Modification \"6-pack\": $1,500 — 6 x 1hr (evaluation + 5 coaching, virtual OR in-person), scheduled 1-2 weeks apart. This is the tier that matches leash reactivity.\n- Behavior Modification Foundation package: $3,000 — 14 x 1hr (evaluation, then 5 weekly, then 8 biweekly). Overkill unless the 6-pack stalls.\n- Virtual-only lessons: $145/hr; discounted starter packages of 4 (basic, $580) or 6 lessons (for aggression/serious/multiple issues).\n- Post-package individual sessions: $130 each (10% ongoing-client discount).\n- Maintenance/day-training packages (current or past clients only): e.g. weekly 1hr = $400/month, or $1,000 for 3 months / 12 sessions.\n\nSERVICE AREA (in-person): San Jose, Campbell, Willow Glen, Santa Clara, Los Gatos, Los Altos, Saratoga, Monte Sereno, Cupertino, Mountain View, Milpitas.\nCONTACT: stacy@wagntrain.com | https://wagntrain.com/private-dog-training-lessons/\nOPEN QUESTION FOR THE CALL: evening/weekend availability is not published — must ask.",
+            "status": "done",
+            "assignee": "agent",
+            "parentId": "t-ba6cf35e",
+            "needsHumanReview": false,
+            "priority": "high",
+            "energy": "low",
+            "timeEstimate": 15,
+            "taskType": [
+              "researching"
+            ],
+            "dueDate": null,
+            "project": "Personal",
+            "section": null,
+            "comments": [],
+            "report": null,
+            "createdAt": "2026-08-04T02:21:21.166Z",
+            "updatedAt": "2026-08-04T02:21:39.879Z",
+            "subtasks": []
+          },
+          {
+            "id": "t-d3bdc068",
+            "title": "Option C (structured reactivity class, priciest per week) — D For Dogz, $595",
+            "description": "D For Dogz (dfordogtraining.com) — South Bay, force-free/positive reinforcement, reactivity is their headline specialty (\"Reactive Dog Training in Silicon Valley\"). Lead trainer Kaajal. Site displays VSA Mentor, CPDT and AKC CGC/S.T.A.R. evaluator badges. Won a Mercury News \"Best in Silicon Valley\" best-dog-trainer award.\n\nPRICES (from their own pages):\n- Leash Reactive Dog Foundations class: $595 for NINE sessions completed in 5 weeks.\n  * In-person classroom: SATURDAYS 9:30-10:30 AM\n  * Live Zoom Q&A/troubleshooting: WEDNESDAYS 6:30-7:15 PM\n  * First TWO in-person sessions are PEOPLE-ONLY — you learn handling before the dog is put under any pressure. Genuinely good design.\n  * Final session is a guided neighborhood walk.\n  -> Both time slots already fit evenings/weekends. Best schedule fit of the three.\n- Follow-on \"Leash Reactive Dogs – About Town\" / \"Reactive to Distinguished\": $500 per MONTH. Includes group sessions in public settings (1st & 3rd Saturdays 10:00-10:50 AM), Zoom skill-building (2nd & 4th Wednesdays), plus one 60-min in-person OR two 30-min virtual private sessions monthly, community access, and an optional bi-weekly reactive-dog support group.\n- Private Coaching (you do the training): $2,400 for 6 weeks — 90-min initial consult + weekly coaching, priority call/text/email access between sessions, a complimentary group class, 3 months post-training support.\n- Day Training (trainer trains the dog): $4,200 for 6 weeks. Enrolling in the full program saves $420.\n\nSERVICE AREA: San Jose, Willow Glen, Santa Clara, Sunnyvale, Milpitas, Campbell, Saratoga, Los Gatos, Los Altos, Cupertino, Mountain View, Palo Alto and more.\nCONTACT: 650-538-3011, Mon-Fri 9am-7pm, Sat 9am-3pm. Free 15-minute discovery call bookable from their site.\nPAGES: https://dfordogtraining.com/growly-dog-foundations-class/ and https://dfordogtraining.com/private-dog-training-silicon-valley/leash-reactive-dog-private-training/\nCAVEAT: class start dates on the public page were stale (a Nov 9 date from a prior year). Confirm the live cohort date on the discovery call.",
+            "status": "done",
+            "assignee": "agent",
+            "parentId": "t-ba6cf35e",
+            "needsHumanReview": false,
+            "priority": "high",
+            "energy": "low",
+            "timeEstimate": 15,
+            "taskType": [
+              "researching"
+            ],
+            "dueDate": null,
+            "project": "Personal",
+            "section": null,
+            "comments": [],
+            "report": null,
+            "createdAt": "2026-08-04T02:21:21.166Z",
+            "updatedAt": "2026-08-04T02:21:39.892Z",
+            "subtasks": []
+          },
+          {
+            "id": "t-7c3f9f83",
+            "title": "Ruled out — do not book these (and why)",
+            "description": "Recorded so you don't waste a call on them.\n\n- Off Leash K9 Training of San Jose (dogtrainerssanjose.com): their pricing page bundles an E-COLLAR into the first lesson ($500 for one individual lesson including the e-collar and a 20ft leash, then $100/additional session). Aversive-tool-led. AVSAB recommends reward-based methods only, including for behavior problems. Wrong tool for a fear/frustration-driven reactive adolescent.\n- Bark Busters Santa Clara: markets \"aggressive dog training\" but uses a proprietary correction-based/dominance-framed method. Same objection.\n- HSSV Beginning/Intermediate Obedience ($150 for six sessions): cheap and tempting, but HSSV's own FAQ says dogs who bark or growl at other dogs on leash are not appropriate for these group classes. Book Top Dogs instead.\n- HSSV Loose-Leash Walking workshop: their page explicitly states no leash-reactive dogs.\n- Santa Clara Dog Training Club (santaclaradog.org, 344 Tully Rd, San Jose): non-profit AKC club, very cheap (~$140 + $2.50 registration for a 7-week session), 50+ years running, positive methods. BUT it's obedience/rally/scent-work focused, not a reactivity program, and it's a group setting. NOT the right first step — but an excellent, low-cost place to go LATER for scent work or rally once reactivity is managed, because sniffing/thinking sports are great for a border collie mix's brain. Keep on file.\n- Zoom Room Santa Clara ($199/mo): positive-reinforcement, but general obedience/agility, not a reactivity program.",
+            "status": "done",
+            "assignee": "agent",
+            "parentId": "t-ba6cf35e",
+            "needsHumanReview": false,
+            "priority": "medium",
+            "energy": "low",
+            "timeEstimate": 15,
+            "taskType": [
+              "researching"
+            ],
+            "dueDate": null,
+            "project": "Personal",
+            "section": null,
+            "comments": [],
+            "report": null,
+            "createdAt": "2026-08-04T02:21:21.166Z",
+            "updatedAt": "2026-08-04T02:21:39.894Z",
+            "subtasks": []
+          }
+        ]
+      },
+      {
+        "id": "t-c3d249b0",
+        "title": "Write the week-by-week plan for weeks 1–4",
+        "description": "Plan written. Five child tasks: a prep/gear task then one task per week, each with the specific drills, session counts, and the end-of-week check that tells you whether to advance or repeat.\n\nTHE ARC:\n- Prep — buy a front-clip harness, long line, treat pouch, high-value treats. Record 3 baseline numbers (threshold distance, recovery time, reactions per walk) and note whether he's frustrated or fearful.\n- Week 1 — ZERO trigger exposure. Stop the daily rehearsals. Build the marker word, \"find it\", and loose-leash walking indoors/in the yard.\n- Week 2 — Engage-Disengage Level 1 at a distance he can handle: he looks at a dog, you mark and feed. You reward the looking.\n- Week 3 — Engage-Disengage Level 2: wait for him to look BACK at you, mark that instead. Begin closing distance 10–20% at a time. Add a trained emergency U-turn.\n- Week 4 — Move onto real neighbourhood walks. Re-measure against baseline and decide: progressing, stalled (get a trainer), or worse (get a behaviour consultant/vet behaviourist).\n\nTWO RULES THAT MATTER MORE THAN THE SCHEDULE:\n1. The weeks are a guide, not a deadline. If the end-of-week check fails, repeat the week. Dogs don't read calendars.\n2. Never let him rehearse. If he's barking and lunging, you're too close — increase distance. Distance is the dial that controls everything.\n\nWHAT SUCCESS AT WEEK 4 LOOKS LIKE: faster recovery after a reaction and check-ins at distances that used to trigger him. NOT a silent dog. Reactivity work is measured in months; four weeks buys you a real trend line, not a cure.",
+        "status": "waiting",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "high",
+        "timeEstimate": 60,
+        "taskType": [
+          "planning",
+          "writing"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T02:10:57.857Z",
+        "updatedAt": "2026-08-04T02:24:40.374Z",
+        "subtasks": [
+          {
+            "id": "t-0459b19c",
+            "title": "Before Week 1: buy the gear and set the baseline",
+            "description": "Do this in one evening before you start Week 1.\n\nBUY:\n- Front-clip / Y-front harness (~$30–45). Clipping the leash at the chest cuts the leverage he uses to pull. Non-negotiable for a hard puller.\n- 10–15 ft long line (~$20) — for decompression sniffing in open space only, never on the street.\n- Treat pouch that clips to your waist (~$15). If treats are in your pocket you will not use them fast enough. This matters more than it sounds.\n- High-value treats, soft and pea-sized, that he does not get otherwise (~$20). Real meat, cheese, or freeze-dried liver. Kibble will not work at the distances you need.\n- Optional: \"Feisty Fido\" by Patricia McConnell (~$12–15 new, ~$4 used) — short booklet on exactly this problem.\n\nDO NOT BUY: prong collar, e-collar, choke chain, or a slip lead. They suppress the bark without changing how he feels about dogs, and the evidence links them to more stress and a worse relationship with you.\n\nSET THE BASELINE — write these three numbers down, you'll compare against them in Week 4:\n1. THRESHOLD DISTANCE: on a normal walk, roughly how many feet away is a dog when he first locks on and stiffens? (Not when he barks — when he locks on. That's earlier.) Guess in car-lengths if easier.\n2. RECOVERY TIME: after he reacts, how long until he can take a treat again? Count seconds.\n3. REACTIONS PER WALK: count them on two typical walks.\n\nAlso note: does he lunge FORWARD toward the dog with a wagging/stiff-high tail (frustration — he wants to get there), or does he bark while trying to increase distance, backing up or freezing (fear)? Write down which. Border collie mixes at 14 months skew frustration. Take a phone video of one reaction if you can — this is the single most useful thing to show a trainer.",
+            "status": "not_started",
+            "assignee": "human",
+            "parentId": "t-c3d249b0",
+            "needsHumanReview": false,
+            "priority": "high",
+            "energy": "medium",
+            "timeEstimate": 60,
+            "taskType": [
+              "errand",
+              "planning"
+            ],
+            "dueDate": null,
+            "project": "Personal",
+            "section": null,
+            "comments": [],
+            "report": null,
+            "createdAt": "2026-08-04T02:24:27.888Z",
+            "updatedAt": "2026-08-04T02:28:10.964Z",
+            "subtasks": []
+          },
+          {
+            "id": "t-6fcb6c07",
+            "title": "Week 1 — Stop the rehearsals. Zero trigger walks; build the mechanics indoors.",
+            "description": "GOAL: no reactions at all this week. You are not training him past dogs yet — you are stopping the daily practice of barking and installing the two mechanical skills you'll need.\n\nWhy: every walk where he barks and lunges is a repetition that strengthens the habit. Week 1 buys you a clean slate.\n\nMANAGEMENT (all week):\n- Walk at the quietest times you have — early morning, or after dark. Yes, this is inconvenient and yes, it's temporary.\n- Drive to a quiet place if your street doesn't work. An empty school field, a business park after hours, an industrial cul-de-sac on a weekend.\n- If a dog appears: turn and walk the other way BEFORE he locks on. No correction, no words. Just leave. This is not failure, it's the whole plan this week.\n- Replace physical exercise with sniffing. Two 20-minute sniff-and-wander sessions on the long line in open space beats one tense 45-minute street walk. Sniffing genuinely lowers arousal, and a border collie mix needs mental work more than mileage.\n\nTRAIN (2 sessions/day, 5 minutes each, in the house and yard — evenings are fine):\n1. CHARGE A MARKER. Pick a word (\"yes\") or use a clicker. Say it, then feed, one treat at a time, 20 reps. Do this until the word alone makes his head snap to you. This is the tool that will do all the work later.\n2. HAND-TARGET / \"find it\". Toss a treat on the ground and say \"find it\". Repeat until the cue alone sends his nose to the floor. This is your emergency escape hatch — it turns his head away from a trigger without confrontation.\n3. LOOSE LEASH, INDOORS AND IN THE YARD ONLY. Walk 5 steps. If the leash is slack, mark and feed AT YOUR LEG SEAM. If it tightens, stop dead and wait — do not pull back. The instant it slackens, mark and move. He learns pulling stops the walk. Do this where there is nothing interesting, because that's the only place he can succeed at first.\n\nEND-OF-WEEK CHECK: can he do 10 slack-leash steps in the yard? Does he whip his head around at the marker word? If yes, go to Week 2. If not, repeat Week 1 — the schedule is a guide, not a deadline.",
+            "status": "not_started",
+            "assignee": "human",
+            "parentId": "t-c3d249b0",
+            "needsHumanReview": false,
+            "priority": "high",
+            "energy": "medium",
+            "timeEstimate": 30,
+            "taskType": [
+              "planning"
+            ],
+            "dueDate": null,
+            "project": "Personal",
+            "section": null,
+            "comments": [],
+            "report": null,
+            "createdAt": "2026-08-04T02:24:27.889Z",
+            "updatedAt": "2026-08-04T02:28:10.966Z",
+            "subtasks": []
+          },
+          {
+            "id": "t-4f9fc705",
+            "title": "Week 2 — Engage-Disengage at a distance he can handle (Level 1: Engage)",
+            "description": "GOAL: he sees a dog, and instead of erupting, he learns that seeing a dog predicts chicken. You are changing how he FEELS, not teaching him to obey.\n\nTHE PROTOCOL — Engage-Disengage, Level 1 (\"Engage\"), from Karen Pryor Clicker Training:\nHe looks AT the other dog -> you mark the instant he looks -> you feed. That's it. You are marking the act of noticing, not any obedience. Repeat.\n\nCounter-intuitive but essential: you reward him for LOOKING at the dog. Do not ask for eye contact with you, do not ask for a sit. Just: look at dog -> mark -> treat.\n\nSETUP — this is the part people get wrong:\n- Pick a spot where you can watch dogs pass at a distance you CHOOSE and control. A park bench 100+ feet from a path. Your car with the hatch open. The far corner of a field. A parking lot overlooking a trail.\n- Start FARTHER than your baseline threshold distance from the prep task. If he locked on at 50 feet, work at 80–100.\n- The test of correct distance: he can look at the dog, then take the treat. If he won't eat, you are too close. Move away immediately — that's information, not a failure.\n- 3–4 sessions this week, 5–10 minutes each. Stop while he's still succeeding. Short and boring beats long and dramatic.\n- Weekends are ideal for these staged sessions; keep weekday evenings for management walks plus the 5-minute loose-leash drills.\n\nSTILL DOING: quiet-time walks, turn away from oncoming dogs, daily sniffing, 5-minute loose-leash sessions now moving to the sidewalk when empty.\n\nIF HE REACTS: don't scold and don't yank. \"Find it\", turn, walk away, and next time start 20 feet farther out. One reaction is a data point. Three in a session means you're in the wrong location.\n\nEND-OF-WEEK CHECK: at your chosen distance, does he look at a dog and turn back to you for food without barking, most of the time? That's the green light for Week 3.",
+            "status": "not_started",
+            "assignee": "human",
+            "parentId": "t-c3d249b0",
+            "needsHumanReview": false,
+            "priority": "high",
+            "energy": "medium",
+            "timeEstimate": 30,
+            "taskType": [
+              "planning"
+            ],
+            "dueDate": null,
+            "project": "Personal",
+            "section": null,
+            "comments": [],
+            "report": null,
+            "createdAt": "2026-08-04T02:24:27.889Z",
+            "updatedAt": "2026-08-04T02:28:10.967Z",
+            "subtasks": []
+          },
+          {
+            "id": "t-12275442",
+            "title": "Week 3 — Add the Disengage step, and start closing distance",
+            "description": "GOAL: he sees a dog and voluntarily checks back in with you — without being asked. Then you begin shrinking the distance.\n\nPROTOCOL — Engage-Disengage, Level 2 (\"Disengage\"):\nNow you wait a beat. He looks at the dog... and you hold your mark until he looks BACK at you on his own. THAT is what you mark and feed.\n\nHe's already learned looking at a dog pays. Now the payment moves to the look-away. This is where reactivity actually breaks — you're building an automatic \"dog appears, I check in with my human\" loop that replaces \"dog appears, I explode\".\n\nIMPORTANT: only move to Level 2 for a given distance once Level 1 is easy at that distance. If he can't disengage, go back to marking the engage for another session. Bounce between levels freely; that's normal, not a setback.\n\nCLOSING DISTANCE — the rule:\n- Cut the distance by roughly 10–20% at a time, never in half.\n- Only close in after a session where he was calm and eating readily throughout.\n- Change ONE variable at a time: distance, OR a busier location, OR a moving dog instead of a stationary one. Never two at once.\n- If he reacts, you went too fast. Back up to the last distance that worked and stay there an extra session. This is expected and happens to everyone.\n\nADD THIS WEEK:\n- EMERGENCY U-TURN as a trained cue, not a panic move. In a quiet spot, say \"let's go\" in a bright voice, pivot 180 degrees, and feed as he catches up. 10 reps a session. Practise it when there's no dog around so it works when there is.\n- Loose-leash work moves onto real sidewalks at quiet times. Expect it to fall apart compared to the yard — that's normal, drop your standard and rebuild.\n\nEND-OF-WEEK CHECK: can he do the look-at-dog-then-look-back loop at a distance meaningfully closer than Week 2? Does \"let's go\" get him turning with you?",
+            "status": "not_started",
+            "assignee": "human",
+            "parentId": "t-c3d249b0",
+            "needsHumanReview": false,
+            "priority": "medium",
+            "energy": "medium",
+            "timeEstimate": 30,
+            "taskType": [
+              "planning"
+            ],
+            "dueDate": null,
+            "project": "Personal",
+            "section": null,
+            "comments": [],
+            "report": null,
+            "createdAt": "2026-08-04T02:24:27.889Z",
+            "updatedAt": "2026-08-04T02:28:10.968Z",
+            "subtasks": []
+          },
+          {
+            "id": "t-6c70e1d5",
+            "title": "Week 4 — Take it onto real walks, then measure against your baseline",
+            "description": "GOAL: move from staged setups to actual neighbourhood walks, and get an honest read on whether this is working.\n\nTHE SHIFT: staged sessions are predictable; real walks are not. So you stop being a trainer and become a driver — scanning ahead, managing distance, and running the protocol when a dog appears.\n\nHOW TO WALK NOW:\n- Scan ahead constantly. Your job is to see the other dog before he does. Every reaction you pre-empt is a rep you don't have to undo.\n- Dog spotted at distance: run Engage-Disengage right there. Mark the look, wait for the check-in, pay.\n- Dog spotted too close, or coming round a corner: \"find it\" or \"let's go\" and increase distance. Cross the street, step behind a parked car, go up a driveway. Using an obstacle to break line of sight is a legitimate, skilled move — not cheating.\n- Keep the treat pouch on and loaded every single walk. Every one.\n- Keep one sniffing session most days. Arousal that doesn't get an outlet comes out at the next dog he sees.\n\nSTART EXPANDING CAREFULLY: try one slightly busier route or one slightly busier time this week — but only one new challenge per outing.\n\nRE-MEASURE — compare directly with the three baseline numbers from the prep task:\n1. Threshold distance: has it shrunk? (Smaller number = better.)\n2. Recovery time after a reaction: has it dropped? (This is often the FIRST thing to improve and the best early sign of progress, even while the barking continues.)\n3. Reactions per walk: count over two typical walks.\n\nHOW TO READ THE RESULT:\n- GOOD PROGRESS = shorter recovery time, and/or he notices a dog and looks back at you without erupting at distances that would have set him off in Week 1. Total silence is NOT the Week 4 goal and expecting it will make you feel like you failed when you haven't.\n- STALLED = no movement on any of the three numbers after four consistent weeks. That's your trigger to bring in a professional: book the $190 behaviour consult with Stacy Braslau-Schneck (CBCC-KA), or enrol in HSSV Top Dogs Level 1 ($300) if you haven't already.\n- WORSE, or he snaps at a dog, or redirects onto you or the leash: stop DIY escalation, get a CBCC-KA or a veterinary behaviourist referral.\n\nTHEN WHAT: weeks 5–12 are more of Week 3 and 4 at progressively shorter distances and in busier places. There is no week where it suddenly finishes. Also, once walks are manageable, put his brain to work — Santa Clara Dog Training Club is a non-profit AKC member club running obedience, rally and scent work classes in San Jose, and their scent work session is listed at $100 + $2.50 registration for 5 weeks (Tuesdays). Cheap, and ideal for a border collie mix — the confidence and focus it builds feeds straight back into the reactivity work. Classes: https://santa-clara-dog-training-club.coursestorm.com/ | https://www.santaclaradog.org/classes",
+            "status": "not_started",
+            "assignee": "human",
+            "parentId": "t-c3d249b0",
+            "needsHumanReview": false,
+            "priority": "medium",
+            "energy": "medium",
+            "timeEstimate": 30,
+            "taskType": [
+              "planning",
+              "decision"
+            ],
+            "dueDate": null,
+            "project": "Personal",
+            "section": null,
+            "comments": [],
+            "report": null,
+            "createdAt": "2026-08-04T02:24:27.889Z",
+            "updatedAt": "2026-08-04T02:28:10.969Z",
+            "subtasks": []
+          }
+        ]
+      },
+      {
+        "id": "t-dd593983",
+        "title": "Enrol in HSSV Top Dogs Level 1 before the 19 Aug cohort fills",
+        "description": "Recommended pick. Humane Society Silicon Valley, 'Top Dogs Level 1' (reactive dogs) — $300 general registration, 6 weeks, all sessions online over Zoom. First session 90 min, then 5 x 50 min. Cohort listed as starting Tue 19 Aug 2026, 6:15 PM — fits the evenings constraint. Eligibility: dogs 8 months and older, so 14 months is fine.\n\nRegister at hssv.org (Training & Behavior > group classes). If the 19 Aug cohort is full, ask to be waitlisted AND ask for the next start date before paying anything else — do not default to the $595 option just because it has a seat.\n\nTwo things to confirm at checkout: (1) that Level 1 is the reactive-dog curriculum and not general obedience, (2) whether Level 2 (in-person, also $300) requires Level 1 first. Reactive-dog classes usually cap enrolment low, so this is the time-sensitive item on the list.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "low",
+        "timeEstimate": 15,
+        "taskType": [
+          "decision",
+          "errand"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T02:28:26.710Z",
+        "updatedAt": "2026-08-04T02:28:26.710Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-ccdc7826",
+        "title": "Ask Stacy's Wag'N'Train whether she has evening or weekend slots",
+        "description": "Only unresolved question on the shortlist. Stacy Braslau-Schneck, MA, CPDT-KA, CBCC-KA — Stacy's Wag'N'Train, San Jose, 25+ years in Silicon Valley. Site: wagntrain.com. Contact via the form / email listed there.\n\nPricing already confirmed from her site: $190 for a one-hour behaviour consult (virtual or in-home), $1,500 for a 6-session behaviour-modification package. Her evening/weekend availability is NOT published anywhere — that is the whole point of this task.\n\nAsk exactly: do you have weekday-evening or weekend appointments, and can we do a single $190 in-home consult for adolescent leash reactivity without committing to the 6-session package? An in-home/1:1 consult is the only way to get a real read on his threshold distance, which the online class can't give you. Worth doing even if you enrol at HSSV — the two are complementary, not either/or.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "medium",
+        "energy": "low",
+        "timeEstimate": 15,
+        "taskType": [
+          "calling"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T02:28:26.710Z",
+        "updatedAt": "2026-08-04T02:28:26.710Z",
+        "subtasks": []
+      }
+    ]
+  },
+  "prefix_diff": {
+    "pairs": 16,
+    "clean_append": 0,
+    "drift_after_markers": 16,
+    "cache_busting": 0,
+    "first_busting": null
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "cell": "off-append",
+  "rep": 3,
+  "task_id": "t-dog",
+  "run_id": "exp-off-append-r3-msf7kkfx",
+  "dry_run": false,
+  "config": {
+    "cache": "off",
+    "context": "append"
+  },
+  "git_sha": "57ee751",
+  "started_at": "2026-08-04T22:07:05.085Z",
+  "finished_at": "2026-08-04T22:10:39.774Z",
+  "wall_ms": 214651,
+  "turns": null,
+  "stop_reason": null,
+  "status": "error",
+  "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"messages.7: `tool_use` ids were found without `tool_result` blocks immediately after: toolu_01DAgZH659dYsv3RtML94ttQ. Each `tool_use` block must have a corresponding `tool_result` block in the next message.\"},\"request_id\":\"req_011CdiUSLDKnfKwdq523n7ck\"}",
+  "seed_check_ok": true,
+  "cache_hit_call1": false,
+  "totals": {
+    "api_calls": 5,
+    "summarizer_calls": 0,
+    "input_tokens": 655790,
+    "output_tokens": 6798,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "web_search_requests": 12,
+    "web_fetch_requests": 14,
+    "cost_usd": 3.5688999999999997,
+    "computed_cost_usd": 3.5688999999999997,
+    "summarizer_cost_usd": 0
+  },
+  "behavior": {
+    "subtasks_created": 3,
+    "comments": 0,
+    "report_attached": false,
+    "statuses_set": 4,
+    "searches": 12,
+    "fetches": 14
+  },
+  "final_task_tree": {
+    "id": "t-dog",
+    "title": "Figure out a training plan for my dog",
+    "description": "Rescue border collie mix, 14 months. Pulls hard on the leash and barks at every other dog on walks. South Bay, California; I can do evenings and weekends.\n\nThree things only:\n1. Whether to hire a trainer or do it myself.\n2. If hiring — two or three local options with real prices.\n3. A week-by-week plan for the first four weeks.\n\nDon't research anything beyond those three.",
+    "status": "in_progress",
+    "assignee": "agent",
+    "parentId": null,
+    "needsHumanReview": false,
+    "priority": "medium",
+    "energy": "medium",
+    "timeEstimate": 60,
+    "taskType": [
+      "researching",
+      "planning"
+    ],
+    "dueDate": "2026-08-07",
+    "project": "Personal",
+    "section": "This week",
+    "comments": [],
+    "report": null,
+    "createdAt": "2026-07-31T09:12:00.000Z",
+    "updatedAt": "2026-08-04T22:07:16.807Z",
+    "subtasks": [
+      {
+        "id": "t-f93657b1",
+        "title": "Decide: hire a trainer vs. DIY for leash pulling + dog reactivity",
+        "description": "VERDICT: Do it yourself first, but buy 2-3 private sessions as a coaching layer. Do NOT sign up for a big multi-week package yet.\n\nREASONING\n- The two problems are different jobs. Leash pulling is a mechanical/skill problem (loose-leash walking + right equipment) and is very DIY-able. Barking at other dogs is an emotional problem (fear/frustration/over-arousal) needing counter-conditioning at a distance the dog can handle — harder to self-coach because it depends on reading body language and judging threshold distance in real time.\n- Age is in your favour. 14 months is peak adolescence; this is a normal window for reactivity to appear and it responds well to early intervention. Sources note early intervention matters and that letting a dog repeatedly go over threshold (or punishing the barking) risks escalation toward genuine aggression.\n- The specific gap a trainer fills: threshold reading, timing of the marker, and someone to run a neutral \"decoy\" dog so you can practise on demand instead of ambushing your dog on the sidewalk. That's worth 2-3 sessions, not 8.\n\nHIRE PROPERLY (full package / behaviour consult, not just 2 sessions) IF ANY OF THESE ARE TRUE:\n- Dog has ever made contact with teeth on a dog or person, or you genuinely fear he would if he got loose.\n- You cannot get him to eat food outdoors at ANY distance from another dog — that means he's over threshold everywhere and you can't run the protocol solo.\n- You physically can't hold him during a lunge.\n- 3-4 weeks of consistent work and it's the same or worse.\n- Reactivity is generalising (now barking at bikes, kids, cars too) or he's also reactive at windows/in the house/in the car.\n\nGO PURE DIY IF: he'll take food with a dog 40+ ft away, recovers within ~30 seconds after a dog passes, and has never made contact.\n\nNON-NEGOTIABLE: no prong, choke, or e-collar for this. Pairing pain with the sight of another dog is the exact opposite of what fear-based reactivity needs and is the fastest route to making it worse. Any trainer who proposes one — walk.\n\nEQUIPMENT CALL: front-clip (front-attachment) harness is the consensus first choice for a strong puller — pulling redirects the dog back toward you rather than rewarding forward motion. Head halter (Gentle Leader) is the fallback only if the harness isn't enough for a dog this strong; it needs its own desensitisation period. Plus a 6ft fixed leash — no flexi.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching",
+          "decision"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T22:07:16.808Z",
+        "updatedAt": "2026-08-04T22:08:08.799Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-f5a9dc67",
+        "title": "Find South Bay CA trainers handling leash reactivity, with real prices",
+        "description": "Identify 3 local (South Bay / San Jose / Sunnyvale / Santa Clara / Campbell area) force-free or positive-reinforcement trainers who explicitly work with leash reactivity. For each: name, credentials (CPDT-KA / KPA / IAABC etc.), service format (private in-home, day training, group reactive-dog class), actual price, phone/email, and whether they offer evenings/weekends. Snippet prices are not enough — read the actual pricing page.",
+        "status": "in_progress",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 60,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T22:07:16.808Z",
+        "updatedAt": "2026-08-04T22:08:08.801Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-b2b41eb5",
+        "title": "Write the week-by-week 4-week training plan",
+        "description": "Build weeks 1-4 with specific daily drills for loose-leash walking and dog reactivity (engage-disengage / Look at That, pattern games, threshold distance management). Must be doable in evenings and weekends by one person. Include gear, session lengths, and what 'progress' looks like at the end of each week.",
+        "status": "not_started",
+        "assignee": "agent",
+        "parentId": "t-dog",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 60,
+        "taskType": [
+          "writing",
+          "planning"
+        ],
+        "dueDate": null,
+        "project": "Personal",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-04T22:07:16.808Z",
+        "updatedAt": "2026-08-04T22:07:16.808Z",
+        "subtasks": []
+      }
+    ]
+  },
+  "prefix_diff": {
+    "pairs": 4,
+    "clean_append": 0,
+    "drift_after_markers": 4,
+    "cache_busting": 0,
+    "first_busting": null
+  }
+}

@@ -1,0 +1,212 @@
+{
+ "id": "ref:t-compliance-live-droptools/rep-22",
+ "A": "t-compliance-live-droptools/rep-22",
+ "B": "t-compliance-naive-append/rep-11",
+ "calls": 2,
+ "STATE_COVERAGE": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 2,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "REQUIRED_FIELDS": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 2,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "LAUNCH_DECISION": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 0,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "DENSITY": {
+  "winner": "A",
+  "tally": {
+   "A": 2,
+   "B": 0,
+   "EQUAL": 0
+  },
+  "clear_votes": 0,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "GROUNDING": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 0,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "OVERALL": {
+  "winner": "B",
+  "tally": {
+   "A": 0,
+   "B": 2,
+   "EQUAL": 0
+  },
+  "clear_votes": 2,
+  "usable_votes": 2,
+  "order_consistent": true
+ },
+ "position_bias": false,
+ "_detail": {
+  "id": "ref:t-compliance-live-droptools/rep-22",
+  "A": "t-compliance-live-droptools/rep-22",
+  "B": "t-compliance-naive-append/rep-11",
+  "calls": [
+   {
+    "order": "AB",
+    "dims": {
+     "STATE_COVERAGE": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "Neither report stubs out the non-recommended states, but Report 2 fills every cell of its four-state matrix (adding size threshold and enforcer rows), names all fifty jurisdictions in a bucket, and states its own coverage boundary in a \"Not researched\" list, whereas Report 1 leaves Washington's consent and retention cells as \"n/a if out of scope\" and never says where its own sweep stops.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "REQUIRED_FIELDS": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "Both get the private right of action right on all four dedicated statutes, but Report 2 gives every penalty a number and a unit (Report 1's Colorado cell has neither), makes thresholds the deciding applicability question, and turns notice-and-consent into a screen he can hand an engineer — before the camera activates, a separate unticked control outside the ToS, a second §15(d) consent for the vendor hand-off, and five named notice elements.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "LAUNCH_DECISION": {
+      "winner": 2,
+      "margin": "SLIGHT",
+      "why": "Both hand him a bounded danger list up top with a \"don't geofence\" answer, but Report 2's test is applied more carefully to this company — Washington priced down because the CPA carries no statutory damages, Colorado priced up because its biometric duties have no size threshold for a pre-launch startup — while Report 1 makes a separate Washington consent flow a launch blocker off an MHMDA theory it concedes is untested.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "DENSITY": {
+      "winner": 1,
+      "margin": "SLIGHT",
+      "why": "Report 1 says the core of the same answer in well under two-thirds the reading, while Report 2 asks him to read several thousand characters on app-store age laws and mass-arbitration colour, including a section it then tells him not to rely on.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "A"
+     },
+     "GROUNDING": {
+      "winner": 2,
+      "margin": "SLIGHT",
+      "why": "Both avoid the one fatal error and both get Illinois's private right of action right, but Report 2 pins the amendment to its public act number and effective date, adds the retroactivity holding and the per-subsection caveat, and lands the Colorado $20k and Washington retention cells that Report 1 leaves vague or deferred.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "OVERALL": {
+      "winner": 2,
+      "margin": "CLEAR",
+      "why": "Report 2 fills every cell for the four states that can actually hurt you, tells you which thresholds decide whether you're in scope at all, and hands you a signup screen you can build from — Report 1 is the tighter read but leaves Washington and Colorado half-filled and over-prices Washington as a blocker.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     }
+    },
+    "unusable": [],
+    "deletable_unverifiable": 0,
+    "deletable_1": [
+     "**Not legal advice.** I'm not a lawyer and several points below are genuinely unsettled (flagged where they are). This is a scoping document to direct counsel's time at the three or four things that actually matter, not a substitute for a sign-off.",
+     "This is the threshold question and it's worth being blunt about, because product teams routinely talk themselves out of scope here.",
+     "| 1 | **Illinois** | Class-action risk. Fee-shifting plus no-injury-needed pleading. **Survivable and now capped per-person.** Comply, don't geofence. |"
+    ],
+    "deletable_2": [
+     "**State App Store Accountability Acts impose duties on developers, not just app stores.** Texas SB 2420 took effect **1 January 2026** after the Fifth Circuit stayed a preliminary injunction; Utah and Louisiana have their own versions; a dozen more states are considering them.",
+     "**An arbitration clause is not a clean escape.** BIPA became a staple of *mass arbitration* campaigns in 2025 and continues into 2026 — thousands of individual filings with per-case fees instead of one class action. See `Wallrich v. Samsung` (7th Cir.) on the fee-payment trap.",
+     "Practitioners now describe Texas, not California, as the leading US privacy regulator."
+    ],
+    "stop_reason": "end_turn"
+   },
+   {
+    "order": "BA",
+    "dims": {
+     "STATE_COVERAGE": {
+      "winner": 1,
+      "margin": "CLEAR",
+      "why": "Both enumerate all fifty, but Report 1 actually differentiates the wider sensitive-data layer state by state (Rhode Island's cure period, Nebraska's SBA model, Maryland's necessity standard, California's thresholds and pre-processing assessment) and flags its own coverage boundary in a Not researched block, where Report 2 collapses twenty states into one paragraph of pattern.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "REQUIRED_FIELDS": {
+      "winner": 1,
+      "margin": "CLEAR",
+      "why": "Report 1 fills every asked-for cell with its unit for all four dedicated states plus a second consent for the vendor hand-off under s.15(d) and a not-bundled-in-the-ToS rule he can build against, while Report 2 leaves Colorado's penalty as an unquantified phrase and Washington's retention as n/a if out of scope.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "LAUNCH_DECISION": {
+      "winner": 1,
+      "margin": "SLIGHT",
+      "why": "Both give a bounded call up front on a real test, but Report 1 names the false positive (Florida), the sleeper (Portland, with $1,000/day and a private right of action) and the reason Colorado catches a pre-launch startup when every other threshold protects him, which Report 2 ranks fifth as low cost to satisfy.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "DENSITY": {
+      "winner": 2,
+      "margin": "SLIGHT",
+      "why": "Report 2 gets him to the answer and the checklist in about half the reading with almost every table row load-bearing, whereas Report 1 tacks on an app-store/minors excursion it self-labels as stale plus litigation-landscape colour he cannot act on before launch.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "A"
+     },
+     "GROUNDING": {
+      "winner": 1,
+      "margin": "SLIGHT",
+      "why": "Neither commits the per-scan error, but Report 1 pins the amendment to the public act number, the effective date and the retroactivity holding and correctly lands more verified cells (Colorado's $20k, Texas's one-year destruction, Washington's AG-only enforcement) than Report 2, which is precise on Washington's statutory text but vague where the numbers matter.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     },
+     "OVERALL": {
+      "winner": 1,
+      "margin": "CLEAR",
+      "why": "Report 1 fills in every state and every field you asked for — penalty units, thresholds, the separate s.15(d) consent for the vendor hand-off, the public retention URL that has to be live before the first scan — and it gets the Illinois amendment exactly right, so it is the one you can hand to engineering and to counsel without going back for the missing cells.",
+      "quote_1_ok": true,
+      "quote_2_ok": true,
+      "winner_ab": "B"
+     }
+    },
+    "unusable": [],
+    "deletable_unverifiable": 0,
+    "deletable_1": [
+     "**Explicitly stale — re-verify before relying on it.** Enforcement timelines and liability frameworks for all three acts shifted during 2026 due to later legislation and court rulings. A subtask exists for this.",
+     "Practitioners now describe Texas, not California, as the leading US privacy regulator.",
+     "BIPA became a staple of *mass arbitration* campaigns in 2025 and continues into 2026 — thousands of individual filings with per-case fees instead of one class action."
+    ],
+    "deletable_2": [
+     "Three findings drive that conclusion:",
+     "BIPA protects Illinois residents where *they* are. Onfido was London-headquartered and still liable.",
+     "**Not legal advice.**"
+    ],
+    "stop_reason": "end_turn"
+   }
+  ]
+ }
+}

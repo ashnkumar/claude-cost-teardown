@@ -1,0 +1,11 @@
+Treatment,Model,Effort,Dog $,Dog range,Dog vs base,Dog latency s,Dog searches,Dog fetches,Dog report chars,Dog n,Dog quality,Comp $,Comp range,Comp vs base,Comp latency s,Comp searches,Comp fetches,Comp report chars,Comp n,Comp quality
+No caching at all,claude-opus-5,high,7.91,6.92-9.54,1.66x,569,19.0,12.3,13539,3,within noise (+-3.8),15.93,9.82-23.50,2.12x,942,27.3,6.7,19734,3,not resolved (n=3)
+Built as-is (BASELINE),claude-opus-5,high,4.76,4.35-5.07,1.00x,573,11.3,13.0,15327,3,within noise (+-3.8),7.50,5.56-9.33,1.00x,806,27.7,2.0,18936,3,not resolved (n=3)
+FIX 1 - dynamic below convo,claude-opus-5,high,1.86,1.78-1.93,0.39x,540,13.7,9.7,13493,3,within noise (+-3.8),2.15,1.87-2.53,0.29x,557,23.0,2.0,15114,3,not resolved (n=3)
+Fix 1 + Opus 5 / low,claude-opus-5,low,0.82,0.67-1.06,0.17x,259,11.0,11.3,6692,3,-4.8 vs Fix 1,0.72,0.67-0.78,0.10x,207,9.3,0.0,7574,3,not resolved (n=3)
+Fix 1 + Sonnet 5 / high,claude-sonnet-5,high,0.61,0.49-0.78,0.13x,154,4.0,2.3,7377,3,-6.8 vs Fix 1,1.14,1.02-1.23,0.15x,384,10.3,1.7,9680,3,not resolved (n=3)
+Fix 1 + Sonnet 5 / low,claude-sonnet-5,low,0.29,0.25-0.33,0.06x,82,2.3,0.0,4539,3,-9.3 vs Fix 1,0.63,0.61-0.65,0.08x,146,6.0,0.0,10674,3,not resolved (n=2)
+Fix 1 + drop old tool results,claude-opus-5,high,3.92,2.99-5.39,0.82x,574,16.0,18.3,14886,3,within noise (+-3.8),4.14,2.63-5.52,0.55x,666,19.3,4.0,19446,3,not resolved (n=3)
+Fix 1 + drop but keep last 2,claude-opus-5,high,2.25,2.16-2.37,0.47x,683,16.7,17.7,10639,3,within noise (+-3.8),2.32,1.60-2.89,0.31x,619,19.7,2.7,14742,3,not resolved (n=3)
+Fix 1 + compact every 6,claude-opus-5,high,1.93,1.93-1.93,0.41x,568,20.0,16.0,7164,1,"-4.2 vs Fix 1 (n=1, provisional)",2.89,2.78-3.01,0.39x,770,21.3,3.0,17025,3,not resolved (n=3)
+Fix 1 + fetch cap 8k,claude-opus-5,high,2.29,1.96-2.73,0.48x,633,16.3,19.0,11120,3,within noise (+-3.8),2.30,1.78-2.62,0.31x,582,20.0,2.3,14649,3,not resolved (n=3)

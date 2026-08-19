@@ -1,0 +1,389 @@
+{
+  "cell": "live-append-sonnet",
+  "rep": 11,
+  "task_id": "t-compliance",
+  "run_id": "exp-live-append-sonnet-r11-msglju1r",
+  "dry_run": false,
+  "config": {
+    "cache": "live",
+    "context": "append",
+    "model": "claude-sonnet-5"
+  },
+  "git_sha": "09ab786",
+  "started_at": "2026-08-05T21:26:11.679Z",
+  "finished_at": "2026-08-05T21:34:55.711Z",
+  "wall_ms": 523690,
+  "turns": 13,
+  "stop_reason": "end_turn",
+  "status": "ok",
+  "error": null,
+  "seed_check_ok": true,
+  "cache_hit_call1": false,
+  "totals": {
+    "api_calls": 13,
+    "summarizer_calls": 0,
+    "input_tokens": 56,
+    "output_tokens": 25194,
+    "cache_creation_input_tokens": 73544,
+    "cache_read_input_tokens": 1257107,
+    "web_search_requests": 13,
+    "web_fetch_requests": 0,
+    "cost_usd": 0,
+    "computed_cost_usd": 1.1610001,
+    "summarizer_cost_usd": 0
+  },
+  "behavior": {
+    "subtasks_created": 9,
+    "comments": 1,
+    "report_attached": true,
+    "statuses_set": 14,
+    "searches": 13,
+    "fetches": 0
+  },
+  "final_task_tree": {
+    "id": "t-compliance",
+    "title": "Research compliance across 50 states",
+    "description": "We're shipping a consumer mobile app that scans a user's face to verify identity at signup, and we charge a monthly subscription. Before launch I need to know, state by state, which biometric privacy laws apply to us, what notice and written consent we have to collect, how long we're allowed to retain the scan, whether there's a private right of action, and what the penalties are. Flag the states that are genuinely dangerous to launch in.",
+    "status": "waiting",
+    "assignee": "agent",
+    "parentId": null,
+    "needsHumanReview": false,
+    "priority": "high",
+    "energy": "high",
+    "timeEstimate": 90,
+    "taskType": [
+      "researching",
+      "decision"
+    ],
+    "dueDate": "2026-08-07",
+    "project": "Launch",
+    "section": "This week",
+    "comments": [
+      {
+        "id": "c-d9861592",
+        "body": "Research is done and written back into the tree. Summary:\n\n**3 Red (genuinely dangerous) states:** Illinois (BIPA — private right of action, $1k-$5k/violation), Texas (CUBI — AG-only but $25k/violation and two $1.3-1.4B settlements against Meta and Google specifically over facial recognition), Washington (RCW 19.375 is mild, but the My Health My Data Act treats biometric data as consumer health data with its own private right of action).\n\n**~22 Yellow states** have comprehensive privacy laws requiring opt-in consent for biometric data as \"sensitive data\" (CA, CO, CT, VA, UT, OR, MT, FL, DE, IA, IN, TN, NH, NJ, KY, MD, MN, NE, RI, AZ, TX overlay, OK, AR), AG-enforced only, no private suits (California's private right of action is breach-only).\n\n**~25 Green states** have no biometric-specific exposure today — baseline UDAP/FTC risk only. This bucket shrinks every few months (Vermont just became the 24th comprehensive-law state, effective 2028; Oklahoma and Arkansas joined the Yellow tier this year) so it should be rechecked before launch and periodically after.\n\nFull narrative report is attached to this task; the full 50-state table is attached to the \"Compile 50-state biometric compliance matrix\" subtask.\n\n**What's left is not research, it's decisions and building:**\n1. Get outside privacy counsel to sign off on consent language/retention schedule before turning on the scan anywhere (subtask created).\n2. Decide launch posture for IL/TX/WA — geofence, delay, or accept risk (business call, subtask created).\n3. Build the actual in-app notice + written consent flow — one flow, used everywhere, satisfies nearly every state at once (subtask created for eng/design).\n\nMarking this `waiting` since the remaining subtasks need a human (counsel engagement, a risk-tolerance decision, and product/eng work) — all research subtasks are done.",
+        "author": "agent",
+        "createdAt": "2026-08-05T21:34:48.092Z"
+      }
+    ],
+    "report": {
+      "markdown": "\n# Biometric Privacy Compliance — 50-State Analysis\n**Product:** consumer mobile app, face scan at signup for identity verification, monthly subscription.\n**Bottom line:** 3 states are genuinely dangerous (Illinois, Texas, Washington). ~22 more require opt-in consent under comprehensive privacy statutes but carry no private right of action. ~25 states have no biometric-specific exposure today. The full 50-state table is on the \"Compile 50-state biometric compliance matrix\" subtask; this report explains the reasoning and what to do about it.\n\n## Why a face scan triggers biometric law at all\nEvery state biometric or privacy statute reviewed defines \"biometric identifier\" to include a scan of face geometry, not just fingerprints — so a selfie-based identity-verification flow is squarely in scope everywhere these laws exist, even though we're not doing \"facial recognition\" for surveillance purposes.\n\n## The 3 Red states — do not launch here without a compliant flow in place\n\n### Illinois — BIPA (740 ILCS 14) — highest risk\n<cite index=\"0-2\">BIPA requires entities to provide notice to the individual whose biometric data is being collected, obtain written consent from that individual, establish and implement a written data retention policy, and ensure compliance with limitations on any transfers of biometric data</cite>. Destruction is required <cite index=\"6-4\">when the initial purpose for collection has been satisfied, or within three years of the individual's last interaction with the entity, whichever comes first</cite>.\n\nThis is the only one of the three dedicated biometric statutes with a **private right of action** — <cite index=\"4-0\">BIPA is the only state biometric law with a private right of action, allowing statutory damages of $1,000 per negligent violation and $5,000 per intentional violation</cite>. A 2024 amendment capped damages to one violation per person rather than per scan, which meaningfully reduces class-action exposure, but the risk is still real: this law has driven nine-figure settlements against major tech companies historically.\n\n### Texas — CUBI (Bus. & Com. Code Ch. 503)\n<cite index=\"1-1\">CUBI prohibits a person from capturing an individual's biometric identifiers for a commercial purpose unless that person informs the individual and obtains the individual's consent prior to the capture</cite>, and requires the identifier be <cite index=\"1-1\">destroyed within a reasonable timeframe</cite> — codified elsewhere as no later than one year after the purpose for capture expires.\n\nNo private right of action — <cite index=\"2-3\">the Texas Attorney General has exclusive authority to enforce CUBI and may obtain relief including civil penalties of up to $25,000 per violation</cite>. That sounds modest until you see it deployed: <cite index=\"2-2\">Meta's recent settlement with the State of Texas under CUBI for $1.4 billion \"is the largest ever obtained from an action brought by a single State\"</cite>, following a $1.375 billion Texas settlement with Google — both over facial-recognition/geometry features closely analogous to ours. The Texas AG has also taken the position that unauthorized capture and improper storage are separate, stackable violations.\n\n### Washington — RCW 19.375 + My Health My Data Act\nThe dedicated biometric statute (RCW 19.375) is comparatively mild: <cite index=\"8-2\">Washington RCW 19.375 requires notice and consent before enrolling biometric identifiers in a database for commercial purposes... AG exclusive enforcement... up to $7,500 per violation. No private right of action</cite>, and it has never been enforced in a reported action.\n\nThe real exposure is the **My Health My Data Act (MHMDA)**, which classifies biometric data as consumer health data: <cite index=\"7-2\">MHMDA may be enforced through a private right of action, in addition to enforcement by the Washington Attorney General</cite>, and commentators expect <cite index=\"7-4\">Washington courts are likely to see a high volume of claims under MHMDA</cite> given the track record of Illinois BIPA litigation. Treat Washington as a private-litigation risk on par with Illinois, not the AG-only risk RCW 19.375 alone would suggest.\n\n## The ~22 Yellow states — comprehensive privacy laws, opt-in required, no private suits\nRoughly twenty states now have general consumer privacy statutes (California, Colorado, Connecticut, Virginia, Utah, Texas's TDPSA, Oregon, Montana, Florida, Delaware, Iowa, Indiana, Tennessee, New Hampshire, New Jersey, Kentucky, Maryland, Minnesota, Nebraska, Rhode Island, Arizona, and more recently Oklahoma and Arkansas) that <cite index=\"0-1\">classify biometric data as sensitive data. Under these laws, a business generally must obtain opt-in consent (or, in California, honor an opt-out) before processing biometric data, and consumers gain rights to access and delete it</cite>.\n\nKey exceptions to the opt-in default: **California, Utah, and Iowa use an opt-out (\"right to limit\") model instead of requiring affirmative consent up front.** California's private right of action is narrow — <cite index=\"10-2\">the private right of action under Cal. Civ. Code 1798.150 is limited to data breach scenarios where a business failed to maintain reasonable security and your unencrypted biometric data was exposed. You cannot sue under the CCPA simply for collecting biometric data without adequate notice</cite>.\n\nTwo states in this tier deserve special attention:\n- **Maryland (MODPA)** goes further than most, prohibiting <cite index=\"9-0\">businesses from collecting, processing, or sharing sensitive data beyond what is strictly necessary to provide a requested service</cite> — not just an opt-out/opt-in choice, an outright necessity test.\n- **Texas** is double-covered: TDPSA sits on top of CUBI, so Texas risk is really the CUBI analysis above.\n\n## The ~25 Green states — no biometric-specific law today\nStates like New York, Massachusetts, Ohio, Pennsylvania, Georgia, and roughly twenty others have no dedicated biometric statute and no comprehensive privacy law yet. Exposure here is limited to general state UDAP/deceptive-practices statutes, the federal FTC Act (Section 5 unfair/deceptive practices — the FTC has separately pursued facial-recognition companies on this theory), and standard breach-notification law (which universally treats biometric data as protected personal information). This is the fastest-moving bucket — Vermont just became the 24th state to enact a comprehensive law (effective 2028), and Oklahoma/Arkansas just joined the Yellow tier in 2026 — so this list should be rechecked periodically, not treated as permanently safe.\n\n## Recommended launch posture (for a decision, not a research answer)\n1. **Build one compliant consent flow and use it everywhere.** A single pre-scan screen with clear notice (what's collected, why, how long retained), affirmative opt-in checkbox with logged timestamp, and a published retention/destruction policy satisfies BIPA, CUBI, RCW 19.375, MHMDA, and every Yellow-state law at once. This is cheaper than maintaining 50 different flows and removes most of the risk in this report.\n2. **Set retention to match the strictest rule that applies to you (Illinois): destroy the scan when its purpose is served, and no later than 3 years after last interaction.** Texas's 1-year-after-purpose rule is stricter for that state specifically — consider matching Texas's shorter window if you don't have a business reason to keep data longer.\n3. **Decide, as a business matter, whether to geofence Illinois, Texas, and Washington until the consent flow ships**, given the settlement history in those three states specifically involves facial-recognition products.\n4. **Get outside privacy counsel to bless the consent language and retention schedule before turning on the scan in any Red or Yellow state** — this report is a compliance map, not legal advice, and the per-state written-notice language has to be gotten right.\n\n## Human next steps (see subtasks)\n- Engage outside privacy counsel to review this matrix and sign off on consent language (subtask created).\n- Decide launch posture for Illinois/Texas/Washington — geofence, delay, or accept risk (subtask created, business decision).\n- Build the in-app notice + written consent flow described above (subtask created, engineering/design work).\n",
+      "sources": [
+        {
+          "title": "Illinois Supreme Court Clarifies Statute of Limitations for BIPA Claims | Sidley Austin",
+          "url": "https://www.sidley.com/en/insights/newsupdates/2023/02/illinois-supreme-court-clarifies-statute-of-limitations-for-illinois-biometric-privacy-act-claims"
+        },
+        {
+          "title": "Texas Capture Or Use Of Biometric Identifier Act - Texas Attorney General",
+          "url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act"
+        },
+        {
+          "title": "Billion Dollar Liability – Texas CUBI - National Law Review",
+          "url": "https://natlawreview.com/article/billion-dollar-liability-understanding-your-obligations-under-texas-capture-or-use"
+        },
+        {
+          "title": "Illinois Biometric Privacy Laws: Collection, Consent & Penalties (2026) | Recording Law",
+          "url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/illinois-data-privacy-laws/biometric-privacy/"
+        },
+        {
+          "title": "Washington Biometric Privacy Laws (2026) | Recording Law",
+          "url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/washington-data-privacy-laws/biometric-privacy/"
+        },
+        {
+          "title": "Washington My Health My Data Act – Part 7: Biometric Data | Hintze Law",
+          "url": "https://hintzelaw.com/blog/wa-my-health-my-data-act-pt7-biometrics"
+        },
+        {
+          "title": "Biometric Privacy Laws by State (2026) | Recording Law",
+          "url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/biometric-privacy-laws/"
+        },
+        {
+          "title": "California Biometric Privacy Laws (2026) | Recording Law",
+          "url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/california-data-privacy-laws/biometric-privacy/"
+        },
+        {
+          "title": "Understanding the Maryland Online Data Privacy Act (MODPA) | Ketch",
+          "url": "https://www.ketch.com/regulatory-compliance/maryland-online-data-privacy-act-modpa"
+        },
+        {
+          "title": "Illinois Data Privacy Laws: BIPA, Consumer Rights & Penalties (2026) | Recording Law",
+          "url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/illinois-data-privacy-laws/"
+        }
+      ],
+      "createdAt": "2026-08-05T21:34:37.368Z"
+    },
+    "createdAt": "2026-08-02T16:40:00.000Z",
+    "updatedAt": "2026-08-05T21:34:48.092Z",
+    "subtasks": [
+      {
+        "id": "t-8a65d3e7",
+        "title": "Illinois BIPA analysis (highest-risk state)",
+        "description": "FINDINGS — Illinois Biometric Information Privacy Act (BIPA), 740 ILCS 14/1 et seq.\n\n**Applies to us:** Yes. A face scan is a \"biometric identifier\" (scan of face geometry) under 740 ILCS 14/10. BIPA covers any private entity with users in Illinois, no size threshold, and excludes only government entities and certain financial institutions.\n\n**Required before collection:**\n1. Informed written notice disclosing what is being collected, the specific purpose, and the length of time it will be stored/used.\n2. A signed written release (electronic signature now expressly valid after the Aug 2, 2024 amendment, Public Act 103-0769).\n3. A publicly available written retention and destruction policy.\n4. No sale, lease, or profiting from the biometric data; disclosure to third parties restricted.\n\n**Retention limit:** Must destroy biometric identifiers when the initial purpose for collection is satisfied, or within 3 years of the individual's last interaction with the company, whichever comes first.\n\n**Private right of action:** YES — the only one of the three dedicated state biometric statutes with one. Any aggrieved person may sue directly, no need to show actual injury beyond the statutory violation.\n\n**Penalties:** $1,000 per negligent violation, $5,000 per intentional/reckless violation, plus attorneys' fees and costs, and injunctive relief. The Aug 2024 amendment (SB 2979) caps recovery to **one violation per person per type of violation** (no more per-scan stacking), which substantially reduces (but does not eliminate) class-action exposure. Statute of limitations is 5 years (Tims v. Black Horse Carriers).\n\n**Risk tier: RED.** Highest-risk state — only state biometric law with a private right of action, and it has generated hundreds of millions in settlements (Facebook/Meta paid $650M in Illinois BIPA litigation historically).",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "high",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T21:26:48.002Z",
+        "updatedAt": "2026-08-05T21:29:28.789Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-7f93607f",
+        "title": "Texas CUBI analysis",
+        "description": "FINDINGS — Texas Capture or Use of Biometric Identifier Act (CUBI), Tex. Bus. & Com. Code § 503.001 et seq.\n\n**Applies to us:** Yes. Covers \"capture\" of a biometric identifier (retina/iris scan, fingerprint, voiceprint, or record of hand/face geometry) for a commercial purpose.\n\n**Required before collection:** Must inform the individual and obtain consent prior to capture. (No requirement that consent be in writing per se, but best practice is written/logged consent given AG's aggressive enforcement posture.)\n\n**Retention limit:** Must destroy the biometric identifier within a reasonable time after capture, and no later than one year after the purpose for collection has expired.\n\n**Restrictions:** Cannot sell, lease, or disclose the biometric identifier except in narrow exceptions.\n\n**Private right of action:** NONE. Enforcement is exclusively by the Texas Attorney General.\n\n**Penalties:** Civil penalty of up to $25,000 per violation, no cap on total exposure. The Texas AG has taken the position that unauthorized capture AND improper storage are separate violations, which can double exposure per incident. The Texas AG has used CUBI aggressively: a $1.4 billion settlement with Meta (2024) and a $1.375 billion settlement with Google — the two largest biometric-privacy recoveries in US history, both over facial recognition features.\n\n**Risk tier: RED.** No private right of action, but the Texas AG is currently the most aggressive biometric regulator in the country and has extracted record-breaking settlements specifically over facial recognition/geometry data — directly on point for our product.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T21:26:48.002Z",
+        "updatedAt": "2026-08-05T21:29:28.790Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-e1c47fe7",
+        "title": "Washington biometric privacy law (RCW 19.375) analysis",
+        "description": "FINDINGS — Washington has TWO relevant statutes; both matter for a face-scan app.\n\n**1) Biometric Identifiers Act, RCW 19.375 (HB 1493, 2017):**\n- Applies to enrolling a biometric identifier (incl. face geometry) \"in a database for a commercial purpose\" — narrower than BIPA because \"enroll\" means converting into a non-reconstructible reference template.\n- Requires notice and consent (or an opt-out mechanism) before enrollment — a lower bar than BIPA/CUBI's affirmative-consent-only standard.\n- Retention: no longer than reasonably necessary to comply with law, prevent fraud/security threats, or provide the service for which it was enrolled — no fixed day/year limit like IL/TX.\n- Excludes photographs, video/audio recordings, and HIPAA-purpose data from the definition of \"biometric identifier\" — narrower scope than BIPA.\n- Private right of action: NONE. Enforcement solely by WA Attorney General as an unfair/deceptive act under the Consumer Protection Act (RCW 19.86), penalties up to $7,500 per violation. No public enforcement action has ever been reported under this statute.\n\n**2) My Health My Data Act (MHMDA), RCW 19.373, effective March 31, 2024 — the one to actually worry about:**\n- Classifies biometric data as \"consumer health data\" and covers a broader range of biometric identifiers (face geometry, palm/vein patterns, keystroke rhythms, gait).\n- Requires consent for collection/use beyond what's strictly necessary to provide the requested product, plus separate consent before sharing with third parties, and honoring deletion requests across all systems including backups.\n- No fixed data retention limitation, but broad deletion-on-request rights.\n- Private right of action: YES, via the WA Consumer Protection Act — one of the few state privacy laws with a private right of action besides BIPA, and expected to generate significant litigation given its broad scope.\n\n**Risk tier: YELLOW→RED.** RCW 19.375 alone is low risk (no private suits, untested). But MHMDA's private right of action means Washington should be treated as a serious litigation risk, comparable in kind (if not yet in track record) to Illinois BIPA.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T21:26:48.002Z",
+        "updatedAt": "2026-08-05T21:29:28.791Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-d7ace67d",
+        "title": "Inventory comprehensive state consumer privacy laws that treat biometric data as 'sensitive data' (CA, CO, VA, CT, UT + newer 2023-2026 laws)",
+        "description": "FINDINGS — Comprehensive state consumer privacy laws (biometric data as \"sensitive data\")\n\n**As of Aug 2026, roughly 20-23 states** have comprehensive consumer privacy statutes that classify biometric identifiers as \"sensitive personal information/data\": California (CCPA/CPRA), Virginia (VCDPA), Colorado (CPA), Connecticut (CTDPA), Utah (UCPA), Florida (FDBR), Texas (TDPSA — separate from CUBI, dual exposure), Oregon, Montana, Delaware, Iowa, Tennessee, New Hampshire, New Jersey, Nebraska, Minnesota (eff. July 31, 2025), Maryland (MODPA, eff. Oct 1, 2025 / enforceable Apr 1, 2026), Indiana, Kentucky, Rhode Island (all eff. Jan 1, 2026), Arizona (eff. Jan 1, 2026), plus Oklahoma (SB 546, signed Mar 2026, effective date pending) and Arkansas (reported eff. July 1, 2026 — verify statute text). **This list keeps growing; recheck before launch.**\n\n**Common baseline requirements:**\n- Post a privacy notice describing what sensitive/biometric data is collected and why.\n- **Opt-in (affirmative) consent required before collecting/processing biometric data in nearly every one of these states.** California, Utah, and Iowa are the exceptions — they use an opt-out/\"right to limit\" model instead of requiring affirmative opt-in.\n- Consumer rights to access, correct, delete, and (in most states) port their data.\n- Data Protection Impact Assessments (DPIAs) typically required before processing sensitive data like biometrics.\n- Most states apply only above a threshold (e.g., data of 25,000-100,000+ residents, or a % of revenue from data sales) — Texas TDPSA is a notable exception with **no revenue/volume threshold**, so it applies regardless of company size.\n\n**California detail (most mature, most relevant given size of CA market):**\n- Biometric data is \"sensitive personal information\" under Cal. Civ. Code §1798.100 et seq. Consumers get the right to know, delete, correct, and to \"limit the use\" of biometric data (opt-out style, not opt-in) — businesses must post a \"Limit the Use of My Sensitive Personal Information\" link.\n- Private right of action is narrow: only for data breaches from failure to maintain reasonable security, $100-$750 per consumer per incident (§1798.150). No general private right of action for a bad consent flow.\n- AG/CPPA enforcement civil penalties up to $7,500 per intentional violation.\n\n**Notable outliers to flag:**\n- **Maryland MODPA** bans selling sensitive data outright and requires data minimization to only what's \"reasonably necessary\" — stricter than opt-out/opt-in models elsewhere.\n- **Colorado** amended its CPA in 2024 to add biometric-specific notice/consent provisions.\n- **Texas TDPSA** stacks on top of CUBI — Texas is double-covered (dedicated biometric statute + comprehensive privacy law).\n\n**Private right of action:** Only California has any (and it's breach-only). All other ~19-22 states are AG-enforcement only.\n\n**Risk tier: YELLOW** across the board (AG enforcement, opt-in consent needed, no general private suits) — except Texas, which is YELLOW-into-RED because of the CUBI overlay described in its own subtask.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "high",
+        "timeEstimate": 60,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T21:26:48.002Z",
+        "updatedAt": "2026-08-05T21:32:10.228Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-32d26735",
+        "title": "Identify remaining states with no biometric-specific or comprehensive privacy statute (baseline exposure)",
+        "description": "FINDINGS — States with no dedicated biometric statute and no comprehensive privacy law (baseline exposure only), as of Aug 2026.\n\n**~24 states fall in this \"baseline\" bucket:** Alabama, Alaska, Georgia, Hawaii, Idaho, Kansas, Louisiana, Maine, Massachusetts, Michigan, Mississippi, Missouri, New Mexico, New York, North Carolina, North Dakota, Ohio, Pennsylvania, South Carolina, South Dakota, West Virginia, Wisconsin, Wyoming. (Vermont just enacted a comprehensive law June 16, 2026 but it isn't effective until Jan 1, 2028, so treat Vermont as baseline-only until then.)\n\n**Their exposure for us comes from three sources, not a biometric-specific statute:**\n1. **State UDAP/consumer-protection statutes** — an AG could theoretically treat a deceptive/undisclosed biometric collection practice as an \"unfair or deceptive act,\" similar to how Washington and Nevada explicitly route their narrower biometric/health-data laws through their consumer protection acts.\n2. **FTC Act Section 5** (federal, not state, but applies nationwide) — the FTC has brought several enforcement actions against companies for collecting/using facial recognition or biometric data without adequate disclosure, treating it as an unfair or deceptive practice.\n2. **Data breach notification statutes** — nearly every state (including all of these) lists biometric data as protected personal information for breach-notification purposes, so a breach exposing face scans triggers standard breach notice obligations even without a dedicated biometric law.\n\n**Two states with narrower, related laws worth knowing about:**\n- **Nevada**: NRS 603A (opt-out of sale of personal data, notice requirements) plus SB 370 (Consumer Health Data Law, eff. Mar 31, 2024) which requires affirmative consent before collecting \"consumer health data\" that includes biometric data — but has NO private right of action; enforced only by the Nevada AG as a deceptive trade practice, penalty up to $5,000/violation.\n- **South Carolina**: has an active but not-yet-enacted bill narrowly focused on biometric data (fingerprints, iris scans, DNA) — worth monitoring, not yet law.\n\n**Risk tier: GREEN** for all states in this bucket — lowest legal risk today, but this is the most likely area for new legislation (privacy law patchwork has added a new state every few months for the last several years), so re-check before and periodically after launch.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "medium",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T21:26:48.002Z",
+        "updatedAt": "2026-08-05T21:33:12.357Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-3d567b34",
+        "title": "Compile 50-state biometric compliance matrix",
+        "description": "Merge findings from the Illinois, Texas, Washington, comprehensive-law, and baseline research subtasks into one state-by-state table covering: law name, applies to us (Y/N), required notice/consent, retention limit, private right of action (Y/N), penalties, and risk tier (Red/Yellow/Green). This becomes the attached report.",
+        "status": "done",
+        "assignee": "agent",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "researching",
+          "writing"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": {
+          "markdown": "\n# 50-State Biometric Compliance Matrix — Face-Scan Identity Verification App\n\nFull state-by-state table. Tier definitions: **Red** = dedicated biometric statute with real teeth (private suits and/or large realized AG settlements) — genuinely dangerous. **Yellow** = comprehensive privacy law requiring opt-in consent for biometric data, AG-enforced only. **Green** = no biometric-specific or comprehensive privacy law; baseline UDAP/FTC/breach-notice exposure only.\n\n| State | Tier | Governing law | Private right of action? |\n|---|---|---|---|\n| Alabama | Green | None (baseline) | No |\n| Alaska | Green | None (baseline) | No |\n| Arizona | Yellow | Consumer Data Privacy Law (eff. Jan 1, 2026) | No |\n| Arkansas | Yellow | Comprehensive law (reported eff. ~Jul 1, 2026 — verify) | No |\n| California | Yellow | CCPA/CPRA — biometric = sensitive personal info | Breach-only (§1798.150) |\n| Colorado | Yellow | Colorado Privacy Act (2024 biometric amendment) | No |\n| Connecticut | Yellow | CTDPA (AG settled first action 2025, $85k) | No |\n| Delaware | Yellow | Delaware Personal Data Privacy Act | No |\n| Florida | Yellow | Florida Digital Bill of Rights | No |\n| Georgia | Green | None (baseline) | No |\n| Hawaii | Green | None (baseline) | No |\n| Idaho | Green | None (baseline) | No |\n| **Illinois** | **RED** | **BIPA (740 ILCS 14)** | **YES — $1,000–$5,000/violation** |\n| Indiana | Yellow | Consumer Data Protection Act (eff. Jan 1, 2026) | No |\n| Iowa | Yellow | Iowa Consumer Data Protection Act (opt-out model) | No |\n| Kansas | Green | None (baseline) | No |\n| Kentucky | Yellow | Consumer Data Protection Act (eff. Jan 1, 2026) | No |\n| Louisiana | Green | None (baseline) | No |\n| Maine | Green | None (baseline) | No |\n| Maryland | Yellow | MODPA (eff. Oct 2025/enforce Apr 2026) — bans sale of sensitive data, data minimization | No |\n| Massachusetts | Green | None (baseline) | No |\n| Michigan | Green | None (baseline) | No |\n| Minnesota | Yellow | Consumer Data Privacy Act (eff. Jul 31, 2025) | No |\n| Mississippi | Green | None (baseline) | No |\n| Missouri | Green | None (baseline) | No |\n| Montana | Yellow | Montana Consumer Data Privacy Act | No |\n| Nebraska | Yellow | Data Privacy Act | No |\n| Nevada | Green | NRS 603A (opt-out of sale) + SB 370 (consumer health data, no PRA) | No |\n| New Hampshire | Yellow | Data Privacy Act | No |\n| New Jersey | Yellow | Data Privacy Act | No |\n| New Mexico | Green | None (baseline) | No |\n| New York | Green | None (baseline; SHIELD Act = breach notice only) | No |\n| North Carolina | Green | None (baseline) | No |\n| North Dakota | Green | None (baseline) | No |\n| Ohio | Green | None (baseline) | No |\n| Oklahoma | Yellow | SB 546 signed Mar 2026, effective date pending | No |\n| Oregon | Yellow | Oregon Consumer Privacy Act — strong biometric provisions | No |\n| Pennsylvania | Green | None (baseline) | No |\n| Rhode Island | Yellow | Data Transparency Act (eff. Jan 1, 2026) | No |\n| South Carolina | Green | None (narrow biometric bill pending, not law) | No |\n| South Dakota | Green | None (baseline) | No |\n| Tennessee | Yellow | Information Protection Act | No |\n| **Texas** | **RED** | **CUBI (Bus. & Com. Code Ch. 503) + TDPSA** | **No (AG-only, but $25k/violation, $1.4B Meta + $1.375B Google settlements)** |\n| Utah | Yellow | UCPA (opt-out model) | No |\n| Vermont | Green | VDPOSA signed Jun 2026, not effective until Jan 1, 2028 | No |\n| Virginia | Yellow | VCDPA | No |\n| **Washington** | **RED** | **RCW 19.375 (AG-only) + My Health My Data Act (PRA via Consumer Protection Act)** | **YES, via MHMDA** |\n| West Virginia | Green | None (baseline) | No |\n| Wisconsin | Green | None (baseline) | No |\n| Wyoming | Green | None (baseline) | No |\n\n**Totals: 3 Red, 22 Yellow, 25 Green.**\n\nSee the parent task report for the full narrative analysis, notice/consent/retention requirements, penalty detail, and recommended launch posture.\n",
+          "sources": [
+            {
+              "title": "Illinois Biometric Privacy Laws: Collection, Consent & Penalties (2026) | Recording Law",
+              "url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/illinois-data-privacy-laws/biometric-privacy/"
+            },
+            {
+              "title": "Texas Capture Or Use Of Biometric Identifier Act - Texas Attorney General",
+              "url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint/consumer-privacy-rights/biometric-identifier-act"
+            },
+            {
+              "title": "Billion Dollar Liability – Texas CUBI - National Law Review",
+              "url": "https://natlawreview.com/article/billion-dollar-liability-understanding-your-obligations-under-texas-capture-or-use"
+            },
+            {
+              "title": "Washington Biometric Privacy Laws (2026) | Recording Law",
+              "url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/washington-data-privacy-laws/biometric-privacy/"
+            },
+            {
+              "title": "Washington My Health My Data Act – Part 7: Biometric Data | Hintze Law",
+              "url": "https://hintzelaw.com/blog/wa-my-health-my-data-act-pt7-biometrics"
+            },
+            {
+              "title": "Biometric Privacy Laws by State (2026) | Recording Law",
+              "url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/biometric-privacy-laws/"
+            },
+            {
+              "title": "US State Privacy Laws in 2026: 20 States, One Compliance Headache",
+              "url": "https://www.nixondigital.io/blog/us-state-privacy-laws/"
+            },
+            {
+              "title": "Most States Still Lack Comprehensive Consumer Data Privacy Laws | Security.org",
+              "url": "https://www.security.org/resources/digital-privacy-legislation-by-state/"
+            },
+            {
+              "title": "California Biometric Privacy Laws (2026) | Recording Law",
+              "url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/california-data-privacy-laws/biometric-privacy/"
+            },
+            {
+              "title": "Understanding the Maryland Online Data Privacy Act (MODPA)",
+              "url": "https://www.ketch.com/regulatory-compliance/maryland-online-data-privacy-act-modpa"
+            },
+            {
+              "title": "Nevada Consumer Health Data Law (SB 370) | Recording Law",
+              "url": "https://www.recordinglaw.com/us-laws/data-privacy-laws/nevada-data-privacy-laws/consumer-health-data-law/"
+            },
+            {
+              "title": "Vermont Becomes 24th State to Enact Comprehensive Consumer Privacy Law | Koley Jessen",
+              "url": "https://www.koleyjessen.com/insights/publications/vermont-becomes-24th-state-to-enact-comprehensive-consumer-privacy-law"
+            }
+          ],
+          "createdAt": "2026-08-05T21:33:56.550Z"
+        },
+        "createdAt": "2026-08-05T21:26:48.002Z",
+        "updatedAt": "2026-08-05T21:33:59.275Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-4e75e47e",
+        "title": "Engage outside privacy counsel to review the compliance matrix before launch",
+        "description": "Send the attached 50-state compliance matrix to outside counsel (or in-house legal) for sign-off, specifically on the Illinois BIPA written-release language, the Texas/Washington consent flow, and the biometric data retention/deletion schedule, before the app goes live in any Red-tier state.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 60,
+        "taskType": [
+          "decision",
+          "calling"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T21:26:48.002Z",
+        "updatedAt": "2026-08-05T21:26:48.002Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-a6536f7d",
+        "title": "Decide launch posture for Red-tier states (IL, TX, WA, and any state requiring written opt-in for sensitive biometric data)",
+        "description": "Using the compliance matrix, decide whether to: (a) geofence/exclude these states at launch, (b) delay launch there until consent flow and retention schedule are built, or (c) accept the litigation/AG-enforcement risk. This is a business risk call, not something research alone can resolve.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "medium",
+        "timeEstimate": 30,
+        "taskType": [
+          "decision"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T21:26:48.002Z",
+        "updatedAt": "2026-08-05T21:26:48.002Z",
+        "subtasks": []
+      },
+      {
+        "id": "t-e59d3e51",
+        "title": "Build the in-app notice + written consent flow required by BIPA-style statutes",
+        "description": "Implement a pre-scan screen that: (1) discloses that a faceprint/biometric identifier is being collected and stored, (2) states the specific purpose and length of time it will be used/stored, (3) captures affirmative written consent (checkbox + timestamp logged) before the scan runs, and (4) is shown to users in every state, not just BIPA states, to minimize the compliance matrix. Coordinate with engineering/design.",
+        "status": "not_started",
+        "assignee": "human",
+        "parentId": "t-compliance",
+        "needsHumanReview": false,
+        "priority": "high",
+        "energy": "high",
+        "timeEstimate": 90,
+        "taskType": [
+          "planning"
+        ],
+        "dueDate": null,
+        "project": "Launch",
+        "section": null,
+        "comments": [],
+        "report": null,
+        "createdAt": "2026-08-05T21:26:48.002Z",
+        "updatedAt": "2026-08-05T21:26:48.002Z",
+        "subtasks": []
+      }
+    ]
+  },
+  "prefix_diff": {
+    "pairs": 12,
+    "clean_append": 12,
+    "drift_after_markers": 0,
+    "cache_busting": 0,
+    "first_busting": null
+  }
+}

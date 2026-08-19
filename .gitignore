@@ -1,0 +1,64 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+# ...except the template the README tells you to copy. Without this
+# negation the cut is built from `git ls-files` and ships without it,
+# so `cp .env.example .env` is the first thing a reader runs and the
+# first thing that fails.
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# delegate — local demo state (seeded from data/seed.json on first boot)
+/data/tasks.json
+/runs/
+tsconfig.tsbuildinfo
+
+# agent working notes — local only
+/notes_to_self_for_agents/
+/data/example-completed.json
+
+# experiment raw request/response captures — multi-MB of fetched web content
+/experiments/**/transcript.jsonl
+
+# python bytecode from the grader scripts
+__pycache__/
+
+# intermediate HTML from scripts/figures.mjs — the committed PNGs are the output
+/.figures-tmp/
